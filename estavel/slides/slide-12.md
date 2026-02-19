@@ -1,150 +1,157 @@
-# Aula 12 - Ecossistema C# e .NET 🔷
+# Aula 12 - UX e Material Design 3 🎨
+
+<!-- .slide: data-transition="zoom" -->
 
 ---
 
-## Agenda 📅
+## 💄 O que é Material Design?
 
-1.  O Que é .NET? { .fragment }
-2.  Ferramentas (VS vs VS Code) { .fragment }
-3.  C# Básico { .fragment }
-4.  LINQ (A Mágica) { .fragment }
-5.  F# (O Lado Funcional) { .fragment }
+O sistema de design do Google.
 
----
-
-## 1. O Que é .NET? 🏗️
-
-- **C#**: A Linguagem. { .fragment }
-- **.NET**: A Plataforma (Runtime, Bibliotecas). { .fragment }
-- Criado pela Microsoft para bater de frente com o Java. { .fragment }
-- Hoje é **Open Source** e roda no Linux/Mac. { .fragment }
+* Criado em 2014. <!-- .element: class="fragment" -->
+* Inspirado em papel e tinta. <!-- .element: class="fragment" -->
+* Agora na versão 3: **Material You**. <!-- .element: class="fragment" -->
 
 ---
 
-## 2. Ferramentas 🛠️
+## 🌸 Material You (M3)
 
-Onde programar?
+A personalização elevada ao máximo.
 
-- **Visual Studio (Roxo)**: A IDE completa. Pesada. Faz tudo (Arrastar botões, Banco de Dados). { .fragment }
-- **VS Code (Azul)**: Editor leve. Rápido. Exige instalar extensões. { .fragment }
-
----
-
-### Criando um Projeto 💻
-
-No terminal:
-
-1.  `dotnet new console -o MeuApp` { .fragment }
-2.  `cd MeuApp` { .fragment }
-3.  `code .` { .fragment }
-4.  `dotnet run` { .fragment }
+* **Cores Dinâmicas**: O app suga as cores do papel de parede do usuário. <!-- .element: class="fragment" -->
+* **Acessibilidade**: Foco em contraste e tamanhos de toque. <!-- .element: class="fragment" -->
+* **Expressividade**: Formas orgânicas e arredondadas. <!-- .element: class="fragment" -->
 
 ---
 
-## 3. C# Básico 📝
+## 📐 O Grid de 8dp
 
-Muito parecido com Java.
+No Android, medimos tudo em múltiplos de 8.
 
-```csharp
-using System;
-
-class Program {
-    static void Main() {
-        Console.WriteLine("Olá, C#!");
-        // Em Java seria System.out.println
-    }
-}
-```
+* 8, 16, 24, 32, 40... <!-- .element: class="fragment" -->
+* Isso garante alinhamento harmônico em qualquer tela. <!-- .element: class="fragment" -->
+* Regras de margem e padding seguem esse padrão. <!-- .element: class="fragment" -->
 
 ---
 
-## 4. LINQ: A Joia da Coroa 💎
-
-**L**anguage **In**tegrated **Q**uery.
-
-- Tratar listas como se fossem SQL. { .fragment }
-- Filtrar, Ordenar, Transformar dados em **uma linha**. { .fragment }
+## 🔘 Componentes Modernos
 
 ---
 
-### Sem LINQ (Jeito Velho) 👴
+### 1. FAB (Floating Action Button)
 
-```csharp
-List<int> pares = new List<int>();
-foreach (int n in numeros) {
-    if (n % 2 == 0) {
-        pares.Add(n);
-    }
-}
-```
+O botão que "flutua" sobre o conteúdo.
+
+* Representa a ação principal. <!-- .element: class="fragment" -->
+* Ex: Criar novo e-mail, Adicionar tarefa. <!-- .element: class="fragment" -->
 
 ---
 
-### Com LINQ (Jeito Novo) ✨
+### 2. Cards 🃏
 
-```csharp
-var pares = numeros.Where(n => n % 2 == 0).ToList();
-```
+Agrupam informações relacionadas.
 
-> Muito mais limpo e legível!
+* Elevação (sombras). <!-- .element: class="fragment" -->
+* Bordas arredondadas (12dp a 28dp). <!-- .element: class="fragment" -->
 
 ---
 
-### Visualizando LINQ (Mermaid)
+### 3. Bottom Navigation 🧭
+
+Navegação principal ao alcance do polegar.
+
+* Entre 3 e 5 destinos. <!-- .element: class="fragment" -->
+* Ideal para uso com uma mão só. <!-- .element: class="fragment" -->
+
+---
+
+## 🌑 Dark Mode: Não é opcional!
+
+O usuário ama o tema escuro.
+
+* Economia de bateria (telas OLED). <!-- .element: class="fragment" -->
+* Descanso visual à noite. <!-- .element: class="fragment" -->
+* **Como fazer**: Pasta `values-night/colors.xml`. <!-- .element: class="fragment" -->
+
+<!-- .slide: data-background-color="#121212" -->
+
+---
+
+## 🆚 Material (Android) vs HIG (iOS)
+
+| Característica | Android (Material) | iOS (HIG) |
+| :--- | :--- | :--- |
+| **Foco** | Elevação / Camadas | Transparência / Blur |
+| **Botões** | FAB / Sombreados | Flat / Bordas finas |
+| **Navegação** | Drawer / Bottom Nav | Tab Bar Superior/Inferior |
+| **Espírito** | Papel e Tinta | Vidro e Minimalismo |
+
+---
+
+## 🔡 Tipografia: Roboto e Além
+
+A fonte oficial do Android.
+
+* Use pesos variados para criar hierarquia. <!-- .element: class="fragment" -->
+* Título: Bold / Grande. <!-- .element: class="fragment" -->
+* Corpo: Regular / 14sp ou 16sp. <!-- .element: class="fragment" -->
+
+---
+
+## 🌊 Feedback Visual (Ripples)
+
+"O app está me ouvindo?"
+
+* Sempre que o usuário tocar, algo deve acontecer. <!-- .element: class="fragment" -->
+* Efeito **Ripple** (Onda) é o padrão. <!-- .element: class="fragment" -->
+
+---
+
+## 🛠️ Prática: Estilizando com M3
+
+1. No `build.gradle`, use Material 1.9.0+. <!-- .element: class="fragment" -->
+2. No XML, troque `Button` por `MaterialButton`. <!-- .element: class="fragment" -->
+3. Teste o atributo `app:cornerRadius` e veja a mudança. <!-- .element: class="fragment" -->
+
+---
+
+## 🧬 Mermaid: Camadas UI
 
 ```mermaid
-graph LR;
-    Input[Lista: 1, 2, 3, 4] -->|Where| Filtro[Pares: 2, 4];
-    Filtro -->|Select| Transf[Quadrado: 4, 16];
-    Transf --> Output[Resultado];
+graph TD
+    A[Barra de Status]
+    B[Barra de App - TopAppBar]
+    C[Conteúdo - RecyclerView]
+    D[Botão Flutuante - FAB]
+    E[Barra Inferior - BottomNav]
+    A --> B
+    B --> C
+    C --> D
+    D --> E
 ```
 
 ---
 
-## Tipos de Dados Poderosos 💪
+## 🧠 UX: Experiência do Usuário
 
-- **var**: O compilador adivinha o tipo. { .fragment }
-    - `var x = 10;` (Vira int). { .fragment }
-- **Nullable Types**: { .fragment }
-    - `int? idade = null;` (Pode ser nulo). { .fragment }
-    - Evita erros de memória. { .fragment }
+UX não é só "bonito", é "funcional".
 
----
-
-## 5. F# (Bônus) 🟣
-
-- Linguagem **Funcional** do .NET. { .fragment }
-- Focada em Matemática e Dados. { .fragment }
-- Influenciou o LINQ e as Lambdas do C#. { .fragment }
-- Código muito conciso. { .fragment }
+* **Velocidade**: Carregamento rápido. <!-- .element: class="fragment" -->
+* **Clareza**: Icons autoexplicativos. <!-- .element: class="fragment" -->
+* **Prevenção**: Não deixe o usuário errar (validações). <!-- .element: class="fragment" -->
 
 ---
 
-## Exercício Rápido ⚡
+## 🏁 Conclusão
 
-**LINQ na Prática**
-
-Dada uma lista de preços: `[10.5, 20.0, 5.0, 100.0]`
-
-1.  Filtre os preços maiores que 15.0. { .fragment }
-2.  Ordene do maior para o menor. { .fragment }
-3.  Mostre o resultado. { .fragment }
+* Design ruim mata apps bons. <!-- .element: class="fragment" -->
+* Siga o grid de 8dp. <!-- .element: class="fragment" -->
+* Pense sempre na acessibilidade (Content Description!). <!-- .element: class="fragment" -->
 
 ---
 
-## Resumo ✅
-
-- C# é moderno, forte e produtivo. { .fragment }
-- **.NET** roda em tudo. { .fragment }
-- **LINQ** salva vidas (e linhas de código). { .fragment }
-- Visual Studio é a casa do C#. { .fragment }
+## ❓ Perguntas sobre Visual?
 
 ---
 
-## Próxima Aula 🚀
-
-- Vamos sair das linguagens compiladas. { .fragment }
-- Vamos para a linguagem mais popular da Ciência de Dados. { .fragment }
-- **Python**: Simples, poderoso e lento (mas ninguém liga). { .fragment }
-
-👉 **Tarefa**: Instalar o .NET SDK!
+### Próxima Aula: Sensores e Hardware! 📸👋

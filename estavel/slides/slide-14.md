@@ -1,150 +1,137 @@
-# Aula 14 - Sistemas Modernos: Rust e Go 🦀🐹
+# Aula 14 - Testes e Qualidade 🐞
+
+<!-- .slide: data-transition="slide" -->
 
 ---
 
-## Agenda 📅
+## 🔍 Por que testar?
 
-1.  O Problema do C/C++ { .fragment }
-2.  Rust: Segurança de Memória { .fragment }
-3.  Go: Concorrência Simples { .fragment }
-4.  Comparativo { .fragment }
-5.  Quando usar? { .fragment }
+Erros custam caro.
 
----
+* Perda de usuários. <!-- .element: class="fragment" -->
+* Má fama na loja (1 estrela). <!-- .element: class="fragment" -->
+* Prejuízo financeiro. <!-- .element: class="fragment" -->
 
-## 1. O Problema do C/C++ 💥
-
-- C/C++ são rápidos, mas perigosos. { .fragment }
-- **70% das vulnerabilidades** de segurança são erros de memória (Microsoft). { .fragment }
-- Buffer Overflow, Use-After-Free. { .fragment }
+> "Testar é o ato de provar que seu código faz o que você diz que ele faz."
 
 ---
 
-## 2. Rust 🦀
+## 📝 O Logcat Profissional
 
-- Criada pela Mozilla. { .fragment }
-- Promessa: **Performance de C++ com Segurança de Memória**. { .fragment }
-- Sem Garbage Collector (GC). { .fragment }
-- Sem Tela Azul. { .fragment }
+Pare de usar `println`. Use etiquetas!
 
----
-
-### O Segredo: Ownership (Posse) 🔑
-
-- Cada dado tem **um único dono**. { .fragment }
-- Quando o dono muda, o antigo perde o acesso. { .fragment }
-- O compilador verifica isso **antes** de rodar. { .fragment }
+* **Log.d**: Debug (lógica). <!-- .element: class="fragment" -->
+* **Log.i**: Informação (eventos). <!-- .element: class="fragment" -->
+* **Log.w**: Aviso (algo estranho). <!-- .element: class="fragment" -->
+* **Log.e**: Erro grave. <!-- .element: class="fragment" -->
 
 ---
 
-### Visualizando Ownership
+## 🛠️ O Modo Debug (Besouro)
 
-```mermaid
-graph LR;
-    A["Variável A\n(Dona do Dado)"] -- "Move" --> B["Variável B\n(Nova Dona)"];
-    style A fill:#f9f;
-    style B fill:#bbf;
-    
-    NoteA["A morre.\nNão pode mais acessar!"] --- A
+Seu superpoder de investigação.
+
+* **Breakpoint**: "Congele" o tempo naquela linha. <!-- .element: class="fragment" -->
+* **Variables Panel**: Veja o que tem dentro de cada objeto. <!-- .element: class="fragment" -->
+* **Evaluate Expression**: Execute código no meio da pausa! 🎩 <!-- .element: class="fragment" -->
+
+---
+
+## 🏔️ A Pirâmide de Testes
+
+Não teste tudo da mesma forma.
+
+1. **Unitários (70%)**: Lógica pura, rápidos. <!-- .element: class="fragment" -->
+2. **Integração (20%)**: Peças conversando. <!-- .element: class="fragment" -->
+3. **UI / Espresso (10%)**: O robô clica na tela. <!-- .element: class="fragment" -->
+
+---
+
+### Teste Unitário (JUnit) 🧪
+
+```kotlin
+@Test
+fun login_comSenhaVazia_deveRetornarErro() {
+    val result = validador.verificar("", "123")
+    assertFalse(result)
+}
 ```
 
+* Roda no seu PC (JVM). <!-- .element: class="fragment" -->
+* Leva milissegundos. <!-- .element: class="fragment" -->
+
 ---
 
-### Código Rust
+### Teste de UI (Espresso) ☕
 
-```rust
-fn main() {
-    let a = String::from("Olá");
-    let b = a; // MOVEU para b
-    
-    // println!("{}", a); // ERRO DE COMPILAÇÃO!
-    // O compilador te salva de usar memória inválida.
+O robô que simula o usuário.
+
+```kotlin
+onView(withId(R.id.btnEnter)).perform(click())
+onView(withId(R.id.txtWelcome)).check(matches(isDisplayed()))
+```
+
+* Roda no Emulador/Celular. <!-- .element: class="fragment" -->
+* Lento, mas testa a experiência real. <!-- .element: class="fragment" -->
+
+---
+
+## 🛡️ Tratamento de Exceções
+
+Previna o "O App parou".
+
+```kotlin
+try {
+    fazerAlgoPerigoso()
+} catch (e: Exception) {
+    Log.e("BUM", "Deu ruim", e)
+    showErrorDialog()
 }
 ```
 
 ---
 
-## 3. Go (Golang) 🐹
+## 🆚 Android vs iOS (Qualidade)
 
-- Criada pelo Google (Rob Pike, Ken Thompson). { .fragment }
-- Foco: **Simplicidade** e **Google Scale**. { .fragment }
-- Compila ultra-rápido. { .fragment }
-
----
-
-### Concorrência Fácil (Goroutines) 🧵
-
-- Threads são pesadas. { .fragment }
-- Goroutines são leves (milhares em poucos MBs). { .fragment }
-- **Channels**: Forma segura de conversar entre processos. { .fragment }
-
----
-
-### Visualizando Channels
-
-```mermaid
-graph LR;
-    T1[Goroutine A] -->|Envia 'Ping'| Canal((Channel));
-    Canal -->|Recebe 'Ping'| T2[Goroutine B];
-    
-    style Canal fill:#ff9;
-```
-
----
-
-### Código Go
-
-```go
-package main
-import "fmt"
-
-func main() {
-    mensagens := make(chan string)
-
-    go func() { mensagens <- "Ping" }()
-
-    msg := <-mensagens
-    fmt.Println(msg)
-}
-```
-
----
-
-## 4. Comparativo ⚖️
-
-| Feature | Rust 🦀 | Go 🐹 |
+| Ferramenta | Android | iOS |
 | :--- | :--- | :--- |
-| **Foco** | Controle, Segurança Absoluta | Simplicidade, Web Services |
-| **Aprendizado** | Curva Íngreme (Dificil) | Muito Fácil |
-| **Performance** | Extrema (Zero-Cost) | Muito Boa (Com GC) |
-| **Uso** | Drivers, Engines, Crypto | Microservices, Cloud, APIs |
+| **Unit Testing** | JUnit / Mockito | XCTest |
+| **UI Testing** | Espresso / Barista | XCUITest |
+| **Logs** | Logcat | Console (os_log) |
+| **Profiler** | Android Profiler | Xcode Instruments |
 
 ---
 
-## Termynal: Execução 🖥️
+## 🏃 CI/CD: Automação
 
-<div data-termynal class="termy">
-    <span data-ty="input">cargo run</span>
-    <span data-ty="progress">Compiling...</span>
-    <span data-ty>Hello Rust! (Safe)</span>
-    <span data-ty="input">go run main.go</span>
-    <span data-ty>Hello Go! (Fast Build)</span>
-</div>
+Nunca envie código quebrado para o GitHub.
 
----
+* **GitHub Actions**: Roda seus testes a cada "Push". <!-- .element: class="fragment" -->
+* **Lint**: Analisa se o seu código está limpo e segue padrões. <!-- .element: class="fragment" -->
 
-## Resumo ✅
-
-- **Rust**: Substitui C++ onde segurança é crítica. { .fragment }
-- **Go**: Substitui Java/Node onde concorrência é crítica. { .fragment }
-- Ambas são o futuro da Infraestrutura (Docker, Kubernetes). { .fragment }
+<!-- .slide: data-background-color="#5e503f" -->
 
 ---
 
-## Próxima Aula 🚀
+## 🛠️ Prática: Meu Primeiro Teste
 
-- Sair do Servidor. { .fragment }
-- Ir para o dispositivo que está na sua mão. { .fragment }
-- **Desenvolvimento Mobile**: Flutter (Dart) e Nativo. { .fragment }
+1. Vá na pasta `src/test/java`. <!-- .element: class="fragment" -->
+2. Crie uma função que soma dois números. <!-- .element: class="fragment" -->
+3. Escreva um `@Test` que use `assertEquals`. <!-- .element: class="fragment" -->
+4. Clique no "Play" verde ao lado da função. <!-- .element: class="fragment" -->
 
-👉 **Tarefa**: Instalar o Go e rodar um "Olá Mundo"!
+---
+
+## 🏁 Conclusão
+
+* Programador bom é o que testa. <!-- .element: class="fragment" -->
+* Use logs com sabedoria. <!-- .element: class="fragment" -->
+* Aprenda a ler o **Stack Trace** (o relatório de erros). <!-- .element: class="fragment" -->
+
+---
+
+## ❓ Perguntas sobre Qualidade?
+
+---
+
+### Próxima Aula: Publicação na Google Play! 🚀👋

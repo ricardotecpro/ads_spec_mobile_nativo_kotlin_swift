@@ -1,159 +1,178 @@
-# Aula 07 - Estruturas de Dados II: Matrizes 📈
+# Aula 07 - Arquitetura MVVM 🏗️
+
+<!-- .slide: data-transition="zoom" -->
 
 ---
 
-## Agenda 📅
+## 🦸 O Problema da God Activity
 
-1.  O Mundo em 2D { .fragment }
-2.  O Que é uma Matriz? { .fragment }
-3.  Coordenadas (Linha x Coluna) { .fragment }
-4.  Percorrendo Matrizes { .fragment }
-5.  Aplicações Práticas { .fragment }
+Sua Activity faz tudo?
+* Chama a internet. <!-- .element: class="fragment" -->
+* Valida campos. <!-- .element: class="fragment" -->
+* Salva no banco. <!-- .element: class="fragment" -->
+* Desenha a tela. <!-- .element: class="fragment" -->
 
----
-
-## 1. O Mundo em 2D 🗺️
-
-Nem tudo cabe numa lista (Vetor).
-
-- Uma sala de cinema. { .fragment }
-- Um tabuleiro de xadrez. { .fragment }
-- Uma planilha do Excel. { .fragment }
-- Precisamos de **2 Dimensões**: Altura e Largura. { .fragment }
+> Isso é um pesadelo de manutenção! 😱
 
 ---
 
-## 2. O Que é uma Matriz? 🏗️
+## 📐 O Padrão MVVM
 
-- É um **"Vetor de Vetores"**. { .fragment }
-- Tem Linhas (Horizontais) e Colunas (Verticais). { .fragment }
-- Cada "casinha" tem um endereço duplo. { .fragment }
+Recomendado pelo Google (Android Jetpack).
+
+* **Model**: Dados e Lógica de Negócio. <!-- .element: class="fragment" -->
+* **View**: UI (Activity/XML). Burra e Visual. <!-- .element: class="fragment" -->
+* **ViewModel**: O cérebro. Faz a ponte entre os dois. <!-- .element: class="fragment" -->
 
 ---
 
-### Visualizando uma Matriz
+### O Fluxo de Dados
 
 ```mermaid
-graph TD;
-    subgraph Matriz [3x3]
-    direction TB
-    L0[Linha 0] --- C00[0,0] --- C01[0,1] --- C02[0,2]
-    L1[Linha 1] --- C10[1,0] --- C11[1,1] --- C12[1,2]
-    L2[Linha 2] --- C20[2,0] --- C21[2,1] --- C22[2,2]
-    end
+graph LR
+    V[View] -->|Ações| VM[ViewModel]
+    VM -->|Observa| V
+    VM <-->|Dados| M[Model/Repo]
 ```
 
 ---
 
-## 3. Coordenadas (Linha, Coluna) 📍
+## 🧠 O ViewModel
 
-Assim como na Batalha Naval: `B4`, `A1`.
-Na programação, usamos índices numéricos.
+Seu maior superpoder: **Sobrevivência**.
 
-- `matriz[LINHA][COLUNA]` { .fragment }
-- Sempre **LINHA primeiro**, depois COLUNA. { .fragment }
+* Quando você gira a tela, a Activity morre e renasce. <!-- .element: class="fragment" -->
+* O ViewModel **permanece** vivo na memória. <!-- .element: class="fragment" -->
+* Os dados não são perdidos! 💎 <!-- .element: class="fragment" -->
+
+<!-- .slide: data-background-color="#1e1e24" -->
 
 ---
 
-### Sintaxe VisualG
+## 📡 LiveData
 
-```portugol
-Var
-   // 3 Linhas, 3 Colunas
-   tabuleiro : vetor [0..2, 0..2] de inteiro
-Inicio
-   // Colocando valor no centro
-   tabuleiro[1][1] <- 5
-   
-   // Canto superior esquerdo
-   tabuleiro[0][0] <- 1
+O mensageiro que respeita a vida.
+
+* É um container de dados observável. <!-- .element: class="fragment" -->
+* A View diz: "Me avise quando o dado mudar". <!-- .element: class="fragment" -->
+* Se a View estiver em background, o LiveData espera ela voltar para avisar. <!-- .element: class="fragment" -->
+
+---
+
+### Exemplo de LiveData
+
+```kotlin
+// No ViewModel
+val nome = MutableLiveData<String>()
+
+fun carregar() {
+    nome.value = "Ricardo"
+}
+```
+
+```kotlin
+// Na Activity
+viewModel.nome.observe(this) { novoNome ->
+    binding.txtNome.text = novoNome
+}
 ```
 
 ---
 
-## 4. Percorrendo uma Matriz 🔄🔄
+## 🏗️ Camada Model & Repository
 
-Se um vetor precisa de 1 loop, a matriz precisa de **2 Loops Aninhados**.
+Não deixe o ViewModel saber de ONDE vêm os dados.
 
-1.  O primeiro trava a **Linha**. { .fragment }
-2.  O segundo percorre todas as **Colunas** daquela linha. { .fragment }
+* O **Repository** decide: "Vou buscar na Internet ou no Banco local?" <!-- .element: class="fragment" -->
+* O ViewModel apenas pede: "Me dê a lista de usuários". <!-- .element: class="fragment" -->
 
 ---
 
-### O Código Padrão
+## 🆚 MVVM vs Outros
 
-```portugol
-para i de 0 ate 2 faca  // Linhas
-   para j de 0 ate 2 faca  // Colunas
-      escreva("Posição [", i, ",", j, "]: ")
-      leia(matriz[i][j])
-   fimpara
-fimpara
+| Padrão | Característica |
+| :--- | :--- |
+| **MVC** | Controller fica sobrecarregado. |
+| **MVP** | Presenter e View muito acoplados. |
+| **MVVM** | View observa o ViewModel (Desacoplado). |
+
+---
+
+## 🧪 Benefícios para Testes
+
+Testar UI é lento e caro.
+Testar lógica no ViewModel é **fast & cheap**. ⚡
+
+> Com MVVM, você testa a lógica sem precisar abrir o emulador.
+
+---
+
+## 🧬 Data Binding (Avançado)
+
+Imagine ligar o dado do ViewModel direto no XML.
+
+```xml
+<TextView
+    android:text="@{viewModel.userName}" />
 ```
 
----
+* Menos `binding.textView.text = ...` na Activity. <!-- .element: class="fragment" -->
+* Código mais limpo. <!-- .element: class="fragment" -->
 
-### Visualizando a Execução
-
-1.  `i=0, j=0` -> [0,0] { .fragment }
-2.  `i=0, j=1` -> [0,1] { .fragment }
-3.  `i=0, j=2` -> [0,2] -> Fim das Colunas. { .fragment }
-4.  `i=1, j=0` -> [1,0] -> Nova Linha! { .fragment }
+<!-- .slide: data-transition="convex" -->
 
 ---
 
-## 5. Matriz Identidade 🆔
+## 🛠️ Prática da Aula: Contador MVVM
 
-Um clássico da matemática.
-Diagonal Principal = 1. Resto = 0.
+1. Crie uma Activity com um botão e um texto. <!-- .element: class="fragment" -->
+2. Crie um `MainViewModel` com um `counter: MutableLiveData<Int>`. <!-- .element: class="fragment" -->
+3. No clique, chame `counter.value = (counter.value ?: 0) + 1`. <!-- .element: class="fragment" -->
+4. Observe o contador na Activity. <!-- .element: class="fragment" -->
 
-- A Diagonal Principal acontece quando `i == j` (0,0; 1,1; 2,2). { .fragment }
+---
 
-```portugol
-se (i == j) entao
-   matriz[i][j] <- 1
-senao
-   matriz[i][j] <- 0
-fimse
+### O Segredo da Rotação 🔄
+
+Teste seu app:
+1. Clique 5 vezes (Contador = 5).
+2. Gire o celular.
+3. Se o contador continuar em 5, você implementou MVVM corretamente! ✅
+
+---
+
+## 🆚 MVVM no iOS
+
+No iOS moderno usamos **@StateObject** e **@Published**.
+
+```swift
+class UserViewModel: ObservableObject {
+    @Published var name = "Ricardo"
+}
 ```
 
----
-
-## 6. Aplicações Reais 🌍
-
-Onde usamos isso?
-
-1.  **Imagens**: Cada pixel é uma célula com cor (RGB). { .fragment }
-2.  **Jogos**: O mapa do jogo (Tilemap). { .fragment }
-3.  **Gráficos 3D**: Matrizes de transformação. { .fragment }
+> O conceito de "Reatividade" é o mesmo!
 
 ---
 
-## Exercício Rápido ⚡
+## 📊 Vantagens Reais
 
-**Soma Total**
-
-1.  Crie uma matriz 2x2. { .fragment }
-2.  Preencha com números. { .fragment }
-3.  Use dois loops para somar TUDO. { .fragment }
-4.  Mostre o total. { .fragment }
+* **Manutenibilidade**: Código organizado por pastas. <!-- .element: class="fragment" -->
+* **Escalabilidade**: Fácil adicionar novas telas. <!-- .element: class="fragment" -->
+* **Performance**: UI Thread fica livre para animações. <!-- .element: class="fragment" -->
 
 ---
 
-## Resumo ✅
+## 🏁 Conclusão
 
-- Matriz = Linhas x Colunas. { .fragment }
-- Declaração: `vetor [L..L, C..C]`. { .fragment }
-- Acesso: `mat[linha][coluna]`. { .fragment }
-- Percorrer: 2 loops `Para`. { .fragment }
+* Não seja um refém da `MainActivity`. <!-- .element: class="fragment" -->
+* Use o ViewModel para guardar o estado. <!-- .element: class="fragment" -->
+* Deixe o LiveData atualizar sua tela. <!-- .element: class="fragment" -->
 
 ---
 
-## Próxima Aula 🚀
+## ❓ Dúvidas?
 
-- Nossos códigos estão ficando grandes... { .fragment }
-- Como organizar? { .fragment }
-- **Modularização**: Dividir para Conquistar. { .fragment }
-- Funções e Procedimentos. { .fragment }
+---
 
-👉 **Tarefa**: Jogue Batalha Naval (no papel ou no código)!
+### Próxima Aula: Persistência de Dados (Room)! 💾👋

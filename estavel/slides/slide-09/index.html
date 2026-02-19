@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aula-09-c-e-c-baixo-nivel" class="md-skip">
+        <a href="#aula-09-listas-eficientes-recyclerview" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -2821,10 +2821,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#agenda" class="md-nav__link">
+  <a href="#o-problema-das-listas-gigantes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Agenda 📅
+        🐢 O Problema das Listas Gigantes
       
     </span>
   </a>
@@ -2832,22 +2832,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-o-pai-das-linguagens" class="md-nav__link">
+  <a href="#a-magica-da-reciclagem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. O Pai das Linguagens 👴
+        ♻️ A Mágica da Reciclagem
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. O Pai das Linguagens 👴">
+    <nav class="md-nav" aria-label="♻️ A Mágica da Reciclagem">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#por-que-aprender-c-hoje" class="md-nav__link">
+  <a href="#o-mecanismo-visual" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Por que aprender C hoje? 🧐
+        O Mecanismo visual
       
     </span>
   </a>
@@ -2860,33 +2860,99 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-anatomia-basica" class="md-nav__link">
+  <a href="#os-3-pilares" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Anatomia Básica 🦴
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Anatomia Básica 🦴">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#desmontando-o-codigo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Desmontando o Código 🔧
+        ⚔️ Os 3 Pilares
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#o-ponto-e-virgula" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#1-layoutmanager" class="md-nav__link">
     <span class="md-ellipsis">
       
-        O Ponto e Vírgula ;
+        📐 1. LayoutManager
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-viewholder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗄️ 2. ViewHolder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-adapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 3. Adapter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidando-com-cliques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👆 Lidando com Cliques
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android-vs-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🆚 Android vs iOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#otimizacao-listadapter-diffutil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Otimização: ListAdapter &amp; DiffUtil
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pratica-lista-de-compras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Prática: Lista de Compras
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Prática: Lista de Compras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dica-cardview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dica: CardView 🃏
       
     </span>
   </a>
@@ -2899,10 +2965,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-o-processo-de-compilacao" class="md-nav__link">
+  <a href="#erro-comum" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. O Processo de Compilação ⚙️
+        ⚠️ Erro Comum
       
     </span>
   </a>
@@ -2910,44 +2976,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-memoria-stack-vs-heap" class="md-nav__link">
+  <a href="#conclusao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Memória: Stack vs Heap 🧠
+        🏁 Conclusão
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Memória: Stack vs Heap 🧠">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perguntas-sobre-listas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❓ Perguntas sobre Listas?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="❓ Perguntas sobre Listas?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#visualizando-a-memoria" class="md-nav__link">
+  <a href="#proxima-aula-consumo-de-apis-com-retrofit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Visualizando a Memória
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stack-pilha" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Stack (Pilha) 🥞
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#heap-monte" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Heap (Monte) 🏔️
+        Próxima Aula: Consumo de APIs com Retrofit! 🌍👋
       
     </span>
   </a>
@@ -2956,106 +3011,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-ponteiros-o-superpoder" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Ponteiros: O Superpoder ⚡
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Ponteiros: O Superpoder ⚡">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#para-que-serve" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Para que serve? 🤷
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-introducao-ao-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Introdução ao C++ 🚀
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Introdução ao C++ 🚀">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exemplo C++ 🚗
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#diferencas-c-vs-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Diferenças C vs C++
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#termynal-compilando" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Termynal: Compilando 🖥️
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resumo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resumo ✅
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proxima-aula" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Próxima Aula 🚀
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3610,10 +3565,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#agenda" class="md-nav__link">
+  <a href="#o-problema-das-listas-gigantes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Agenda 📅
+        🐢 O Problema das Listas Gigantes
       
     </span>
   </a>
@@ -3621,22 +3576,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-o-pai-das-linguagens" class="md-nav__link">
+  <a href="#a-magica-da-reciclagem" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. O Pai das Linguagens 👴
+        ♻️ A Mágica da Reciclagem
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. O Pai das Linguagens 👴">
+    <nav class="md-nav" aria-label="♻️ A Mágica da Reciclagem">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#por-que-aprender-c-hoje" class="md-nav__link">
+  <a href="#o-mecanismo-visual" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Por que aprender C hoje? 🧐
+        O Mecanismo visual
       
     </span>
   </a>
@@ -3649,33 +3604,99 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-anatomia-basica" class="md-nav__link">
+  <a href="#os-3-pilares" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Anatomia Básica 🦴
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2. Anatomia Básica 🦴">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#desmontando-o-codigo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Desmontando o Código 🔧
+        ⚔️ Os 3 Pilares
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#o-ponto-e-virgula" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#1-layoutmanager" class="md-nav__link">
     <span class="md-ellipsis">
       
-        O Ponto e Vírgula ;
+        📐 1. LayoutManager
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-viewholder" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🗄️ 2. ViewHolder
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-adapter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🧠 3. Adapter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lidando-com-cliques" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        👆 Lidando com Cliques
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#android-vs-ios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🆚 Android vs iOS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#otimizacao-listadapter-diffutil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Otimização: ListAdapter &amp; DiffUtil
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pratica-lista-de-compras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🛠️ Prática: Lista de Compras
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🛠️ Prática: Lista de Compras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dica-cardview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dica: CardView 🃏
       
     </span>
   </a>
@@ -3688,10 +3709,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-o-processo-de-compilacao" class="md-nav__link">
+  <a href="#erro-comum" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. O Processo de Compilação ⚙️
+        ⚠️ Erro Comum
       
     </span>
   </a>
@@ -3699,44 +3720,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-memoria-stack-vs-heap" class="md-nav__link">
+  <a href="#conclusao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Memória: Stack vs Heap 🧠
+        🏁 Conclusão
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="4. Memória: Stack vs Heap 🧠">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#perguntas-sobre-listas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ❓ Perguntas sobre Listas?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="❓ Perguntas sobre Listas?">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#visualizando-a-memoria" class="md-nav__link">
+  <a href="#proxima-aula-consumo-de-apis-com-retrofit" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Visualizando a Memória
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stack-pilha" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Stack (Pilha) 🥞
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#heap-monte" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Heap (Monte) 🏔️
+        Próxima Aula: Consumo de APIs com Retrofit! 🌍👋
       
     </span>
   </a>
@@ -3745,106 +3755,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-ponteiros-o-superpoder" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5. Ponteiros: O Superpoder ⚡
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="5. Ponteiros: O Superpoder ⚡">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#para-que-serve" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Para que serve? 🤷
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-introducao-ao-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6. Introdução ao C++ 🚀
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6. Introdução ao C++ 🚀">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#exemplo-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exemplo C++ 🚗
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#diferencas-c-vs-c" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Diferenças C vs C++
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#termynal-compilando" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Termynal: Compilando 🖥️
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#resumo" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Resumo ✅
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#proxima-aula" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Próxima Aula 🚀
-      
-    </span>
-  </a>
   
 </li>
       
@@ -3868,191 +3778,144 @@
   
 
 
-<h1 id="aula-09-c-e-c-baixo-nivel">Aula 09 - C e C++: Baixo Nível 🧱</h1>
+<h1 id="aula-09-listas-eficientes-recyclerview">Aula 09 - Listas Eficientes (RecyclerView) 📋</h1>
+<!-- .slide: data-transition="zoom" -->
+
 <hr>
-<h2 id="agenda">Agenda 📅</h2>
+<h2 id="o-problema-das-listas-gigantes">🐢 O Problema das Listas Gigantes</h2>
+<p>Imagine uma lista com 10.000 contatos.
+Criar 10.000 objetos de layout travaria qualquer celular.</p>
+<ul>
+<li>Memória cheia. <!-- .element: class="fragment" --></li>
+<li>Lag na rolagem. <!-- .element: class="fragment" --></li>
+<li>App fechando (Crash). <!-- .element: class="fragment" --></li>
+</ul>
+<hr>
+<h2 id="a-magica-da-reciclagem">♻️ A Mágica da Reciclagem</h2>
+<p>O <strong>RecyclerView</strong> não cria 10.000 itens.
+Ele cria apenas o que cabe na tela (+ uns 2 ou 3 de reserva).</p>
+<ul>
+<li>Item sai por cima -&gt; Entra na "piscina". <!-- .element: class="fragment" --></li>
+<li>Item entra por baixo -&gt; Pega um layout da piscina e só troca o texto. <!-- .element: class="fragment" --></li>
+</ul>
+<hr>
+<h3 id="o-mecanismo-visual">O Mecanismo visual</h3>
+<pre class="mermaid"><code>graph TD
+    A[Item 1 sai ↑] --&gt; P((Piscina de Views))
+    P --&gt; B[Item 12 entra ↓]</code></pre>
+<hr>
+<h2 id="os-3-pilares">⚔️ Os 3 Pilares</h2>
+<p>Para fazer um RecyclerView, você precisa de:</p>
 <ol>
-<li>História e Importância { .fragment }</li>
-<li>Anatomia de um Programa C { .fragment }</li>
-<li>Compilação { .fragment }</li>
-<li>Gerenciamento de Memória (Stack vs Heap) { .fragment }</li>
-<li>Ponteiros { .fragment }</li>
-<li>Introdução ao C++ (OOP) { .fragment }</li>
+<li><strong>LayoutManager</strong>: Define o formato (Lista, Grade, etc). <!-- .element: class="fragment" --></li>
+<li><strong>ViewHolder</strong>: Guarda as referências dos IDs (Gaveta). <!-- .element: class="fragment" --></li>
+<li><strong>Adapter</strong>: Liga os dados às Views (O Cérebro). <!-- .element: class="fragment" --></li>
 </ol>
 <hr>
-<h2 id="1-o-pai-das-linguagens">1. O Pai das Linguagens 👴</h2>
+<h2 id="1-layoutmanager">📐 1. LayoutManager</h2>
+<p>Troque a cara da sua lista com 1 linha:</p>
 <ul>
-<li><strong>C (1972)</strong>: Dennis Ritchie (Bell Labs). { .fragment }</li>
-<li><strong>Base de Tudo</strong>: Windows, Linux, Mac, Android, iOS. { .fragment }</li>
-<li><strong>Filosofia</strong>: "Confie no programador" (mesmo se ele fizer besteira). { .fragment }</li>
+<li><strong>LinearLayoutManager</strong>: Lista vertical/horizontal. <!-- .element: class="fragment" --></li>
+<li><strong>GridLayoutManager</strong>: Grade (estilo galeria). <!-- .element: class="fragment" --></li>
+<li><strong>StaggeredGridLayoutManager</strong>: Grade tipo Pinterest. <!-- .element: class="fragment" --></li>
 </ul>
 <hr>
-<h3 id="por-que-aprender-c-hoje">Por que aprender C hoje? 🧐</h3>
-<ul>
-<li>Entender como a máquina funciona de verdade. { .fragment }</li>
-<li>Gerenciar memória manualmente. { .fragment }</li>
-<li>Performance extrema (Jogos, Sistemas Embarcados). { .fragment }</li>
-</ul>
-<hr>
-<h2 id="2-anatomia-basica">2. Anatomia Básica 🦴</h2>
-<div class="language-c highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">printf</span><span class="p">(</span><span class="s">"Olá, Mundo C!"</span><span class="p">);</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">}</span>
+<h2 id="2-viewholder">🗄️ 2. ViewHolder</h2>
+<p>Evita que o Android tenha que procurar o <code>findViewById</code> milhares de vezes.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">MeuViewHolder</span><span class="p">(</span><span class="n">view</span><span class="p">:</span><span class="w"> </span><span class="n">View</span><span class="p">)</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">RecyclerView</span><span class="p">.</span><span class="na">ViewHolder</span><span class="p">(</span><span class="n">view</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">nome</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">view</span><span class="p">.</span><span class="na">findViewById</span><span class="o">&lt;</span><span class="n">TextView</span><span class="o">&gt;</span><span class="p">(</span><span class="n">R</span><span class="p">.</span><span class="na">id</span><span class="p">.</span><span class="na">txtNome</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">}</span>
 </span></code></pre></div>
 <hr>
-<h3 id="desmontando-o-codigo">Desmontando o Código 🔧</h3>
-<ol>
-<li><code>#include &lt;stdio.h&gt;</code>: Importa biblioteca de IO (Entrada/Saída). { .fragment }</li>
-<li><code>int main()</code>: A função principal. Todo programa começa aqui. { .fragment }</li>
-<li><code>printf(...)</code>: Imprime formatado. { .fragment }</li>
-<li><code>return 0;</code>: Retorna "Sucesso" para o Sistema Operacional. { .fragment }</li>
-</ol>
-<hr>
-<h3 id="o-ponto-e-virgula">O Ponto e Vírgula <code>;</code></h3>
+<h2 id="3-adapter">🧠 3. Adapter</h2>
+<p>Onde a lógica acontece.</p>
 <ul>
-<li>Em C/C++, ele é <strong>OBRIGATÓRIO</strong>. { .fragment }</li>
-<li>O compilador não adivinha onde a linha termina. { .fragment }</li>
-<li>Esquecer <code>;</code> é o erro nº 1 de iniciantes. { .fragment }</li>
+<li><code>onCreateViewHolder</code>: Infla o layout do XML. <!-- .element: class="fragment" --></li>
+<li><code>onBindViewHolder</code>: Coloca os dados na tela. <!-- .element: class="fragment" --></li>
+<li><code>getItemCount</code>: Diz quantos itens a lista tem. <!-- .element: class="fragment" --></li>
 </ul>
 <hr>
-<h2 id="3-o-processo-de-compilacao">3. O Processo de Compilação ⚙️</h2>
-<p>C é uma linguagem <strong>Compilada</strong>.</p>
-<ol>
-<li><strong>Código Fonte</strong> (<code>.c</code>): Texto legível. { .fragment }</li>
-<li><strong>Compilador</strong> (<code>gcc</code>): Traduz para Assembly/Machine Code. { .fragment }</li>
-<li><strong>Linker</strong>: Junta com bibliotecas. { .fragment }</li>
-<li><strong>Executável</strong> (<code>.exe</code>): Programa final. { .fragment }</li>
-</ol>
-<hr>
-<h2 id="4-memoria-stack-vs-heap">4. Memória: Stack vs Heap 🧠</h2>
-<p>Onde seus dados moram?</p>
-<hr>
-<h3 id="visualizando-a-memoria">Visualizando a Memória</h3>
-<pre class="mermaid"><code>graph TD;
-    subgraph RAM
-    Stack["Stack (Pilha)"] --- V["Locais\nAutomáticas\nRápidas"];
-    Heap["Heap (Monte)"] --- D["Dinâmicas\nManuais\nLentas"];
-    end
-    style Stack fill:#f9f;
-    style Heap fill:#bbf;</code></pre>
-<hr>
-<h3 id="stack-pilha">Stack (Pilha) 🥞</h3>
-<ul>
-<li>Variáveis normais: <code>int idade = 20;</code> { .fragment }</li>
-<li>Criada e destruída automaticamente. { .fragment }</li>
-<li>Tamanho fixo e pequeno. { .fragment }</li>
-</ul>
-<hr>
-<h3 id="heap-monte">Heap (Monte) 🏔️</h3>
-<ul>
-<li>Memória dinâmica: <code>malloc()</code> ou <code>new</code>. { .fragment }</li>
-<li>Você pede memória ao sistema. { .fragment }</li>
-<li><strong>Cuidado</strong>: Você precisa devolver (<code>free</code> ou <code>delete</code>), senão vaza memória (Memory Leak)! { .fragment }</li>
-</ul>
-<hr>
-<h2 id="5-ponteiros-o-superpoder">5. Ponteiros: O Superpoder ⚡</h2>
-<p>Um ponteiro não guarda o valor. Guarda o <strong>ENDEREÇO</strong>.</p>
-<ul>
-<li><code>int x = 10;</code> (Valor 10) { .fragment }</li>
-<li><code>int *p = &amp;x;</code> (Endereço onde o 10 mora, ex: <code>0x7ffee4</code>) { .fragment }</li>
-</ul>
-<hr>
-<h3 id="para-que-serve">Para que serve? 🤷</h3>
-<ol>
-<li>Modificar variáveis originais dentro de funções. { .fragment }</li>
-<li>Alocar memória dinâmica. { .fragment }</li>
-<li>Criar estruturas complexas (Listas, Árvores). { .fragment }</li>
-</ol>
-<blockquote>
-<p>"Com grandes poderes vêm grandes responsabilidades." (E Segmentation Faults).</p>
-</blockquote>
-<hr>
-<h2 id="6-introducao-ao-c">6. Introdução ao C++ 🚀</h2>
-<p>C++ = C + Classes (OOP).</p>
-<ul>
-<li>Mantém a performance do C. { .fragment }</li>
-<li>Adiciona organização de objetos. { .fragment }</li>
-<li>Base para Jogos (Unreal) e Softwares Pesados (Chrome, Photoshop). { .fragment }</li>
-</ul>
-<hr>
-<h3 id="exemplo-c">Exemplo C++ 🚗</h3>
-<div class="language-cpp highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">Carro</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">public</span><span class="o">:</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">buzinar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Bi Bi!"</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">};</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="n">Carro</span><span class="w"> </span><span class="n">meuCarro</span><span class="p">;</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="n">meuCarro</span><span class="p">.</span><span class="n">buzinar</span><span class="p">();</span>
-</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">}</span>
+<h2 id="lidando-com-cliques">👆 Lidando com Cliques</h2>
+<p>O RecyclerView não tem clique nativo. Nós criamos!</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">holder</span><span class="p">.</span><span class="na">itemView</span><span class="p">.</span><span class="na">setOnClickListener</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lista</span><span class="o">[</span><span class="n">position</span><span class="o">]</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="c1">// Abrir detalhes...</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
 </span></code></pre></div>
 <hr>
-<h3 id="diferencas-c-vs-c">Diferenças C vs C++</h3>
+<h2 id="android-vs-ios">🆚 Android vs iOS</h2>
+<p>O mecanismo é IGUAL. Só mudam os nomes.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Feature</th>
-<th style="text-align: left;">C</th>
-<th style="text-align: left;">C++</th>
+<th style="text-align: left;">Conceito</th>
+<th style="text-align: left;">Android</th>
+<th style="text-align: left;">iOS</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><strong>Paradigma</strong></td>
-<td style="text-align: left;">Estruturado</td>
-<td style="text-align: left;">Orientado a Objetos (Multi)</td>
+<td style="text-align: left;"><strong>Componente</strong></td>
+<td style="text-align: left;">RecyclerView</td>
+<td style="text-align: left;">UITableView</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Output</strong></td>
-<td style="text-align: left;"><code>printf()</code></td>
-<td style="text-align: left;"><code>cout &lt;&lt;</code></td>
+<td style="text-align: left;"><strong>Reciclagem</strong></td>
+<td style="text-align: left;">Scrap Heap</td>
+<td style="text-align: left;">Reusable Cell</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Input</strong></td>
-<td style="text-align: left;"><code>scanf()</code></td>
-<td style="text-align: left;"><code>cin &gt;&gt;</code></td>
+<td style="text-align: left;"><strong>Dados</strong></td>
+<td style="text-align: left;">Adapter</td>
+<td style="text-align: left;">Data Source</td>
 </tr>
 <tr>
-<td style="text-align: left;"><strong>Extensão</strong></td>
-<td style="text-align: left;"><code>.c</code></td>
-<td style="text-align: left;"><code>.cpp</code></td>
+<td style="text-align: left;"><strong>Gaveta</strong></td>
+<td style="text-align: left;">ViewHolder</td>
+<td style="text-align: left;">UITableViewCell</td>
 </tr>
 </tbody>
 </table>
 <hr>
-<h2 id="termynal-compilando">Termynal: Compilando 🖥️</h2>
-<div data-termynal class="termy">
-    <span data-ty="input">gcc programa.c -o programa</span>
-    <span data-ty="progress">Compilando...</span>
-    <span data-ty="input">./programa</span>
-    <span data-ty>Olá Mundo C!</span>
-</div>
+<h2 id="otimizacao-listadapter-diffutil">🚀 Otimização: ListAdapter &amp; DiffUtil</h2>
+<p><code>notifyDataSetChanged()</code> é coisa do passado.</p>
+<ul>
+<li>O <strong>DiffUtil</strong> calcula o que mudou. <!-- .element: class="fragment" --></li>
+<li>Animações automáticas de inserção e remoção. <!-- .element: class="fragment" --></li>
+<li>Muito mais rápido para o processador. <!-- .element: class="fragment" --></li>
+</ul>
+<!-- .slide: data-background-color="#5a189a" -->
 
 <hr>
-<h2 id="resumo">Resumo ✅</h2>
+<h2 id="pratica-lista-de-compras">🛠️ Prática: Lista de Compras</h2>
+<ol>
+<li>Crie um layout <code>item_produto.xml</code>. <!-- .element: class="fragment" --></li>
+<li>Crie a lista de objetos <code>Produto</code>. <!-- .element: class="fragment" --></li>
+<li>Implemente o Adapter e veja a mágica da rolagem fluida. <!-- .element: class="fragment" --></li>
+</ol>
+<hr>
+<h3 id="dica-cardview">Dica: CardView 🃏</h3>
+<p>Use <code>MaterialCardView</code> nos seus itens para ganhar sombras e bordas arredondadas automaticamente!</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;com.google.android.material.card.MaterialCardView</span><span class="w"> </span><span class="err">...</span><span class="nt">&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="cm">&lt;!-- Seus textos/imagens aqui --&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nt">&lt;/com.google.android.material.card.MaterialCardView&gt;</span>
+</span></code></pre></div>
+<hr>
+<h2 id="erro-comum">⚠️ Erro Comum</h2>
+<p>Tentar atualizar a lista e esquecer de avisar o Adapter.
+Sempre que o dado do banco/internet chegar, use:
+<code>adapter.submitList(novaLista)</code> (se usar ListAdapter).</p>
+<hr>
+<h2 id="conclusao">🏁 Conclusão</h2>
 <ul>
-<li>C é a mãe de todas. { .fragment }</li>
-<li><strong>Compilador</strong> traduz para binário. { .fragment }</li>
-<li><strong>Ponteiros</strong> acessam memória direta. { .fragment }</li>
-<li><strong>C++</strong> adiciona Classes ao poder do C. { .fragment }</li>
+<li>RecyclerView é obrigatório em 99% dos apps. <!-- .element: class="fragment" --></li>
+<li>O foco é performance e economia de memória. <!-- .element: class="fragment" --></li>
+<li>Masterize o Adapter e você dominará o Android. <!-- .element: class="fragment" --></li>
 </ul>
 <hr>
-<h2 id="proxima-aula">Próxima Aula 🚀</h2>
-<ul>
-<li>Sair do "Baixo Nível". { .fragment }</li>
-<li>Ir para o mundo corporativo e robusto. { .fragment }</li>
-<li><strong>Java</strong>: "Escreva uma vez, rode em qualquer lugar". { .fragment }</li>
-</ul>
-<p>👉 <strong>Tarefa</strong>: Instalar o Code::Blocks ou configurar GCC no VS Code!</p>
+<h2 id="perguntas-sobre-listas">❓ Perguntas sobre Listas?</h2>
+<hr>
+<h3 id="proxima-aula-consumo-de-apis-com-retrofit">Próxima Aula: Consumo de APIs com Retrofit! 🌍👋</h3>
 
 
 
@@ -4075,7 +3938,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 22:05:05 UTC">19 de fevereiro de 2026 22:05:05</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 22:50:10 UTC">19 de fevereiro de 2026 22:50:10</span>
   </span>
 
     
@@ -4100,7 +3963,7 @@
     </span>
     <nav>
       
-        <a href="mailto:not.committed.yet">Not Committed Yet</a>
+        <a href="mailto:ricardotecpro@hotmail.com">Ricardo Pires</a>
     </nav>
   </span>
 

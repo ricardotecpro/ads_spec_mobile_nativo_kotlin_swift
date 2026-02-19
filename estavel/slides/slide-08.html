@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 08 - Python Backend</title>
+    <title>Aula 08 - Desenvolvimento Mobile Nativo</title>
     
     <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reset.css">
     <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reveal.css">
@@ -40,28 +40,20 @@
             plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
         });
 
-        // Ocultar atalhos em tela cheia
         function updateShortcutsVisibility() {
-            console.log('fullscreenchange event detected');
             const isFullscreen = document.fullscreenElement || 
                                  document.webkitFullscreenElement || 
                                  document.mozFullScreenElement || 
                                  document.msFullscreenElement;
-            console.log('isFullscreen:', !!isFullscreen);
             
             const shortcuts = document.querySelector('.reveal-shortcuts');
             if (shortcuts) {
                 shortcuts.style.display = isFullscreen ? 'none' : 'block';
-                console.log('Set display to:', shortcuts.style.display);
-            } else {
-                console.log('Shortcuts element not found');
             }
         }
 
         document.addEventListener('fullscreenchange', updateShortcutsVisibility);
         document.addEventListener('webkitfullscreenchange', updateShortcutsVisibility);
-        document.addEventListener('mozfullscreenchange', updateShortcutsVisibility);
-        document.addEventListener('MSFullscreenChange', updateShortcutsVisibility);
     </script>
 </body>
 </html>

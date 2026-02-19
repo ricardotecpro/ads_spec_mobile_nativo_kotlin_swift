@@ -1,150 +1,95 @@
-# Aula 16 - PHP e o Lado do Servidor 🐘
+# Aula 16 - A Grande Conclusão 🎓
+
+<!-- .slide: data-transition="zoom" -->
 
 ---
 
-## Agenda 📅
+## 🏆 Você Conseguiu!
 
-1.  Como a Web Funciona? { .fragment }
-2.  PHP: O Motor da Internet { .fragment }
-3.  Arquitetura MVC { .fragment }
-4.  Laravel (Framework) { .fragment }
-5.  Projeto Final { .fragment }
+De "Zero" a Desenvolvedor Mobile Nativo.
 
----
-
-## 1. O Ciclo da Web 🌍
-
-Client vs Server.
-
-- **Cliente (Browser)**: Pede coisas (Request). { .fragment }
-- **Servidor**: Processa e Devolve (Response). { .fragment }
-- **Banco de Dados**: Guarda as informações. { .fragment }
+* Entendeu a base (Java/Kotlin). <!-- .element: class="fragment" -->
+* Dominou a estrutura (Manifest/Gradle/Res). <!-- .element: class="fragment" -->
+* Construiu interfaces (XML/Material). <!-- .element: class="fragment" -->
+* Conectou com o mundo (API/Rede). <!-- .element: class="fragment" -->
 
 ---
 
-### Requisição e Resposta (Sequence)
+## 🧠 Recapitulação: O Arsenal do Dev
 
-```mermaid
-sequenceDiagram
-    participant Browser
-    participant Servidor
-    participant Banco
-    
-    Browser->>Servidor: 1. GET /perfil
-    Servidor->>Banco: 2. SELECT * FROM users
-    Banco-->>Servidor: 3. Dados (João, 25)
-    Servidor-->>Browser: 4. HTML Pronto
-```
+* **Linguagem**: Kotlin Moderno. <!-- .element: class="fragment" -->
+* **Arquitetura**: MVVM (ViewModel + LiveData). <!-- .element: class="fragment" -->
+* **Persistência**: Room (Bancos Locais). <!-- .element: class="fragment" -->
+* **Rede**: Retrofit (Internet). <!-- .element: class="fragment" -->
+* **UI**: RecyclerView & ConstraintLayout. <!-- .element: class="fragment" -->
 
 ---
 
-## 2. O Que é PHP? 🐘
+## 🚀 O Próximo Nível
 
-**P**HP: **H**ypertext **P**reprocessor.
+O aprendizado nunca termina.
 
-- Roda no Servidor (Back-end). { .fragment }
-- Gera HTML dinâmico. { .fragment }
-- Fácil de hospedar (qualquer servidor barato tem). { .fragment }
-- Poderoso (Facebook, Wikipedia, WordPress). { .fragment }
-
----
-
-### Código PHP
-
-```php
-<?php
-    $nome = "Maria";
-    $saldo = 100.50;
-    
-    echo "<h1>Olá, $nome!</h1>";
-    echo "<p>Saldo: $saldo</p>";
-?>
-```
+1. **Jetpack Compose**: UI Declarativa (O futuro). <!-- .element: class="fragment" -->
+2. **KMP (Kotlin Multiplatform)**: Compartilhe lógica com iOS. <!-- .element: class="fragment" -->
+3. **Hilt/Koin**: Injeção de Dependências. <!-- .element: class="fragment" -->
+4. **Coroutines Avançado**: Flow e StateFlow. <!-- .element: class="fragment" -->
 
 ---
 
-## 3. Arquitetura MVC 🏗️
+## 💼 Carreira e Portfólio
 
-Para organizar sites grandes, não misturamos código.
+Como conseguir a primeira vaga?
 
-- **M**odel (Modelo): Dados e Banco. { .fragment }
-- **V**iew (Visão): HTML e Telas. { .fragment }
-- **C**ontroller (Controlador): A Lógica. { .fragment }
+* **GitHub Ativo**: Commits frequentes. <!-- .element: class="fragment" -->
+* **README Impecável**: Explique SEU projeto. <!-- .element: class="fragment" -->
+* **Publicação**: Ter um app na Play Store vale ouro. <!-- .element: class="fragment" -->
 
----
-
-### Fluxo MVC
-
-```mermaid
-graph LR;
-    User -->|Rota| Controller;
-    Controller -->|Pede| Model;
-    Model -->|Devolve| Controller;
-    Controller -->|Envia| View;
-    View -->|HTML| User;
-```
+<!-- .slide: data-background-color="#560bad" -->
 
 ---
 
-## 4. Laravel 🚀
+## 📱 iOS: A Outra Metade
 
-O Framework PHP mais popular.
+Agora que você sabe Android, aprender iOS será MUITO mais fácil.
 
-- Sintaxe elegante. { .fragment }
-- Ferramentas prontas (Login, Email, Banco). { .fragment }
-- "O PHP Moderno". { .fragment }
-
-```php
-// Rota simples em Laravel
-Route::get('/', function () {
-    return view('welcome');
-});
-```
+* Swift ≈ Kotlin. <!-- .element: class="fragment" -->
+* SwiftUI ≈ Jetpack Compose. <!-- .element: class="fragment" -->
+* Lógica de negócio é a mesma! <!-- .element: class="fragment" -->
 
 ---
 
-## Projeto Final do Curso 🏆
+## ⚔️ Nativo vs Híbrido
 
-**Mural de Recados Fullstack**
+Você escolheu o caminho da performance e do controle total.
 
-- **Banco**: MySQL (`recados`: id, mensagem). { .fragment }
-- **Back**: PHP (Busca recados). { .fragment }
-- **Front**: HTML/CSS (Mostra recados). { .fragment }
-- Use tudo que aprendeu: Lógica, Loops, Vetores (Dados do banco), HTML. { .fragment }
+> "Aplicações nativas entregam a melhor experiência possível que o hardware pode oferecer."
 
 ---
 
-## Termynal: Servidor PHP 🖥️
+## 🎓 O Projeto Final
 
-<div data-termynal class="termy">
-    <span data-ty="input">php -S localhost:8000</span>
-    <span data-ty="progress">Listening on localhost:8000...</span>
-    <span data-ty>Requisição recebida: /index.php</span>
-    <span data-ty>200 OK</span>
-</div>
+Sua obra-prima.
 
----
-
-## Resumo do Módulo ✅
-
-1.  **Lógica**: Algoritmos, Fluxogramas. { .fragment }
-2.  **Dados**: Variáveis, Vetores, Matrizes. { .fragment }
-3.  **Tecnologias**: { .fragment }
-    - Baixo nível (C/C++). { .fragment }
-    - Web (JS, PHP). { .fragment }
-    - Mobile (Flutter). { .fragment }
-    - Corporativo (Java, C#). { .fragment }
+* Aplique tudo o que vimos. <!-- .element: class="fragment" -->
+* Resolva um problema real. <!-- .element: class="fragment" -->
+* Capriche no visual (UX/UI). <!-- .element: class="fragment" -->
 
 ---
 
-## Parabéns! 🎓
+## ✨ Mensagem de Despedida
 
-Você completou a jornada de Lógica e Algoritmos.
-Você agora tem a **base** para aprender qualquer linguagem.
+O mundo está no bolso das pessoas.
+Você agora tem a chave para entrar lá.
 
-**Próximos Passos?**
-- Escolha uma área (Front, Back, Mobile, Dados). { .fragment }
-- Aprofunde-se na linguagem escolhida. { .fragment }
-- **PRATIQUE!** { .fragment }
+> "A tecnologia move o mundo, mas são as pessoas que movem a tecnologia."
 
-👉 **Projeto Final**: Entregar o Mural de Recados!
+---
+
+## 🏁 Fim da Jornada
+
+Obrigado por nos acompanhar nesta trilha.
+Nos vemos na Play Store! 🚀
+
+---
+
+### Ricardo TecPro & Equipe 👋

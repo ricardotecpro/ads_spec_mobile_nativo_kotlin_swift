@@ -1,197 +1,158 @@
-# Aula 09 - C e C++: Baixo Nível 🧱
+# Aula 09 - Listas Eficientes (RecyclerView) 📋
+
+<!-- .slide: data-transition="zoom" -->
 
 ---
 
-## Agenda 📅
+## 🐢 O Problema das Listas Gigantes
 
-1.  História e Importância { .fragment }
-2.  Anatomia de um Programa C { .fragment }
-3.  Compilação { .fragment }
-4.  Gerenciamento de Memória (Stack vs Heap) { .fragment }
-5.  Ponteiros { .fragment }
-6.  Introdução ao C++ (OOP) { .fragment }
+Imagine uma lista com 10.000 contatos.
+Criar 10.000 objetos de layout travaria qualquer celular.
 
----
-
-## 1. O Pai das Linguagens 👴
-
-- **C (1972)**: Dennis Ritchie (Bell Labs). { .fragment }
-- **Base de Tudo**: Windows, Linux, Mac, Android, iOS. { .fragment }
-- **Filosofia**: "Confie no programador" (mesmo se ele fizer besteira). { .fragment }
+* Memória cheia. <!-- .element: class="fragment" -->
+* Lag na rolagem. <!-- .element: class="fragment" -->
+* App fechando (Crash). <!-- .element: class="fragment" -->
 
 ---
 
-### Por que aprender C hoje? 🧐
+## ♻️ A Mágica da Reciclagem
 
-- Entender como a máquina funciona de verdade. { .fragment }
-- Gerenciar memória manualmente. { .fragment }
-- Performance extrema (Jogos, Sistemas Embarcados). { .fragment }
+O **RecyclerView** não cria 10.000 itens.
+Ele cria apenas o que cabe na tela (+ uns 2 ou 3 de reserva).
 
----
-
-## 2. Anatomia Básica 🦴
-
-```c
-#include <stdio.h>
-
-int main() {
-    printf("Olá, Mundo C!");
-    return 0;
-}
-```
+* Item sai por cima -> Entra na "piscina". <!-- .element: class="fragment" -->
+* Item entra por baixo -> Pega um layout da piscina e só troca o texto. <!-- .element: class="fragment" -->
 
 ---
 
-### Desmontando o Código 🔧
-
-1.  `#include <stdio.h>`: Importa biblioteca de IO (Entrada/Saída). { .fragment }
-2.  `int main()`: A função principal. Todo programa começa aqui. { .fragment }
-3.  `printf(...)`: Imprime formatado. { .fragment }
-4.  `return 0;`: Retorna "Sucesso" para o Sistema Operacional. { .fragment }
-
----
-
-### O Ponto e Vírgula `;`
-
-- Em C/C++, ele é **OBRIGATÓRIO**. { .fragment }
-- O compilador não adivinha onde a linha termina. { .fragment }
-- Esquecer `;` é o erro nº 1 de iniciantes. { .fragment }
-
----
-
-## 3. O Processo de Compilação ⚙️
-
-C é uma linguagem **Compilada**.
-
-1.  **Código Fonte** (`.c`): Texto legível. { .fragment }
-2.  **Compilador** (`gcc`): Traduz para Assembly/Machine Code. { .fragment }
-3.  **Linker**: Junta com bibliotecas. { .fragment }
-4.  **Executável** (`.exe`): Programa final. { .fragment }
-
----
-
-## 4. Memória: Stack vs Heap 🧠
-
-Onde seus dados moram?
-
----
-
-### Visualizando a Memória
+### O Mecanismo visual
 
 ```mermaid
-graph TD;
-    subgraph RAM
-    Stack["Stack (Pilha)"] --- V["Locais\nAutomáticas\nRápidas"];
-    Heap["Heap (Monte)"] --- D["Dinâmicas\nManuais\nLentas"];
-    end
-    style Stack fill:#f9f;
-    style Heap fill:#bbf;
+graph TD
+    A[Item 1 sai ↑] --> P((Piscina de Views))
+    P --> B[Item 12 entra ↓]
 ```
 
 ---
 
-### Stack (Pilha) 🥞
+## ⚔️ Os 3 Pilares
 
-- Variáveis normais: `int idade = 20;` { .fragment }
-- Criada e destruída automaticamente. { .fragment }
-- Tamanho fixo e pequeno. { .fragment }
+Para fazer um RecyclerView, você precisa de:
 
----
-
-### Heap (Monte) 🏔️
-
-- Memória dinâmica: `malloc()` ou `new`. { .fragment }
-- Você pede memória ao sistema. { .fragment }
-- **Cuidado**: Você precisa devolver (`free` ou `delete`), senão vaza memória (Memory Leak)! { .fragment }
+1. **LayoutManager**: Define o formato (Lista, Grade, etc). <!-- .element: class="fragment" -->
+2. **ViewHolder**: Guarda as referências dos IDs (Gaveta). <!-- .element: class="fragment" -->
+3. **Adapter**: Liga os dados às Views (O Cérebro). <!-- .element: class="fragment" -->
 
 ---
 
-## 5. Ponteiros: O Superpoder ⚡
+## 📐 1. LayoutManager
 
-Um ponteiro não guarda o valor. Guarda o **ENDEREÇO**.
+Troque a cara da sua lista com 1 linha:
 
-- `int x = 10;` (Valor 10) { .fragment }
-- `int *p = &x;` (Endereço onde o 10 mora, ex: `0x7ffee4`) { .fragment }
-
----
-
-### Para que serve? 🤷
-
-1.  Modificar variáveis originais dentro de funções. { .fragment }
-2.  Alocar memória dinâmica. { .fragment }
-3.  Criar estruturas complexas (Listas, Árvores). { .fragment }
-
-> "Com grandes poderes vêm grandes responsabilidades." (E Segmentation Faults).
+* **LinearLayoutManager**: Lista vertical/horizontal. <!-- .element: class="fragment" -->
+* **GridLayoutManager**: Grade (estilo galeria). <!-- .element: class="fragment" -->
+* **StaggeredGridLayoutManager**: Grade tipo Pinterest. <!-- .element: class="fragment" -->
 
 ---
 
-## 6. Introdução ao C++ 🚀
+## 🗄️ 2. ViewHolder
 
-C++ = C + Classes (OOP).
+Evita que o Android tenha que procurar o `findViewById` milhares de vezes.
 
-- Mantém a performance do C. { .fragment }
-- Adiciona organização de objetos. { .fragment }
-- Base para Jogos (Unreal) e Softwares Pesados (Chrome, Photoshop). { .fragment }
-
----
-
-### Exemplo C++ 🚗
-
-```cpp
-#include <iostream>
-using namespace std;
-
-class Carro {
-public:
-    void buzinar() {
-        cout << "Bi Bi!" << endl;
-    }
-};
-
-int main() {
-    Carro meuCarro;
-    meuCarro.buzinar();
-    return 0;
+```kotlin
+class MeuViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    val nome = view.findViewById<TextView>(R.id.txtNome)
 }
 ```
 
 ---
 
-### Diferenças C vs C++
+## 🧠 3. Adapter
 
-| Feature | C | C++ |
+Onde a lógica acontece.
+
+* `onCreateViewHolder`: Infla o layout do XML. <!-- .element: class="fragment" -->
+* `onBindViewHolder`: Coloca os dados na tela. <!-- .element: class="fragment" -->
+* `getItemCount`: Diz quantos itens a lista tem. <!-- .element: class="fragment" -->
+
+---
+
+## 👆 Lidando com Cliques
+
+O RecyclerView não tem clique nativo. Nós criamos!
+
+```kotlin
+holder.itemView.setOnClickListener {
+    val item = lista[position]
+    // Abrir detalhes...
+}
+```
+
+---
+
+## 🆚 Android vs iOS
+
+O mecanismo é IGUAL. Só mudam os nomes.
+
+| Conceito | Android | iOS |
 | :--- | :--- | :--- |
-| **Paradigma** | Estruturado | Orientado a Objetos (Multi) |
-| **Output** | `printf()` | `cout <<` |
-| **Input** | `scanf()` | `cin >>` |
-| **Extensão** | `.c` | `.cpp` |
+| **Componente** | RecyclerView | UITableView |
+| **Reciclagem** | Scrap Heap | Reusable Cell |
+| **Dados** | Adapter | Data Source |
+| **Gaveta** | ViewHolder | UITableViewCell |
 
 ---
 
-## Termynal: Compilando 🖥️
+## 🚀 Otimização: ListAdapter & DiffUtil
 
-<div data-termynal class="termy">
-    <span data-ty="input">gcc programa.c -o programa</span>
-    <span data-ty="progress">Compilando...</span>
-    <span data-ty="input">./programa</span>
-    <span data-ty>Olá Mundo C!</span>
-</div>
+`notifyDataSetChanged()` é coisa do passado.
 
----
+* O **DiffUtil** calcula o que mudou. <!-- .element: class="fragment" -->
+* Animações automáticas de inserção e remoção. <!-- .element: class="fragment" -->
+* Muito mais rápido para o processador. <!-- .element: class="fragment" -->
 
-## Resumo ✅
-
-- C é a mãe de todas. { .fragment }
-- **Compilador** traduz para binário. { .fragment }
-- **Ponteiros** acessam memória direta. { .fragment }
-- **C++** adiciona Classes ao poder do C. { .fragment }
+<!-- .slide: data-background-color="#5a189a" -->
 
 ---
 
-## Próxima Aula 🚀
+## 🛠️ Prática: Lista de Compras
 
-- Sair do "Baixo Nível". { .fragment }
-- Ir para o mundo corporativo e robusto. { .fragment }
-- **Java**: "Escreva uma vez, rode em qualquer lugar". { .fragment }
+1. Crie um layout `item_produto.xml`. <!-- .element: class="fragment" -->
+2. Crie a lista de objetos `Produto`. <!-- .element: class="fragment" -->
+3. Implemente o Adapter e veja a mágica da rolagem fluida. <!-- .element: class="fragment" -->
 
-👉 **Tarefa**: Instalar o Code::Blocks ou configurar GCC no VS Code!
+---
+
+### Dica: CardView 🃏
+
+Use `MaterialCardView` nos seus itens para ganhar sombras e bordas arredondadas automaticamente!
+
+```xml
+<com.google.android.material.card.MaterialCardView ...>
+    <!-- Seus textos/imagens aqui -->
+</com.google.android.material.card.MaterialCardView>
+```
+
+---
+
+## ⚠️ Erro Comum
+
+Tentar atualizar a lista e esquecer de avisar o Adapter.
+Sempre que o dado do banco/internet chegar, use:
+`adapter.submitList(novaLista)` (se usar ListAdapter).
+
+---
+
+## 🏁 Conclusão
+
+* RecyclerView é obrigatório em 99% dos apps. <!-- .element: class="fragment" -->
+* O foco é performance e economia de memória. <!-- .element: class="fragment" -->
+* Masterize o Adapter e você dominará o Android. <!-- .element: class="fragment" -->
+
+---
+
+## ❓ Perguntas sobre Listas?
+
+---
+
+### Próxima Aula: Consumo de APIs com Retrofit! 🌍👋

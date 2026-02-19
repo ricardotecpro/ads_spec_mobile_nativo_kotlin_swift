@@ -1,211 +1,211 @@
-# Aula 03 - Estrutura Sequencial ➡️
+# Aula 03 - Kotlin Moderno ⚡
+
+<!-- .slide: data-transition="convex" -->
 
 ---
 
-## Agenda 📅
+## 🚀 O que é Kotlin?
 
-1.  Variáveis (Revisão) { .fragment }
-2.  Tipos de Dados { .fragment }
-3.  Entrada e Saída { .fragment }
-4.  Operadores Aritméticos { .fragment }
-5.  Atribuição { .fragment }
+A linguagem que mudou o Android.
 
----
-
-## 1. Variáveis: Caixas da Memória 📦
-
-- Computador tem memória (RAM). { .fragment }
-- **Variável**: Um pedaço nomeado dessa memória. { .fragment }
-- Guardam **um valor** por vez. { .fragment }
+* Criada pela JetBrains (2011). <!-- .element: class="fragment" -->
+* Oficial no Android (Google I/O 2017). <!-- .element: class="fragment" -->
+* **Moderna**, **Segura** e **Concisa**. <!-- .element: class="fragment" -->
 
 ---
 
-### Visualização 🧪
+## 🛡️ Null Safety: O Fim dos Crashes
+
+O pesadelo do Java era o `null`.
+O Kotlin resolveu isso na raiz.
+
+```kotlin
+var nome: String = "Ricardo"
+nome = null // Erro de Compilação! 🛑
+```
+
+Para permitir nulos:
+```kotlin
+var nome: String? = "Pode ser nulo"
+nome = null // OK! ✅
+```
+
+---
+
+## 📦 Variáveis: `val` vs `var`
+
+No Kotlin, preferimos a imutabilidade.
+
+* **val**: Imutável (referência não muda). 🔒 <!-- .element: class="fragment" -->
+* **var**: Mutável (pode mudar o valor). 🔓 <!-- .element: class="fragment" -->
+
+```kotlin
+val idade = 25 // Nunca mais muda
+var saldo = 100.0 // Pode mudar
+```
+
+---
+
+## ⚡ Inferência de Tipos
+
+O Kotlin é inteligente. Ele sabe o tipo sem você dizer.
+
+```kotlin
+val versao = 15 // Ele sabe que é Int
+val pi = 3.14 // Ele sabe que é Double
+```
+
+---
+
+## 💬 Interpolação de Strings
+
+Diga adeus ao `+ " " +`.
+
+```kotlin
+val usuario = "Google"
+println("Olá, $usuario! Temos ${10 + 2} notificações.")
+```
+
+---
+
+## 🕴️ Operador Elvis `?:`
+
+"Se for nulo, faça isso".
+
+```kotlin
+val nome: String? = null
+val resultado = nome ?: "Visitante"
+// resultado = "Visitante"
+```
+
+---
+
+## 🛠️ Funções: Simplicidade
+
+```kotlin
+fun somar(a: Int, b: Int): Int {
+    return a + b
+}
+
+// Versão "Single Line"
+fun somar(a: Int, b: Int) = a + b
+```
+
+---
+
+## 🏗️ Estruturas de Decisão
+
+O `if` e o `when` no Kotlin são **expressões** (retornam valor).
+
+```kotlin
+val status = if (nota >= 6) "Aprovado" else "Reprovado"
+
+when (nota) {
+    10 -> println("Genial!")
+    in 7..9 -> println("Muito bom")
+    else -> println("Tente mais")
+}
+```
+
+---
+
+## 📋 Coleções
+
+Listas que facilitam a vida.
+
+```kotlin
+val numeros = listOf(1, 2, 3) // Imutável
+val nomes = mutableListOf("Ana", "Bia") // Mutável
+nomes.add("Caio")
+```
+
+---
+
+## 🏛️ Classes e Objetos
+
+Mais limpo que o Java.
+
+```kotlin
+class Carro(val model: String, var ano: Int)
+
+val meuCarro = Carro("Fusca", 1970)
+println(meuCarro.model)
+```
+
+---
+
+### 📊 Data Classes
+
+Onde o Kotlin brilha de verdade.
+
+```kotlin
+data class Usuario(val id: Int, val email: String)
+// Gera automaticamente: toString, equals, hashCode, copy...
+```
+
+---
+
+## 🧬 Interoperabilidade
+
+Você pode misturar Java e Kotlin no mesmo projeto sem problemas.
 
 ```mermaid
-graph TD;
-    Memoria[RAM] --> Var1[Gaveta 'IDADE'];
-    Var1 --> Val1[Valor: 25];
-    Memoria --> Var2[Gaveta 'NOME'];
-    Var2 --> Val2["Valor: 'Maria'"];
+graph LR
+    A[Java Code] <--> B[Kotlin Code]
+    B --> C[Bytecode JVM]
+    C --> D[Dalvik/ART Android]
 ```
 
 ---
 
-## 2. Tipos de Dados 📐
+## 🍎 Comparação: Swift
 
-Nem tudo cabe na mesma caixa.
+O Kotlin e o Swift são quase "gêmeos" na sintaxe moderna.
 
-1.  **Inteiro**: Números sem vírgula (10, -5). { .fragment }
-2.  **Real**: Números com vírgula (10.5, 3.14). { .fragment }
-3.  **Caractere**: Texto ("Olá", "A"). { .fragment }
-4.  **Lógico**: Verdadeiro ou Falso. { .fragment }
+| Recurso | Kotlin | Swift |
+| :--- | :--- | :--- |
+| **Constante** | `val` | `let` |
+| **Variável** | `var` | `var` |
+| **Opcional** | `String?` | `String?` |
+| **Função** | `fun` | `func` |
 
 ---
 
-### Erro Comum ❌
+## 🎮 Playground da Aula
 
-Tentar colocar texto numa caixa de número.
+Acesse [play.kotlinlang.org](https://play.kotlinlang.org) e teste:
 
-```visualg
-Var
-   idade : inteiro
-Inicio
-   idade <- "Vinte" // ERRO!
+1. Crie uma variável que pode ser nula. <!-- .element: class="fragment" -->
+2. Use o operador Elvis nela. <!-- .element: class="fragment" -->
+3. Crie uma data class "Produto". <!-- .element: class="fragment" -->
+
+<!-- .slide: data-background-color="#3d5a80" -->
+
+---
+
+## ⚠️ Safe Call `?.`
+
+Chama o método apenas se não for nulo.
+
+```kotlin
+val nome: String? = null
+println(nome?.length) // Não crasha! Imprime "null"
 ```
 
 ---
 
-## 3. Entrada e Saída ⚙️
+## 🏁 Conclusão
 
-Como o programa fala com o usuário?
-
-- **Entrada**: Dados que entram (Teclado). { .fragment }
-- **Saída**: Dados que saem (Tela). { .fragment }
-
----
-
-### Comando: ESCREVA (Saída) 📤
-
-- Mostra texto na tela. { .fragment }
-- `escreva` (na mesma linha). { .fragment }
-- `escreval` (pula linha). { .fragment }
-
-```visualg
-escreval("Olá Mundo")
-escreva("Tudo bem?")
-```
+* Kotlin economiza tempo e dedos (menos código). <!-- .element: class="fragment" -->
+* Segurança contra nulos é o seu maior trunfo. <!-- .element: class="fragment" -->
+* É a linguagem do futuro do Android. <!-- .element: class="fragment" -->
 
 ---
 
-### Comando: LEIA (Entrada) 📥
+## 🚀 Próxima Aula: Anatomia de um App
 
-- Pára o programa e espera o usuário digitar. { .fragment }
-- Guarda o que foi digitado numa variável. { .fragment }
-
-```visualg
-escreva("Qual seu nome?")
-leia(nome)
-```
+Vamos abrir o Android Studio e ver como o Kotlin controla as telas!
 
 ---
 
-## 4. Atribuição (`<-`) ⬅️
-
-- Colocar um valor dentro da variável. { .fragment }
-- Lê-se: "Recebe". { .fragment }
-- A seta sempre aponta para a esquerda (para a variável). { .fragment }
-
-```visualg
-media <- (n1 + n2) / 2
-nome <- "João"
-```
-
----
-
-## 5. Operadores Aritméticos 🧮
-
-O computador é uma calculadora gigante.
-
-| Operador | Nome | Exemplo |
-| :---: | :--- | :--- |
-| `+` | Soma | `5 + 3` |
-| `-` | Subtração | `10 - 2` |
-| `*` | Multiplicação | `4 * 3` |
-| `/` | Divisão | `20 / 4` |
-
----
-
-### Operadores Especiais ✨
-
-- **Módulo (`%`)**: Resto da divisão. { .fragment }
-    - `5 % 2 = 1` (Sobrou 1). { .fragment }
-    - Útil para saber se é Par ou Ímpar. { .fragment }
-- **Potência (`^`)**: Elevar ao quadrado/cubo. { .fragment }
-    - `2 ^ 3 = 8`. { .fragment }
-
----
-
-## Ordem de Precedência 🥇
-
-Matemática básica!
-
-1.  Parênteses `( )` { .fragment }
-2.  Potência `^` { .fragment }
-3.  Multiplicação e Divisão `* /` { .fragment }
-4.  Soma e Subtração `+ -` { .fragment }
-
-> `2 + 3 * 4` = 14 (Não 20!)
-
----
-
-## Exemplo Completo: Dobro do Número 🔢
-
-Vamos criar um programa que lê um número e mostra o dobro.
-
----
-
-### Passo 1: Definir Variáveis
-
-```visualg
-Algoritmo "Dobro"
-Var
-   numero : inteiro
-   resultado : inteiro
-```
-
----
-
-### Passo 2: Entrada
-
-```visualg
-Inicio
-   escreva("Digite um número: ")
-   leia(numero)
-```
-
----
-
-### Passo 3: Processamento
-
-```visualg
-   resultado <- numero * 2
-```
-
----
-
-### Passo 4: Saída
-
-```visualg
-   escreval("O dobro é: ", resultado)
-Fimalgoritmo
-```
-
----
-
-## Exercício Rápido ⚡
-
-Faça no VisualG agora:
-1.  Leia dois números. { .fragment }
-2.  Some os dois. { .fragment }
-3.  Mostre o resultado. { .fragment }
-
----
-
-## Resumo ✅
-
-- **Variáveis**: Nome, Tipo e Valor. { .fragment }
-- **Tipos**: Inteiro, Real, Caractere, Lógico. { .fragment }
-- **Entrada**: `leia()`. { .fragment }
-- **Saída**: `escreva()`. { .fragment }
-- **Atribuição**: `<-`. { .fragment }
-
----
-
-## Próxima Aula 🚀
-
-- E se precisarmos tomar **decisões**? { .fragment }
-- O comando `SE`. { .fragment }
-- Estruturas Condicionais. { .fragment }
-
-👉 **Tarefa**: Terminar os exercícios da lista 03!
+### Até a próxima! ⚡👋

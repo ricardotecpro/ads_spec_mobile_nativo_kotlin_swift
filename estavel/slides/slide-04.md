@@ -1,212 +1,162 @@
-# Aula 04 - Estrutura Condicional 🔀
+# Aula 04 - Estrutura de um App 🏗️
+
+<!-- .slide: data-transition="zoom" -->
 
 ---
 
-## Agenda 📅
+## 🧐 O que tem "debaixo do capô"?
 
-1.  O Desvio Lógico ("Se...") { .fragment }
-2.  Operadores Relacionais { .fragment }
-3.  Estrutura Se-Entao-Senao { .fragment }
-4.  Operadores Lógicos (E, OU, NÃO) { .fragment }
-5.  Estrutura Escolha-Caso { .fragment }
+Ao abrir um projeto no Android Studio, vemos muitas pastas.
+Não se desespere! Vamos entender cada uma.
 
 ---
 
-## 1. O Desvio Lógico 🤔
+## 📂 Visão Geral do Projeto
 
-Até agora, nossos programas eram uma linha reta.
-Mas a vida é feita de escolhas.
-
-- **Se** chover, pego guarda-chuva. { .fragment }
-- **Senão**, vou de bicicleta. { .fragment }
+Existem dois modos de visão: **Project** e **Android**.
+Nós usaremos o modo **Android** (mais organizado).
 
 ---
 
-### Visualizando a Decisão
+## 1. O Manifesto 📜
+
+`app/src/main/AndroidManifest.xml`
+
+É o contrato do seu app com o sistema operacional.
+
+* Nome e Ícone do App. <!-- .element: class="fragment" -->
+* Declaração de todas as **Activities**. <!-- .element: class="fragment" -->
+* Solicitação de **Permissões** (Câmera, GPS). <!-- .element: class="fragment" -->
+
+---
+
+## 2. A Pasta `java` (ou `kotlin`) ⌨️
+
+Onde a "mágica" acontece.
+
+* Ficam as classes de lógica. <!-- .element: class="fragment" -->
+* Ficam as classes das telas (MainActivity). <!-- .element: class="fragment" -->
+* Organizado em **pacotes** (ex: `com.meuapp.telas`). <!-- .element: class="fragment" -->
+
+---
+
+## 3. A Pasta `res` (Resources) 🎨
+
+Tudo o que o usuário **vê** ou **ouve**, mas que não é lógica.
+
+* **drawable**: Imagens e ícones. <!-- .element: class="fragment" -->
+* **layout**: A interface visual (XML). <!-- .element: class="fragment" -->
+* **mipmap**: Ícones que aparecem no menu do celular. <!-- .element: class="fragment" -->
+* **values**: Strings, Cores e Temas. <!-- .element: class="fragment" -->
+
+---
+
+### 🎨 Por que centralizar os `values`?
+
+Evite escrever texto direto no código!
+
+```xml
+<!-- res/values/strings.xml -->
+<string name="boas_vinda">Bem-vindo ao App!</string>
+```
+
+> Facilita a tradução para outros idiomas (Internacionalização). 🌍
+
+---
+
+## 4. Gradle: O Gerente de Fábrica ⚙️
+
+Não é código do seu app, é a configuração da "fábrica" que constrói ele.
+
+* `build.gradle (Project)`: Configurações globais. <!-- .element: class="fragment" -->
+* `build.gradle (Module)`: Configurações específicas do App. <!-- .element: class="fragment" -->
+
+---
+
+### 📦 O que tem no Gradle?
+
+* **versionCode**: Número interno (1, 2, 3...). <!-- .element: class="fragment" -->
+* **versionName**: Nome para o usuário (1.0.1...). <!-- .element: class="fragment" -->
+* **Dependencies**: Bibliotecas externas (Retrofit, Room). <!-- .element: class="fragment" -->
+
+---
+
+## 🏗️ O Ciclo de Build
 
 ```mermaid
-graph TD;
-    Inicio([Início]) --> Pergunta{Está Sol?};
-    Pergunta -- Sim --> A[Praia];
-    Pergunta -- Não --> B[Netflix];
-    A --> Fim([Fim]);
-    B --> Fim;
+graph LR
+    A[Código Kotlin/Java] --> B[Compilador]
+    E[Recursos XML/Img] --> B
+    B --> C[Arquivo DEX]
+    C --> D[APK / AAB]
 ```
 
 ---
 
-## 2. Operadores Relacionais 📏
+## 🆚 Estrutura: Android vs iOS
 
-Para o computador decidir, ele precisa **comparar**.
-A resposta é sempre **Verdadeiro** ou **Falso**.
-
----
-
-### Os Comparadores
-
-| Símbolo | Significado | Exemplo | Resultado |
-| :---: | :--- | :--- | :--- |
-| `>` | Maior que | `10 > 5` | V |
-| `<` | Menor que | `3 < 8` | V |
-| `==` | Igual a | `5 == 5` | V |
-| `!=` | Diferente | `5 != 3` | V |
-| `>=` | Maior/Igual | `10 >= 10` | V |
+| Android | iOS | Papel |
+| :---: | :---: | :--- |
+| `AndroidManifest` | `Info.plist` | Metadados |
+| `res/layout` | `Storyboard/XIB` | UI Visual |
+| `gradle` | `CocoaPods/SwiftPM` | Dependências |
+| `res/values` | `Localizable.strings` | Textos |
 
 ---
 
-## 3. Sintaxe Básica (Se-Entao) 📝
+## 🔌 ViewBinding: O Link Seguro
 
-```visualg
-se (nota >= 7) entao
-   escreva("Aprovado!")
-fimse
+Antigamente usava-se o `findViewById` (lento e perigoso).
+Hoje usamos o **ViewBinding**.
+
+```kotlin
+// No código Kotlin
+binding.txtTitulo.text = "Novo Título"
 ```
 
-- Se a condição for **Verdadeira**, ele executa o bloco. { .fragment }
-- Se for **Falsa**, ele pula. { .fragment }
+> Garante que você não tente acessar um ID que não existe na tela! 🛡️
 
 ---
 
-### O "Senao" (O Plano B)
+## 🛠️ Prática: Explorando o Studio
 
-E se for Falso? Usamos o `senao`.
+1. Abra o arquivo `Activity_main.xml`. <!-- .element: class="fragment" -->
+2. Veja as abas **Code**, **Split** e **Design**. <!-- .element: class="fragment" -->
+3. Mantenha no **Split** para aprender rápido! <!-- .element: class="fragment" -->
 
-```visualg
-se (nota >= 7) entao
-   escreva("Aprovado!")
-senao
-   escreva("Reprovado!")
-fimse
-```
+<!-- .slide: data-background-color="#2d6a4f" -->
 
 ---
 
-## 4. Operadores Lógicos 🔗
+## ⚠️ Cuidado com a pasta `build`
 
-Às vezes, uma condição só não basta.
-
-- Quero ir à praia **SE** tiver sol **E** for sábado. { .fragment }
-
----
-
-### Operador E (AND) 🤝
-
-- Exige que **TODAS** as condições sejam verdadeiras. { .fragment }
-
-| A | B | A e B |
-| :---: | :---: | :---: |
-| V | V | **V** |
-| V | F | F |
-| F | V | F |
-| F | F | F |
+Ela é gerada automaticamente.
+**Nunca** altere nada dentro dela manualmente. Se der erro, use o comando:
+`Build -> Clean Project`.
 
 ---
 
-### Operador OU (OR) 🤷
+## 🧩 Resumo
 
-- Exige que **PELO MENOS UM** seja verdadeiro. { .fragment }
-
-| A | B | A ou B |
-| :---: | :---: | :---: |
-| V | V | **V** |
-| V | F | **V** |
-| F | V | **V** |
-| F | F | F |
+* **Manifesto**: Declarativo e essencial. <!-- .element: class="fragment" -->
+* **Res**: Visual e Multimídia. <!-- .element: class="fragment" -->
+* **Gradle**: Configuração e Bibliotecas. <!-- .element: class="fragment" -->
+* **Java/Kotlin**: Comportamento. <!-- .element: class="fragment" -->
 
 ---
 
-### Operador NÃO (NOT) 🚫
+## 🚀 Desafio da Aula
 
-- Inverte o resultado. { .fragment }
-
-| A | NÃO A |
-| :---: | :---: |
-| V | F |
-| F | V |
+1. Adicione uma nova cor em `colors.xml`. <!-- .element: class="fragment" -->
+2. Crie uma nova String em `strings.xml`. <!-- .element: class="fragment" -->
+3. Use essa cor e essa string em um componente na tela inicial. <!-- .element: class="fragment" -->
 
 ---
 
-## Exemplo Prático: Média Escolar 🎓
+## 🏁 Conclusão
 
-Vamos melhorar nosso cálculo de média.
-
-- Media >= 7: Aprovado. { .fragment }
-- Media >= 5 E Media < 7: Recuperação. { .fragment }
-- Media < 5: Reprovado. { .fragment }
+Entender a estrutura é o primeiro passo para não se perder em projetos grandes.
 
 ---
 
-### O Código (Aninhado)
-
-```visualg
-se (media >= 7) entao
-   escreval("Aprovado")
-senao
-   se (media >= 5) entao
-      escreval("Recuperação")
-   senao
-      escreval("Reprovado")
-   fimse
-fimse
-```
-
----
-
-## 5. Estrutura Escolha-Caso 🚦
-
-Quando temos muitas opções fixas (como um Menu).
-Evita aquele monte de `se-senao-se-senao`.
-
----
-
-### Exemplo: Menu
-
-```visualg
-escolha (opcao)
-   caso 1
-      escreva("Iniciar Jogo")
-   caso 2
-      escreva("Configurações")
-   caso 3
-      escreva("Sair")
-   outrocaso
-      escreva("Opção Inválida")
-fimescolha
-```
-
----
-
-### Quando usar qual? 🤔
-
-- **SE**: Para testar intervalos (`idade > 18`), condições complexas (`E`, `OU`). { .fragment }
-- **ESCOLHA**: Para valores exatos (Menus, Códigos de produto). { .fragment }
-
----
-
-## Exercício Rápido ⚡
-
-**Par ou Ímpar?**
-
-1.  Leia um número. { .fragment }
-2.  Verifique se o resto da divisão por 2 é zero. { .fragment }
-3.  Se for, é Par. { .fragment }
-4.  Senão, é Ímpar. { .fragment }
-
----
-
-## Resumo ✅
-
-- **Se/Então/Senão**: Tomada de decisão. { .fragment }
-- **Relacionais**: `>`, `<`, `=`, `!=`. { .fragment }
-- **Lógicos**: `E`, `OU`, `NÃO`. { .fragment }
-- **Escolha**: Ótimo para menus. { .fragment }
-
----
-
-## Próxima Aula 🚀
-
-- E se eu quiser repetir um comando 1000 vezes? { .fragment }
-- **Loops** (Laços de Repetição). { .fragment }
-- `Enquanto`, `Para`, `Repita`. { .fragment }
-
-👉 **Tarefa**: Fazer o exercício do Bhaskara!
+### Próxima Aula: Interface Gráfica (Layouts)! 🎨👋
