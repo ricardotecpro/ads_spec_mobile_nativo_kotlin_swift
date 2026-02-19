@@ -1,32 +1,37 @@
-# Linguagem Python
+# Aula 13 - Sensores e Hardware 📸
 
 ---
 
-## Tópicos da Aula
-
-- Introdução ao tema
-- Conceitos fundamentais
-- Exemplos práticos
-- Exercícios de fixação
-
----
-
-## Conceito Chave
-
-> Definição importante sobre Linguagem Python.
+## 📸 Acessando o Mundo Real
+- Câmera.
+- Localização (GPS).
+- Acelerômetro e Giroscópio.
+- Biometria.
 
 ---
 
-## Exemplo Prático
-
-```
-// Exemplo de código ou algoritmo
-escreva("Olá mundo!")
-```
+## 🔑 Permissões (Permissions)
+- No Manifesto: Uso básico.
+- Em Tempo de Execução: Uso sensível.
+- Usuário no controle da privacidade.
 
 ---
 
-## Conclusão
+## 🗺️ Localização Inteligente
+- **Fused Location Provider**.
+- Balanceia precisão vs bateria.
+- Coordenadas Lat/Long.
 
-- Resumo do que aprendemos
-- Próximos passos
+---
+
+## 🎥 CameraX
+- Simplificação extrema.
+- Preview, Capture, Analysis.
+- Compatibilidade entre fabricantes.
+
+---
+
+## 🍎 Core Motion (iOS)
+- Framework robusto da Apple.
+- Permissões ainda mais granulares.
+- CameraControl no iOS moderno.

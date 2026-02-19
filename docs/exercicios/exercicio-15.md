@@ -1,30 +1,18 @@
-# Exercícios 15 - Mobile (Dart/Kotlin) 📱
-
-!!! tip "Objetivo"
-    **Objetivo**: Lógica para Apps.
-
----
+# Exercícios 15 - Publicação 🚀
 
 ## 🟢 Fáceis
 
-1.  **Função Nula (Dart)**: Crie uma variável `String? nome`. Atribua `null`. Tente imprimir. Use `??` para imprimir "Anônimo" caso seja nulo.
-2.  **Lista de Tarefas (Kotlin)**: Crie uma `MutableList` de Strings. Adicione "Estudar", "Correr". Imprima a lista.
+1.  **Formato**: Qual o formato de arquivo obrigatório para enviar novos apps para a Google Play Store? (APK ou AAB?)
+2.  **Custo**: Qual o valor da taxa para criar uma conta de desenvolvedor no Google Play? Ela é anual ou única?
 
 ## 🟡 Médios
 
-3.  **Classe Carro (Dart)**:
-    *   Classe `Carro` com `modelo` e `ano`.
-    *   Construtor nomeado `Carro.antigo(modelo)` que fixa o ano em 1980.
-    *   Crie um carro normal e um antigo.
-4.  **When Expression (Kotlin)**:
-    *   Receba um número de 1 a 7.
-    *   Use `when` para retornar "Domingo", "Segunda", etc.
-    *   Else: "Dia inválido".
+3.  **Keystore**:
+    Por que o arquivo de chave (.jks) é tão crítico? O que acontece se você perdê-lo após publicar a versão 1.0 do seu app?
+4.  **ProGuard/R8**:
+    Explique o que é a ofuscação de código e por que ela é importante para a segurança do app.
 
 ## 🔴 Desafio
 
-5.  **Árvore de Widget (Flutter - Papel)**:
-    *   Não precisa rodar. Apenas escreva a estrutura de classes.
-    *   Tela com `AppBar` ("Login").
-    *   `Body` com `Column`.
-    *   Filhos da Column: `TextField` (Email), `TextField` (Senha), `ElevatedButton` (Entrar).
+5.  **Otimização**:
+    Como o Google Play usa o Android App Bundle (AAB) para reduzir o tamanho do download para o usuário final em comparação ao APK tradicional?

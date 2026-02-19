@@ -1,125 +1,61 @@
 # Sobre o Curso
 
-## 🎓 Git e GitHub - Do Zero ao Profissional
+## 🎓 Desenvolvimento Mobile Nativo Profissional
 
-Este é um curso completo e estruturado de Versionamento de Código com Git e GitHub. Desenvolvido para levar você do básico ao avançado, com uma abordagem prática e focada nas necessidades reais do mercado de desenvolvimento de software.
+Este curso foi projetado para transformar iniciantes em desenvolvedores capazes de criar, testar e publicar aplicativos de alto desempenho para o ecossistema Android, mantendo uma base sólida de conhecimento para transição futura para iOS.
 
 ## 🎯 Objetivos do Curso
 
 <div class="grid cards" markdown>
 
--   :material-target: **Dominar Git**
-    
+-   :material-cellphone-cog: **Domínio Android**
     ---
-    
-    Aprender os comandos fundamentais, fluxo de trabalho local e como o Git funciona por baixo dos panos.
+    Dominar Kotlin e Java, o Android Studio e os componentes principais do sistema (Activities, Services, Manifest).
 
--   :material-code-braces: **GitHub Profissional**
-    
+-   :material-layers-triple: **Arquitetura de Mercado**
     ---
-    
-    Utilizar o GitHub não apenas como repositório, mas como plataforma de colaboração, gestão de projetos e portfólio.
+    Utilizar o padrão MVVM, LiveData e ViewModel para criar códigos escaláveis e fáceis de manter.
 
--   :material-api: **Colaboração**
-    
+-   :material-cloud-sync: **Dados e Networking**
     ---
-    
-    Trabalhar em equipe utilizando Branches, Pull Requests, Code Reviews e resolvendo conflitos de forma eficiente.
+    Conectar apps ao mundo real via Retrofit (APIs REST) e persistência local com Room Database.
 
--   :material-test-tube: **Boas Práticas**
-    
+-   :material-rocket-launch: **Publicação e Carreira**
     ---
-    
-    Criar um histórico de commits limpo, escrever mensagens significativas e manter repositórios organizados.
+    Entender o processo de assinatura de apps, geração de AAB e publicação na Google Play Store.
 
 </div>
 
 ## 📚 O Que Você Vai Aprender
 
-### Módulo 1 – Conceitos Básicos
-- Instalação e configuração do Git
-- Ciclo de vida dos arquivos (Tracked to Committed)
-- Histórico e navegação no tempo
-- Ramificação (Branching) e Fusão (Merging)
+### Módulo 1 – Fundamentos e UI
+- História do Mobile e Mercado
+- Kotlin vs Java vs Swift
+- Interfaces com XML e ViewBinding
+- ConstraintLayout e Unidades (dp/sp)
 
-### Módulo 2 – Trabalhando com GitHub
-- Repositórios Remotos
-- Sincronização (Push/Pull)
-- Resolução de Conflitos
-- Pull Requests e Code Review
+### Módulo 2 – Navegação e Arquitetura
+- Intents e Backstack
+- Ciclo de Vida do Android
+- Padrão MVVM (ViewModel + LiveData)
+- Temas e Material Design 3
 
-### Módulo 3 – Fluxos e Organização
-- GitHub Flow
-- Issues e Projects (Kanban)
-- Markdown para documentação
-- README profissional
+### Módulo 3 – Listas e Persistência
+- RecyclerView e Adapters eficientes
+- Banco de Dados Room (SQLite)
+- Consumo de APIs com Retrofit
+- Gerenciamento de Threads (Coroutines)
 
-### Módulo 4 – Colaboração e Carreira
-- Forks e contribuição Open Source
-- GitHub Pages para hospedagem
-- Tratamento de erros comuns (Detached HEAD, etc.)
-- Construção de portfólio
+### Módulo 4 – Recursos Avançados
+- Sensores, Câmera e GPS
+- Testes Unitários e Testes de UI (Espresso)
+- Debugging e Logcat
+- Publicação na Store
 
 ## 🛠️ Metodologia
 
-<div class="grid cards" markdown>
-
--   :material-book-open-variant: **Aulas Teóricas**
-    
-    ---
-    
-    Conteúdo explicativo com exemplos práticos e slides interativos.
-
--   :material-code-tags: **Exercícios Práticos**
-    
-    ---
-    
-    Listas de exercícios para fixar o conteúdo de cada aula.
-
--   :material-rocket-launch: **Projetos Reais**
-    
-    ---
-    
-    Desenvolva projetos práticos aplicando os conceitos aprendidos.
-
--   :material-head-question: **Quizzes Interativos**
-    
-    ---
-    
-    Teste seus conhecimentos com quizzes ao final de cada módulo.
-
-</div>
-
-## 👨‍🎓 Para Quem é Este Curso
-
-- **Iniciantes** que nunca usaram controle de versão
-- **Desenvolvedores** que usam Git apenas no básico ("add, commit, push")
-- **Estudantes** que precisam organizar seus trabalhos acadêmicos
-- **Profissionais** que querem melhorar seu fluxo de trabalho em equipe
-
-## 📋 Pré-requisitos
-
-- Computador com Windows, Linux ou macOS
-- Instalação do Git (coberta no curso)
-- Conta no GitHub (gratuita)
-- **Não é necessário conhecimento prévio de programação!**
-
-## 🎖️ O Que Você Receberá
-
-- ✅ 16 aulas completas e estruturadas
-- ✅ Slides interativos para todas as aulas
-- ✅ Exercícios práticos com soluções
-- ✅ Projetos reais para portfólio
-- ✅ Quizzes para autoavaliação
-- ✅ Guias de configuração de ambiente
-
-## 🚀 Comece Agora
-
-Pronto para dominar o Git?
-
-[:material-rocket: Ir para Aula 01](aulas/aula-01.md){ .md-button .md-button--primary }
-[:material-cog: Configurar Ambiente](setups/index.md){ .md-button }
+Foco 100% prático. Cada aula termina com um desafio real que compõe seu portfólio. Utilizamos diagramas interativos e quizzes para garantir a fixação do conteúdo técnico.
 
 ---
-
-**Dúvidas?** Entre em contato ou acesse a [documentação completa](materiais.md).
+**Pronto para o próximo nível?** 
+[:material-rocket: Começar Agora](aulas/aula-01.md){ .md-button .md-button--primary }

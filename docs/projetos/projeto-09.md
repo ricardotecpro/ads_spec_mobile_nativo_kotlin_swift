@@ -1,11 +1,13 @@
-# Projeto 09 - Gerenciador de Memória (C/C++) 🧱
+# Projeto 09 - Agenda de Contatos (RecyclerView) 📋
 
-**Objetivo**: Entender manipulação direta de memória.
+**Objetivo**: Implementar uma lista dinâmica e performática.
 
 ## O Desafio
-1.  Crie um programa em C.
-2.  Aloque dinamicamente (`malloc`) um vetor de inteiros com tamanho definido pelo usuário.
-3.  Preencha esse vetor com números aleatórios.
-4.  Crie uma função que receba o ponteiro desse vetor e inverta a ordem dos elementos **sem criar um segundo vetor**.
-5.  Libere a memória (`free`) no final.
-6.  **Extra (C++)**: Faça o mesmo usando uma Classe `VetorDinamico` e Destrutores.
+Crie uma agenda de contatos:
+1.  **Layout do Item**: Crie `item_contato.xml` com Nome e Telefone.
+2.  **Adapter**: Crie um `RecyclerView.Adapter` que receba uma lista de objetos `Contato`.
+3.  **MainActivity**: Configure o RecyclerView com um `LinearLayoutManager`.
+4.  **Ação**: Ao clicar em um contato, mostre um `Toast` com o telefone dele.
+
+## Diferencial ✨
+Tente usar o **ListAdapter** com **DiffUtil** para que a lista se atualize com animações suaves ao remover um contato.

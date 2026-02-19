@@ -1,11 +1,14 @@
-# Projeto 15 - Interface de Login (Mobile) 📱
+# Projeto 15 - Gerando o App Bundle 📦
 
-**Objetivo**: UI/UX e Validação.
+**Objetivo**: Preparar o aplicativo para o lançamento real.
 
-## O Desafio (Flutter)
-1.  Crie uma tela bonita com: Logo, Email, Senha, Botão.
-2.  Validação:
-    *   Email deve ter "@".
-    *   Senha deve ter 6+ caracteres.
-3.  Se validar OK -> Navegue para uma "Home Page" simples.
-4.  Se erro -> Mostre Snackbar ou Texto vermelho.
+## O Desafio
+Desta vez o desafio é técnico e de configuração:
+1.  Crie uma **Keystore** (.jks) protegida por senha.
+2.  Configure o `signingConfigs` no seu `build.gradle` para usar essa chave.
+3.  Habilite o **R8/ProGuard** (`minifyEnabled true`).
+4.  Vá em `Build > Generate Signed Bundle / APK`.
+5.  Gere o arquivo `.aab`.
+
+## Reflexão
+Qual o tamanho final do seu `.aab` comparado ao `.apk` gerado anteriormente? Observe a diferença! ⚖️

@@ -1,28 +1,18 @@
-# Exercícios 13 - Python 🐍
-
-!!! tip "Objetivo"
-    **Objetivo**: Dados e Automação.
-
----
+# Exercícios 13 - Sensores e Hardware 📸
 
 ## 🟢 Fáceis
 
-1.  **Soma de Lista**: Crie uma lista com 5 números. Use a função `sum()` para somar todos.
-2.  **Contador de Letras**: Leia uma palavra. Use `len()` para mostrar quantas letras ela tem.
+1.  **Permissões**: Qual a diferença entre uma permissão "Normal" e uma "Perigosa" no Android?
+2.  **GPS**: Qual biblioteca do Google Play Services é recomendada para obter a localização?
 
 ## 🟡 Médios
 
-3.  **Dicionário de Aluno**:
-    *   Crie um dicionário com: `nome`, `nota1`, `nota2`.
-    *   Calcule a média.
-    *   Adicione um novo campo `situacao` com "Aprovado" ou "Reprovado".
-    *   Mostre o dicionário completo.
-4.  **Tabuada com Range**: Use um loop `for i in range(1, 11)` para mostrar a tabuada do 9.
+3.  **SensorManager**:
+    Para que serve o método `registerListener`? O que acontece se esquecermos de chamar o `unregisterListener` no `onStop()` ou `onDestroy()` da Activity?
+4.  **CameraX**:
+    Cite os 3 principais casos de uso (Use Cases) da biblioteca CameraX e para que servem.
 
 ## 🔴 Desafio
 
-5.  **Analisador de Texto**:
-    *   Texto: "Python é incrível e muito fácil".
-    *   Conte quantas palavras existem (use `.split()`).
-    *   Substitua "fácil" por "poderoso" (use `.replace()`).
-    *   Mostre o texto final em CAIXA ALTA (use `.upper()`).
+5.  **Privacidade**:
+    Se o usuário negar uma permissão perigosa (ex: Câmera) e marcar "Não perguntar novamente", como o desenvolvedor deve agir para que o usuário possa reativar essa permissão? É possível abrir o pop-up de novo direto pelo código?

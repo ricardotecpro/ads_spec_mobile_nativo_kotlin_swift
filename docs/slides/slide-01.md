@@ -1,32 +1,37 @@
-# Conteúdo do Curso
+# Aula 01 - Introdução ao Mobile 📱
 
 ---
 
-## Tópicos da Aula
-
-- Introdução ao tema
-- Conceitos fundamentais
-- Exemplos práticos
-- Exercícios de fixação
+## 🌎 O Panorama Mobile
+- Bilhões de usuários ativos.
+- Android vs iOS: Os dois titãs.
+- Oportunidades de carreira.
 
 ---
 
-## Conceito Chave
-
-> Definição importante sobre Conteúdo do Curso.
-
----
-
-## Exemplo Prático
-
-```
-// Exemplo de código ou algoritmo
-escreva("Olá mundo!")
-```
+## 🛠️ Tecnologias de Desenvolvimento
+1.  **Nativo**: Performance máxima, acesso total ao hardware (Kotlin/Swift).
+2.  **Híbrido**: "Escreva uma vez, rode em tudo" (Flutter, React Native).
+3.  **Web/PWA**: Sites que parecem apps.
 
 ---
 
-## Conclusão
+## 🆚 Por que Nativo?
+- **Android**: Kotlin/Java.
+- **iOS**: Swift/Objective-C.
+- Melhor experiência do usuário (UX).
+- Melhor aproveitamento da bateria.
 
-- Resumo do que aprendemos
-- Próximos passos
+---
+
+## 🏗️ Ecossistema Android
+- Baseado em Linux.
+- Open Source (AOSP).
+- Diversidade de fabricantes e telas.
+
+---
+
+## 🏁 Próximos Passos
+- Configuração do Ambiente.
+- Entendendo a lógica Mobile.
+- Nosso primeiro "Olá Mundo!".

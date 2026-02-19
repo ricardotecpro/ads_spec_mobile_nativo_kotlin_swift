@@ -1,9 +1,9 @@
-# Curso de Algoritmos e Lógica de Programação 🚀
+# Desenvolvimento Mobile Nativo 📱
 
-Bem-vindo ao curso definitivo para quem quer começar na programação com o pé direito. Aqui você aprende **Lógica Pura** e aplica em **12 Linguagens de Mercado**.
+Domine a criação de aplicativos profissionais para Android e entenda como as mesmas lógicas se aplicam ao ecossistema iOS. Do zero ao app na Google Play Store.
 
-!!! tip "Metodologia"
-    **Metodologia**: Foco em prática, visualização (diagramas) e português claro. Sem "tech nês" desnecessário.
+!!! tip "Foco do Curso"
+    **Metodologia**: Aprendizado prático focado no ecossistema Android (Kotlin/Java) com pontes constantes para o mundo iOS (Swift), garantindo uma visão completa do desenvolvimento nativo.
 
 ---
 
@@ -11,72 +11,58 @@ Bem-vindo ao curso definitivo para quem quer começar na programação com o pé
 
 <div class="grid cards" markdown>
 
--   :material-brain: **Lógica Sólida**
-    
+-   :material-android: **Ecossistema Android**
     ---
-    
-    Domine algoritmos, fluxogramas, variáveis, condicionais e laços de repetição. A base de tudo.
-    
-    [:octicons-arrow-right-24: Ir para Fundamentos](aulas/aula-01.md)
+    Domine Kotlin e Java, o Android Studio e o ciclo de vida das Activities. A base sólida do sistema mobile mais usado no mundo.
+    [:octicons-arrow-right-24: Ir para Módulo 1](aulas/aula-01.md)
 
--   :material-translate: **O Poliglota**
-    
+-   :material-apple: **Visão Poliglota**
     ---
-    
-    Aplique o que aprendeu em **C, Java, Python, JS, Go** e mais. Entenda os paradigmas.
-    
-    [:octicons-code-24: Ver Linguagens](aulas/aula-09.md)
+    Entenda as diferenças e semelhanças entre Android e iOS. Aprenda como conceitos de UI e Navegação se traduzem entre plataformas.
+    [:octicons-code-24: Ver Comparativos](aulas/aula-02.md)
 
--   :material-tools: **Ferramentas Reais**
-    
+-   :material-layers: **Arquitetura MVVM**
     ---
-    
-    Aprenda a configurar VS Code, Git, Compiladores e Ambientes Cloud.
-    
-    [:octicons-download-24: Configurar Ambiente](setups/index.md)
+    Aprenda o padrão de mercado recomendado pelo Google: Separação de responsabilidades, LiveData e ViewModel.
+    [:octicons-rocket-24: Ver Arquitetura](aulas/aula-07.md)
 
--   :material-rocket: **Projetos Práticos**
-    
+-   :material-cloud-sync: **Mundo Conectado**
     ---
-    
-    Saia da teoria com projetos reais: Calculadoras, Jogos, Sistemas Web e Apps.
-    
+    Consuma APIs REST com Retrofit, persista dados com Room e gerencie tarefas assíncronas com Coroutines.
     [:octicons-repo-24: Ver Projetos](projetos/index.md)
 
 </div>
 
 ---
 
-## 📚 Estrutura do Curso (16 Aulas)
+## 📚 Jornada de Aprendizado (16 Aulas)
 
-O curso é dividido em dois módulos estratégicos.
+O curso é estruturado em quatro trilhas de especialização.
 
-### Módulo 1: Fundamentos (Aulas 01-08)
-Construa seu **modelo mental** de programador.
-*   [Aula 01 - Introdução e Algoritmos](aulas/aula-01.md) 🧠
-*   [Aula 02 - Ambiente e Ferramentas](aulas/aula-02.md) 🛠️
-*   [Aula 03 - Estrutura Sequencial](aulas/aula-03.md) ➡️
-*   [Aula 04 - Estrutura Condicional](aulas/aula-04.md) 🔀
-*   [Aula 05 - Estruturas Repetitivas](aulas/aula-05.md) 🔁
-*   [Aula 06 - Vetores (Arrays)](aulas/aula-06.md) 📊
-*   [Aula 07 - Matrizes](aulas/aula-07.md) 📈
-*   [Aula 08 - Funções e Modularização](aulas/aula-08.md) 🧩
+### 🧱 Trilha 1: Fundamentos e UI (Aulas 01-04)
+*   [Aula 01 - Intro Mobile](aulas/aula-01.md) 📱
+*   [Aula 02 - Java vs Swift](aulas/aula-02.md) ☕
+*   [Aula 03 - Kotlin Moderno](aulas/aula-03.md) ⚡
+*   [Aula 04 - Estrutura App](aulas/aula-04.md) 🏗️
 
-### Módulo 2: O Poliglota (Aulas 09-16)
-Veja a mágica acontecer nas linguagens reais.
-*   [Aula 09 - Baixo Nível (C / C++)](aulas/aula-09.md) 🧱
-*   [Aula 10 - Web Moderna (JS / TS)](aulas/aula-10.md) 🌐
-*   [Aula 11 - Corporativo (Java)](aulas/aula-11.md) ☕
-*   [Aula 12 - Microsoft (.NET / C# / F#)](aulas/aula-12.md) 🔷
-*   [Aula 13 - Data Science (Python)](aulas/aula-13.md) 🐍
-*   [Aula 14 - Sistemas (Rust / Go)](aulas/aula-14.md) ⚙️
-*   [Aula 15 - Mobile (Dart / Kotlin)](aulas/aula-15.md) 📱
-*   [Aula 16 - Legado e Web (PHP)](aulas/aula-16.md) 🐘
+### 🏗️ Trilha 2: Arquitetura e Dados (Aulas 05-08)
+*   [Aula 05 - Interface (UI)](aulas/aula-05.md) 🎨
+*   [Aula 06 - Navegação](aulas/aula-06.md) 🗺️
+*   [Aula 07 - MVVM](aulas/aula-07.md) 🏛️
+*   [Aula 08 - Persistência (Room)](aulas/aula-08.md) 💾
+
+### 🔌 Trilha 3: Listas e Networking (Aulas 09-12)
+*   [Aula 09 - RecyclerView](aulas/aula-09.md) 📋
+*   [Aula 10 - API REST (Retrofit)](aulas/aula-10.md) 🌍
+*   [Aula 11 - Threads/Async](aulas/aula-11.md) 🧵
+*   [Aula 12 - UX/Material 3](aulas/aula-12.md) 💄
+
+### 🚀 Trilha 4: Hardware e Lançamento (Aulas 13-16)
+*   [Aula 13 - Sensores/GPS](aulas/aula-13.md) 📸
+*   [Aula 14 - Testes/Debug](aulas/aula-14.md) 🧪
+*   [Aula 15 - Publicação Store](aulas/aula-15.md) 🏪
+*   [Aula 16 - Projeto Final](aulas/aula-16.md) 🎓
 
 ---
 
-!!! success
-    **Pronto para começar?** 
-    Clique no botão abaixo e inicie sua jornada!
-
-[:material-play: Começar Agora](aulas/aula-01.md){ .md-button .md-button--primary .md-button--large }
+[:material-play: Começar Minha Carreira Mobile](aulas/aula-01.md){ .md-button .md-button--primary .md-button--large }

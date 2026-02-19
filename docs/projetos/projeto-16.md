@@ -1,37 +1,20 @@
-# Projeto 16 - Mural Fullstack (Milestone Final) 🏆
+# Projeto 16 - App Final Integrador �
 
-## O Desafio 🎯
-Você chegou ao topo. É hora de conectar tudo. O projeto final é um "Mural de Recados Anônimos" (estilo Twitter antigo/Orkut).
+**Objetivo**: O "TCC (Trabalho de Conclusão de Curso)" do desenvolvedor Mobile Nativo.
 
-**Objetivo**: Criar uma aplicação Web completa (Banco -> Back -> Front).
+## O Tema
+Escolha um tema que resolva um problema real (Ex: Finanças, Clima, Saúde, Educação).
 
-## Arquitetura (MVC)
+## Requisitos Mínimos
+1.  **Arquitetura**: Uso obrigatório de MVVM (ViewModel + LiveData).
+2.  **Dados**: Persistência local (Room) ou Consumo de API Externa (Retrofit).
+3.  **UI/UX**: Estilo Material 3 completo, com ícones vetoriais.
+4.  **Hardware**: Uso de pelo menos um recurso (Câmera, GPS ou Sensores).
+5.  **Qualidade**: Pelo menos 2 testes unitários de lógica crítica.
 
-```mermaid
-graph LR;
-    Navegador -->|POST /salvar| ControllerPHP;
-    ControllerPHP -->|INSERT| MySQL[("Banco Recados")];
-    MySQL -->|SELECT| ControllerPHP;
-    ControllerPHP -->|HTML| Navegador;
-```
+## Documentação ✨
+Seu repositório no GitHub deve ter um **README.md** impecável, com imagens do app, explicação técnica e como rodar o projeto. Este será o seu cartão de visitas para o mercado!
 
-## Requisitos Técnicos
-1.  **Banco de Dados (MySQL)**:
-    - Tabela `recados` (`id` INT AI, `texto` VARCHAR, `data_hora` DATETIME).
-2.  **Backend (PHP/Laravel/Node)**:
-    - Rota `GET /`: Lista recados.
-    - Rota `POST /recado`: Salva novo recado.
-3.  **Frontend (HTML/CSS)**:
-    - Bootstrap para ficar bonito rápido.
-    - Design responsivo (Mobile First - Aula 15!).
+---
 
-## Funcionalidades
-1.  **Postar**: Escrever mensagem e enviar.
-2.  **Feed**: Ver mensagens (Mais recentes no topo).
-3.  **Sanitização**: Proteger contra XSS (não deixar usuário postar `<script>`).
-
-## Dica de Ouro 🌟
-Comece pelo Banco de Dados. Se o banco estiver errado, tudo dá errado.
-
-## Entrega 📦
-- Link do Repositório GitHub com código fonte e script SQL.
+**Boa sorte e bom código!** 🚀🚀🚀

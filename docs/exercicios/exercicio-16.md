@@ -1,29 +1,18 @@
-# Exercícios 16 - PHP e Web 🐘
-
-!!! tip "Objetivo"
-    **Objetivo**: Backend e Dados.
-
----
+# Exercícios 16 - Planejamento do Projeto Final 🎓
 
 ## 🟢 Fáceis
 
-1.  **Data e Hora**: Crie um script PHP que mostre: "Hoje é dia [d/m/Y] e são [H:i] horas".
-2.  **Array Associativo**: Crie um array `$pessoa` com nome e idade. Mostre com `echo`.
+1.  **Tema**: Escolha o tema do seu projeto final. Será um dos sugeridos (Finanças, Clima, Livros, Fitness) ou um tema autoral?
+2.  **Escopo**: Liste as 2 principais telas que seu app terá.
 
 ## 🟡 Médios
 
-3.  **Formulário Simples**:
-    *   Crie um HTML com campo "nome" e botão "Enviar".
-    *   No PHP, verifique se o nome foi enviado (`isset($_GET['nome'])`).
-    *   Se sim, mostre "Olá [nome]". Se não, mostre "Digite seu nome".
-4.  **Loop HTML**:
-    *   Crie um array com 5 nomes de cidades.
-    *   Use `foreach` para gerar uma lista `<ul><li>` com essas cidades no HTML.
+3.  **Arquitetura**:
+    Desenhe (ou descreva) como será o seu `ViewModel`. Quais dados (LiveData) ele vai expor para a View?
+4.  **Dados**:
+    Seu app usará dados da Internet (Retrofit) ou salvará localmente (Room)? Justifique sua escolha baseada na utilidade do app.
 
 ## 🔴 Desafio
 
-5.  **Simulador de Banco de Dados**:
-    *   Crie uma classe `Conexao`.
-    *   Método `conectar()`: Retorna "Conectado ao MySQL".
-    *   Método `buscar(id)`: Retorna "Buscando usuário ID...".
-    *   Simule o processo de buscar um usuário e mostrar na tela.
+5.  **Checklist de Qualidade**:
+    Crie um checklist com 5 itens de UX/UI que você vai garantir no seu projeto final (ex: Modo Escuro, Feedback de cliques, Tratamento de erro de rede, etc).

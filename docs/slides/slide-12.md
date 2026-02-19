@@ -1,32 +1,37 @@
-# Linguagem C#
+# Aula 12 - UX e Material Design 3 🎨
 
 ---
 
-## Tópicos da Aula
-
-- Introdução ao tema
-- Conceitos fundamentais
-- Exemplos práticos
-- Exercícios de fixação
+## 💄 Material You (M3)
+- O design de "Papel e Tinta".
+- Foco em personalização (Dynamic Color).
+- Hierarquia clara e legível.
 
 ---
 
-## Conceito Chave
-
-> Definição importante sobre Linguagem C#.
-
----
-
-## Exemplo Prático
-
-```
-// Exemplo de código ou algoritmo
-escreva("Olá mundo!")
-```
+## 🌸 Cores Dinâmicas
+- O App "puxa" cores do papel de parede do usuário.
+- Interface mais harmônica com o sistema.
+- Acessibilidade de cores automática.
 
 ---
 
-## Conclusão
+## 🧱 Componentes Modernos
+- Floating Action Button (FAB).
+- Bottom Navigation.
+- Cards (Elevação e Bordas).
+- TopAppBar (Barra Superior).
 
-- Resumo do que aprendemos
-- Próximos passos
+---
+
+## 📈 Melhores Práticas UX
+- Feedback de toque (Ripples).
+- Tempos de espera com Loadings/Esqueletos.
+- Dark Mode é obrigatório.
+
+---
+
+## 🍎 Human Interface Guidelines (iOS)
+- O design da Apple foca em desfoque (Blur) e Minimalismo.
+- Material (Android) prefere sombras e elevação.
+- Dois caminhos, um objetivo: Usabilidade.

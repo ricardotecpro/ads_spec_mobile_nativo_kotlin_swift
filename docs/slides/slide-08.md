@@ -1,32 +1,37 @@
-# Funções
+# Aula 08 - Persistência de Dados 💾
 
 ---
 
-## Tópicos da Aula
-
-- Introdução ao tema
-- Conceitos fundamentais
-- Exemplos práticos
-- Exercícios de fixação
+## 📂 Opções de Armazenamento
+1.  **SharedPreferences**: Chaves e valores simples (Configurações).
+2.  **Room (SQLite)**: Banco de dados estruturado.
+3.  **Arquivos**: Fotos, textos longos.
 
 ---
 
-## Conceito Chave
-
-> Definição importante sobre Funções.
-
----
-
-## Exemplo Prático
-
-```
-// Exemplo de código ou algoritmo
-escreva("Olá mundo!")
-```
+## 🏢 Room Database
+- Abstração poderosa sobre o SQLite.
+- **Entity**: Tabela.
+- **DAO**: Métodos de acesso (SQL).
+- **Database**: O ponto de conexão.
 
 ---
 
-## Conclusão
+## 🧵 Threads e Banco de Dados
+- **PROIBIDO** acessar banco na Main Thread!
+- Use Coroutines ou threads separadas.
+- O Room obriga isso por padrão.
 
-- Resumo do que aprendemos
-- Próximos passos
+---
+
+## 🛠️ Migrations
+- O que fazer quando o banco muda?
+- Controle de versão do esquema.
+- Evite o crash na atualização.
+
+---
+
+## 🍎 Core Data e SwiftData (iOS)
+- iOS usa `Core Data` (equivalente ao Room).
+- Recentemente lançou o `SwiftData` (mais simples e moderno).
+- Ambos focam em persistir objetos locais.

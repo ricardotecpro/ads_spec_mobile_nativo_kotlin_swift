@@ -1,10 +1,14 @@
-# Projeto 05 - Jogo de Adivinhação 🎲
+# Projeto 05 - Layouts e Unidades 🎨
 
-**Objetivo**: Usar Loops e Aleatoriedade.
+**Objetivo**: Praticar a construção de interfaces complexas com diferentes ViewGroups.
 
 ## O Desafio
-1.  O computador "pensa" em um número de 1 a 100 (use função Random).
-2.  O usuário tenta adivinhar digitando um número.
-3.  O computador diz "O número secreto é MAIOR" ou "O número secreto é MENOR".
-4.  O jogo só acaba quando o usuário acertar.
-5.  No final, mostre: "Parabéns! Você acertou em X tentativas".
+Crie uma tela de "Detalhes de Produto" (tipo e-commerce) contendo:
+1.  **LinearLayout (Vertical)** para a estrutura principal.
+2.  **ImageView** no topo para a foto do produto.
+3.  **ConstraintLayout** para a área de informações (nome do produto à esquerda, preço à direita, ambos alinhados).
+4.  **Botão de "Comprar"** ocupando a largura total na parte inferior.
+5.  Use `dp` para margens (mínimo 16dp) e `sp` para o título do produto.
+
+## Dica
+Teste o seu layout em diferentes tamanhos de tela no emulador ou no Preview do Android Studio.

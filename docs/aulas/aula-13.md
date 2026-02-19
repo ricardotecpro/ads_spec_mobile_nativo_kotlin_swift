@@ -1,108 +1,112 @@
-# Aula 13 - Python e Ciência de Dados 🐍
+# Aula 13 - Sensores e Hardware �
 
 !!! tip "Objetivo"
-    **Objetivo**: Programar rápido, com poucas linhas e muita clareza. A linguagem favorita da IA e Data Science.
+    **Objetivo**: Aprender a acessar os recursos físicos do dispositivo, como Câmera, GPS (Localização) e Sensores de Movimento (Acelerômetro), entendendo o sistema de permissões em tempo de execução.
 
 ---
 
-## 1. Por que Python? 🚀
+## 1. O Mundo do Hardware �
 
-Python lê-se como inglês. Não usa chaves `{}` nem ponto-e-vírgula `;`. Usa **Indentação** (espaços).
-
-```python
-# Em Python
-if idade >= 18:
-    print("Maior")
-else:
-    print("Menor")
-```
-
-### Visualizando Estruturas de Dados (Mermaid)
-
-Python brilha com **Listas** e **Dicionários**.
-
-```mermaid
-graph LR;
-    subgraph Lista [Lista: Compras]
-    L0[0: Maçã] --- L1[1: Banana] --- L2[2: Uva]
-    end
-    
-    subgraph Dicionario [Dicionário: Pessoa]
-    D1[Chave: 'Nome'\nValor: 'Ana'] --- D2[Chave: 'Idade'\nValor: 25]
-    end
-    
-    style Lista fill:#bbf;
-    style Dicionario fill:#f9f;
-```
+Diferente da Web, o App Nativo tem acesso direto aos sensores do celular.
+Os principais são:
+*   **Movimento**: Acelerômetro, Giroscópio.
+*   **Posição**: GPS, Magnetômetro (Bússola).
+*   **Ambiente**: Luz, Barômetro (Pressão), Temperatura.
+*   **Interface**: Câmera, Microfone, Biometria (Digital/Rosto).
 
 ---
 
-## 2. Dicionários: A Chave do Sucesso 🔑
+## 2. Permissões (Permissions) 🔑
 
-Em C ou Java, usamos vetores. Em Python, usamos Dicionários (Chave: Valor). É extremamente rápido.
+No Android, as permissões são divididas em duas categorias:
 
-```python
-pessoa = {
-    "nome": "Ana",
-    "idade": 25,
-    "skills": ["Python", "SQL"]
+1.  **Normais**: Não oferecem risco à privacidade (ex: Bluetooth, Internet). Definidas apenas no `AndroidManifest.xml`.
+2.  **Perigosas**: Acessam dados sensíveis (ex: Câmera, GPS, Contatos). Precisam ser pedidas ao usuário **em tempo de execução** (pop-up).
+
+### Solicitando Permissão (Moderno)
+
+```kotlin
+val requestPermissionLauncher = registerForActivityResult(
+    ActivityResultContracts.RequestPermission()
+) { isGranted: Boolean ->
+    if (isGranted) {
+        // Permissão concedida! Abrir câmera...
+    } else {
+        // Permissão negada... explicar por que precisa.
+    }
 }
 
-print(pessoa["nome"]) # Ana
+// Chamar quando precisar
+requestPermissionLauncher.launch(Manifest.permission.CAMERA)
 ```
 
 ---
 
-## 3. Python Interativo (REPL) ⌨️
+## 3. Localização e GPS 🗺️
 
-Python é interpretado. Você pode testar ideias na hora.
+Para obter a localização, usamos o **Fused Location Provider** (parte do Google Play Services). Ele é mais inteligente e economiza bateria.
 
-<div data-termynal class="termy">
-    <span data-ty="input">python</span>
-    <span data-ty>>>> 2 + 2</span>
-    <span data-ty>4</span>
-    <span data-ty>>>> nome = "Ric"</span>
-    <span data-ty>>>> print(nome * 3)</span>
-    <span data-ty>RicRicRic</span>
-    <span data-ty>>>> exit()</span>
-</div>
+```kotlin
+val fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
-</div>
-
-### Executando Arquivos (.py)
-Para programas grandes, não usamos o REPL. Criamos um arquivo `app.py`:
-
-```python
-# app.py
-print("Iniciando sistema...")
-nome = input("Digite seu nome: ")
-print(f"Bem-vindo, {nome}!")
-```
-
-E rodamos no terminal:
-`<span class="termy">python app.py</span>`
-
----
-
-## 4. O Poder das Bibliotecas (Data Science) 📊
-
-Python tem bibliotecas para tudo.
-*   **Pandas**: Excel com esteroides.
-*   **Matplotlib**: Gráficos.
-
-```python
-import pandas as pd
-# dados = pd.read_csv("vendas.csv")
-# print(dados.describe())
+fusedLocationClient.lastLocation.addOnSuccessListener { location : Location? ->
+    // Got last known location. In some rare situations this can be null.
+    location?.let {
+        val lat = it.latitude
+        val long = it.longitude
+    }
+}
 ```
 
 ---
 
-## 5. Exercícios de Fixação 📝
+## 4. Sensores de Movimento 🎢
 
-1.  **Fácil**: Crie uma lista com 5 frutas e imprima a terceira.
-2.  **Médio**: Crie um dicionário para um `Carro` (marca, modelo, ano). Imprima "Meu carro é um [Modelo] de [Ano]".
-3.  **Desafio (Análise)**: Dada a lista `notas = [5.5, 8.0, 9.5, 4.0]`, use funções do Python (`sum`, `len`) para calcular a média e dizer se passou (Média >= 6).
+O Android usa o `SensorManager` para escutar dados do acelerômetro, por exemplo.
+
+```kotlin
+val sensorManager = getSystemService(Context.SENSOR_SERVICE) as SensorManager
+val sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
+
+val listener = object : SensorEventListener {
+    override fun onSensorChanged(event: SensorEvent?) {
+        val x = event?.values?.get(0) // Inclinação X
+        // ...
+    }
+    override fun onAccuracyChanged(s: Sensor?, a: Int) {}
+}
+
+sensorManager.registerListener(listener, sensor, SensorManager.SENSOR_DELAY_NORMAL)
+```
 
 ---
-**Próxima Aula**: Performance extrema e segurança de memória com [Rust e Go](./aula-14.md).
+
+## 5. Câmera (CameraX) 📸
+
+O Google criou a biblioteca **CameraX** para facilitar o uso da câmera, que era muito complexo antigamente. Ela lida com as diferenças entre fabricantes automaticamente.
+
+Principais casos de uso:
+1.  **Preview**: Ver a imagem na tela.
+2.  **Image Capture**: Tirar foto e salvar.
+3.  **Image Analysis**: Ler QR Code ou detectar rostos em tempo real.
+
+---
+
+## 6. Biometria (Impressão Digital) ☝️
+
+O `BiometricPrompt` exibe aquela janela padrão do sistema para o usuário colocar o dedo ou olhar para a câmera.
+
+### 🆚 Comparação: Core Motion e CameraControl (iOS)
+No iOS, o framework `Core Motion` lida com sensores, e a `AVFoundation` lida com a Câmera. O sistema de permissões do iOS é ainda mais rígido desde o início.
+
+---
+
+## 7. Desafio: O Detector de Balanço shake
+Crie um app que:
+1.  Escute o acelerômetro.
+2.  Se o valor de aceleração passar de um limite (usuário balançou o celular), mude a cor de fundo da tela para uma cor aleatória.
+3.  Imprima no Logcat: "Balanço detectado!".
+
+---
+
+**Próxima Aula**: Como garantir que seu código não quebre? [Testes e Debugging](./aula-14.md) 🐞

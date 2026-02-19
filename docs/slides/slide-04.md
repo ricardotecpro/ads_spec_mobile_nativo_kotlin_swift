@@ -1,32 +1,38 @@
-# Estrutura Condicional
+# Aula 04 - Estrutura de um App Android 🧱
 
 ---
 
-## Tópicos da Aula
-
-- Introdução ao tema
-- Conceitos fundamentais
-- Exemplos práticos
-- Exercícios de fixação
+## 📂 Anatomia do Projeto
+- **manifests/**: `AndroidManifest.xml`.
+- **java/** (ou kotlin/): Código fonte.
+- **res/**: Recursos (Layouts, Imagens, Strings).
 
 ---
 
-## Conceito Chave
-
-> Definição importante sobre Estrutura Condicional.
-
----
-
-## Exemplo Prático
-
-```
-// Exemplo de código ou algoritmo
-escreva("Olá mundo!")
-```
+## 📝 O Manifesto
+- O "RG" do aplicativo.
+- Declara Permissões.
+- Declara Telas (Activities).
+- Define o ícone e tema.
 
 ---
 
-## Conclusão
+## 🖼️ Recursos (Resources)
+- `layout/`: Arquivos XML de interface.
+- `drawable/`: Imagens e vetores.
+- `values/`: Strings, Cores, Dimensões.
+- **Dica**: Nunca use texto fixo no XML, use `strings.xml`.
 
-- Resumo do que aprendemos
-- Próximos passos
+---
+
+## 🐘 Gradle: O Motor de Busca
+- Gerenciador de dependências.
+- Configura o SDK e versões.
+- `build.gradle` (Project vs Module).
+
+---
+
+## 🏗️ Activities
+- Uma tela = Uma `Activity`.
+- Ciclo de Vida: `onCreate`, `onStart`, `onResume`...
+- Conexão código-interface (ViewBinding).

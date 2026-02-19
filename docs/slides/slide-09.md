@@ -1,32 +1,36 @@
-# Linguagem C
+# Aula 09 - Listas Eficientes 📋
 
 ---
 
-## Tópicos da Aula
-
-- Introdução ao tema
-- Conceitos fundamentais
-- Exemplos práticos
-- Exercícios de fixação
+## 🐢 O Problema da ListView
+- Carrega todos os itens de uma vez.
+- Trava a UI em listas longas.
+- Consumo alto de RAM.
 
 ---
 
-## Conceito Chave
-
-> Definição importante sobre Linguagem C.
-
----
-
-## Exemplo Prático
-
-```
-// Exemplo de código ou algoritmo
-escreva("Olá mundo!")
-```
+## ♻️ RecyclerView (O Reciclador)
+- Reaproveita as Views que saem da tela.
+- Cria apenas o necessário para preencher a visão.
+- Fluidez máxima.
 
 ---
 
-## Conclusão
+## 🛠️ O Trio de Ferro
+1.  **LayoutManager**: Como organizar os itens? (Linear, Grid).
+2.  **Adapter**: Quem coloca o dado na View?
+3.  **ViewHolder**: Quem guarda as referências da View?
 
-- Resumo do que aprendemos
-- Próximos passos
+---
+
+## 🚀 ListAdapter e DiffUtil
+- Identifica o que mudou na lista.
+- Atualiza apenas o item específico.
+- Animações automáticas e performance de ponta.
+
+---
+
+## 🍎 UITableView (iOS)
+- No iOS, usamos `UITableView` ou `UICollectionView`.
+- O padrão de "Cells" recicladas é o mesmo.
+- `onBindViewHolder` (Android) == `cellForRowAt` (iOS).

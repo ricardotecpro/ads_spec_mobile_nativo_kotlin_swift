@@ -1,10 +1,13 @@
-# Projeto 07 - Jogo da Velha (Tic-Tac-Toe) ⭕❌
+# Projeto 07 - Contador MVVM 🏗️
 
-**Objetivo**: Dominar Matrizes.
+**Objetivo**: Implementar a separação de responsabilidades com LiveData e ViewModel.
 
 ## O Desafio
-1.  Crie uma matriz 3x3 de caracteres, iniciando vazia.
-2.  Dois jogadores (X e O) jogam alternadamente.
-3.  A cada jogada, mostre o tabuleiro desenhado na tela.
-4.  Verifique se alguém ganhou (linha completa, coluna completa ou diagonal).
-5.  Verifique se deu "Velha" (tabuleiro cheio sem ganhador).
+Crie um aplicativo de "Contador de Cliques":
+1.  **View**: Um `TextView` mostrando o número e um `Button` (+1).
+2.  **ViewModel**: Deve conter um `MutableLiveData<Int>` para o contador.
+3.  **Lógica**: Ao clicar no botão, chame uma função no ViewModel que incrementa o valor.
+4.  **Observação**: A View deve observar o LiveData e atualizar o texto sempre que o valor mudar.
+
+## O Teste de Ouro
+Gire a tela do celular! Se o número se mantiver, seu ViewModel está configurado corretamente. 🔄

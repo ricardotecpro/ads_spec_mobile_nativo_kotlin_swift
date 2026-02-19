@@ -1,37 +1,22 @@
-# Guias de Instalação 🛠️
+# Ambientes de Desenvolvimento 🛠️
 
-Prepare seu ambiente de desenvolvimento.
+Guias para configurar seu computador para o desenvolvimento mobile.
 
 <div class="grid cards" markdown>
 
--   :material-laptop: **Ferramentas Iniciais**
-
+-   :material-android: **Android**
     ---
+    Instalação do Android Studio, SDK e emuladores.
+    - [Setup 01 - Android Studio](setup-01.md)
 
-    Comece por aqui.
-
-    - [Setup 01 - Lógica (VisualG)](setup-01.md)
-    - [Setup 02 - C / C++ (MinGW)](setup-02.md)
-    - [Setup 03 - Web (Node/VS Code)](setup-03.md)
-
--   :material-coffee: **Linguagens Corporativas**
-
+-   :material-apple: **iOS (Opcional/Referência)**
     ---
+    Configuração básica de Xcode e ferramentas Mac.
+    - [Setup 02 - Xcode Foundation](setup-02.md)
 
-    Para grandes sistemas.
-
-    - [Setup 04 - Java (JDK)](setup-04.md)
-    - [Setup 05 - .NET (SDK)](setup-05.md)
-    - [Setup 09 - PHP (XAMPP)](setup-09.md)
-
--   :material-rocket: **Sistemas e Mobile**
-
+-   :material-cog: **Ferramentas de Apoio**
     ---
-
-    Performance e Apps.
-
-    - [Setup 06 - Python](setup-06.md)
-    - [Setup 07 - Rust e Go](setup-07.md)
-    - [Setup 08 - Mobile (Flutter)](setup-08.md)
+    Git, Terminais e Postman/Insomnia para testes de API.
+    - [Setup 03 - Tools](setup-03.md)
 
 </div>

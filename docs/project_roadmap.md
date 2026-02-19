@@ -1,34 +1,28 @@
-# Roadmap do Projeto: Curso de Lógica e Algoritmos
+# Roadmap do Projeto: Curso Mobile Nativo 📱
 
-Este documento rastreia o progresso do desenvolvimento do curso de Lógica e Algoritmos.
+Este documento rastreia a evolução do curso.
 
-## ✅ Fase 1: Estruturação e Conteúdo Base (Concluído)
-- [x] Definição da ementa (16 aulas)
-- [x] Criação da estrutura de diretórios (`docs/aulas`, `docs/slides`, etc.)
-- [x] Geração de conteúdo inicial para todas as 16 aulas
-- [x] Geração de slides para todas as 16 aulas (Reveal.js)
-- [x] Criação de quizzes e exercícios básicos
+## ✅ Fase 1: Planejamento (Concluído)
+- [x] Definição Syllabus (16 Aulas)
+- [x] Estrutura Android first com paralelos iOS
+- [x] Configuração MkDocs Material
 
-## 🚧 Fase 2: Revisão e Polimento (Em Andamento)
-- [x] **Revisão Técnica**: Verificar precisão dos comandos Git.
-- [ ] **Revisão Pedagógica**: Melhorar clareza e fluxo das explicações.
-- [x] **Design e UX**:
-    - [x] Ajustar tema para cores do GitHub (Dark Mode).
-    - [x] Melhorar layout dos slides.
-    - [x] Padronizar imagens e diagramas (Mermaid).
-- [ ] **Interatividade**:
-    - [x] Adicionar quizzes interativos.
-    - [x] Criar projetos práticos.
+## ✅ Fase 2: Conteúdo Base (Concluído)
+- [x] Criação das 16 Aulas (Markdown)
+- [x] Criação dos 16 Quizzes (HTML)
+- [x] Criação dos 16 Conjuntos de Exercícios
+- [x] Criação dos 16 Slides (RevealJS)
 
-## 🚀 Fase 3: Automação e Deploy (Concluído)
-- [x] Configuração do MkDocs (`mkdocs.yml`).
-- [x] Configuração de automação de testes.
-- [x] Testes automatizados de build e links quebrados.
+## ✅ Fase 3: Projetos e UX (Concluído)
+- [x] Definição dos 16 Challenges/Projetos
+- [x] Aplicação de Material Design 3 no conteúdo
+- [x] Diagramação Mermaid de ciclo de vida e arquitetura
 
-## 📦 Fase 4: Lançamento
-- [x] Deploy final no GitHub Pages (branch `gh-pages`).
-- [ ] Divulgação inicial.
+## 🚀 Fase 4: Lançamento e Manutenção
+- [x] Deploy GitHub Pages
+- [ ] Atualização para novas versões SDK (Android 14+)
+- [ ] Inclusão de vídeos demonstrativos
 
 ---
-**Status Atual**: Fase 4 - Lançamento e Manutenção.
-**Última Atualização**: 16/02/2026
+**Status Atual**: Finalizado / Manutenção
+**Última Atualização**: 19/02/2026

@@ -1,32 +1,36 @@
-# Vetores
+# Aula 06 - Navegação e Intents 🗺️
 
 ---
 
-## Tópicos da Aula
-
-- Introdução ao tema
-- Conceitos fundamentais
-- Exemplos práticos
-- Exercícios de fixação
-
----
-
-## Conceito Chave
-
-> Definição importante sobre Vetores.
+## 🚀 O que é uma Intent?
+- O "mensageiro" do Android.
+- Solicita uma ação de outro componente.
+- **Explícita**: Abre uma Activity específica.
+- **Implícita**: Pede ao sistema (abrir link, câmera).
 
 ---
 
-## Exemplo Prático
-
-```
-// Exemplo de código ou algoritmo
-escreva("Olá mundo!")
-```
+## 📩 Passando Dados
+- Usamos `putExtra(chave, valor)`.
+- Na outra tela, recuperamos com `intent.get...Extra("chave")`.
+- **Dica**: Use nomes de chaves constantes.
 
 ---
 
-## Conclusão
+## 🥞 A Pilha de Telas (Back Stack)
+- Funciona como uma pilha (LIFO).
+- Nova Activity = Push.
+- Botão Voltar = Pop.
+- `finish()`: Fecha a tela atual.
 
-- Resumo do que aprendemos
-- Próximos passos
+---
+
+## 🏁 Ciclo de Vida na Navegação
+- `onPause()` -> `onStop()` (quando a tela sai de vista).
+- `onRestart()` -> `onStart()` -> `onResume()` (ao voltar).
+
+---
+
+## 🍎 Segues e Coordinators (iOS)
+- No iOS, a navegação é feita via `Segues` ou `UINavigationController`.
+- O conceito de pilha é idêntico.

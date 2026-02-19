@@ -1,105 +1,59 @@
-# Aula 16 - PHP e o Legado Web 🐘
+# Aula 16 - Projeto Final e Conclusão 🎓
 
 !!! tip "Objetivo"
-    **Objetivo**: Entender como a Web funciona de verdade. O ciclo Cliente-Servidor e por que o PHP ainda domina 77% da internet.
+    **Objetivo**: Aplicar TODO o conhecimento adquirido (Layouts, Navegação, MVVM, API, Banco de Dados, Sensores) na criação de um aplicativo completo e funcional de portfólio.
 
 ---
 
-## 1. O Ciclo da Web (Request/Response) 🌍
+## 1. O Desafio Final: "My Daily Companion" 🦸‍♂️
 
-Toda vez que você acessa um site, uma conversa acontece.
+Você deve criar um app que ajude o usuário no seu dia a dia. Escolha UM dos temas abaixo ou crie o seu:
 
-### Visualizando a Requisição (Mermaid)
-
-```mermaid
-sequenceDiagram
-    participant Chrome as Navegador (Cliente)
-    participant Server as Servidor (PHP/Apache)
-    participant DB as Banco de Dados (MySQL)
-    
-    Chrome->>Server: 1. Acessa site.com
-    Note right of Chrome: GET /index.php
-    Server->>DB: 2. Pede dados do usuário
-    DB-->>Server: 3. Retorna dados
-    Server->>Server: 4. Monta o HTML
-    Server-->>Chrome: 5. Devolve página HTML
-```
+1.  **App de Finanças**: Cadastra despesas, salva no Room, exibe lista com RecyclerView e totalizador.
+2.  **App de Clima**: Consome uma API (OpenWeather) baseada no GPS (Localização) do usuário.
+3.  **Catálogo de Livros/Games**: Consome uma API ou salva localmente as capas e detalhes, com busca e favoritos.
+4.  **App de Fitness**: Usa o contador de passos (sensor) e cronômetro para marcar exercícios.
 
 ---
 
-## 2. PHP: O Motor da Web Dinâmica ⚙️
+## 2. Requisitos Obrigatórios 📋
 
-O PHP roda no **Servidor**. O usuário nunca vê o código PHP, só o HTML que ele gera.
-
-```php
-<?php
-$nome = "Maria";
-echo "<h1>Olá, $nome!</h1>";
-?>
-```
-
-O navegador recebe apenas:
-```html
-<h1>Olá, Maria!</h1>
-```
-
-### Simulando um Servidor Local (Termynal)
-
-<div data-termynal class="termy">
-    <span data-ty="input">php -S localhost:8000</span>
-    <span data-ty="progress">PHP Development Server started...</span>
-    <span data-ty="progress">Listening on http://localhost:8000</span>
-    <span data-ty="progress">Press Ctrl-C to quit.</span>
-</div>
+O projeto deve conter obrigatoriamente:
+- [ ] **Arquitetura MVVM** (ViewModel + LiveData).
+- [ ] **Interface Material Design 3** (Cards, Botões, Cores consistentes).
+- [ ] **Navegação** entre pelo menos 2 telas (Lista e Detalhes).
+- [ ] **Persistência** (Room ou SharedPreferences) OU **Networking** (Retrofit).
+- [ ] **Boas Práticas**: Código limpo, strings traduzidas, Logcat para debug.
 
 ---
 
-## 3. Laravel: PHP Moderno 🚀
+## 3. Dicas para um Portfólio de Elite ✨
 
-Ninguém escreve PHP "puro" em grandes sistemas. Usamos frameworks como **Laravel**. Ele organiza tudo em **MVC** (Model, View, Controller).
-
-*   **Model**: Cuida do Banco de Dados.
-*   **View**: Cuida do HTML (Telas).
-*   **Controller**: O cérebro que liga os dois.
-
-### Visualizando MVC (Mermaid)
-
-```mermaid
-graph LR;
-    User["Usuário"] -->|Acessa URL| Route["Rotas"];
-    Route -->|Chama| Controller["Controlador"];
-    Controller -->|Busca Dados| Model["Modelo (Banco)"];
-    Model -->|Retorna| Controller;
-    Controller -->|Envia para Tela| View["Visualização"];
-    View -->|HTML Final| User;
-    
-    style Controller fill:#f9f;
-```
-
-```php
-// Exemplo Laravel (Rotas web.php)
-Route::get('/recados', function () {
-    $recados = Recado::all(); // Model
-    return view('lista_recados', ['recados' => $recados]); // View
-});
-```
+Para um recrutador olhar seu projeto e dizer "UAU":
+1.  **README.md no GitHub**: Explique o que o app faz, coloque prints/GIFs dele rodando e liste as tecnologias usadas.
+2.  **Dark Mode**: Suporte total ao modo escuro.
+3.  **Tratamento de Erros**: Se a internet cair, mostre uma tela bonita de "Ops!", não deixe o app branco.
+4.  **Animações**: Use o `MotionLayout` ou simples `ViewPropertyAnimator` para dar vida aos botões.
 
 ---
 
-## 4. Projeto Final: Mural de Recados 📌
+## 4. Onde continuar estudando? 📚
 
-Vamos fechar o curso conectando tudo.
-1.  **Banco**: Tabela `recados` (id, texto).
-2.  **PHP**: Conecta e busca os recados.
-3.  **HTML**: Mostra na tela.
+O mundo mobile não para. O que aprender agora?
+1.  **Jetpack Compose**: A nova forma de criar UI no Android (substituindo o XML).
+2.  **Kotlin Multiplatform (KMP)**: Use a mesma lógica Kotlin no Android e no iOS.
+3.  **SwiftUI**: Se quiser entrar de vez no mundo Apple.
+4.  **Dependency Injection (Hilt/Koin)**: Para projetos gigantes.
+
+---
+
+## 5. Mensagem Final 🌟
+
+Parabéns! Você saiu do ZERO e agora entende como as ferramentas que movem o mundo (apps) são construídas. O caminho é longo, mas a base que você construiu aqui é sólida como o Kernel Linux do Android.
+
+> "A melhor maneira de prever o futuro é inventá-lo." - *Steve Jobs* (e adaptado para os devs Mobile).
 
 ---
 
-## 5. Exercícios de Fixação 📝
-
-1.  **Fácil**: Crie um script PHP que mostre a data e hora atual.
-2.  **Médio**: Crie um formulário HTML que envie nome e idade para um script PHP, que deve responder "Pode entrar" ou "Barrado".
-3.  **Desafio (SQL + PHP)**: Desenhe o diagrama de como seria o sistema de login do Facebook (Cliente -> Servidor -> Banco).
-
----
-**Parabéns!** 🎓 Você completou o módulo teórico/prático. Agora é hora de botar a mão na massa nos [Projetos Finais](../projetos/index.md)!
+**FIM DO CURSO** 🚀🚀🚀
+Desejamos muito sucesso na sua jornada como Desenvolvedor Mobile Nativo!

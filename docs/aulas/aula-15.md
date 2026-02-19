@@ -1,102 +1,70 @@
-# Aula 15 - Desenvolvimento Mobile: Dart e Kotlin 📱
+# Aula 15 - Publicação e Google Play Store 🚀
 
 !!! tip "Objetivo"
-    **Objetivo**: Criar aplicativos que rodam no seu bolso. Entenda a diferença entre **Nativo** e **Multiplataforma**.
+    **Objetivo**: Conhecer o processo final de transformar seu código em um produto real, gerando o arquivo de produção (.aab), criando artes para a loja e entendendo os critérios de revisão.
 
 ---
 
-## 1. O Mundo Mobile 🌍
+## 1. APK vs AAB 📦
 
-Existem dois reis: **Android** (Google) e **iOS** (Apple).
-Para criar apps, temos dois caminhos:
-
-1.  **Nativo**: Escreve um código para cada (Kotlin para Android, Swift para iOS). Melhor performance, mas dobro do trabalho.
-2.  **Multiplataforma**: Escreve um código (Dart/Flutter, React Native) que roda nos dois.
-
-### Visualizando a Árvore de Widgets (Flutter/Mermaid)
-Em Flutter, TUDO é um Widget (um pedaço da tela). Eles se organizam como uma árvore.
-
-```mermaid
-graph TD;
-    App[MaterialApp] --> Home["Scaffold (Tela Principal)"];
-    Home --> AppBar[Barra Superior];
-    Home --> Body[Corpo: Coluna];
-    Body --> Text1["Texto 'Olá'"];
-    Body --> Button["Botão 'Clique'"];
-    
-    style App fill:#f9f;
-    style Home fill:#bbf;
-```
+*   **APK (Android Package)**: Formato antigo. É um "zip" com tudo dentro.
+*   **AAB (Android App Bundle)**: Formato moderno (obrigatório para novos apps). O Google Play usa o Bundle para gerar APKs otimizados para cada celular (só envia as imagens daquela densidade de tela, economizando espaço).
 
 ---
 
-## 2. Dart e Flutter 💙
+## 2. Preparando o App para Produção ⚙️
 
-Dart é a linguagem. Flutter é o framework (ferramenta).
-
-```dart
-import 'package:flutter/material.dart';
-
-void main() {
-  runApp(MeuApp());
-}
-
-class MeuApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: Text("Meu Primeiro App")),
-        body: Center(child: Text("Olá, Flutter!")),
-      ),
-    );
-  }
-}
-```
-
-### Simulando o Build (Termynal)
-
-<div data-termynal class="termy">
-    <span data-ty="input">flutter create meu_app</span>
-    <span data-ty="progress">Criando projeto...</span>
-    <span data-ty="input">flutter run</span>
-    <span data-ty="progress">Compilando para Android...</span>
-    <span data-ty="progress">Instalando no emulador...</span>
-    <span data-ty="progress">Aplicativo rodando!</span>
-</div>
-
-### 3. Gerenciando Estado (O Interativo) ⚡
-
-Aplicativos não são estáticos. Se você clica num botão e a tela muda, o **Estado** mudou.
-
-```mermaid
-graph LR;
-    User["Usuário Clica"] --> State["Estado Muda<br/>(Contador + 1)"];
-    State --> UI["Tela Redesenha<br/>(build)"];
-    
-    style State fill:#bfb;
-```
+1.  **Remover Logs**: Limpe os `Log.d` ou use bibliotecas como o **Timber** para gerenciar isso.
+2.  **Ofuscação (ProGuard/R8)**: Protege seu código contra pirataria e diminui o tamanho do app removendo código não usado.
+3.  **Versão**: Atualize o `versionCode` (número inteiro) e `versionName` (ex: "1.0.0") no `build.gradle`.
 
 ---
 
-## 4. Kotlin: O Poder do Android Nativo 🤖
+## 3. Gerando a Chave de Assinatura (Keystore) 🔑
 
-Kotlin é moderno, conciso e 100% compatível com Java. É a linguagem oficial do Google para Android.
-
-```kotlin
-fun main() {
-    val nome = "Android"
-    println("Olá, $nome!")
-}
-```
+O Android exige que todo app seja assinado digitalmente.
+**IMPORTANTE**: Se você perder o arquivo `.jks` (keystore), você nunca mais poderá atualizar seu app na loja. Guarde em 3 lugares diferentes! 💾
 
 ---
 
-## 4. Exercícios de Fixação 📝
+## 4. Google Play Console 🎮
 
-1.  **Fácil (Dart)**: Crie uma função em Dart que receba uma lista de preços e retorne o total.
-2.  **Médio (Flutter Conceitual)**: Desenhe a árvore de widgets da tela de login do Instagram (Logo, Campo Email, Campo Senha, Botão Entrar).
-3.  **Desafio (Kotlin)**: Crie uma classe `Celular` com método `ligar()`. Se a bateria estiver vazia, mostre erro.
+É o portal do desenvolvedor Google.
+*   **Custo**: Taxa única de **$25**.
+*   **Revisão**: O app passa por uma análise automatizada e humana (pode levar de 1 a 7 dias).
 
 ---
-**Próxima Aula**: Voltando para onde tudo começou (e onde a internet vive). [PHP e o Legado Web](./aula-16.md).
+
+## 5. Materiais para a Loja (Marketing) 🎨
+
+Você vai precisar de:
+1.  **Título e Descrição** (Curta e Longa).
+2.  **Ícone do App** (512x512).
+3.  **Feature Graphic** (1024x500 - Arte de destaque).
+4.  **Screenshots** (Capturas de tela do app rodando).
+
+---
+
+## 6. Testes Rápidos (Canais de Teste) 🧪
+
+Antes de lançar para o público geral, use os canais:
+*   **Teste Interno**: Para sua equipe (instantâneo).
+*   **Teste Fechado (Beta)**: Para convidados.
+*   **Teste Aberto**: Qualquer um pode baixar e testar.
+
+### 🆚 Comparação: App Store Connect e TestFlight (iOS)
+No iOS, a taxa é anual ($99). O portal chama-se `App Store Connect` e o app de testes oficial é o `TestFlight`. A revisão da Apple é conhecida por ser muito mais rigorosa que a do Google.
+
+---
+
+## 7. Desafio: Checklist de Lançamento ✅
+
+Imagine que você terminou seu app de Notas. Marque o que você faria ANTES de clicar em "Gerar AAB":
+- [ ] Deixar a senha do banco de dados exposta no código? (Espero que não! 😱)
+- [ ] Ativar o `minifyEnabled true` para encolher o código?
+- [ ] Testar em um celular físico real?
+- [ ] Verificar se as Strings estão traduzidas para PT-BR?
+
+---
+
+**Próxima Aula**: O grande final! [Projeto de Conclusão de Curso](./aula-16.md) 🎓

@@ -1,32 +1,35 @@
-# Matrizes
+# Aula 07 - Arquitetura Moderna (MVVM) 🏗️
 
 ---
 
-## Tópicos da Aula
-
-- Introdução ao tema
-- Conceitos fundamentais
-- Exemplos práticos
-- Exercícios de fixação
+## 😵 O problema da "God Activity"
+- Activities que fazem tudo (UI + Lógica + Banco).
+- Difícil de testar.
+- Difícil de manter.
 
 ---
 
-## Conceito Chave
-
-> Definição importante sobre Matrizes.
-
----
-
-## Exemplo Prático
-
-```
-// Exemplo de código ou algoritmo
-escreva("Olá mundo!")
-```
+## 🏗️ O Padrão MVVM
+1.  **Model**: Dados e Lógica de Negócios.
+2.  **View**: Activity/Fragment (Apenas mostra as coisas).
+3.  **ViewModel**: O cérebro. Guarda o estado e se comunica com o Model.
 
 ---
 
-## Conclusão
+## 🧠 ViewModel: A Vida Longa
+- Sobrevive à rotação da tela!
+- Não deve ter referências à View (evita Memory Leak).
 
-- Resumo do que aprendemos
-- Próximos passos
+---
+
+## 📡 LiveData
+- O dado "vivo".
+- A View "observa" o LiveData.
+- Quando o dado muda no ViewModel, a View atualiza sozinha.
+- Respeita o Ciclo de Vida.
+
+---
+
+## 🍎 MVVM no Swift
+- iOS usa muito MVVM com `Combine` ou `SwiftUI`.
+- `State` e `ObservableObject` no SwiftUI são os primos do LiveData.

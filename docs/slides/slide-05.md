@@ -1,32 +1,34 @@
-# Estruturas Repetitivas
+# Aula 05 - Interface Gráfica (UI) 🎨
 
 ---
 
-## Tópicos da Aula
-
-- Introdução ao tema
-- Conceitos fundamentais
-- Exemplos práticos
-- Exercícios de fixação
+## 🖼️ Views e ViewGroups
+- **View**: Um componente visual (Botão, Texto, Imagem).
+- **ViewGroup**: Um container que organiza as Views (Layout).
 
 ---
 
-## Conceito Chave
-
-> Definição importante sobre Estruturas Repetitivas.
-
----
-
-## Exemplo Prático
-
-```
-// Exemplo de código ou algoritmo
-escreva("Olá mundo!")
-```
+## 📏 Unidades de Medida
+- **dp** (Density-independent Pixels): Para tamanhos e margens.
+- **sp** (Scale-independent Pixels): Para textos (respeita a acessibilidade).
+- **Dica**: Nunca use `px`!
 
 ---
 
-## Conclusão
+## 📐 Layouts Principais
+- **LinearLayout**: Organiza em linha ou coluna.
+- **FrameLayout**: Empilha Views (uma sobre a outra).
+- **ConstraintLayout**: O mais poderoso. Flexível e plano.
 
-- Resumo do que aprendemos
-- Próximos passos
+---
+
+## 🎨 Estilos e Temas
+- `themes.xml`: Define a aparência global.
+- `styles.xml`: Reaproveita propriedades em várias Views.
+- Dark Mode automático.
+
+---
+
+## 🍎 Auto Layout (iOS)
+- No iOS, o `ConstraintLayout` é o equivalente ao `Auto Layout`.
+- Ambos usam "amarras" (constraints) para definir a posição.

@@ -1,32 +1,37 @@
-# Linguagem C++
+# Aula 10 - Mundo Conectado (API REST) 🌍
 
 ---
 
-## Tópicos da Aula
-
-- Introdução ao tema
-- Conceitos fundamentais
-- Exemplos práticos
-- Exercícios de fixação
+## 🔌 O que é uma API?
+- O garçom entre o App e o Servidor.
+- Formato **JSON** (Leve e universal).
+- Verbos HTTP: `GET`, `POST`, `PUT`, `DELETE`.
 
 ---
 
-## Conceito Chave
-
-> Definição importante sobre Linguagem C++.
-
----
-
-## Exemplo Prático
-
-```
-// Exemplo de código ou algoritmo
-escreva("Olá mundo!")
-```
+## 🚀 Retrofit: O Padrão Ouro
+- Transforma a API em uma Interface Kotlin.
+- Converte JSON -> Objeto automaticamente.
+- Gerencia o tempo da requisição.
 
 ---
 
-## Conclusão
+## 📝 Contrato da API
+- Mapeamento de rotas.
+- `@GET`, `@POST`.
+- `@Path` e `@Query` para parâmetros.
+- `@Body` para enviar dados.
 
-- Resumo do que aprendemos
-- Próximos passos
+---
+
+## 🔐 Permissões e Segurança
+- `INTERNET` permission no Manifesto.
+- HTTPS obrigatório (segurança).
+- Trate o erro 404, 500 e sem internet!
+
+---
+
+## 🍎 URLSession e Alamofire (iOS)
+- No iOS, `URLSession` é o nativo flexível.
+- `Alamofire` é a biblioteca mais comum.
+- `Codable` (iOS) == `Gson/Moshi` (Android).

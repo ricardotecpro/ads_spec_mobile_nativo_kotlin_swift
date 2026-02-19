@@ -1,32 +1,38 @@
-# Estrutura Sequencial
+# Aula 03 - Introdução ao Kotlin ⚡
 
 ---
 
-## Tópicos da Aula
-
-- Introdução ao tema
-- Conceitos fundamentais
-- Exemplos práticos
-- Exercícios de fixação
+## 🚀 A Linguagem Oficial
+- Google anunciou Kotlin como oficial em 2017.
+- Interoperável com Java.
+- Concisa, segura e moderna.
 
 ---
 
-## Conceito Chave
-
-> Definição importante sobre Estrutura Sequencial.
-
----
-
-## Exemplo Prático
-
-```
-// Exemplo de código ou algoritmo
-escreva("Olá mundo!")
-```
+## 🛡️ Null Safety: O fim do NPE
+- Tipos não-nulos por padrão.
+- Operador Safe Call `?.`.
+- Operador Elvis `?:`.
+- Operador Not-null Assertion `!!`.
 
 ---
 
-## Conclusão
+## ✍️ Sintaxe Moderna
+- `val` (Imutável) vs `var` (Mutável).
+- Data Classes (Adeus Getters/Setters!).
+- Funções como cidadãs de primeira classe.
 
-- Resumo do que aprendemos
-- Próximos passos
+---
+
+## 🧩 Funcionalidades Incríveis
+- String Templates.
+- Defaults Arguments.
+- Extension Functions.
+- Smart Casts.
+
+---
+
+## 🍎 Comparação com Swift
+- Kotlin e Swift são "irmãos de sintaxe".
+- Ambos focam em segurança de nulos e imutabilidade.
+- Quem aprende um, aprende o outro rápido!

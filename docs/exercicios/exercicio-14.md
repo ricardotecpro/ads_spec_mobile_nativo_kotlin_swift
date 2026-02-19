@@ -1,31 +1,18 @@
-# Exercícios 14 - Rust e Go 🦀🐹
-
-!!! tip "Objetivo"
-    **Objetivo**: Sistemas e Concorrência.
-
----
+# Exercícios 14 - Testes e Qualidade 🧪
 
 ## 🟢 Fáceis
 
-1.  **Rust Hello**: Instale o Rust e rode um "Olá Mundo" com `cargo run`.
-2.  **Go Hello**: Instale o Go e rode um "Olá Mundo" com `go run main.go`.
+1.  **Logcat**: Por que usar `Log.d()` em vez de `println()` no Android?
+2.  **Breakpoint**: O que acontece com a execução do código quando ele atinge um breakpoint no modo Debug?
 
 ## 🟡 Médios
 
-3.  **Ownership (Rust)**:
-    *   Crie uma String `s1 = "Teste"`.
-    *   Mova para `s2`.
-    *   Tente imprimir `s1` e veja o erro de compilação. Explique por que aconteceu.
-4.  **Goroutine Simples (Go)**:
-    *   Crie uma função que imprime "Processando..." 5 vezes com um delay de 1 segundo.
-    *   Chame-a com `go` na frente.
-    *   Chame-a normalmente na thread principal.
-    *   Veja as mensagens se misturarem.
+3.  **Pirâmide de Testes**:
+    Por que devemos ter mais Testes Unitários do que Testes de UI? Cite 2 razões.
+4.  **Espresso**:
+    Escreva uma linha de código usando Espresso para verificar se um botão com o ID `btn_salvar` está visível na tela.
 
 ## 🔴 Desafio
 
-5.  **Calculadora Segura (Rust)**:
-    *   Crie uma função de divisão que retorna um `Result<f64, String>`.
-    *   Se o divisor for 0, retorne `Err("Divisão por zero")`.
-    *   Senão, retorne `Ok(resultado)`.
-    *   No `main`, trate o erro com `match`.
+5.  **TDD (Test Driven Development)**:
+    Explique brevemente o ciclo "Red-Green-Refactor". Como essa prática ajuda a evitar bugs em aplicativos mobile que crescem muito rápido?

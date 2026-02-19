@@ -1,14 +1,14 @@
-# Projeto 11 - Banco Imobiliário Simplificado (Java) ☕
+# Projeto 11 - Simulador de Corrida (Async) 🏎️
 
-**Objetivo**: Orientação a Objetos na prática.
+**Objetivo**: Dominar o uso de Coroutines e CoroutineScopes.
 
 ## O Desafio
-1.  Classe `Jogador`: nome, saldo, posicao.
-2.  Classe `Propriedade`: nome, preco, aluguel, dono (Jogador).
-3.  No `main`:
-    *   Crie 2 jogadores.
-    *   Crie uma lista de propriedades.
-    *   Simule 10 rodadas de dados.
-    *   Se cair em propriedade sem dono -> Pode comprar.
-    *   Se cair em propriedade com dono -> Paga aluguel.
-4.  Mostre quem tem mais dinheiro no final.
+Simule dois carros correndo no log em paralelo:
+1.  Crie duas funções `suspend` que representam Carro A e Carro B.
+2.  Cada função deve fazer um loop de 1 a 10, com `delay()` aleatório entre as iterações.
+3.  Use o `viewModelScope.launch` para iniciar as duas coroutines simultaneamente.
+4.  Imprima no Logcat: "Carro A: 50m...", "Carro B: 60m...".
+5.  Ao final, mostre quem ganhou a corrida em um `TextView`.
+
+## Dica
+Use `withContext(Dispatchers.Main)` para atualizar o `TextView` quando a corrida terminar, caso esteja dentro do `Dispatchers.Default`.

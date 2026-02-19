@@ -1,33 +1,35 @@
 # Quizzes Interativos 🧠
 
-Teste seus conhecimentos rapidamente.
+Teste seus conhecimentos rapidamente ao final de cada módulo.
 
 <div class="grid cards" markdown>
 
--   :material-numeric-1-box: **Módulo 1: Fundamentos**
-
+-   :material-numeric-1-box: **Fase 1**
     ---
+    - [Quiz 01 - Intro](quiz-01.md)
+    - [Quiz 02 - Java vs Swift](quiz-02.md)
+    - [Quiz 03 - Kotlin](quiz-03.md)
+    - [Quiz 04 - Estrutura App](quiz-04.md)
 
-    - [Quiz 01 - Introdução](quiz-01.md)
-    - [Quiz 02 - Ambiente](quiz-02.md)
-    - [Quiz 03 - Sequencial](quiz-03.md)
-    - [Quiz 04 - Condicional](quiz-04.md)
-    - [Quiz 05 - Repetição](quiz-05.md)
-    - [Quiz 06 - Vetores](quiz-06.md)
-    - [Quiz 07 - Matrizes](quiz-07.md)
-    - [Quiz 08 - Modularização](quiz-08.md)
-
--   :material-numeric-2-box: **Módulo 2: O Poliglota**
-
+-   :material-numeric-2-box: **Fase 2**
     ---
+    - [Quiz 05 - UI/Layouts](quiz-05.md)
+    - [Quiz 06 - Navegação](quiz-06.md)
+    - [Quiz 07 - MVVM](quiz-07.md)
+    - [Quiz 08 - Persistência](quiz-08.md)
 
-    - [Quiz 09 - C / C++](quiz-09.md)
-    - [Quiz 10 - JS / TS](quiz-10.md)
-    - [Quiz 11 - Java](quiz-11.md)
-    - [Quiz 12 - .NET](quiz-12.md)
-    - [Quiz 13 - Python](quiz-13.md)
-    - [Quiz 14 - Rust / Go](quiz-14.md)
-    - [Quiz 15 - Mobile](quiz-15.md)
-    - [Quiz 16 - PHP](quiz-16.md)
+-   :material-numeric-3-box: **Fase 3**
+    ---
+    - [Quiz 09 - RecyclerView](quiz-09.md)
+    - [Quiz 10 - API REST](quiz-10.md)
+    - [Quiz 11 - Async/Threads](quiz-11.md)
+    - [Quiz 12 - UX/Material](quiz-12.md)
+
+-   :material-numeric-4-box: **Fase 4**
+    ---
+    - [Quiz 13 - Sensores](quiz-13.md)
+    - [Quiz 14 - Testes/Debug](quiz-14.md)
+    - [Quiz 15 - Publicação](quiz-15.md)
+    - [Quiz 16 - Revisão Final](quiz-16.md)
 
 </div>

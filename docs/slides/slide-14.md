@@ -1,32 +1,36 @@
-# Linguagem JavaScript
+# Aula 14 - Testes e Qualidade 🧪
 
 ---
 
-## Tópicos da Aula
-
-- Introdução ao tema
-- Conceitos fundamentais
-- Exemplos práticos
-- Exercícios de fixação
+## 🐞 O Caçador de Bugs
+- **Logcat**: Monitoramento em tempo real.
+- **Debugger**: Breakpoints e inspeção de memória.
+- Corrija o erro antes que o usuário veja.
 
 ---
 
-## Conceito Chave
-
-> Definição importante sobre Linguagem JavaScript.
-
----
-
-## Exemplo Prático
-
-```
-// Exemplo de código ou algoritmo
-escreva("Olá mundo!")
-```
+## 🏔️ A Pirâmide de Testes
+1.  **Unitários**: Funções puras (JVM).
+2.  **Integração**: Componentes conversando.
+3.  **UI (Espresso)**: Clicando em botões no App.
 
 ---
 
-## Conclusão
+## 🛡️ Estabilidade: Try/Catch
+- Evite o Crash!
+- Mensagens amigáveis para o usuário.
+- Tratamento de exceções comuns.
 
-- Resumo do que aprendemos
-- Próximos passos
+---
+
+## 🧪 Espresso na Prática
+- `onView`: Encontra o item.
+- `perform`: Executa a ação (click, type).
+- `check`: Wagner as asserções.
+
+---
+
+## 🍎 XCTest (iOS)
+- Framework nativo da Apple.
+- Testes Unitários e UI integrados no Xcode.
+- A filosofia é idêntica ao Android.

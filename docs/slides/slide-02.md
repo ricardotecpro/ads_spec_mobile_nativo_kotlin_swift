@@ -1,32 +1,36 @@
-# Introdução à Programação
+# Aula 02 - Fundamentos Java para Mobile ☕
 
 ---
 
-## Tópicos da Aula
-
-- Introdução ao tema
-- Conceitos fundamentais
-- Exemplos práticos
-- Exercícios de fixação
+## 🏗️ A Base do Android
+- Android nasceu com Java.
+- Máquina Virtual Dalvik / ART.
+- A herança do Java no Android moderno.
 
 ---
 
-## Conceito Chave
-
-> Definição importante sobre Introdução à Programação.
-
----
-
-## Exemplo Prático
-
-```
-// Exemplo de código ou algoritmo
-escreva("Olá mundo!")
-```
+## 📝 Sintaxe Básica
+- Tipos Primitivos vs Objetos.
+- `String`, `int`, `boolean`.
+- O papel do `final` (Imutabilidade).
 
 ---
 
-## Conclusão
+## 🏢 Orientação a Objetos (POO)
+- Classes e Objetos.
+- Atributos e Métodos.
+- Construtores.
 
-- Resumo do que aprendemos
-- Próximos passos
+---
+
+## 📦 Pilares do POO
+- **Encapsulamento**: `private`, `public`.
+- **Herança**: `extends`.
+- **Polimorfismo**: Interfaces e Sobrescrita.
+
+---
+
+## 🆚 Java vs Swift
+- No iOS (Swift), usamos `class` e `struct`.
+- Java é 100% focado em classes para lógica.
+- Diferenças de sintaxe em coleções (`List` vs `Array`).

@@ -1,13 +1,16 @@
-# Projeto 14 - Chat via Terminal (Go/Rust) 🦀🐹
+# Projeto 14 - Suíte de Testes 🧪
 
-**Objetivo**: Concorrência e Canais.
+**Objetivo**: Garantir a qualidade do código com Testes Automatizados.
 
-## O Desafio (Go)
-1.  Crie uma função `servidor(canal)` que recebe mensagens e imprime "Servidor recebeu: X".
-2.  Crie 3 Goroutines `clientes`, cada uma enviando 5 mensagens para o canal.
-3.  Faça o servidor processar todas concorrentemente.
+## O Desafio
+1.  Crie uma classe `Validador` com funções para:
+    - Validar se um E-mail é válido (contém @ e .).
+    - Validar se uma Senha tem pelo menos 6 caracteres.
+2.  Crie testes unitários para essas funções cobrindo casos de sucesso e falha.
+3.  Crie um teste de UI com **Espresso** para:
+    - Digitar um e-mail inválido.
+    - Clicar no botão entrar.
+    - Verificar se a mensagem de erro aparece na tela.
 
-## O Desafio (Rust - Alternativo)
-1.  Crie um programa que use Threads para contar até 10 milhões.
-2.  Divida o trabalho em 4 threads.
-3.  Use um `Mutex` ou canais para somar o total final com segurança.
+## O que entregar?
+O código da classe de teste e um print dos testes passando (barra verde no Android Studio!). ✅

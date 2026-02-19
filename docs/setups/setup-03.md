@@ -1,28 +1,30 @@
-# Setup 03: Web Moderno (JS/TS) 🌐
+# Setup 03: Ferramentas de Apoio 🛠️
 
-## 1. Node.js
-O motor que roda JavaScript fora do navegador.
-1.  Baixe a versão **LTS** em [nodejs.org](https://nodejs.org/).
-2.  Instale (Next, Next, Finish).
-3.  Teste no terminal: `node -v` e `npm -v`.
+Além da IDE, você precisará de ferramentas para gerenciar código e testar dados.
 
-## 2. Visual Studio Code
-O editor padrão da indústria.
-1.  Baixe em [code.visualstudio.com](https://code.visualstudio.com/).
-2.  Instale extensões úteis:
-    *   **Live Server**: Para rodar HTML localmente.
-    *   **Prettier**: Para formatar código.
-    *   **ESLint**: Para encontrar erros.
+## 1. Git e GitHub
+Essencial para versionamento.
+*   **Download**: [git-scm.com](https://git-scm.com/).
+*   **Configuração Inicial**:
+    ```bash
+    git config --global user.name "Seu Nome"
+    git config --global user.email "seu@email.com"
+    ```
 
-## 3. TypeScript
-Após instalar o Node.js, instale o compilador TS globalmente:
-```bash
-npm install -g typescript
-```
-Teste com `tsc -v`.
+## 2. Postman ou Insomnia
+Para testar as APIs REST antes de escrever código Kotlin/Swift.
+*   **Postman**: [postman.com](https://www.postman.com/).
+*   **Insomnia**: [insomnia.rest](https://insomnia.rest/).
 
-## 4. Solução de Problemas Comuns ⚠️
+## 3. Vysor (Opcional)
+Para espelhar a tela do seu celular real no computador (via cabo USB).
+*   **Acesso**: [vysor.io](https://www.vysor.io/).
 
-*   **cmd 'node' não encontrado**: Reinicie seu terminal ou computador após instalar o Node.js.
-*   **Erro de Permissão no npm**: Tente executar o terminal como Administrador ou use o `nvm` para gerenciar versões.
-*   **Code Runner não funciona**: Verifique se o Node está no PATH. Tente rodar manualmente no terminal: `node arquivo.js`.
+## 4. ADB (Android Debug Bridge)
+Já vem com o Android Studio, mas é útil no PATH do sistema.
+*   Permite instalar APKs via terminal: `adb install app.apk`.
+*   Permite ver logs detalhados: `adb logcat`.
+
+## 5. Flipper (Meta)
+Uma ferramenta avançada para debugar bancos de dados SQLite e chamadas de rede direto na interface visual.
+*   **Acesso**: [fbflipper.com](https://fbflipper.com/).
