@@ -5669,7 +5669,29 @@ O <strong>DiffUtil</strong> compara a lista velha com a nova e atualiza só o qu
 </span></code></pre></div>
 Sem isso, o app crasha com <code>SecurityException</code>.<p></p>
 <hr>
-<h2 id="aulas-aula-10-6-ferramentas-uteis">6. Ferramentas Úteis 🛠️</h2>
+<h2 id="aulas-aula-10-6-autenticacao-e-seguranca">6. Autenticação e Segurança 🔐</h2>
+<p>Apps reais quase sempre precisam de login. Os padrões mais comuns são:</p>
+<ol>
+<li><strong>Basic Auth</strong>: Envia usuário e senha em cada pedido (Inseguro sozinho).</li>
+<li><strong>Bearer Token (JWT)</strong>: Após o login, o servidor devolve um "Token". Você envia esse token no cabeçalho (Header) de todas as próximas chamadas.</li>
+<li><strong>OAuth2</strong>: Padrão para "Login com Google/Facebook".</li>
+</ol>
+<h3 id="aulas-aula-10-adicionando-token-no-retrofit-interceptor">Adicionando Token no Retrofit (Interceptor)</h3>
+<p>Não precisamos colocar o token manualmente em cada função. Usamos um <code>Interceptor</code> do OkHttp:</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#aulas-aula-10-__codelineno-6-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">client</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">OkHttpClient</span><span class="p">.</span><span class="na">Builder</span><span class="p">().</span><span class="na">addInterceptor</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">chain</span><span class="w"> </span><span class="o">-&gt;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#aulas-aula-10-__codelineno-6-2"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">novoRequest</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">chain</span><span class="p">.</span><span class="na">request</span><span class="p">().</span><span class="na">newBuilder</span><span class="p">()</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#aulas-aula-10-__codelineno-6-3"></a><span class="w">        </span><span class="p">.</span><span class="na">addHeader</span><span class="p">(</span><span class="s">"Authorization"</span><span class="p">,</span><span class="w"> </span><span class="s">"Bearer </span><span class="si">$</span><span class="n">MEU_TOKEN</span><span class="s">"</span><span class="p">)</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#aulas-aula-10-__codelineno-6-4"></a><span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">()</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#aulas-aula-10-__codelineno-6-5"></a><span class="w">    </span><span class="n">chain</span><span class="p">.</span><span class="na">proceed</span><span class="p">(</span><span class="n">novoRequest</span><span class="p">)</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#aulas-aula-10-__codelineno-6-6"></a><span class="p">}.</span><span class="na">build</span><span class="p">()</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#aulas-aula-10-__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#aulas-aula-10-__codelineno-6-8"></a><span class="kd">val</span><span class="w"> </span><span class="nv">retrofit</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Retrofit</span><span class="p">.</span><span class="na">Builder</span><span class="p">()</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#aulas-aula-10-__codelineno-6-9"></a><span class="w">    </span><span class="p">.</span><span class="na">client</span><span class="p">(</span><span class="n">client</span><span class="p">)</span><span class="w"> </span><span class="c1">// Vincula o cliente customizado</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#aulas-aula-10-__codelineno-6-10"></a><span class="w">    </span><span class="p">.</span><span class="na">baseUrl</span><span class="p">(...)</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#aulas-aula-10-__codelineno-6-11"></a><span class="w">    </span><span class="p">.</span><span class="na">build</span><span class="p">()</span>
+</span></code></pre></div>
+<hr>
+<h2 id="aulas-aula-10-7-ferramentas-uteis">7. Ferramentas Úteis 🛠️</h2>
 <ul>
 <li><strong>Postman / Insomnia</strong>: Para testar a API antes de codar.</li>
 <li><strong>Mocky.io</strong>: Para criar APIs falsas (Mock) para teste.</li>
@@ -5764,7 +5786,19 @@ Se você colocar um código que demora 5 segundos na Main Thread (ex: baixar ima
 3.  A requisição de rede é abortada.
 4.  Nenhum crash acontece por tentar atualizar uma tela que não existe mais.</p>
 <hr>
-<h2 id="aulas-aula-11-6-desafio-simulador-de-corrida">6. Desafio: Simulador de Corrida 🏎️</h2>
+<h2 id="aulas-aula-11-6-comunicacao-em-tempo-real-sockets">6. Comunicação em Tempo Real (Sockets) 🔌</h2>
+<p>Enquanto o REST (Aula 10) é como um "pedido e resposta", o <strong>Socket (TCP)</strong> é como uma ligação telefônica: o canal fica aberto.</p>
+<ul>
+<li><strong>Full-Duplex</strong>: Tanto o servidor quanto o app podem enviar dados a qualquer momento.</li>
+<li><strong>Casos de Uso</strong>: Chats, Jogos Online, Cotações de Bolsa em tempo real.</li>
+<li><strong>Biblioteca Recomendada</strong>: <code>Socket.io</code> ou <code>WebSockets</code> nativo.</li>
+</ul>
+<blockquote>
+<p>[!NOTE]
+Trabalhar com Sockets exige cuidado redobrado com o <strong>ciclo de vida</strong>. Se o app for para o background, você deve decidir se mantém o socket aberto ou fecha para economizar bateria.</p>
+</blockquote>
+<hr>
+<h2 id="aulas-aula-11-7-desafio-simulador-de-corrida">7. Desafio: Simulador de Corrida 🏎️</h2>
 <p>Crie uma função <code>suspend fun corrida()</code> que:
 1.  Imprima "Preparar..."
 2.  Espere 1 segundo (<code>delay(1000)</code> - nota: <code>delay</code> não trava a thread, <code>Thread.sleep</code> trava!).
@@ -5932,7 +5966,29 @@ Os principais são:
 2.  <strong>Image Capture</strong>: Tirar foto e salvar.
 3.  <strong>Image Analysis</strong>: Ler QR Code ou detectar rostos em tempo real.</p>
 <hr>
-<h2 id="aulas-aula-13-6-biometria-impressao-digital">6. Biometria (Impressão Digital) ☝️</h2>
+<h2 id="aulas-aula-13-6-bluetooth-e-dispositivos-embarcados">6. Bluetooth e Dispositivos Embarcados 🔵</h2>
+<p>Muitas vezes o app precisa falar com um Arduino, ESP32 ou fone de ouvido.
+*   <strong>Bluetooth Classic</strong>: Para áudio e transferência de arquivos grande.
+*   <strong>BLE (Bluetooth Low Energy)</strong>: Para sensores e wearables. Economiza muita bateria.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#aulas-aula-13-__codelineno-3-1"></a><span class="c1">// Exemplo simplificado de scan</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#aulas-aula-13-__codelineno-3-2"></a><span class="kd">val</span><span class="w"> </span><span class="nv">bluetoothAdapter</span><span class="p">:</span><span class="w"> </span><span class="n">BluetoothAdapter? </span><span class="o">=</span><span class="w"> </span><span class="n">BluetoothAdapter</span><span class="p">.</span><span class="na">getDefaultAdapter</span><span class="p">()</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#aulas-aula-13-__codelineno-3-3"></a><span class="n">bluetoothAdapter</span><span class="o">?.</span><span class="na">startDiscovery</span><span class="p">()</span><span class="w"> </span>
+</span></code></pre></div>
+<hr>
+<h2 id="aulas-aula-13-7-telefonia-e-sms">7. Telefonia e SMS 📞</h2>
+<p>O Android permite que seu app interaja com as funções de telefone.
+*   <strong>Fazer Chamadas</strong>: Precisa de permissão <code>CALL_PHONE</code>.
+*   <strong>Enviar SMS</strong>: Use <code>SmsManager</code>.</p>
+<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#aulas-aula-13-__codelineno-4-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">smsManager</span><span class="p">:</span><span class="w"> </span><span class="n">SmsManager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SmsManager</span><span class="p">.</span><span class="na">getDefault</span><span class="p">()</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#aulas-aula-13-__codelineno-4-2"></a><span class="n">smsManager</span><span class="p">.</span><span class="na">sendTextMessage</span><span class="p">(</span><span class="s">"numero"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="s">"Olá Mundo!"</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span>
+</span></code></pre></div>
+<hr>
+<h2 id="aulas-aula-13-8-mapas-e-orientacao">8. Mapas e Orientação 🗺️</h2>
+<p>Além de saber a latitude, podemos mostrar isso visualmente.
+*   <strong>Google Maps SDK</strong>: A biblioteca padrão para exibir mapas, desenhar rotas e colocar marcadores.
+*   <strong>Geocoding</strong>: Transformar coordenadas (lat/long) em endereços reais (Rua X, nº 10).</p>
+<hr>
+<h2 id="aulas-aula-13-9-biometria-impressao-digital">9. Biometria (Impressão Digital) ☝️</h2>
 <p>O <code>BiometricPrompt</code> exibe aquela janela padrão do sistema para o usuário colocar o dedo ou olhar para a câmera.</p>
 <h3 id="aulas-aula-13-comparacao-core-motion-e-cameracontrol-ios">🆚 Comparação: Core Motion e CameraControl (iOS)</h3>
 <p>No iOS, o framework <code>Core Motion</code> lida com sensores, e a <code>AVFoundation</code> lida com a Câmera. O sistema de permissões do iOS é ainda mais rígido desde o início.</p>
@@ -6482,6 +6538,8 @@ Desejamos muito sucesso na sua jornada como Desenvolvedor Mobile Nativo!</p></bo
     O que acontece se o campo no JSON for <code>"user_name"</code> (snake_case) e na sua data class for <code>val userName: String</code> (camelCase)? Como o Retrofit/Gson sabe mapear isso? (Pesquise sobre anotação <code>@SerializedName</code>).</li>
 <li><strong>Threading</strong>:
     O Retrofit (com Coroutines) precisa que você use <code>withContext(Dispatchers.IO)</code> manualmente na chamada, ou ele já faz isso por baixo dos panos?</li>
+<li><strong>Autenticação</strong>:
+    Se uma API exige um token JWT no cabeçalho <code>Authorization</code>, como você configuraria o Retrofit para enviar esse token em todas as requisições sem repetir código? (Pesquise sobre <code>OkHttp Interceptors</code>).</li>
 </ol>
 <h2 id="exercicios-exercicio-10-desafio">🔴 Desafio</h2>
 <ol>
@@ -6508,6 +6566,8 @@ Desejamos muito sucesso na sua jornada como Desenvolvedor Mobile Nativo!</p></bo
     c) Atualizar um TextView (UI).</li>
 <li><strong>Suspensão</strong>:
     O que acontece com a Thread Principal quando ela encontra uma função <code>suspend</code> que chama <code>delay(5000)</code>? Ela trava por 5 segundos ou continua livre para desenhar a tela?</li>
+<li><strong>Sockets vs REST</strong>:
+    Explique a principal diferença entre uma comunicação REST e uma comunicação via Sockets (TCP). Quando você escolheria usar Sockets em vez de REST em um aplicativo Android?</li>
 </ol>
 <h2 id="exercicios-exercicio-11-desafio">🔴 Desafio</h2>
 <ol>
@@ -6564,11 +6624,14 @@ Desejamos muito sucesso na sua jornada como Desenvolvedor Mobile Nativo!</p></bo
     Para que serve o método <code>registerListener</code>? O que acontece se esquecermos de chamar o <code>unregisterListener</code> no <code>onStop()</code> ou <code>onDestroy()</code> da Activity?</li>
 <li><strong>CameraX</strong>:
     Cite os 3 principais casos de uso (Use Cases) da biblioteca CameraX e para que servem.</li>
+<li><strong>Bluetooth e SMS</strong>:
+    a) Qual a diferença entre Bluetooth Classic e Bluetooth Low Energy (BLE) em termos de consumo de bateria e casos de uso?
+    b) Quais as classes principais no Android para enviar um SMS e para gerenciar a conexão Bluetooth?</li>
 </ol>
 <h2 id="exercicios-exercicio-13-desafio">🔴 Desafio</h2>
 <ol>
-<li><strong>Privacidade</strong>:
-    Se o usuário negar uma permissão perigosa (ex: Câmera) e marcar "Não perguntar novamente", como o desenvolvedor deve agir para que o usuário possa reativar essa permissão? É possível abrir o pop-up de novo direto pelo código?</li>
+<li><strong>Geocoding e Mapas</strong>:
+    Se você tem a latitude e longitude de um usuário, como você faria para descobrir o nome da rua e o número (endereço completo)? Qual o nome do processo e da classe que faz isso no Android?</li>
 </ol></body></html></section><section class="print-page" id="exercicios-exercicio-14" heading-number="4.15"><html><head>
         <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', function () {

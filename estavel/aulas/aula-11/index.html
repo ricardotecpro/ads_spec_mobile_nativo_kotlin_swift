@@ -1080,10 +1080,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-desafio-simulador-de-corrida" class="md-nav__link">
+  <a href="#6-comunicacao-em-tempo-real-sockets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Desafio: Simulador de Corrida 🏎️
+        6. Comunicação em Tempo Real (Sockets) 🔌
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-desafio-simulador-de-corrida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Desafio: Simulador de Corrida 🏎️
       
     </span>
   </a>
@@ -3560,10 +3571,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-desafio-simulador-de-corrida" class="md-nav__link">
+  <a href="#6-comunicacao-em-tempo-real-sockets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Desafio: Simulador de Corrida 🏎️
+        6. Comunicação em Tempo Real (Sockets) 🔌
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-desafio-simulador-de-corrida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Desafio: Simulador de Corrida 🏎️
       
     </span>
   </a>
@@ -3665,7 +3687,19 @@ Se você colocar um código que demora 5 segundos na Main Thread (ex: baixar ima
 3.  A requisição de rede é abortada.
 4.  Nenhum crash acontece por tentar atualizar uma tela que não existe mais.</p>
 <hr>
-<h2 id="6-desafio-simulador-de-corrida">6. Desafio: Simulador de Corrida 🏎️</h2>
+<h2 id="6-comunicacao-em-tempo-real-sockets">6. Comunicação em Tempo Real (Sockets) 🔌</h2>
+<p>Enquanto o REST (Aula 10) é como um "pedido e resposta", o <strong>Socket (TCP)</strong> é como uma ligação telefônica: o canal fica aberto.</p>
+<ul>
+<li><strong>Full-Duplex</strong>: Tanto o servidor quanto o app podem enviar dados a qualquer momento.</li>
+<li><strong>Casos de Uso</strong>: Chats, Jogos Online, Cotações de Bolsa em tempo real.</li>
+<li><strong>Biblioteca Recomendada</strong>: <code>Socket.io</code> ou <code>WebSockets</code> nativo.</li>
+</ul>
+<blockquote>
+<p>[!NOTE]
+Trabalhar com Sockets exige cuidado redobrado com o <strong>ciclo de vida</strong>. Se o app for para o background, você deve decidir se mantém o socket aberto ou fecha para economizar bateria.</p>
+</blockquote>
+<hr>
+<h2 id="7-desafio-simulador-de-corrida">7. Desafio: Simulador de Corrida 🏎️</h2>
 <p>Crie uma função <code>suspend fun corrida()</code> que:
 1.  Imprima "Preparar..."
 2.  Espere 1 segundo (<code>delay(1000)</code> - nota: <code>delay</code> não trava a thread, <code>Thread.sleep</code> trava!).
@@ -3697,7 +3731,7 @@ Se você colocar um código que demora 5 segundos na Main Thread (ex: baixar ima
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 21:44:50 UTC">19 de fevereiro de 2026 21:44:50</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 22:29:02 UTC">19 de fevereiro de 2026 22:29:02</span>
   </span>
 
     
