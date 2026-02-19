@@ -4,90 +4,90 @@
 
 <div class="quiz-container">
   <div class="quiz-question">1. O que significa a sigla MVVM?</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto!">Model - View - ViewModel</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Model - View - ViewMap</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Mobile - View - VirtualMachine</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Main - View - VisualModel</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. MVVM é o padrão de arquitetura recomendado pelo Google para apps Android modernos.">Mobile View Variable Model</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! MVVM é o padrão de arquitetura recomendado pelo Google para apps Android modernos.">Model - View - ViewModel</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. MVVM é o padrão de arquitetura recomendado pelo Google para apps Android modernos.">Master View Visual Machine</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. MVVM é o padrão de arquitetura recomendado pelo Google para apps Android modernos.">Multiple View Version Method</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">2. No MVVM, quem deve conter a lógica de negócios e estado da tela?</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto. A View é "burra".">A View (Activity)</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! É o cérebro.">O ViewModel</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">O XML</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">O Adapter</div>
+  <div class="quiz-question">2. Na arquitetura MVVM, qual é a responsabilidade da camada VIEW?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. A View deve ser "burra" e apenas refletir o estado enviado pelo ViewModel.">Realizar cálculos matemáticos complexos.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. A View deve ser "burra" e apenas refletir o estado enviado pelo ViewModel.">Salvar dados no banco de dados.</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! A View deve ser "burra" e apenas refletir o estado enviado pelo ViewModel.">Apenas exibir a interface e reagir a eventos do usuário (toques), sem lógica de negócio.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. A View deve ser "burra" e apenas refletir o estado enviado pelo ViewModel.">Gerenciar a conexão de rede.</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">3. Qual o principal benefício do ViewModel em relação à rotação de tela?</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto. ViewModel não desenha.">Ele rotaciona junto com a tela automaticamente</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Ele sobrevive à destruição da Activity.">Ele não é destruído quando a Activity é recriada</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Ele impede a rotação da tela</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Ele formata o layout</div>
+  <div class="quiz-question">3. Qual componente é responsável por sobreviver a mudanças de configuração (como girar a tela) e guardar os dados da UI?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O ViewModel foi criado para ter um ciclo de vida mais longo que a Activity, retendo dados durante recriações.">Activity</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O ViewModel foi criado para ter um ciclo de vida mais longo que a Activity, retendo dados durante recriações.">Intent</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! O ViewModel foi criado para ter um ciclo de vida mais longo que a Activity, retendo dados durante recriações.">ViewModel</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O ViewModel foi criado para ter um ciclo de vida mais longo que a Activity, retendo dados durante recriações.">Fragment</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">4. O que é `LiveData`?</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Um banco de dados em tempo real</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Observável e ciente do ciclo de vida.">Um container de dados observável que respeita o ciclo de vida</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Uma thread separada</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Um plugin de vídeo</div>
+  <div class="quiz-question">4. O que é o "LiveData"?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O LiveData avisa a View quando um dado muda, mas só se a View estiver ativa.">Um serviço de streaming do Android.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O LiveData avisa a View quando um dado muda, mas só se a View estiver ativa.">Um tipo de bateria de longa duração.</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! O LiveData avisa a View quando um dado muda, mas só se a View estiver ativa.">Um container de dados observável que respeita o ciclo de vida da Activity/Fragment.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O LiveData avisa a View quando um dado muda, mas só se a View estiver ativa.">O banco de dados em tempo real do Google.</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">5. A View (Activity) deve ter uma referência direta ao Model (Banco/API)?</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto. Isso viola a separação.">Sim, para ser mais rápido</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Quem fala com o Model é o ViewModel.">Não, ela deve falar apenas com o ViewModel</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Depende do tamanho do app</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Sim, mas só para leitura</div>
+  <div class="quiz-question">5. Qual a vantagem de uma Activity "Observar" (observe) um dado no ViewModel em vez de pedir o dado manualmente?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O padrão Observer garante que sempre que o dado mudar no ViewModel, a tela se atualize sozinha.">Gasta menos internet.</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! O padrão Observer garante que sempre que o dado mudar no ViewModel, a tela se atualize sozinha.">Garante que a UI esteja sempre sincronizada com os dados reais automaticamente.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O padrão Observer garante que sempre que o dado mudar no ViewModel, a tela se atualize sozinha.">Aumenta a velocidade do processador.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O padrão Observer garante que sempre que o dado mudar no ViewModel, a tela se atualize sozinha.">Deleta o cache do app.</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">6. Qual o problema da "God Activity" (Activity Deus)?</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Difícil de manter e testar.">Classe gigante que faz tudo (UI, Lógica, Banco)</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Ter muitas Activities no projeto</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Usar nomes religiosos no código</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Uma Activity que não fecha</div>
+  <div class="quiz-question">6. Onde deve ficar a lógica de busca de dados (seja de uma API ou Banco)?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Separação de conceitos: dados ficam no Model, lógica de UI no ViewModel, e exibição na View.">No método onCreate da Activity.</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Separação de conceitos: dados ficam no Model, lógica de UI no ViewModel, e exibição na View.">No Model (frequentemente gerenciado por um Repository).</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Separação de conceitos: dados ficam no Model, lógica de UI no ViewModel, e exibição na View.">Dentro do arquivo XML de layout.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Separação de conceitos: dados ficam no Model, lógica de UI no ViewModel, e exibição na View.">No arquivo AndroidManifest.</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">7. Como a Activity recebe atualizações do ViewModel?</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Polling (perguntando toda hora)</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Padrão Observer.">Observando (observing) o LiveData</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Recebendo um callback via Interface Java</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Via BroadcastReceiver</div>
+  <div class="quiz-question">7. Por que a arquitetura MVVM facilita a escrita de "Testes Unitários"?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Podemos testar o ViewModel em um computador simples, sem precisar de um celular/emulador ligado.">Porque você não precisa testar nada.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Podemos testar o ViewModel em um computador simples, sem precisar de um celular/emulador ligado.">Porque o Kotlin testa o código sozinho.</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Podemos testar o ViewModel em um computador simples, sem precisar de um celular/emulador ligado.">Porque a lógica está isolada no ViewModel, que não depende de componentes visuais do Android para rodar.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Podemos testar o ViewModel em um computador simples, sem precisar de um celular/emulador ligado.">Porque o projeto fica com menos arquivos.</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">8. É uma boa prática passar Contexto (Activity) para o ViewModel?</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto. Isso causa Memory Leak! Ja que o ViewModel vive mais que a Activity.">Sim, sem problemas</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! ViewModel não deve referenciar View/Context.">Não, pois pode causar vazamento de memória (Memory Leak)</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Sim, se for SoftReference</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Depende da versão do Android</div>
+  <div class="quiz-question">8. O que acontece com o ViewModel quando a Activity que o criou é destruída definitivamente (ex: usuário apertou voltar)?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O ViewModel morre quando sua View associada morre definitivamente (não por rotação).">Ele fica na memória para sempre.</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! O ViewModel morre quando sua View associada morre definitivamente (não por rotação).">Ele também é destruído (limpo) para liberar memória.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O ViewModel morre quando sua View associada morre definitivamente (não por rotação).">Ele se move para outro aplicativo.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O ViewModel morre quando sua View associada morre definitivamente (não por rotação).">Ele reinicia o celular.</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">9. Qual a camada responsável por fornecer dados (Repository)?</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto!">Model</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">View</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">ViewModel</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Controller</div>
+  <div class="quiz-question">9. Como o ViewModel se comunica de volta com a Activity no MVVM?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O ViewModel nunca deve ter uma referência direta para a Activity, evitando vazamentos de memória.">Chamando `activity.updateUI()`.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O ViewModel nunca deve ter uma referência direta para a Activity, evitando vazamentos de memória.">Usando uma Intent.</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! O ViewModel nunca deve ter uma referência direta para a Activity, evitando vazamentos de memória.">Através de LiveData ou StateFlow (Fluxo de dados observável).</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O ViewModel nunca deve ter uma referência direta para a Activity, evitando vazamentos de memória.">Enviando um e-mail.</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">10. O `MutableLiveData` tem qual diferença para o `LiveData`?</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">É mais rápido</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto!">Permite alterar o valor (.value ou .postValue)</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">É thread-safe por padrão</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Suporta apenas Strings</div>
+  <div class="quiz-question">10. No iOS moderno (SwiftUI), qual é o conceito que mais se assemelha ao ViewModel operando com LiveData?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O SwiftUI usa o padrão de reatividade onde a View se redesenha automaticamente quando um estado observado muda.">Structs</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O SwiftUI usa o padrão de reatividade onde a View se redesenha automaticamente quando um estado observado muda.">@IBAction</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! O SwiftUI usa o padrão de reatividade onde a View se redesenha automaticamente quando um estado observado muda.">@ObservableObject ou @StateObject</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O SwiftUI usa o padrão de reatividade onde a View se redesenha automaticamente quando um estado observado muda.">Core Graphics</div>
   <div class="quiz-feedback"></div>
 </div>

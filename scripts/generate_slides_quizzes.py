@@ -1,8 +1,5 @@
-"""
-Script para gerar automaticamente todos os slides HTML e quizzes interativos
-Baseado nos formatos antigos que funcionavam
-"""
 import pathlib
+import re
 from rich import print
 from rich.progress import track
 
@@ -14,7 +11,7 @@ def generate_slide_html(lesson_number: int) -> str:
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula {lesson_number:02d} - Python Backend</title>
+    <title>Aula {lesson_number:02d} - Desenvolvimento Mobile Nativo</title>
     
     <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reset.css">
     <link rel="stylesheet" href="https://unpkg.com/reveal.js@4.5.0/dist/reveal.css">
@@ -51,65 +48,86 @@ def generate_slide_html(lesson_number: int) -> str:
             plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
         }});
 
-        // Ocultar atalhos em tela cheia
         function updateShortcutsVisibility() {{
-            console.log('fullscreenchange event detected');
             const isFullscreen = document.fullscreenElement || 
                                  document.webkitFullscreenElement || 
                                  document.mozFullScreenElement || 
                                  document.msFullscreenElement;
-            console.log('isFullscreen:', !!isFullscreen);
             
             const shortcuts = document.querySelector('.reveal-shortcuts');
             if (shortcuts) {{
                 shortcuts.style.display = isFullscreen ? 'none' : 'block';
-                console.log('Set display to:', shortcuts.style.display);
-            }} else {{
-                console.log('Shortcuts element not found');
             }}
         }}
 
         document.addEventListener('fullscreenchange', updateShortcutsVisibility);
         document.addEventListener('webkitfullscreenchange', updateShortcutsVisibility);
-        document.addEventListener('mozfullscreenchange', updateShortcutsVisibility);
-        document.addEventListener('MSFullscreenChange', updateShortcutsVisibility);
     </script>
 </body>
 </html>
 '''
 
 
-def clean_slide_markdown(md_path: pathlib.Path) -> None:
-    """Remove frontmatter YAML dos slides markdown"""
-    content = md_path.read_text(encoding='utf-8')
+def convert_quiz_md_to_html(md_content: str) -> str:
+    """Converte o formato MarkDown de quiz para o formato HTML interativo"""
+    # Regex para capturar Perguntas, Opções e Explicações
+    # 1. Título
+    title_match = re.search(r'# (.*)', md_content)
+    title = title_match.group(1) if title_match else "Quiz"
     
-    # Remove frontmatter se existir
-    if content.startswith('---'):
-        parts = content.split('---', 2)
-        if len(parts) >= 3:
-            # Remove tudo até o segundo ---
-            content = parts[2].lstrip()
-            
-            # Remove comentários Marp
-            lines = content.split('\n')
-            cleaned_lines = [line for line in lines if not line.strip().startswith('<!-- _class:')]
-            content = '\n'.join(cleaned_lines)
-            
-            md_path.write_text(content, encoding='utf-8')
-            print(f"  [green]✓[/green] Limpou frontmatter de {md_path.name}")
+    html_output = [f"# {title}\n", '--8<-- "assets/quiz.html"\n']
+    
+    # Split by questions
+    questions = re.split(r'\n\d+\. ', md_content)
+    if not questions[0].strip().startswith('1.'):
+        # The first element might be the title, discard it if it doesn't have a question
+        questions = questions[1:]
+    else:
+        # If it starts with 1., the first split will have it
+        questions[0] = questions[0].replace('1. ', '', 1)
+
+    for i, q_block in enumerate(questions, 1):
+        lines = q_block.strip().split('\n')
+        if not lines: continue
+        
+        question_text = lines[0].strip()
+        options = []
+        explanation = ""
+        
+        for line in lines[1:]:
+            line = line.strip()
+            if line.startswith('- ['):
+                is_correct = 'x' in line.lower()[:5]
+                option_text = line[line.find(']')+1:].strip()
+                options.append((option_text, is_correct))
+            elif line.startswith('*Explicação:'):
+                explanation = line.replace('*Explicação:', '').strip('*').strip()
+        
+        # Build HTML
+        html_output.append('<div class="quiz-container">')
+        html_output.append(f'  <div class="quiz-question">{i}. {question_text}</div>')
+        
+        for opt_text, is_correct in options:
+            correct_attr = "true" if is_correct else "false"
+            feedback = f"✅ Correto! {explanation}" if is_correct else f"❌ Incorreto. {explanation}"
+            html_output.append(f'  <div class="quiz-option" data-correct="{correct_attr}" data-feedback="{feedback}">{opt_text}</div>')
+        
+        html_output.append('  <div class="quiz-feedback"></div>')
+        html_output.append('</div>\n')
+        
+    return "\n".join(html_output)
 
 
 def generate_all_slides():
     """Gera arquivos HTML para todos os 16 slides"""
     slides_dst_dir = pathlib.Path('docs/slides')
-    slides_src_dir = slides_dst_dir / '.src'
+    slides_src_dir = slides_dst_dir / 'src'
     
     if not slides_src_dir.exists():
-        print("[yellow]⚠ Pasta docs/slides/.src/ não encontrada.[/yellow]")
+        print("[yellow]⚠ Pasta docs/slides/src/ não encontrada.[/yellow]")
         return
     
     print("\n[bold cyan]📊 Gerando Slides HTML...[/bold cyan]")
-    print(f"Fonte: {slides_src_dir}")
     
     for i in track(range(1, 17), description="Processando slides..."):
         src_md_name = f"slide-{i:02d}.md"
@@ -118,63 +136,58 @@ def generate_all_slides():
         html_path = slides_dst_dir / f"slide-{i:02d}.html"
         
         if src_md_path.exists():
-            # 1. Ler fonte
             content = src_md_path.read_text(encoding='utf-8')
             
-            # 2. Limpar (opcional, se já estiver limpo não faz mal)
-            # A função clean_slide_markdown era in-place, vamos fazer em memória aqui ou adaptar
-            # Para simplificar, copiamos e limpamos no destino
+            # 1. Corrigir fragmentos: transformar { .fragment } em <!-- .element: class="fragment" -->
+            # Isso permite usar uma sintaxe mais limpa no source
+            content = content.replace('{ .fragment }', '<!-- .element: class="fragment" -->')
             
-            # Remove frontmatter se existir
+            # 2. Remover frontmatter (YAML) se existir, mas manter os comentários de slide do Reveal.js
             if content.startswith('---'):
                 parts = content.split('---', 2)
                 if len(parts) >= 3:
-                    content = parts[2].lstrip()
-                    lines = content.split('\n')
-                    cleaned_lines = [line for line in lines if not line.strip().startswith('<!-- _class:')]
-                    content = '\n'.join(cleaned_lines)
+                    # Se houver YAML no topo (comum em arquivos Markdown), removemos para não quebrar o Reveal.js
+                    # Mas atenção: o split('---', 2) pode remover o primeiro slide se o arquivo começa com --- separador de slide
+                    # No Reveal.js, slides costumam ser separados por ---. Se o arquivo começa com ---, ele pode ser YAML ou o primeiro slide.
+                    # Vamos assumir que se começa com --- e termina com --- logo depois, é YAML.
+                    header = parts[1]
+                    if 'title:' in header or 'author:' in header:
+                        content = parts[2].lstrip()
             
-            # 3. Escrever Markdown runtime em docs/slides/
             dst_md_path.write_text(content, encoding='utf-8')
-            
-            # 4. Gerar HTML referenciando este markdown
-            html_content = generate_slide_html(i)
-            html_path.write_text(html_content, encoding='utf-8')
-        else:
-            print(f"[yellow]⚠ Fonte {src_md_path} não encontrada[/yellow]")
+            html_path.write_text(generate_slide_html(i), encoding='utf-8')
+
+
+def generate_all_quizzes():
+    """Gera arquivos HTML para todos os 16 quizzes"""
+    quizzes_dst_dir = pathlib.Path('docs/quizzes')
+    quizzes_src_dir = quizzes_dst_dir / 'src'
     
-    print(f"[green]✓ {16} slides HTML e MD gerados com sucesso![/green]")
-
-
-def convert_quiz_to_html(quiz_number: int) -> str:
-    """Lê quiz markdown e retorna versão HTML (placeholder - precisa ser implementado)"""
-    # Por enquanto retorna template básico
-    # Você precisará implementar a conversão real baseado no conteúdo
-    return f'''# Quiz {quiz_number:02d}
-
---8<-- "assets/quiz.html"
-
-<!-- Adicione as perguntas aqui no formato HTML -->
-<div class="quiz-container">
-  <div class="quiz-question">Pergunta de exemplo</div>
-  <div class="quiz-option" data-correct="true" data-feedback="Correto!">Opção correta</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Opção incorreta</div>
-  <div class="quiz-feedback"></div>
-</div>
-'''
+    if not quizzes_src_dir.exists():
+        print("[yellow]⚠ Pasta docs/quizzes/src/ não encontrada.[/yellow]")
+        return
+    
+    print("\n[bold magenta]📝 Gerando Quizzes Interativos...[/bold magenta]")
+    
+    for i in track(range(1, 17), description="Processando quizzes..."):
+        src_md_name = f"quiz-{i:02d}.md"
+        src_md_path = quizzes_src_dir / src_md_name
+        dst_md_path = quizzes_dst_dir / src_md_name
+        
+        if src_md_path.exists():
+            content = src_md_path.read_text(encoding='utf-8')
+            html_quiz = convert_quiz_md_to_html(content)
+            dst_md_path.write_text(html_quiz, encoding='utf-8')
 
 
 def main():
-    """Função principal"""
-    print("[bold]🚀 Automação de Slides e Quizzes[/bold]")
+    print("[bold]🚀 Automação de Conteúdo: Mobile Nativo[/bold]")
     print("=" * 50)
     
     generate_all_slides()
+    generate_all_quizzes()
     
-    print("\n[yellow]⚠ Nota:[/yellow] Quizzes precisam ser convertidos manualmente")
-    print("  Use o template em docs/quizzes/quiz-01.md como referência")
-    
-    print("\n[green]✅ Automação concluída![/green]")
+    print("\n[green]✅ Conteúdo gerado com sucesso![/green]")
 
 
 if __name__ == '__main__':

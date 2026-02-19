@@ -1,93 +1,93 @@
-# Quiz 02 - Fundamentos Java ☕
+# Quiz 02 - Fundamentos de Java para Android ☕
 
 --8<-- "assets/quiz.html"
 
 <div class="quiz-container">
-  <div class="quiz-question">1. Qual a convenção de nomenclatura para classes em Java?</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Ex: MinhaClasse.">PascalCase (Primeira letra maiúscula)</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">camelCase</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">snake_case</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">kebab-case</div>
+  <div class="quiz-question">1. Por que o Java ainda é importante para o desenvolvimento Android, mesmo com a existência do Kotlin?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O ecossistema Android tem mais de uma década de código Java robusto que todo desenvolvedor precisa saber navegar.">Porque o Kotlin vai deixar de existir em 2025.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O ecossistema Android tem mais de uma década de código Java robusto que todo desenvolvedor precisa saber navegar.">Porque o Java é mais rápido que o Kotlin.</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! O ecossistema Android tem mais de uma década de código Java robusto que todo desenvolvedor precisa saber navegar.">Porque a maior parte do sistema Android e de bibliotecas legadas foi escrita em Java.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O ecossistema Android tem mais de uma década de código Java robusto que todo desenvolvedor precisa saber navegar.">Porque o Google proibiu o uso de Kotlin em apps profissionais.</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">2. O que acontece se uma variável `Integer` (Wrapper) for nula e você tentar somar +1?</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">O resultado é 1</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">O resultado é null</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! O temido NPE.">NullPointerException</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Erro de compilação</div>
+  <div class="quiz-question">2. Em Java, qual é a sintaxe correta para declarar uma variável de texto?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. No Java clássico, usamos o tipo explícito com a primeira letra maiúscula (String é uma Classe).">text nome = "Android";</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. No Java clássico, usamos o tipo explícito com a primeira letra maiúscula (String é uma Classe).">var nome : String = "Android";</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! No Java clássico, usamos o tipo explícito com a primeira letra maiúscula (String é uma Classe).">String nome = "Android";</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. No Java clássico, usamos o tipo explícito com a primeira letra maiúscula (String é uma Classe).">string nome = 'Android';</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">3. Qual palavra-chave é usada para herança em Java?</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto. É do C#.">inherits</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto!">extends</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto. Uma classe implementa interface.">implements</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto. É do Python.">def</div>
+  <div class="quiz-question">3. O que acontece se você tentar rodar o código `int x = null;` em Java?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Tipos primitivos como int, double e boolean não podem ser nulos no Java.">O valor de x será 0.</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Tipos primitivos como int, double e boolean não podem ser nulos no Java.">Ocorrerá um erro de compilação, pois tipos primitivos (int) não aceitam null.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Tipos primitivos como int, double e boolean não podem ser nulos no Java.">O programa rodará normalmente.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Tipos primitivos como int, double e boolean não podem ser nulos no Java.">O valor de x será indefinido.</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">4. Diferente do Swift, o Java exige o uso de ponto e vírgula no final das instruções?</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! É obrigatório.">Sim, obrigatório</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Não, é opcional</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Apenas em loops</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Apenas na declaração de variáveis</div>
+  <div class="quiz-question">4. Qual o comando usado para imprimir uma mensagem no console/Logcat em Java?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. System.out.println é o comando padrão de saída do Java SE.">print("Olá");</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. System.out.println é o comando padrão de saída do Java SE.">echo "Olá";</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! System.out.println é o comando padrão de saída do Java SE.">System.out.println("Olá");</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. System.out.println é o comando padrão de saída do Java SE.">console.log("Olá");</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">5. "void" no método significa que:</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">O método é vazio (sem código)</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Não retorna valor.">O método não retorna nada</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">O método é privado</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">O método é estático</div>
+  <div class="quiz-question">5. O que define uma Classe em Java?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Classes definem os atributos e comportamentos que os objetos criados a partir delas terão.">É apenas um arquivo de texto qualquer.</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Classes definem os atributos e comportamentos que os objetos criados a partir delas terão.">É um molde ou planta para criar objetos.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Classes definem os atributos e comportamentos que os objetos criados a partir delas terão.">É um comando de repetição.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Classes definem os atributos e comportamentos que os objetos criados a partir delas terão.">É um sinônimo de variável.</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">6. Qual lista é dinâmica e mais usada que o Array comum em Java?</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">ListArray</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto!">ArrayList</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Variadic</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">ObjectList</div>
+  <div class="quiz-question">6. Qual modificador de acesso torna um atributo visível apenas dentro da própria classe?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Private garante o encapsulamento, protegendo os dados de acessos externos indevidos.">public</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Private garante o encapsulamento, protegendo os dados de acessos externos indevidos.">protected</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Private garante o encapsulamento, protegendo os dados de acessos externos indevidos.">private</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Private garante o encapsulamento, protegendo os dados de acessos externos indevidos.">static</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">7. Como se declara uma constante em Java?</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto. É do JS/TS ou C#.">const</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto. É do Swift/Kotlin.">val / let</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto!">final</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">static</div>
+  <div class="quiz-question">7. Em Android, o que é uma "Activity"?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Quase toda tela que você vê em um app Android é uma subclasse de Activity.">Uma rotina de exercícios físicos.</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Quase toda tela que você vê em um app Android é uma subclasse de Activity.">Uma classe que representa uma tela do aplicativo.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Quase toda tela que você vê em um app Android é uma subclasse de Activity.">O banco de dados do celular.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Quase toda tela que você vê em um app Android é uma subclasse de Activity.">Uma conexão com a internet.</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">8. Qual a visibilidade padrão (se não escrever public nem private) em Java?</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Private</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! (Package-private).">Package-Private (Visível no pacote)</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Public</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Protected</div>
+  <div class="quiz-question">8. Qual o método principal que o Android chama quando uma Activity é iniciada?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O onCreate é onde definimos o layout e inicializamos a lógica da nossa tela.">main()</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O onCreate é onde definimos o layout e inicializamos a lógica da nossa tela.">start()</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! O onCreate é onde definimos o layout e inicializamos a lógica da nossa tela.">onCreate()</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O onCreate é onde definimos o layout e inicializamos a lógica da nossa tela.">onStop()</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">9. Qual símbolo representa "Ou Lógico" em Java?</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto. É E.">&&</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Pipe duplo.">||</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">or</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">!=</div>
+  <div class="quiz-question">9. Para que serve o comando `extends` em Java?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Herança permite reutilizar código. Ex: MainActivity extends Activity.">Para aumentar o tamanho da tela.</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! Herança permite reutilizar código. Ex: MainActivity extends Activity.">Para realizar Herança, fazendo uma classe herdar características de outra.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Herança permite reutilizar código. Ex: MainActivity extends Activity.">Para importar uma biblioteca.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. Herança permite reutilizar código. Ex: MainActivity extends Activity.">Para deletar um objeto.</div>
   <div class="quiz-feedback"></div>
 </div>
 
 <div class="quiz-container">
-  <div class="quiz-question">10. Classes em Java herdam implicitamente de qual classe?</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">Main</div>
-  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! A mãe de todas.">Object</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">String</div>
-  <div class="quiz-option" data-correct="false" data-feedback="Incorreto.">System</div>
+  <div class="quiz-question">10. O que significa "Compilar" um código Java?</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O compilador Java (javac) gera os arquivos .class ou .dex que o Android consegue ler.">Traduzir o código para Português.</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O compilador Java (javac) gera os arquivos .class ou .dex que o Android consegue ler.">Enviar o app para a loja oficial.</div>
+  <div class="quiz-option" data-correct="true" data-feedback="✅ Correto! O compilador Java (javac) gera os arquivos .class ou .dex que o Android consegue ler.">Transformar o código escrito por humanos em Bytecode (entendido pela Máquina Virtual).</div>
+  <div class="quiz-option" data-correct="false" data-feedback="❌ Incorreto. O compilador Java (javac) gera os arquivos .class ou .dex que o Android consegue ler.">Deletar os comentários do programa.</div>
   <div class="quiz-feedback"></div>
 </div>
