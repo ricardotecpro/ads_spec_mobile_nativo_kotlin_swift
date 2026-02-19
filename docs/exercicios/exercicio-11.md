@@ -14,9 +14,11 @@
     c) Atualizar um TextView (UI).
 4.  **Suspensão**:
     O que acontece com a Thread Principal quando ela encontra uma função `suspend` que chama `delay(5000)`? Ela trava por 5 segundos ou continua livre para desenhar a tela?
+5.  **Sockets vs REST**:
+    Explique a principal diferença entre uma comunicação REST e uma comunicação via Sockets (TCP). Quando você escolheria usar Sockets em vez de REST em um aplicativo Android?
 
 ## 🔴 Desafio
 
-5.  **Race Condition (Condição de Corrida)**:
+6.  **Race Condition (Condição de Corrida)**:
     Duas coroutines tentam alterar a mesma variável `contador = 0` ao mesmo tempo. Ambas leem 0, somam 1 e salvam 1. O resultado final é 1, mas deveria ser 2.
     *   Como resolver isso em Kotlin (Mutex, Atomic, ou Single Thread)?

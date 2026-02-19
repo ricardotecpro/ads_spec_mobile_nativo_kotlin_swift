@@ -90,7 +90,20 @@ Uma das maiores vantagens. Se o usuário sair da tela no meio do download:
 
 ---
 
-## 6. Desafio: Simulador de Corrida 🏎️
+## 6. Comunicação em Tempo Real (Sockets) 🔌
+
+Enquanto o REST (Aula 10) é como um "pedido e resposta", o **Socket (TCP)** é como uma ligação telefônica: o canal fica aberto.
+
+*   **Full-Duplex**: Tanto o servidor quanto o app podem enviar dados a qualquer momento.
+*   **Casos de Uso**: Chats, Jogos Online, Cotações de Bolsa em tempo real.
+*   **Biblioteca Recomendada**: `Socket.io` ou `WebSockets` nativo.
+
+> [!NOTE]
+> Trabalhar com Sockets exige cuidado redobrado com o **ciclo de vida**. Se o app for para o background, você deve decidir se mantém o socket aberto ou fecha para economizar bateria.
+
+---
+
+## 7. Desafio: Simulador de Corrida 🏎️
 
 Crie uma função `suspend fun corrida()` que:
 1.  Imprima "Preparar..."

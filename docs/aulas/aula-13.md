@@ -92,7 +92,42 @@ Principais casos de uso:
 
 ---
 
-## 6. Biometria (Impressão Digital) ☝️
+## 6. Bluetooth e Dispositivos Embarcados 🔵
+
+Muitas vezes o app precisa falar com um Arduino, ESP32 ou fone de ouvido.
+*   **Bluetooth Classic**: Para áudio e transferência de arquivos grande.
+*   **BLE (Bluetooth Low Energy)**: Para sensores e wearables. Economiza muita bateria.
+
+```kotlin
+// Exemplo simplificado de scan
+val bluetoothAdapter: BluetoothAdapter? = BluetoothAdapter.getDefaultAdapter()
+bluetoothAdapter?.startDiscovery() 
+```
+
+---
+
+## 7. Telefonia e SMS 📞
+
+O Android permite que seu app interaja com as funções de telefone.
+*   **Fazer Chamadas**: Precisa de permissão `CALL_PHONE`.
+*   **Enviar SMS**: Use `SmsManager`.
+
+```kotlin
+val smsManager: SmsManager = SmsManager.getDefault()
+smsManager.sendTextMessage("numero", null, "Olá Mundo!", null, null)
+```
+
+---
+
+## 8. Mapas e Orientação 🗺️
+
+Além de saber a latitude, podemos mostrar isso visualmente.
+*   **Google Maps SDK**: A biblioteca padrão para exibir mapas, desenhar rotas e colocar marcadores.
+*   **Geocoding**: Transformar coordenadas (lat/long) em endereços reais (Rua X, nº 10).
+
+---
+
+## 9. Biometria (Impressão Digital) ☝️
 
 O `BiometricPrompt` exibe aquela janela padrão do sistema para o usuário colocar o dedo ou olhar para a câmera.
 

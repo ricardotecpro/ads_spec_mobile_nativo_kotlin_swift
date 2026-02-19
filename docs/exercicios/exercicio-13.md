@@ -11,8 +11,11 @@
     Para que serve o método `registerListener`? O que acontece se esquecermos de chamar o `unregisterListener` no `onStop()` ou `onDestroy()` da Activity?
 4.  **CameraX**:
     Cite os 3 principais casos de uso (Use Cases) da biblioteca CameraX e para que servem.
+5.  **Bluetooth e SMS**:
+    a) Qual a diferença entre Bluetooth Classic e Bluetooth Low Energy (BLE) em termos de consumo de bateria e casos de uso?
+    b) Quais as classes principais no Android para enviar um SMS e para gerenciar a conexão Bluetooth?
 
 ## 🔴 Desafio
 
-5.  **Privacidade**:
-    Se o usuário negar uma permissão perigosa (ex: Câmera) e marcar "Não perguntar novamente", como o desenvolvedor deve agir para que o usuário possa reativar essa permissão? É possível abrir o pop-up de novo direto pelo código?
+6.  **Geocoding e Mapas**:
+    Se você tem a latitude e longitude de um usuário, como você faria para descobrir o nome da rua e o número (endereço completo)? Qual o nome do processo e da classe que faz isso no Android?

@@ -112,7 +112,34 @@ Sem isso, o app crasha com `SecurityException`.
 
 ---
 
-## 6. Ferramentas Úteis 🛠️
+## 6. Autenticação e Segurança 🔐
+
+Apps reais quase sempre precisam de login. Os padrões mais comuns são:
+
+1.  **Basic Auth**: Envia usuário e senha em cada pedido (Inseguro sozinho).
+2.  **Bearer Token (JWT)**: Após o login, o servidor devolve um "Token". Você envia esse token no cabeçalho (Header) de todas as próximas chamadas.
+3.  **OAuth2**: Padrão para "Login com Google/Facebook".
+
+### Adicionando Token no Retrofit (Interceptor)
+Não precisamos colocar o token manualmente em cada função. Usamos um `Interceptor` do OkHttp:
+
+```kotlin
+val client = OkHttpClient.Builder().addInterceptor { chain ->
+    val novoRequest = chain.request().newBuilder()
+        .addHeader("Authorization", "Bearer $MEU_TOKEN")
+        .build()
+    chain.proceed(novoRequest)
+}.build()
+
+val retrofit = Retrofit.Builder()
+    .client(client) // Vincula o cliente customizado
+    .baseUrl(...)
+    .build()
+```
+
+---
+
+## 7. Ferramentas Úteis 🛠️
 
 *   **Postman / Insomnia**: Para testar a API antes de codar.
 *   **Mocky.io**: Para criar APIs falsas (Mock) para teste.
