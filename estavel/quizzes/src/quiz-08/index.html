@@ -16,12 +16,12 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../assets/images/logic_logo.svg">
+      <link rel="icon" href="../../../assets/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Quiz 08 - Persistência de Dados (Room) 💾 - Desenvolvimento Mobile Nativo - Curso</title>
+        <title>Quiz 08 - Modularização 🧩 - Desenvolvimento Mobile Nativo - Curso</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quiz-08-persistencia-de-dados-room" class="md-skip">
+        <a href="#quiz-08-modularizacao" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -116,7 +116,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quiz 08 - Persistência de Dados (Room) 💾
+              Quiz 08 - Modularização 🧩
             
           </span>
         </div>
@@ -475,7 +475,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     Desenvolvimento Mobile Nativo - Curso
@@ -3326,106 +3326,96 @@
   
 
 
-<h1 id="quiz-08-persistencia-de-dados-room">Quiz 08 - Persistência de Dados (Room) 💾</h1>
+<h1 id="quiz-08-modularizacao">Quiz 08 - Modularização 🧩</h1>
 <ol>
 <li>
-<p>Para que servem as "SharedPreferences" no Android?</p>
+<p>O que é Modularização?</p>
 <ul>
-<li>[ ] Salvar fotos em alta resolução.</li>
-<li>[x] Salvar pequenas configurações do tipo chave-valor (ex: nome, tema).</li>
-<li>[ ] Criar um banco de dados relacional complexo.</li>
-<li>[ ] Enviar arquivos para a nuvem.
-<em>Explicação: SharedPreferences são ideais para dados simples e rápidos que não precisam de uma estrutura de tabela.</em></li>
+<li>[ ] Deixar o computador mudo</li>
+<li>[x] Dividir um programa grande em partes menores e organizadas</li>
+<li>[ ] Usar o operador Módulo (%)</li>
+<li>[ ] Comprar móveis modulados</li>
 </ul>
 </li>
 <li>
-<p>O que é a biblioteca "Room"?</p>
+<p>Qual a diferença principal entre Procedimento e Função?</p>
 <ul>
-<li>[ ] Um editor de fotos do Google.</li>
-<li>[x] Uma camada de abstração sobre o SQLite que facilita o uso de bancos de dados no Android.</li>
-<li>[ ] Um framework para animações de interface.</li>
-<li>[ ] Uma ferramenta de chat interno.
-<em>Explicação: O Room faz parte do Jetpack e transforma tabelas em classes Kotlin de forma segura.</em></li>
+<li>[ ] Procedimento é mais rápido</li>
+<li>[x] Função retorna um valor, Procedimento apenas executa</li>
+<li>[ ] Função não aceita parâmetros</li>
+<li>[ ] Nenhuma</li>
 </ul>
 </li>
 <li>
-<p>Na arquitetura do Room, o que representa uma classe anotada com <code>@Entity</code>?</p>
+<p>O que são Parâmetros (ou Argumentos)?</p>
 <ul>
-<li>[ ] Uma conexão de rede.</li>
-<li>[x] Uma tabela no banco de dados.</li>
-<li>[ ] Um botão na tela.</li>
-<li>[ ] Uma permissão do sistema.
-<em>Explicação: Cada entidade (Entity) corresponde a uma linha na sua tabela do banco de dados.</em></li>
+<li>[ ] São erros de código</li>
+<li>[x] Dados que enviamos para dentro do módulo (Input)</li>
+<li>[ ] O resultado final</li>
+<li>[ ] Variáveis globais</li>
 </ul>
 </li>
 <li>
-<p>Qual a função do "DAO" (Data Access Object) no Room?</p>
+<p>O que é o "Retorno" de uma função?</p>
 <ul>
-<li>[ ] Definir as cores do app.</li>
-<li>[ ] Navegar entre as telas.</li>
-<li>[x] Definir os métodos de acesso aos dados (Insert, Query, Update, Delete).</li>
-<li>[ ] Gerenciar o GPS.
-<em>Explicação: O DAO é a interface onde escrevemos os comandos SQL ou anotações para manipular o banco.</em></li>
+<li>[ ] Quando o código volta para o início</li>
+<li>[x] O valor final que a função devolve para quem chamou</li>
+<li>[ ] Um comando de repetição</li>
+<li>[ ] O botão Enter</li>
 </ul>
 </li>
 <li>
-<p>Por que é proibido acessar o banco de dados na "Thread Principal" (Main Thread)?</p>
+<p>O que é uma Variável Local?</p>
 <ul>
-<li>[ ] Porque o Google cobra por acesso.</li>
-<li>[x] Porque operações de disco são lentas e podem travar a interface do usuário (ANR).</li>
-<li>[ ] Porque o banco de dados só funciona offline.</li>
-<li>[ ] Porque o código fica muito feio.
-<em>Explicação: O Android bloqueia por padrão acessos pesados na Thread de UI para manter o app fluido.</em></li>
+<li>[x] Uma variável que só existe DENTRO do módulo onde foi criada</li>
+<li>[ ] Uma variável que todo o programa vê</li>
+<li>[ ] Uma variável brasileira</li>
+<li>[ ] Uma constante</li>
 </ul>
 </li>
 <li>
-<p>Qual anotação define uma chave primária autoincrementável no Room?</p>
+<p>O que é uma Variável Global?</p>
 <ul>
-<li>[ ] @Key</li>
-<li>[x] @PrimaryKey(autoGenerate = true)</li>
-<li>[ ] @IdField</li>
-<li>[ ] @MainKey
-<em>Explicação: Chaves primárias garantem que cada registro seja único no banco.</em></li>
+<li>[ ] Uma variável que viaja o mundo</li>
+<li>[x] Uma variável acessível por todos os módulos do programa</li>
+<li>[ ] Uma variável perigosa (deve ser evitada quando possível)</li>
+<li>[ ] B e C estão corretas</li>
 </ul>
 </li>
 <li>
-<p>Como o Room avisa a UI que um dado mudou no banco de dados de forma automática?</p>
+<p>O que é Passagem por Valor?</p>
 <ul>
-<li>[ ] Através de um sinal de fumaça.</li>
-<li>[ ] Reiniciando o aplicativo.</li>
-<li>[x] Retornando um <code>LiveData</code> ou <code>Flow</code> no método do DAO.</li>
-<li>[ ] Enviando uma notificação push.
-<em>Explicação: Ao retornar LiveData no DAO, o banco "assina" as mudanças para a View.</em></li>
+<li>[x] Envia uma CÓPIA do dado. Se mudar dentro, não altera fora.</li>
+<li>[ ] Envia o endereço da memória</li>
+<li>[ ] Cobra um valor para executar</li>
+<li>[ ] Não existe</li>
 </ul>
 </li>
 <li>
-<p>O que faz a classe anotada com <code>@Database</code>?</p>
+<p>O que é Passagem por Referência?</p>
 <ul>
-<li>[ ] Cria a interface gráfica.</li>
-<li>[ ] Salva as fotos na galeria.</li>
-<li>[x] Atua como o ponto de entrada principal para a conexão com o banco SQLite.</li>
-<li>[ ] Define as permissões de internet.
-<em>Explicação: A classe Database mantém as instâncias dos DAOs e a versão do banco.</em></li>
+<li>[ ] Envia uma cópia</li>
+<li>[x] Envia o ENDEREÇO (Link). Se mudar dentro, altera a original fora.</li>
+<li>[ ] Cita uma referência bibliográfica</li>
+<li>[ ] Usa Wikipedia</li>
 </ul>
 </li>
 <li>
-<p>Imagine que você salvou o nome "João" nas SharedPreferences. Se o usuário limpar o cache do app nas configurações do Android, o que acontece?</p>
+<p>Qual a vantagem de modularizar?</p>
 <ul>
-<li>[ ] O dado continua lá.</li>
-<li>[x] O dado é removido, pois SharedPreferences fazem parte dos dados privados do app.</li>
-<li>[ ] O celular formata sozinho.</li>
-<li>[ ] O app para de funcionar.
-<em>Explicação: Limpar dados do app remove SharedPreferences e bancos de dados locais.</em></li>
+<li>[ ] Reutilização de código</li>
+<li>[ ] Facilidade de leitura e manutenção</li>
+<li>[ ] Redução de erros</li>
+<li>[x] Todas as anteriores</li>
 </ul>
 </li>
 <li>
-<p>No iOS, qual o banco de dados nativo comparável ao Room?</p>
+<p>A função <code>RaizQ(x)</code> (Raiz Quadrada) é um exemplo de:</p>
 <ul>
-<li>[ ] Firebase</li>
-<li>[ ] UserDefaults</li>
-<li>[x] Core Data (ou SwiftData)</li>
-<li>[ ] CloudKit
-<em>Explicação: Core Data é o framework de persistência robusto da Apple para dados estruturados.</em></li>
+<li>[x] Função (Retorna o valor da raiz)</li>
+<li>[ ] Procedimento</li>
+<li>[ ] Variável</li>
+<li>[ ] Constante</li>
 </ul>
 </li>
 </ol>
@@ -3451,7 +3441,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 22:50:10 UTC">19 de fevereiro de 2026 22:50:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="24 de fevereiro de 2026 04:47:03 UTC">24 de fevereiro de 2026 04:47:03</span>
   </span>
 
     

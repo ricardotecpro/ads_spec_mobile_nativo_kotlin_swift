@@ -16,12 +16,12 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../assets/images/logic_logo.svg">
+      <link rel="icon" href="../../../assets/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Quiz 04 - Estrutura de um Aplicativo Android 🏗️ - Desenvolvimento Mobile Nativo - Curso</title>
+        <title>Quiz 04 - Estrutura Condicional 🔀 - Desenvolvimento Mobile Nativo - Curso</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quiz-04-estrutura-de-um-aplicativo-android" class="md-skip">
+        <a href="#quiz-04-estrutura-condicional" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -116,7 +116,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quiz 04 - Estrutura de um Aplicativo Android 🏗️
+              Quiz 04 - Estrutura Condicional 🔀
             
           </span>
         </div>
@@ -475,7 +475,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     Desenvolvimento Mobile Nativo - Curso
@@ -3326,106 +3326,96 @@
   
 
 
-<h1 id="quiz-04-estrutura-de-um-aplicativo-android">Quiz 04 - Estrutura de um Aplicativo Android 🏗️</h1>
+<h1 id="quiz-04-estrutura-condicional">Quiz 04 - Estrutura Condicional 🔀</h1>
 <ol>
 <li>
-<p>O que é o arquivo "build.gradle" em um projeto Android?</p>
+<p>Para que serva a estrutura <code>Se...Entao</code>?</p>
 <ul>
-<li>[ ] É onde desenhamos a interface visual.</li>
-<li>[ ] É o arquivo que contém as fotos do app.</li>
-<li>[x] É o arquivo de configuração de dependências e automação de build.</li>
-<li>[ ] É o código fonte principal em Kotlin.
-<em>Explicação: O Gradle gerencia quais bibliotecas seu app usa e como ele será compilado.</em></li>
+<li>[ ] Para repetir código</li>
+<li>[x] Para tomar decisões baseadas em condições</li>
+<li>[ ] Para declarar variáveis</li>
+<li>[ ] Para imprimir na tela</li>
 </ul>
 </li>
 <li>
-<p>Qual diretório do projeto guarda os "Recursos", como imagens, cores e textos?</p>
+<p>Qual operador verifica se dois valores são IGUAIS?</p>
 <ul>
-<li>[ ] java/</li>
-<li>[ ] manifests/</li>
-<li>[x] res/</li>
-<li>[ ] build/
-<em>Explicação: 'res' vem de Resources. Tudo que não é código fonte (lógica) fica aqui.</em></li>
+<li>[ ] =</li>
+<li>[x] == (ou = no VisualG dependendo da versão, mas == é padrão universal)</li>
+<li>[ ] ===</li>
+<li>[ ] &lt;&gt;</li>
 </ul>
 </li>
 <li>
-<p>O que define a interface visual (layout) de uma tela no Android clássico?</p>
+<p>O que o <code>Senao</code> faz?</p>
 <ul>
-<li>[ ] Um arquivo .txt</li>
-<li>[ ] Um arquivo .jpg</li>
-<li>[x] Um arquivo .xml</li>
-<li>[ ] Um arquivo .kt
-<em>Explicação: Tradicionalmente, o Android usa XML para definir a hierarquia de visualização da tela.</em></li>
+<li>[ ] Executa se a condição do Se for Verdadeira</li>
+<li>[x] Executa se a condição do Se for Falsa</li>
+<li>[ ] Executa sempre</li>
+<li>[ ] Cancela o programa</li>
 </ul>
 </li>
 <li>
-<p>Qual componente do sistema Android representa uma "página" ou tela interativa?</p>
+<p>Qual o resultado de <code>10 &gt; 5 E 5 &gt; 2</code>?</p>
 <ul>
-<li>[ ] Service</li>
-<li>[ ] Broadcast Receiver</li>
-<li>[x] Activity</li>
-<li>[ ] Intent
-<em>Explicação: Activities são os blocos fundamentais da UI do Android.</em></li>
+<li>[x] Verdadeiro</li>
+<li>[ ] Falso</li>
+<li>[ ] Erro</li>
+<li>[ ] 10</li>
 </ul>
 </li>
 <li>
-<p>Para que serve a pasta <code>res/values</code>?</p>
+<p>Qual o resultado de <code>10 &gt; 5 E 2 &gt; 5</code>?</p>
 <ul>
-<li>[ ] Para guardar vídeos.</li>
-<li>[ ] Para salvar o banco de dados.</li>
-<li>[x] Para guardar arquivos XML de strings, cores e estilos (centralização de constantes).</li>
-<li>[ ] Para guardar o código Java.
-<em>Explicação: Centralizar textos e cores facilita a internacionalização e a manutenção do design.</em></li>
+<li>[ ] Verdadeiro</li>
+<li>[x] Falso</li>
+<li>[ ] Talvez</li>
+<li>[ ] 5</li>
 </ul>
 </li>
 <li>
-<p>Qual é a função do <code>ViewBinding</code>?</p>
+<p>O operador <code>OU</code> retorna Verdadeiro quando:</p>
 <ul>
-<li>[ ] Conectar o app ao Wi-Fi.</li>
-<li>[x] Criar uma referência segura entre o arquivo de layout (XML) e o código Kotlin/Java.</li>
-<li>[ ] Fazer o download de imagens da internet.</li>
-<li>[ ] Comprimir o tamanho do app.
-<em>Explicação: O ViewBinding evita o uso excessivo de <code>findViewById</code> e protege contra NullPointerExceptions.</em></li>
+<li>[ ] Todas as condições são verdadeiras</li>
+<li>[ ] Nenhuma condição é verdadeira</li>
+<li>[x] Pelo menos uma condição é verdadeira</li>
+<li>[ ] A primeira é falsa</li>
 </ul>
 </li>
 <li>
-<p>No Gradle, o que significa <code>minSdkVersion</code>?</p>
+<p>O que é "Indentação"?</p>
 <ul>
-<li>[ ] A versão máxima que o app suporta.</li>
-<li>[x] A versão mínima do sistema Android que o celular deve ter para instalar o app.</li>
-<li>[ ] O tamanho mínimo em MB do aplicativo.</li>
-<li>[ ] O número de desenvolvedores no projeto.
-<em>Explicação: Define a compatibilidade retroativa do seu aplicativo.</em></li>
+<li>[ ] Espaço em disco usado</li>
+<li>[x] Recuo do código para indicar hierarquia/bloco</li>
+<li>[ ] Nome de variável inválido</li>
+<li>[ ] erro de digitação</li>
 </ul>
 </li>
 <li>
-<p>O que acontece na pasta <code>res/drawable</code>?</p>
+<p>Para menus com muitas opções (1, 2, 3...), qual estrutura é melhor?</p>
 <ul>
-<li>[ ] Ficam os arquivos de texto salvos pelo usuário.</li>
-<li>[ ] Ficam as músicas de fundo.</li>
-<li>[x] Ficam os ícones e imagens vetoriais do app.</li>
-<li>[ ] Ficam os scripts do banco de dados.
-<em>Explicação: Desenhos e ícones residem aqui para serem referenciados pelo layout.</em></li>
+<li>[ ] Muitos SEs encadeados</li>
+<li>[x] Escolha/Caso (Switch/Case)</li>
+<li>[ ] Repita</li>
+<li>[ ] Vetor</li>
 </ul>
 </li>
 <li>
-<p>O componente <code>Intent</code> serve para:</p>
+<p>Como verificar se um número <code>x</code> é PAR?</p>
 <ul>
-<li>[ ] Guardar dados permanentemente no celular.</li>
-<li>[x] Solicitar uma ação de outro componente (ex: abrir uma nova tela ou a câmera).</li>
-<li>[ ] Aumentar o brilho da tela.</li>
-<li>[ ] Compilar o código mais rápido.
-<em>Explicação: Intents são as "mensagens" que o Android usa para navegar entre as telas.</em></li>
+<li>[ ] <code>x / 2 == 0</code></li>
+<li>[x] <code>x % 2 == 0</code> (Resto da divisão é 0)</li>
+<li>[ ] <code>x % 2 == 1</code></li>
+<li>[ ] <code>x * 2</code></li>
 </ul>
 </li>
 <li>
-<p>No iOS, qual arquivo é o equivalente funcional mais próximo ao <code>AndroidManifest.xml</code>?</p>
+<p>A condição <code>SE (media &gt;= 6)</code> inclui o 6?</p>
 <ul>
-<li>[ ] Storyboard</li>
-<li>[ ] AppConfig.swift</li>
-<li>[x] Info.plist</li>
-<li>[ ] AppDelegate.swift
-<em>Explicação: O Info.plist guarda metadados e permissões vitais para o aplicativo Apple.</em></li>
+<li>[x] Sim (Maior ou Igual)</li>
+<li>[ ] Não (Apenas maior que 6)</li>
+<li>[ ] Apenas se for inteiro</li>
+<li>[ ] Não sei</li>
 </ul>
 </li>
 </ol>
@@ -3451,7 +3441,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 22:50:10 UTC">19 de fevereiro de 2026 22:50:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="24 de fevereiro de 2026 04:47:03 UTC">24 de fevereiro de 2026 04:47:03</span>
   </span>
 
     

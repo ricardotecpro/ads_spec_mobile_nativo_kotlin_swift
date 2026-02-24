@@ -16,12 +16,12 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../assets/images/logic_logo.svg">
+      <link rel="icon" href="../../../assets/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Quiz 11 - Threads e Coroutines 🧵 - Desenvolvimento Mobile Nativo - Curso</title>
+        <title>Quiz 11 - Java ☕ - Desenvolvimento Mobile Nativo - Curso</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quiz-11-threads-e-coroutines" class="md-skip">
+        <a href="#quiz-11-java" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -116,7 +116,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quiz 11 - Threads e Coroutines 🧵
+              Quiz 11 - Java ☕
             
           </span>
         </div>
@@ -475,7 +475,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     Desenvolvimento Mobile Nativo - Curso
@@ -3326,106 +3326,96 @@
   
 
 
-<h1 id="quiz-11-threads-e-coroutines">Quiz 11 - Threads e Coroutines 🧵</h1>
+<h1 id="quiz-11-java">Quiz 11 - Java ☕</h1>
 <ol>
 <li>
-<p>O que é a "Main Thread" (ou UI Thread) no Android?</p>
+<p>O slogan do Java é "Write Once, Run Anywhere". O que permite isso?</p>
 <ul>
-<li>[ ] Uma thread que fica baixando arquivos em background.</li>
-<li>[x] A thread principal responsável por desenhar a interface e processar toques do usuário.</li>
-<li>[ ] A conexão de internet do celular.</li>
-<li>[ ] O carregador de bateria.
-<em>Explicação: Quase tudo que é visual acontece na Main Thread, que deve estar sempre livre para não travar.</em></li>
+<li>[ ] O código fonte ASCII</li>
+<li>[x] A JVM (Java Virtual Machine)</li>
+<li>[ ] O Windows</li>
+<li>[ ] A internet</li>
 </ul>
 </li>
 <li>
-<p>O que causa o erro "ANR" (Application Not Responding)?</p>
+<p>Um Objeto é uma instância de uma:</p>
 <ul>
-<li>[ ] Falta de espaço em disco.</li>
-<li>[x] Bloquear a Main Thread por muito tempo (ex: fazendo uma operação pesada ou download).</li>
-<li>[ ] O usuário esqueceu de carregar o celular.</li>
-<li>[ ] Usar muitas cores no layout.
-<em>Explicação: Se a Main Thread for bloqueada por mais de ~5 segundos, o Android mata o app para proteger o sistema.</em></li>
+<li>[ ] Função</li>
+<li>[x] Classe</li>
+<li>[ ] Variável</li>
+<li>[ ] Matriz</li>
 </ul>
 </li>
 <li>
-<p>O que são Kotlin Coroutines?</p>
+<p>Qual pilar da OO protege os dados sensíveis de uma classe?</p>
 <ul>
-<li>[ ] Um novo tipo de tela.</li>
-<li>[ ] Uma linguagem de banco de dados.</li>
-<li>[x] Mecanismos de concorrência leve que permitem escrever código assíncrono de forma sequencial.</li>
-<li>[ ] Pequenos robôs que consertam o código.
-<em>Explicação: Coroutines são muito leves (podem rodar milhares ao mesmo tempo) e facilitam o código assíncrono.</em></li>
+<li>[ ] Herança</li>
+<li>[ ] Polimorfismo</li>
+<li>[x] Encapsulamento</li>
+<li>[ ] Abstração</li>
 </ul>
 </li>
 <li>
-<p>Qual a função da palavra-chave <code>suspend</code> em Kotlin?</p>
+<p>Para herdar de uma classe em Java, usamos:</p>
 <ul>
-<li>[ ] Deletar a função da memória.</li>
-<li>[x] Indicar que a função pode ser pausada e continuada depois sem bloquear a thread atual.</li>
-<li>[ ] Tornar a função invisível para outras classes.</li>
-<li>[ ] Faz com que a função rode apenas em feriados.
-<em>Explicação: Funções suspend são o coração das Coroutines.</em></li>
+<li>[ ] implements</li>
+<li>[x] extends</li>
+<li>[ ] inherits</li>
+<li>[ ] clone</li>
 </ul>
 </li>
 <li>
-<p>Para que serve o <code>Dispatcher.IO</code> no Kotlin?</p>
+<p>O que faz o Spring Boot?</p>
 <ul>
-<li>[ ] Para atualizar a barra de progresso na tela.</li>
-<li>[ ] Para fazer cálculos matemáticos intensos (CPU).</li>
-<li>[x] Para realizar operações de entrada/saída (Rede, Banco de Dados, Arquivos).</li>
-<li>[ ] Para tocar músicas.
-<em>Explicação: O Dispatcher.IO usa um conjunto de threads otimizadas para espera de rede ou disco.</em></li>
+<li>[ ] Limpa o PC</li>
+<li>[x] Facilita a criação de aplicações Java (Web/Microserviços) com configuração mínima</li>
+<li>[ ] Compila o código mais rápido</li>
+<li>[ ] É um jogo</li>
 </ul>
 </li>
 <li>
-<p>Qual Dispatcher deve ser usado OBRIGATORIAMENTE para atualizar um componente visual (ex: <code>txtNome.text = "João"</code>)?</p>
+<p>O métódo <code>public static void main(String[] args)</code> serve para:</p>
 <ul>
-<li>[ ] Dispatchers.IO</li>
-<li>[ ] Dispatchers.Default</li>
-<li>[x] Dispatchers.Main</li>
-<li>[ ] Dispatchers.Unconfined
-<em>Explicação: Apenas a Main Thread tem permissão para alterar a interface gráfica no Android.</em></li>
+<li>[ ] Declarar variáveis</li>
+<li>[x] Ser o ponto de entrada (Início) da aplicação</li>
+<li>[ ] Imprimir na tela</li>
+<li>[ ] Conectar no banco</li>
 </ul>
 </li>
 <li>
-<p>O que é o <code>viewModelScope</code>?</p>
+<p>O Garbage Collector do Java serve para:</p>
 <ul>
-<li>[ ] Um telescópio para ver o código.</li>
-<li>[x] Um escopo de coroutine ligado ao ciclo de vida do ViewModel; limpa tudo automaticamente quando o ViewModel morre.</li>
-<li>[ ] O banco de dados do Google.</li>
-<li>[ ] Uma variável global para todo o app.
-<em>Explicação: Usar viewModelScope garante que downloads sejam cancelados se o usuário sair da tela, evitando vazamentos e crashes.</em></li>
+<li>[ ] Coletar lixo eletrônico</li>
+<li>[x] Limpar automaticamente memória RAM não utilizada</li>
+<li>[ ] Organizar arquivos</li>
+<li>[ ] Deletar vírus</li>
 </ul>
 </li>
 <li>
-<p>O que caracteriza uma comunicação via "Socket" (TCP) em relação ao REST?</p>
+<p>O que é o Maven?</p>
 <ul>
-<li>[ ] É mais lenta.</li>
-<li>[x] É uma conexão bidirecional persistente (Full-Duplex), ideal para chats ou jogos em tempo real.</li>
-<li>[ ] Só funciona com Bluetooth.</li>
-<li>[ ] É um formato de imagem.
-<em>Explicação: Diferente do REST (pergunta/resposta), o Socket deixa um canal aberto para ambos os lados falarem a qualquer momento.</em></li>
+<li>[ ] Um tipo de café</li>
+<li>[x] Um gerenciador de dependências e construção de projetos</li>
+<li>[ ] Um editor de texto</li>
+<li>[ ] Um banco de dados</li>
 </ul>
 </li>
 <li>
-<p>No iOS moderno, qual o conceito equivalente às Kotlin Coroutines para lidar com assincronismo?</p>
+<p>Se eu tenho <code>Animal a = new Cachorro()</code>, isso é um exemplo de:</p>
 <ul>
-<li>[ ] GCD (Grand Central Dispatch)</li>
-<li>[ ] OperationQueues</li>
-<li>[x] Async / Await</li>
-<li>[ ] Closures
-<em>Explicação: O Swift recentemente adotou uma sintaxe de Async/Await muito parecida com as Coroutines do Kotlin.</em></li>
+<li>[x] Polimorfismo</li>
+<li>[ ] Encapsulamento</li>
+<li>[ ] Erro</li>
+<li>[ ] Recursão</li>
 </ul>
 </li>
 <li>
-<p>O que faz a função <code>withContext()</code> dentro de uma Coroutine?</p>
+<p>Tipagem do Java é:</p>
 <ul>
-<li>[ ] Fecha o aplicativo.</li>
-<li>[x] Permite trocar temporariamente de Thread (ex: sair da Main e ir para IO) e voltar após terminar.</li>
-<li>[ ] Salva o estado do celular.</li>
-<li>[ ] Muda o idioma do app.
-<em>Explicação: withContext é essencial para orquestrar em qual thread cada pedaço do código deve rodar.</em></li>
+<li>[ ] Fraca e Dinâmica</li>
+<li>[x] Forte e Estática</li>
+<li>[ ] Opcional</li>
+<li>[ ] Inexistente</li>
 </ul>
 </li>
 </ol>
@@ -3451,7 +3441,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 22:50:10 UTC">19 de fevereiro de 2026 22:50:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="24 de fevereiro de 2026 04:47:03 UTC">24 de fevereiro de 2026 04:47:03</span>
   </span>
 
     

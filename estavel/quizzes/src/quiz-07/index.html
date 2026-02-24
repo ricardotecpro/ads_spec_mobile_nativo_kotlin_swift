@@ -16,12 +16,12 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../assets/images/logic_logo.svg">
+      <link rel="icon" href="../../../assets/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Quiz 07 - Arquitetura MVVM 🏗️ - Desenvolvimento Mobile Nativo - Curso</title>
+        <title>Quiz 07 - Matrizes 🔢 - Desenvolvimento Mobile Nativo - Curso</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quiz-07-arquitetura-mvvm" class="md-skip">
+        <a href="#quiz-07-matrizes" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -116,7 +116,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quiz 07 - Arquitetura MVVM 🏗️
+              Quiz 07 - Matrizes 🔢
             
           </span>
         </div>
@@ -475,7 +475,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     Desenvolvimento Mobile Nativo - Curso
@@ -3326,106 +3326,96 @@
   
 
 
-<h1 id="quiz-07-arquitetura-mvvm">Quiz 07 - Arquitetura MVVM 🏗️</h1>
+<h1 id="quiz-07-matrizes">Quiz 07 - Matrizes 🔢</h1>
 <ol>
 <li>
-<p>O que significa a sigla MVVM?</p>
+<p>O que é uma Matriz em programação?</p>
 <ul>
-<li>[ ] Mobile View Variable Model</li>
-<li>[x] Model - View - ViewModel</li>
-<li>[ ] Master View Visual Machine</li>
-<li>[ ] Multiple View Version Method
-<em>Explicação: MVVM é o padrão de arquitetura recomendado pelo Google para apps Android modernos.</em></li>
+<li>[ ] O filme com Keanu Reeves</li>
+<li>[x] Um vetor multidimensional (geralmente bidimensional, com linhas e colunas)</li>
+<li>[ ] Uma impressora matricial</li>
+<li>[ ] Um erro de sistema</li>
 </ul>
 </li>
 <li>
-<p>Na arquitetura MVVM, qual é a responsabilidade da camada VIEW?</p>
+<p>Quantos índices eu preciso para acessar um elemento de uma Matriz 2D?</p>
 <ul>
-<li>[ ] Realizar cálculos matemáticos complexos.</li>
-<li>[ ] Salvar dados no banco de dados.</li>
-<li>[x] Apenas exibir a interface e reagir a eventos do usuário (toques), sem lógica de negócio.</li>
-<li>[ ] Gerenciar a conexão de rede.
-<em>Explicação: A View deve ser "burra" e apenas refletir o estado enviado pelo ViewModel.</em></li>
+<li>[ ] 1</li>
+<li>[x] 2 (Linha e Coluna)</li>
+<li>[ ] 3</li>
+<li>[ ] 0</li>
 </ul>
 </li>
 <li>
-<p>Qual componente é responsável por sobreviver a mudanças de configuração (como girar a tela) e guardar os dados da UI?</p>
+<p>Se tenho <code>m[3,3]</code>, quantos elementos cabem no total?</p>
 <ul>
-<li>[ ] Activity</li>
-<li>[ ] Intent</li>
-<li>[x] ViewModel</li>
-<li>[ ] Fragment
-<em>Explicação: O ViewModel foi criado para ter um ciclo de vida mais longo que a Activity, retendo dados durante recriações.</em></li>
+<li>[ ] 3</li>
+<li>[ ] 6</li>
+<li>[x] 9 (3x3)</li>
+<li>[ ] 12</li>
 </ul>
 </li>
 <li>
-<p>O que é o "LiveData"?</p>
+<p>Em uma matriz, o que representam <code>i</code> e <code>j</code> geralmente?</p>
 <ul>
-<li>[ ] Um serviço de streaming do Android.</li>
-<li>[ ] Um tipo de bateria de longa duração.</li>
-<li>[x] Um container de dados observável que respeita o ciclo de vida da Activity/Fragment.</li>
-<li>[ ] O banco de dados em tempo real do Google.
-<em>Explicação: O LiveData avisa a View quando um dado muda, mas só se a View estiver ativa.</em></li>
+<li>[ ] Início e Janela</li>
+<li>[x] Linha e Coluna</li>
+<li>[ ] Inteiro e Java</li>
+<li>[ ] Índio e Jaca</li>
 </ul>
 </li>
 <li>
-<p>Qual a vantagem de uma Activity "Observar" (observe) um dado no ViewModel em vez de pedir o dado manualmente?</p>
+<p>O que é a Diagonal Principal de uma matriz Quadrada?</p>
 <ul>
-<li>[ ] Gasta menos internet.</li>
-<li>[x] Garante que a UI esteja sempre sincronizada com os dados reais automaticamente.</li>
-<li>[ ] Aumenta a velocidade do processador.</li>
-<li>[ ] Deleta o cache do app.
-<em>Explicação: O padrão Observer garante que sempre que o dado mudar no ViewModel, a tela se atualize sozinha.</em></li>
+<li>[ ] A primeira linha</li>
+<li>[x] A linha onde i é igual a j (0,0; 1,1; 2,2...)</li>
+<li>[ ] A última coluna</li>
+<li>[ ] A borda da matriz</li>
 </ul>
 </li>
 <li>
-<p>Onde deve ficar a lógica de busca de dados (seja de uma API ou Banco)?</p>
+<p>Para percorrer uma matriz inteira, qual estrutura uso?</p>
 <ul>
-<li>[ ] No método onCreate da Activity.</li>
-<li>[x] No Model (frequentemente gerenciado por um Repository).</li>
-<li>[ ] Dentro do arquivo XML de layout.</li>
-<li>[ ] No arquivo AndroidManifest.
-<em>Explicação: Separação de conceitos: dados ficam no Model, lógica de UI no ViewModel, e exibição na View.</em></li>
+<li>[ ] Um Para simples</li>
+<li>[x] Dois Paras aninhados (um dentro do outro)</li>
+<li>[ ] Um Se dentro de um Enquanto</li>
+<li>[ ] Switch Case</li>
 </ul>
 </li>
 <li>
-<p>Por que a arquitetura MVVM facilita a escrita de "Testes Unitários"?</p>
+<p>Uma imagem digital pode ser representada por uma Matriz?</p>
 <ul>
-<li>[ ] Porque você não precisa testar nada.</li>
-<li>[ ] Porque o Kotlin testa o código sozinho.</li>
-<li>[x] Porque a lógica está isolada no ViewModel, que não depende de componentes visuais do Android para rodar.</li>
-<li>[ ] Porque o projeto fica com menos arquivos.
-<em>Explicação: Podemos testar o ViewModel em um computador simples, sem precisar de um celular/emulador ligado.</em></li>
+<li>[x] Sim, pixels são pontos numa grade (R,G,B)</li>
+<li>[ ] Não, imagem é mágica</li>
+<li>[ ] Apenas se for preto e branco</li>
+<li>[ ] Não, imagem é vetor</li>
 </ul>
 </li>
 <li>
-<p>O que acontece com o ViewModel quando a Activity que o criou é destruída definitivamente (ex: usuário apertou voltar)?</p>
+<p>No jogo Batalha Naval, o tabuleiro é uma:</p>
 <ul>
-<li>[ ] Ele fica na memória para sempre.</li>
-<li>[x] Ele também é destruído (limpo) para liberar memória.</li>
-<li>[ ] Ele se move para outro aplicativo.</li>
-<li>[ ] Ele reinicia o celular.
-<em>Explicação: O ViewModel morre quando sua View associada morre definitivamente (não por rotação).</em></li>
+<li>[ ] Lista</li>
+<li>[x] Matriz</li>
+<li>[ ] Pilha</li>
+<li>[ ] Fila</li>
 </ul>
 </li>
 <li>
-<p>Como o ViewModel se comunica de volta com a Activity no MVVM?</p>
+<p>Matriz Identidade tem:</p>
 <ul>
-<li>[ ] Chamando <code>activity.updateUI()</code>.</li>
-<li>[ ] Usando uma Intent.</li>
-<li>[x] Através de LiveData ou StateFlow (Fluxo de dados observável).</li>
-<li>[ ] Enviando um e-mail.
-<em>Explicação: O ViewModel nunca deve ter uma referência direta para a Activity, evitando vazamentos de memória.</em></li>
+<li>[x] 1 na diagonal principal e 0 no resto</li>
+<li>[ ] Tudo 1</li>
+<li>[ ] Tudo 0</li>
+<li>[ ] Números aleatórios</li>
 </ul>
 </li>
 <li>
-<p>No iOS moderno (SwiftUI), qual é o conceito que mais se assemelha ao ViewModel operando com LiveData?</p>
+<p>Matrizes tridimensionais (3D) existem?</p>
 <ul>
-<li>[ ] Structs</li>
-<li>[ ] @IBAction</li>
-<li>[x] @ObservableObject ou @StateObject</li>
-<li>[ ] Core Graphics
-<em>Explicação: O SwiftUI usa o padrão de reatividade onde a View se redesenha automaticamente quando um estado observado muda.</em></li>
+<li>[x] Sim (Linha, Coluna, Profundidade)</li>
+<li>[ ] Não, o limite é 2</li>
+<li>[ ] Apenas na NASA</li>
+<li>[ ] Sim, mas não servem para nada</li>
 </ul>
 </li>
 </ol>
@@ -3451,7 +3441,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 22:50:10 UTC">19 de fevereiro de 2026 22:50:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="24 de fevereiro de 2026 04:47:03 UTC">24 de fevereiro de 2026 04:47:03</span>
   </span>
 
     

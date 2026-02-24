@@ -16,12 +16,12 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../assets/images/logic_logo.svg">
+      <link rel="icon" href="../../../assets/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Aula 11 - Threads e Coroutines 🧵 - Desenvolvimento Mobile Nativo - Curso</title>
+        <title>Aula 11 - Java e Orientação a Objetos ☕ - Desenvolvimento Mobile Nativo - Curso</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aula-11-threads-e-coroutines" class="md-skip">
+        <a href="#aula-11-java-e-orientacao-a-objetos" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -116,7 +116,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Aula 11 - Threads e Coroutines 🧵
+              Aula 11 - Java e Orientação a Objetos ☕
             
           </span>
         </div>
@@ -475,7 +475,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     Desenvolvimento Mobile Nativo - Curso
@@ -3315,22 +3315,44 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#o-bloqueio-da-ui" class="md-nav__link">
+  <a href="#agenda" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🛑 O Bloqueio da UI
+        Agenda 📅
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🛑 O Bloqueio da UI">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-o-mundo-orientado-a-objetos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. O Mundo Orientado a Objetos 🌍
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-classe-vs-objeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Classe vs Objeto 🏗️
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Classe vs Objeto 🏗️">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#o-erro-anr" class="md-nav__link">
+  <a href="#visualizando-mermaid" class="md-nav__link">
     <span class="md-ellipsis">
       
-        O Erro ANR 💀
+        Visualizando (Mermaid)
       
     </span>
   </a>
@@ -3343,10 +3365,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#kotlin-coroutines" class="md-nav__link">
+  <a href="#3-java-e-a-jvm" class="md-nav__link">
     <span class="md-ellipsis">
       
-        ⚡ Kotlin Coroutines
+        3. Java e a JVM ♻️
       
     </span>
   </a>
@@ -3354,22 +3376,44 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#os-3-pilares-da-coroutine" class="md-nav__link">
+  <a href="#4-os-3-pilares-da-oo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏛️ Os 3 Pilares da Coroutine
+        4. Os 3 Pilares da OO 🏛️
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="🏛️ Os 3 Pilares da Coroutine">
+    <nav class="md-nav" aria-label="4. Os 3 Pilares da OO 🏛️">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#conheca-os-dispatchers" class="md-nav__link">
+  <a href="#encapsulamento" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚦 Conheça os Dispatchers
+        Encapsulamento 🛡️
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heranca" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Herança 🧬
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polimorfismo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Polimorfismo 🎭
       
     </span>
   </a>
@@ -3382,44 +3426,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-palavra-chave-suspend" class="md-nav__link">
+  <a href="#5-spring-boot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🛌 A palavra-chave suspend
+        5. Spring Boot 🍃
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#coroutines-na-viewmodel" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🧠 Coroutines na ViewModel
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sockets-tempo-real" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔌 Sockets (Tempo Real)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔌 Sockets (Tempo Real)">
+    <nav class="md-nav" aria-label="5. Spring Boot 🍃">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#socket-vs-rest" class="md-nav__link">
+  <a href="#exemplo-de-api" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Socket vs REST
+        Exemplo de API
       
     </span>
   </a>
@@ -3432,10 +3454,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#android-vs-ios-async" class="md-nav__link">
+  <a href="#exercicio-mental" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🆚 Android vs iOS (Async)
+        Exercício Mental 🧠
       
     </span>
   </a>
@@ -3443,10 +3465,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cancelamento-automatico" class="md-nav__link">
+  <a href="#resumo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🚫 Cancelamento Automático
+        Resumo ✅
       
     </span>
   </a>
@@ -3454,52 +3476,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#pratica-o-simulador-de-corrida" class="md-nav__link">
+  <a href="#proxima-aula" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🛠️ Prática: O Simulador de Corrida
+        Próxima Aula 🚀
       
     </span>
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conclusao" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🏁 Conclusão
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#perguntas-sobre-threads" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ❓ Perguntas sobre Threads?
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="❓ Perguntas sobre Threads?">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#proxima-aula-ux-e-material-design-3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Próxima Aula: UX e Material Design 3! 🎨👋
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -3523,159 +3506,133 @@
   
 
 
-<h1 id="aula-11-threads-e-coroutines">Aula 11 - Threads e Coroutines 🧵</h1>
-<!-- .slide: data-transition="convex" -->
-
+<h1 id="aula-11-java-e-orientacao-a-objetos">Aula 11 - Java e Orientação a Objetos ☕</h1>
 <hr>
-<h2 id="o-bloqueio-da-ui">🛑 O Bloqueio da UI</h2>
-<p>O Android é um sistema exigente: ele redesenha a tela a cada 16ms (60fps).</p>
-<ul>
-<li><strong>Main Thread</strong>: Onde tudo o que é visual acontece. { .fragment }</li>
-<li><strong>Regra de Ouro</strong>: Nunca coloque código pesado na Main Thread. { .fragment }</li>
-</ul>
-<hr>
-<h3 id="o-erro-anr">O Erro ANR 💀</h3>
-<p>Se a Main Thread parar por +5 segundos...
-<strong>Application Not Responding</strong>. O sistema mata seu app.</p>
-<ul>
-<li>Download de arquivos. { .fragment }</li>
-<li>Leitura de banco de dados pesada. { .fragment }</li>
-<li>Processamento de imagens. { .fragment }</li>
-</ul>
-<hr>
-<h2 id="kotlin-coroutines">⚡ Kotlin Coroutines</h2>
-<p>"Threads leves".</p>
-<ul>
-<li>Você pode rodar milhões sem travar o celular. { .fragment }</li>
-<li>Código assíncrono que parece sequencial. { .fragment }</li>
-<li>Criado pela JetBrains para facilitar sua vida. { .fragment }</li>
-</ul>
-<hr>
-<h2 id="os-3-pilares-da-coroutine">🏛️ Os 3 Pilares da Coroutine</h2>
+<h2 id="agenda">Agenda 📅</h2>
 <ol>
-<li><strong>Job</strong>: A tarefa em si (o trabalho). { .fragment }</li>
-<li><strong>Scope</strong>: Onde ela vive (morreu a tela, morre a tarefa). { .fragment }</li>
-<li><strong>Dispatcher</strong>: Em qual pista ela corre (Threads). { .fragment }</li>
+<li>O Mundo dos Objetos { .fragment }</li>
+<li>Classes vs Objetos { .fragment }</li>
+<li>Java e a JVM { .fragment }</li>
+<li>Os 3 Pilares da OO { .fragment }</li>
+<li>Spring Boot (Java Moderno) { .fragment }</li>
 </ol>
 <hr>
-<h3 id="conheca-os-dispatchers">🚦 Conheça os Dispatchers</h3>
+<h2 id="1-o-mundo-orientado-a-objetos">1. O Mundo Orientado a Objetos 🌍</h2>
+<p>Até agora, programamos <strong>Ações</strong> (Funções).
+Mas o mundo é feito de <strong>Coisas</strong> (Objetos).</p>
 <ul>
-<li><strong>Main</strong>: Só para interface (UI). { .fragment }</li>
-<li><strong>IO</strong>: Rede, Banco, Arquivos (Espera). { .fragment }</li>
-<li><strong>Default</strong>: Cálculos pesados de CPU. { .fragment }</li>
+<li><strong>Estruturada</strong>: Verbo (Fazer algo). { .fragment }</li>
+<li><strong>OO</strong>: Substantivo (Algo que faz). { .fragment }</li>
 </ul>
 <hr>
-<h2 id="a-palavra-chave-suspend">🛌 A palavra-chave <code>suspend</code></h2>
-<p>"Esta função pode demorar, mas não vai travar o celular".</p>
-<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">buscarDados</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="m">2000</span><span class="p">)</span><span class="w"> </span><span class="c1">// Pausa a coroutine, não a thread!</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"Terminei"</span><span class="p">)</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
-</span></code></pre></div>
-<hr>
-<h2 id="coroutines-na-viewmodel">🧠 Coroutines na ViewModel</h2>
-<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">class</span><span class="w"> </span><span class="nc">MeuViewModel</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">ViewModel</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="kd">fun</span><span class="w"> </span><span class="nf">carregar</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">        </span><span class="n">viewModelScope</span><span class="p">.</span><span class="na">launch</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="c1">// Inicia no Scope seguro</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">             </span><span class="kd">val</span><span class="w"> </span><span class="nv">dados</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">withContext</span><span class="p">(</span><span class="n">Dispatchers</span><span class="p">.</span><span class="na">IO</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">                 </span><span class="n">api</span><span class="p">.</span><span class="na">getDados</span><span class="p">()</span><span class="w"> </span><span class="c1">// Roda em background</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">             </span><span class="p">}</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">             </span><span class="n">binding</span><span class="p">.</span><span class="na">txt</span><span class="p">.</span><span class="na">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dados</span><span class="w"> </span><span class="c1">// Volta pra Main e atualiza</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">        </span><span class="p">}</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="p">}</span>
-</span></code></pre></div>
-<!-- .slide: data-background-color="#3d5a80" -->
-
-<hr>
-<h2 id="sockets-tempo-real">🔌 Sockets (Tempo Real)</h2>
-<p>REST é: "Eu peço, você responde".
-Socket é: "Canal aberto, qualquer um fala".</p>
+<h2 id="2-classe-vs-objeto">2. Classe vs Objeto 🏗️</h2>
+<p>A distinção mais importante.</p>
 <ul>
-<li><strong>Full-Duplex</strong>: Envio e Recebimento simultâneo. { .fragment }</li>
-<li><strong>Casos</strong>: Chat, GPS em tempo real, Bolsa de Valores. { .fragment }</li>
+<li><strong>Classe</strong>: O Molde. A Planta. A Ideia. (Abstrato). { .fragment }</li>
+<li><strong>Objeto</strong>: A Instância. A Casa. A Coisa Real. (Concreto). { .fragment }</li>
 </ul>
 <hr>
-<h3 id="socket-vs-rest">Socket vs REST</h3>
-<pre class="mermaid"><code>sequenceDiagram
-    participant App
-    participant Server
-    Note over App,Server: REST (Request/Response)
-    App-&gt;&gt;Server: Me dá os dados?
-    Server-&gt;&gt;App: Aqui estão. (Fecha)
-
-    Note over App,Server: Socket (Persistent)
-    App-&gt;&gt;Server: Abre conexão
-    Server-&gt;&gt;App: Conectado!
-    Server-&gt;&gt;App: Mensagem nova!
-    App-&gt;&gt;Server: Valeu!</code></pre>
+<h3 id="visualizando-mermaid">Visualizando (Mermaid)</h3>
+<pre class="mermaid"><code>classDiagram
+    class Carro {
+        +String cor
+        +acelerar()
+    }
+    Ferrari --|&gt; Carro : É um
+    Fusca --|&gt; Carro : É um</code></pre>
 <hr>
-<h2 id="android-vs-ios-async">🆚 Android vs iOS (Async)</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Recurso</th>
-<th style="text-align: left;">Android (Kotlin)</th>
-<th style="text-align: left;">iOS (Swift)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><strong>Padrão</strong></td>
-<td style="text-align: left;">Coroutines</td>
-<td style="text-align: left;">Async / Await</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Palavra</strong></td>
-<td style="text-align: left;"><code>suspend</code></td>
-<td style="text-align: left;"><code>async</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Chamada</strong></td>
-<td style="text-align: left;"><code>launch</code></td>
-<td style="text-align: left;"><code>Task</code></td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Espera</strong></td>
-<td style="text-align: left;"><code>delay</code></td>
-<td style="text-align: left;"><code>try await Task.sleep</code></td>
-</tr>
-</tbody>
-</table>
+<h2 id="3-java-e-a-jvm">3. Java e a JVM ♻️</h2>
+<p>"Write Once, Run Anywhere" (Escreva uma vez, rode em qualquer lugar).</p>
+<ul>
+<li>O Java não compila para Binário direto. { .fragment }</li>
+<li>Ele compila para <strong>Bytecode</strong> (<code>.class</code>). { .fragment }</li>
+<li>A <strong>JVM</strong> (Máquina Virtual Java) roda esse Bytecode em qualquer sistema (Windows, Linux, Android, Geladeira). { .fragment }</li>
+</ul>
 <hr>
-<h2 id="cancelamento-automatico">🚫 Cancelamento Automático</h2>
-<p>O <code>viewModelScope</code> é fantástico.</p>
+<h2 id="4-os-3-pilares-da-oo">4. Os 3 Pilares da OO 🏛️</h2>
 <ol>
-<li>Usuário abre a tela e começa o download. { .fragment }</li>
-<li>Usuário fecha o app ou muda de tela. { .fragment }</li>
-<li>O download é cancelado na hora. Economia de bateria e dados! { .fragment }</li>
+<li>Encapsulamento { .fragment }</li>
+<li>Herança { .fragment }</li>
+<li>Polimorfismo { .fragment }</li>
 </ol>
 <hr>
-<h2 id="pratica-o-simulador-de-corrida">🛠️ Prática: O Simulador de Corrida</h2>
-<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">suspend</span><span class="w"> </span><span class="kd">fun</span><span class="w"> </span><span class="nf">corrida</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"3..."</span><span class="p">)</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="m">1000</span><span class="p">)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"2..."</span><span class="p">)</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="m">1000</span><span class="p">)</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"1..."</span><span class="p">)</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="n">delay</span><span class="p">(</span><span class="m">1000</span><span class="p">)</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">    </span><span class="n">println</span><span class="p">(</span><span class="s">"JÁ!"</span><span class="p">)</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">}</span>
+<h3 id="encapsulamento">Encapsulamento 🛡️</h3>
+<p>Proteger os dados. Ninguém mexe no cofre do banco direto.</p>
+<ul>
+<li><strong>Private</strong>: Só a classe vê. { .fragment }</li>
+<li><strong>Public</strong>: Todo mundo vê. { .fragment }</li>
+<li><strong>Getters/Setters</strong>: Porteiros que controlam o acesso. { .fragment }</li>
+</ul>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">private</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">saldo</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">depositar</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">valor</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">valor</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="n">saldo</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">valor</span><span class="p">;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="p">}</span>
 </span></code></pre></div>
+<hr>
+<h3 id="heranca">Herança 🧬</h3>
+<p>Reaproveitar código.</p>
 <ul>
-<li>Chame isso num clique de botão e tente clicar em outro botão enquanto a contagem ocorre. Se funcionar, você venceu o ANR! 🏆</li>
+<li><code>Cachorro</code> <strong>é um</strong> <code>Animal</code>. { .fragment }</li>
+<li><code>Gato</code> <strong>é um</strong> <code>Animal</code>. { .fragment }</li>
+<li>Tudo que <code>Animal</code> tem, eles herdam (nome, idade). { .fragment }</li>
+</ul>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Cachorro</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Animal</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">...</span><span class="w"> </span><span class="p">}</span>
+</span></code></pre></div>
+<hr>
+<h3 id="polimorfismo">Polimorfismo 🎭</h3>
+<p>Muitas formas.</p>
+<ul>
+<li>O método <code>fazerSom()</code> existe em Animal. { .fragment }</li>
+<li>No Cachorro, ele faz "Au Au". { .fragment }</li>
+<li>No Gato, ele faz "Miau". { .fragment }</li>
+<li>O mesmo método se comporta diferente. { .fragment }</li>
 </ul>
 <hr>
-<h2 id="conclusao">🏁 Conclusão</h2>
+<h2 id="5-spring-boot">5. Spring Boot 🍃</h2>
+<p>Java não é só "tela preta".
+É a linguagem nº 1 em Bancos e Grandes Empresas.</p>
 <ul>
-<li>Main Thread é sagrada. { .fragment }</li>
-<li>Coroutines trazem ordem ao caos assíncrono. { .fragment }</li>
-<li>Sempre use <code>viewModelScope</code> para segurança. { .fragment }</li>
+<li><strong>Spring Boot</strong>: Framework para criar APIs Web. { .fragment }</li>
+<li>Tira toda a configuração chata. { .fragment }</li>
 </ul>
 <hr>
-<h2 id="perguntas-sobre-threads">❓ Perguntas sobre Threads?</h2>
+<h3 id="exemplo-de-api">Exemplo de API</h3>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nd">@RestController</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">OlaController</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nd">@GetMapping</span><span class="p">(</span><span class="s">"/ola"</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="nf">dizerOla</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="s">"Olá, Mundo Java Web!"</span><span class="p">;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
+</span></code></pre></div>
 <hr>
-<h3 id="proxima-aula-ux-e-material-design-3">Próxima Aula: UX e Material Design 3! 🎨👋</h3>
+<h2 id="exercicio-mental">Exercício Mental 🧠</h2>
+<p>Modele um sistema de <strong>Venda</strong>.</p>
+<ul>
+<li>Classes: <code>Produto</code>, <code>Cliente</code>, <code>Venda</code>. { .fragment }</li>
+<li>Atributos: <code>Preco</code>, <code>Nome</code>. { .fragment }</li>
+<li>Métodos: <code>CalcularTotal()</code>, <code>Pagar()</code>. { .fragment }</li>
+</ul>
+<hr>
+<h2 id="resumo">Resumo ✅</h2>
+<ul>
+<li><strong>Classe</strong> é molde, <strong>Objeto</strong> é real. { .fragment }</li>
+<li><strong>JVM</strong> garante portabilidade. { .fragment }</li>
+<li><strong>Encapsulamento</strong> protege. { .fragment }</li>
+<li><strong>Herança</strong> reutiliza. { .fragment }</li>
+<li><strong>Polimorfismo</strong> flexibiliza. { .fragment }</li>
+</ul>
+<hr>
+<h2 id="proxima-aula">Próxima Aula 🚀</h2>
+<ul>
+<li>O concorrente direto do Java. { .fragment }</li>
+<li>Criado pela Microsoft. { .fragment }</li>
+<li><strong>C# e plataforma .NET</strong>. { .fragment }</li>
+<li>Foco em produtividade. { .fragment }</li>
+</ul>
+<p>👉 <strong>Tarefa</strong>: Instalar o JDK (Java Development Kit) e o VS Code Extension Pack for Java!</p>
 
 
 
@@ -3698,7 +3655,7 @@ Socket é: "Canal aberto, qualquer um fala".</p>
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 22:50:10 UTC">19 de fevereiro de 2026 22:50:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="24 de fevereiro de 2026 04:47:03 UTC">24 de fevereiro de 2026 04:47:03</span>
   </span>
 
     

@@ -16,12 +16,12 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../assets/images/logic_logo.svg">
+      <link rel="icon" href="../../assets/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Setup 09: PHP e Servidor Local 🐘 - Desenvolvimento Mobile Nativo - Curso</title>
+        <title>Aula: Ecossistemas Mobile Modernos 📱 - Desenvolvimento Mobile Nativo - Curso</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setup-09-php-e-servidor-local" class="md-skip">
+        <a href="#aula-ecossistemas-mobile-modernos" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -116,7 +116,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Setup 09: PHP e Servidor Local 🐘
+              Aula: Ecossistemas Mobile Modernos 📱
             
           </span>
         </div>
@@ -475,7 +475,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
     Desenvolvimento Mobile Nativo - Curso
@@ -3315,10 +3315,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-xampp-tudo-em-um" class="md-nav__link">
+  <a href="#pontes-entre-hardware-e-software" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. XAMPP (Tudo em Um)
+        Pontes entre Hardware e Software
       
     </span>
   </a>
@@ -3326,10 +3326,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-composer-gerenciador-de-pacotes" class="md-nav__link">
+  <a href="#1-o-espectro-do-desenvolvimento" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Composer (Gerenciador de Pacotes)
+        1. O Espectro do Desenvolvimento 🏗️
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. O Espectro do Desenvolvimento 🏗️">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mapeamento-de-tecnologias" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mapeamento de Tecnologias 📊
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-na-pratica-o-poder-da-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Na Prática: O Poder da CLI 💻
       
     </span>
   </a>
@@ -3337,10 +3365,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-laravel-opcional" class="md-nav__link">
+  <a href="#3-blocos-de-conhecimento" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Laravel (Opcional)
+        3. Blocos de Conhecimento 🧠
       
     </span>
   </a>
@@ -3348,10 +3376,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-solucao-de-problemas-comuns" class="md-nav__link">
+  <a href="#exercicios-progressivos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Solução de Problemas Comuns ⚠️
+        📝 Exercícios Progressivos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projeto-dashboard-de-arquitetura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Mini-Projeto: Dashboard de Arquitetura
       
     </span>
   </a>
@@ -3378,29 +3417,66 @@
   
 
 
-<h1 id="setup-09-php-e-servidor-local">Setup 09: PHP e Servidor Local 🐘</h1>
-<p>Como o PHP roda no servidor, precisamos simular um servidor no nosso computador.</p>
-<h2 id="1-xampp-tudo-em-um">1. XAMPP (Tudo em Um)</h2>
-<p>O pacote mais fácil. Inclui Apache (Servidor), MySQL (Banco) e PHP.
-1.  Baixe em <a href="https://www.apachefriends.org/pt_br/index.html">apachefriends.org</a>.
-2.  Instale e abra o <strong>XAMPP Control Panel</strong>.
-3.  Clique em <strong>Start</strong> no Apache e MySQL.
-4.  Seus arquivos devem ficar na pasta <code>C:\xampp\htdocs</code>.</p>
-<h2 id="2-composer-gerenciador-de-pacotes">2. Composer (Gerenciador de Pacotes)</h2>
-<p>Essencial para usar bibliotecas modernas e frameworks como Laravel.
-1.  Baixe em <a href="https://getcomposer.org/">getcomposer.org</a>.
-2.  Instale. Ele deve encontrar seu PHP automaticamente.</p>
-<h2 id="3-laravel-opcional">3. Laravel (Opcional)</h2>
-<p>Para criar projetos profissionais:
-</p><div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>composer<span class="w"> </span>global<span class="w"> </span>require<span class="w"> </span>laravel/installer
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>laravel<span class="w"> </span>new<span class="w"> </span>meu-projeto
-</span></code></pre></div><p></p>
-<h2 id="4-solucao-de-problemas-comuns">4. Solução de Problemas Comuns ⚠️</h2>
+<h1 id="aula-ecossistemas-mobile-modernos">Aula: Ecossistemas Mobile Modernos 📱</h1>
+<h2 id="pontes-entre-hardware-e-software">Pontes entre Hardware e Software</h2>
+<p>Nesta aula, exploraremos como transformamos código em apps funcionais para <strong>Android (ARM)</strong> e <strong>iOS (Apple Silicon)</strong>, navegando entre soluções nativas e multiplataforma.</p>
+<hr>
+<h2 id="1-o-espectro-do-desenvolvimento">1. O Espectro do Desenvolvimento 🏗️</h2>
+<p>O desenvolvedor moderno deve escolher entre <strong>Performance Máxima</strong> (Nativo) ou <strong>Agilidade de Escopo</strong> (Multiplataforma).</p>
+<h3 id="mapeamento-de-tecnologias">Mapeamento de Tecnologias 📊</h3>
+<pre class="mermaid"><code>graph TD
+    A[Desenvolvimento Mobile] --&gt; B[Nativo]
+    A --&gt; C[Multiplataforma]
+    B --&gt; D[Android: Kotlin/Java]
+    B --&gt; E[iOS: Swift]
+    C --&gt; F[Híbrido: Ionic/Capacitor]
+    C --&gt; G[Renderizado: RN/Flutter]
+    C --&gt; H[Compilado: .NET MAUI]</code></pre>
 <ul>
-<li><strong>Apache não inicia (Port 80 busy)</strong>: Skype ou IIS podem estar usando a porta 80. No XAMPP, vá em Config -&gt; httpd.conf e mude <code>Listen 80</code> para <code>Listen 8080</code>.</li>
-<li><strong>MySQL não conecta</strong>: Verifique se o serviço está verde no XAMPP.</li>
-<li><strong>Erro de DLL</strong>: Pode faltar o "Visual C++ Redistributable" no seu Windows. Atualize-o.</li>
+<li><strong>Nativo:</strong> Acesso total ao hardware com latência zero.</li>
+<li><strong>Multiplataforma:</strong> Reuso de código (escreva uma vez, rode em dois).</li>
 </ul>
+<hr>
+<h2 id="2-na-pratica-o-poder-da-cli">2. Na Prática: O Poder da CLI 💻</h2>
+<p>Para criar um app moderno, o fluxo via terminal é o padrão de mercado.</p>
+<div id="termynal" data-termynal>
+    <span data-ty="input">npx ionic start MySuperApp tabs --type=angular</span>
+    <span data-ty="progress"></span>
+    <span data-ty="input">npx cap add android</span>
+    <span data-ty="output">🚀 Projeto configurado para ARM64/x86!</span>
+</div>
+
+<hr>
+<h2 id="3-blocos-de-conhecimento">3. Blocos de Conhecimento 🧠</h2>
+<div class="admonition concept">
+<p class="admonition-title">Conceito: Compilação AOT vs JIT</p>
+<p>No iOS, o código <strong>deve</strong> ser compilado <strong>AOT</strong> (<em>Ahead-of-Time</em>) por segurança. No Android, usamos <strong>JIT</strong> (<em>Just-in-Time</em>) para otimizar o app enquanto ele roda.</p>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Atenção: Bridge vs Engine</p>
+<p>O <strong>React Native</strong> usa uma "ponte" (bridge) para falar com o nativo, o que pode causar gargalos. O <strong>Flutter</strong> carrega sua própria "engine" de desenho (Skia/Impeller), sendo mais fluido na UI.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Dica: .NET MAUI</p>
+<p>O MAUI é a evolução do Xamarin e permite criar apps para Android, iOS e Windows ARM usando C#. É ideal para ecossistemas corporativos.</p>
+</div>
+<hr>
+<h2 id="exercicios-progressivos">📝 Exercícios Progressivos</h2>
+<ol>
+<li><strong>Nível 1:</strong> Explique por que um app feito em Ionic tende a consumir mais memória RAM do que um app em Swift nativo.</li>
+<li><strong>Nível 2:</strong> Em qual camada do sistema operacional o .NET MAUI atua para acessar o GPS de diferentes plataformas simultaneamente?</li>
+<li><strong>Nível 3:</strong> Desenhe (mentalmente ou em papel) o fluxo de dados de um botão clicado em um app React Native até ele ser processado pela CPU ARM.</li>
+</ol>
+<hr>
+<h2 id="mini-projeto-dashboard-de-arquitetura">🚀 Mini-Projeto: Dashboard de Arquitetura</h2>
+<p><strong>Objetivo:</strong> Criar um protótipo que detecta a arquitetura do processador.</p>
+<ul>
+<li><strong>Requisito 1:</strong> Usar <strong>Ionic + Capacitor</strong> para acessar a API de <code>Device Info</code>.</li>
+<li><strong>Requisito 2:</strong> Exibir se o dispositivo é <code>arm64</code>, <code>x86_64</code> ou <code>unknown</code>.</li>
+<li><strong>Requisito 3:</strong> Adicionar um botão que simula um processamento pesado para observar o comportamento térmico.</li>
+</ul>
+<hr>
+<p><a href="../">Retornar ao Índice de Setups <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.78 19.03a.75.75 0 0 1-1.06 0l-6.25-6.25a.75.75 0 0 1 0-1.06l6.25-6.25a.749.749 0 0 1 1.275.326.75.75 0 0 1-.215.734L5.81 11.5h14.44a.75.75 0 0 1 0 1.5H5.81l4.97 4.97a.75.75 0 0 1 0 1.06"></path></svg></span></a></p>
 
 
 
@@ -3423,7 +3499,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 21:44:50 UTC">19 de fevereiro de 2026 21:44:50</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="24 de fevereiro de 2026 04:47:03 UTC">24 de fevereiro de 2026 04:47:03</span>
   </span>
 
     

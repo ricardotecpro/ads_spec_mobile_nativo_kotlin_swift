@@ -16,12 +16,12 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../assets/images/logic_logo.svg">
+      <link rel="icon" href="../../../assets/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Quiz 05 - Interface Gráfica (UI) 🎨 - Desenvolvimento Mobile Nativo - Curso</title>
+        <title>Quiz 05 - Estruturas Repetitivas 🔄 - Desenvolvimento Mobile Nativo - Curso</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quiz-05-interface-grafica-ui" class="md-skip">
+        <a href="#quiz-05-estruturas-repetitivas" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -116,7 +116,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quiz 05 - Interface Gráfica (UI) 🎨
+              Quiz 05 - Estruturas Repetitivas 🔄
             
           </span>
         </div>
@@ -475,7 +475,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     Desenvolvimento Mobile Nativo - Curso
@@ -3326,106 +3326,96 @@
   
 
 
-<h1 id="quiz-05-interface-grafica-ui">Quiz 05 - Interface Gráfica (UI) 🎨</h1>
+<h1 id="quiz-05-estruturas-repetitivas">Quiz 05 - Estruturas Repetitivas 🔄</h1>
 <ol>
 <li>
-<p>Qual a diferença fundamental entre uma View e um ViewGroup?</p>
+<p>Qual o principal objetivo de uma estrutura repetitiva (Loop)?</p>
 <ul>
-<li>[ ] Uma View organiza o layout e um ViewGroup exibe o conteúdo.</li>
-<li>[x] Uma View é um componente visual individual (botão, texto) e um ViewGroup é um container que organiza as Views.</li>
-<li>[ ] Não há diferença, são sinônimos.</li>
-<li>[ ] ViewGroups só existem no iOS.
-<em>Explicação: ViewGroups (como LinearLayout e ConstraintLayout) servem para posicionar as Views na tela.</em></li>
+<li>[ ] Deixar o código mais lento</li>
+<li>[ ] Criar variáveis infinitas</li>
+<li>[x] Executar um bloco de códigos várias vezes sem repetir escrita</li>
+<li>[ ] Tomar uma única decisão</li>
 </ul>
 </li>
 <li>
-<p>Qual unidade de medida deve ser usada para definir o tamanho de botões e margens no Android?</p>
+<p>O que caracteriza um "Loop Infinito"?</p>
 <ul>
-<li>[ ] px (pixels)</li>
-<li>[ ] pt (pontos)</li>
-<li>[x] dp (density-independent pixels)</li>
-<li>[ ] sp (scale-independent pixels)
-<em>Explicação: dp escala automaticamente de acordo com a densidade de pixels da tela do dispositivo.</em></li>
+<li>[ ] Ele roda 1000 vezes e para</li>
+<li>[x] Ele nunca atinge a condição de parada</li>
+<li>[ ] Ele é muito rápido</li>
+<li>[ ] Ele ocupa 0 bytes de memória</li>
 </ul>
 </li>
 <li>
-<p>Qual unidade de medida é recomendada especificamente para o tamanho de textos (fontes)?</p>
+<p>A estrutura <code>Enquanto...Faca</code> testa a condição quando?</p>
 <ul>
-<li>[ ] dp</li>
-<li>[ ] px</li>
-<li>[x] sp</li>
-<li>[ ] mm
-<em>Explicação: sp respeita as configurações de acessibilidade do usuário, aumentando se o usuário escolher letras grandes no sistema.</em></li>
+<li>[x] No Início (antes de entrar)</li>
+<li>[ ] No Fim (depois de rodar uma vez)</li>
+<li>[ ] No meio</li>
+<li>[ ] Nunca</li>
 </ul>
 </li>
 <li>
-<p>Qual Layout organiza seus filhos em uma única linha ou coluna?</p>
+<p>A estrutura <code>Repita...Ate</code> garante que o bloco execute pelo menos quantas vezes?</p>
 <ul>
-<li>[ ] ConstraintLayout</li>
-<li>[ ] FrameLayout</li>
-<li>[x] LinearLayout</li>
-<li>[ ] RelativeLayout
-<em>Explicação: O LinearLayout é linear, ou seja, segue uma única direção (horizontal ou vertical).</em></li>
+<li>[ ] 0</li>
+<li>[x] 1</li>
+<li>[ ] 10</li>
+<li>[ ] Infinito</li>
 </ul>
 </li>
 <li>
-<p>Qual a principal vantagem do ConstraintLayout em relação aos outros layouts?</p>
+<p>Para loops onde sabemos o número exato de repetições (ex: 10 vezes), qual é a melhor estrutura?</p>
 <ul>
-<li>[ ] É o layout mais antigo e compatível.</li>
-<li>[x] Permite criar layouts complexos de forma plana, sem aninhar muitos ViewGroups, melhorando a performance.</li>
-<li>[ ] Só funciona com imagens 3D.</li>
-<li>[ ] Ele obriga o uso de Java em vez de Kotlin.
-<em>Explicação: O ConstraintLayout reduz o aninhamento de telas, o que torna a renderização mais rápida.</em></li>
+<li>[ ] Enquanto</li>
+<li>[ ] Repita</li>
+<li>[x] Para (For)</li>
+<li>[ ] Se</li>
 </ul>
 </li>
 <li>
-<p>No Android Studio, o que representa a aba "Split" ao editar um arquivo XML?</p>
+<p>O que é um "Contador" em um loop?</p>
 <ul>
-<li>[ ] Divide a tela do computador em duas.</li>
-<li>[x] Mostra o código XML de um lado e o preview visual do outro.</li>
-<li>[ ] Separa o código Kotlin do XML.</li>
-<li>[ ] Finaliza o processo de compilação.
-<em>Explicação: É o modo ideal para desenvolvedores, permitindo ver o resultado visual imediato das mudanças no código.</em></li>
+<li>[ ] Uma variável que soma valores (total = total + valor)</li>
+<li>[x] Uma variável que conta passadas (i = i + 1)</li>
+<li>[ ] Um cronômetro do Windows</li>
+<li>[ ] Um erro de hardware</li>
 </ul>
 </li>
 <li>
-<p>O atributo <code>android:layout_width="match_parent"</code> faz com que o componente:</p>
+<p>O que é um "Acumulador" (ou Somador)?</p>
 <ul>
-<li>[ ] Tenha o tamanho exato do seu conteúdo interno.</li>
-<li>[x] Ocupe toda a largura disponível do seu componente pai (parent).</li>
-<li>[ ] Tenha exatamente 100 pixels de largura.</li>
-<li>[ ] Desapareça da tela.
-<em>Explicação: match_parent diz ao componente para esticar até os limites do container onde ele está.</em></li>
+<li>[ ] Uma variável que conta de 1 em 1</li>
+<li>[x] Uma variável que guarda a soma de valores (saldo = saldo + deposito)</li>
+<li>[ ] Uma bateria</li>
+<li>[ ] Um vetor</li>
 </ul>
 </li>
 <li>
-<p>Qual componente usamos para permitir que o usuário digite um texto (Input)?</p>
+<p>O comando <code>interrompa</code> (break) serve para:</p>
 <ul>
-<li>[ ] TextView</li>
-<li>[x] EditText (ou TextInputEditText)</li>
-<li>[ ] Button</li>
-<li>[ ] ImageButton
-<em>Explicação: Diferente do TextView (exibição), o EditText permite a interação de escrita.</em></li>
+<li>[ ] Pausar o programa para o café</li>
+<li>[x] Sair imediatamente do loop</li>
+<li>[ ] Reiniciar o Windows</li>
+<li>[ ] Pular uma iteração</li>
 </ul>
 </li>
 <li>
-<p>Para que serve o atributo <code>android:hint</code> em um EditText?</p>
+<p>O que é "Teste de Mesa"?</p>
 <ul>
-<li>[ ] É a senha secreta do campo.</li>
-<li>[ ] Define a cor do fundo.</li>
-<li>[x] Exibe um texto de ajuda ou exemplo dentro do campo enquanto ele está vazio.</li>
-<li>[ ] Define o limite máximo de caracteres.
-<em>Explicação: O hint (dica) ajuda o usuário a entender o que ele deve digitar naquele campo.</em></li>
+<li>[ ] Testar se a mesa está firme</li>
+<li>[x] Simular o código manualmente (no papel) para ver os valores das variáveis</li>
+<li>[ ] Rodar o código no servidor de produção</li>
+<li>[ ] Limpar o computador</li>
 </ul>
 </li>
 <li>
-<p>No iOS, qual tecnologia de layout é mais parecida com o ConstraintLayout do Android?</p>
+<p>No loop <code>Para i de 1 ate 10 faca</code>, qual o valor final de <code>i</code> ao sair do loop?</p>
 <ul>
-<li>[ ] SwiftUI</li>
-<li>[ ] Objective-C</li>
-<li>[x] Auto Layout</li>
-<li>[ ] Core Graphics
-<em>Explicação: Tanto o ConstraintLayout quanto o Auto Layout baseiam-se em regras de posicionamento relativo entre os elementos.</em></li>
+<li>[ ] 9</li>
+<li>[ ] 10</li>
+<li>[x] 11 (Geralmente ele incrementa, falha no teste 11 &lt;= 10 e sai) - <em>Depende da linguagem, mas em lógica costuma ser o valor de 'estouro'</em></li>
+<li>[ ] 0</li>
 </ul>
 </li>
 </ol>
@@ -3451,7 +3441,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 22:50:10 UTC">19 de fevereiro de 2026 22:50:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="24 de fevereiro de 2026 04:47:03 UTC">24 de fevereiro de 2026 04:47:03</span>
   </span>
 
     

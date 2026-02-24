@@ -16,12 +16,12 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../assets/images/logic_logo.svg">
+      <link rel="icon" href="../../../assets/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Quiz 14 - Testes, Qualidade e Debugging 🐞 - Desenvolvimento Mobile Nativo - Curso</title>
+        <title>Quiz 14 - Rust e Go 🦀🐹 - Desenvolvimento Mobile Nativo - Curso</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quiz-14-testes-qualidade-e-debugging" class="md-skip">
+        <a href="#quiz-14-rust-e-go" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -116,7 +116,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quiz 14 - Testes, Qualidade e Debugging 🐞
+              Quiz 14 - Rust e Go 🦀🐹
             
           </span>
         </div>
@@ -475,7 +475,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     Desenvolvimento Mobile Nativo - Curso
@@ -3326,106 +3326,96 @@
   
 
 
-<h1 id="quiz-14-testes-qualidade-e-debugging">Quiz 14 - Testes, Qualidade e Debugging 🐞</h1>
+<h1 id="quiz-14-rust-e-go">Quiz 14 - Rust e Go 🦀🐹</h1>
 <ol>
 <li>
-<p>Qual a principal diferença entre um Teste Unitário e um Teste de UI no Android?</p>
+<p>Qual o foco principal da linguagem Rust?</p>
 <ul>
-<li>[ ] Testes de UI são mais rápidos.</li>
-<li>[x] Testes Unitários testam lógica rápida na JVM (computador); Testes de UI rodam no emulador/celular clicando na tela.</li>
-<li>[ ] Testes Unitários só funcionam com Java.</li>
-<li>[ ] Não há diferença, são o mesmo arquivo.
-<em>Explicação: Testes Unitários são a base da pirâmide (rápidos e baratos), enquanto testes de UI (Espresso) são mais lentos e complexos.</em></li>
+<li>[ ] Facilidade de aprendizado</li>
+<li>[x] Segurança de Memória e Performance (sem Garbage Collector)</li>
+<li>[ ] Desenvolvimento Web Frontend</li>
+<li>[ ] Scripts simples</li>
 </ul>
 </li>
 <li>
-<p>Para que serve o "Logcat" no Android Studio?</p>
+<p>O que é o "Borrow Checker" (Verificador de Empréstimo) do Rust?</p>
 <ul>
-<li>[ ] Para desenhar ícones.</li>
-<li>[x] Para visualizar mensagens de sistema, erros e logs personalizados que ajudam a encontrar bugs.</li>
-<li>[ ] Para salvar o app na nuvem.</li>
-<li>[ ] Para aumentar a velocidade da internet.
-<em>Explicação: É o console de saída onde o desenvolvedor monitora toda a saúde do app em tempo real.</em></li>
+<li>[ ] Um sistema de empréstimo bancário</li>
+<li>[x] O compilador garantindo que ninguém acesse memória inválida</li>
+<li>[ ] Uma biblioteca de matemática</li>
+<li>[ ] Um erro comum</li>
 </ul>
 </li>
 <li>
-<p>Qual o nível de log (<code>Log.x</code>) deve ser usado para indicar um erro crítico que faz o app parar de funcionar conforme esperado?</p>
+<p>Go (Golang) foi criado por qual empresa?</p>
 <ul>
-<li>[ ] Log.v (Verbose)</li>
-<li>[ ] Log.d (Debug)</li>
-<li>[ ] Log.i (Info)</li>
-<li>[x] Log.e (Error)
-<em>Explicação: O Log.e aparece em vermelho no Logcat e ajuda a identificar falhas graves rapidamente.</em></li>
+<li>[ ] Facebook</li>
+<li>[x] Google</li>
+<li>[ ] Amazon</li>
+<li>[ ] Microsoft</li>
 </ul>
 </li>
 <li>
-<p>O que é um "Breakpoint" no processo de Debugging?</p>
+<p>O que são Goroutines em Go?</p>
 <ul>
-<li>[ ] Uma tecla que quebrou.</li>
-<li>[x] Um ponto de interrupção no código onde a execução para para o desenvolvedor analisar o valor das variáveis.</li>
-<li>[ ] O final do programa.</li>
-<li>[ ] Um erro de compilação.
-<em>Explicação: Breakpoints permitem a inspeção "ao vivo" do estado do app linha por linha.</em></li>
+<li>[ ] Rotinas de dança</li>
+<li>[x] Threads ultra-leves para concorrência</li>
+<li>[ ] Funções matemáticas</li>
+<li>[ ] Erros de compilação</li>
 </ul>
 </li>
 <li>
-<p>Qual biblioteca é o padrão para realizar testes de interface (UI) no Android?</p>
+<p>A ferramenta oficial de gerenciamento de pacotes do Rust é:</p>
 <ul>
-<li>[ ] JUnit</li>
-<li>[ ] Mockito</li>
-<li>[x] Espresso</li>
-<li>[ ] Retrofit
-<em>Explicação: O Espresso permite encontrar elementos na tela (<code>withId</code>) e realizar ações (<code>click()</code>, <code>typeText()</code>).</em></li>
+<li>[ ] npm</li>
+<li>[x] cargo</li>
+<li>[ ] pip</li>
+<li>[ ] maven</li>
 </ul>
 </li>
 <li>
-<p>O que o framework JUnit faz?</p>
+<p>Go usa ponto-e-vírgula <code>;</code> obrigatório no final da linha?</p>
 <ul>
-<li>[ ] Desenha layouts.</li>
-<li>[x] Fornece a estrutura para escrever e rodar testes unitários (anotações como <code>@Test</code>).</li>
-<li>[ ] Faz o build do app.</li>
-<li>[ ] Envia o app para a loja.
-<em>Explicação: O JUnit é o framework de testes mais popular do mundo Java/Kotlin.</em></li>
+<li>[ ] Sim</li>
+<li>[x] Não (o compilador insere se omitido)</li>
+<li>[ ] Apenas em loops</li>
+<li>[ ] Depende do editor</li>
 </ul>
 </li>
 <li>
-<p>Por que devemos usar <code>try/catch</code> em operações de rede?</p>
+<p>Qual linguagem está sendo introduzida no Kernel do Linux?</p>
 <ul>
-<li>[ ] Para o código ficar mais longo.</li>
-<li>[x] Para evitar que o app feche (Crash) caso a internet falhe ou o servidor retorne erro.</li>
-<li>[ ] Para o download ser mais rápido.</li>
-<li>[ ] Porque é obrigatório em todas as funções.
-<em>Explicação: O tratamento de exceções garante que o app continue rodando mesmo diante de imprevistos externos.</em></li>
+<li>[ ] Java</li>
+<li>[ ] Python</li>
+<li>[x] Rust</li>
+<li>[ ] C#</li>
 </ul>
 </li>
 <li>
-<p>O que significa "Refatorar" um código?</p>
+<p>Rust permite usar valores "NULL" livremente?</p>
 <ul>
-<li>[ ] Adicionar novas funcionalidades.</li>
-<li>[x] Reorganizar e limpar o código existente para melhorar a qualidade, sem mudar o que ele faz para o usuário.</li>
-<li>[ ] Apagar todo o projeto e começar do zero.</li>
-<li>[ ] Traduzir o app.
-<em>Explicação: Refatorar é essencial para manter a saúde do projeto a longo prazo.</em></li>
+<li>[ ] Sim</li>
+<li>[x] Não, usa o tipo Option<t> para segurança</t></li>
+<li>[ ] Sim, mas avisa</li>
+<li>[ ] Depende da versão</li>
 </ul>
 </li>
 <li>
-<p>Qual é a ferramenta de testes automatizados da Apple para o iOS?</p>
+<p>Para comunicação entre Goroutines, Go utiliza:</p>
 <ul>
-<li>[ ] Espresso iOS</li>
-<li>[ ] AppleTest</li>
-<li>[x] XCTest</li>
-<li>[ ] SwiftUnit
-<em>Explicação: O XCTest é o framework nativo da Apple para testes unitários, de performance e de UI.</em></li>
+<li>[ ] Emails</li>
+<li>[x] Channels (Canais)</li>
+<li>[ ] Variáveis globais inseguras</li>
+<li>[ ] Arquivos de texto</li>
 </ul>
 </li>
 <li>
-<p>Qual a porcentagem ideal de cobertura de testes unitários recomendada pela "Pirâmide de Testes"?</p>
+<p>Ambas as linguagens (Rust e Go) são:</p>
 <ul>
-<li>[ ] 0% (não precisa testar).</li>
-<li>[ ] 10% (testar só o login).</li>
-<li>[x] Cerca de 70% (deve ser a maior parte dos seus testes).</li>
-<li>[ ] 100% (testar cada linha exaustivamente).
-<em>Explicação: Testes unitários são a fundação por serem rápidos, estáveis e fáceis de manter.</em></li>
+<li>[ ] Interpretadas</li>
+<li>[x] Compiladas (Geram binário nativo)</li>
+<li>[ ] Apenas para Windows</li>
+<li>[ ] Lentas</li>
 </ul>
 </li>
 </ol>
@@ -3451,7 +3441,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 22:50:10 UTC">19 de fevereiro de 2026 22:50:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="24 de fevereiro de 2026 04:47:03 UTC">24 de fevereiro de 2026 04:47:03</span>
   </span>
 
     

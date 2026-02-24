@@ -16,12 +16,12 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../assets/images/logic_logo.svg">
+      <link rel="icon" href="../../assets/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Setup 06: Python 🐍 - Desenvolvimento Mobile Nativo - Curso</title>
+        <title>Aula: O Caso de Estudo Apple 🍎 - Desenvolvimento Mobile Nativo - Curso</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setup-06-python" class="md-skip">
+        <a href="#aula-o-caso-de-estudo-apple" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -116,7 +116,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Setup 06: Python 🐍
+              Aula: O Caso de Estudo Apple 🍎
             
           </span>
         </div>
@@ -475,7 +475,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
     Desenvolvimento Mobile Nativo - Curso
@@ -3315,10 +3315,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-interpretador-python" class="md-nav__link">
+  <a href="#evolucao-e-eficiencia" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Interpretador Python
+        Evolução e Eficiência
       
     </span>
   </a>
@@ -3326,10 +3326,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-pycharm-community" class="md-nav__link">
+  <a href="#1-a-jornada-do-silicio" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. PyCharm Community
+        1. A Jornada do Silício 🕒
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. A Jornada do Silício 🕒">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#linha-do-tempo-de-transicoes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Linha do Tempo de Transições 📊
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-ferramentas-de-teste-virtualizacao-vs-simulacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Ferramentas de Teste: Virtualização vs. Simulação 📱
       
     </span>
   </a>
@@ -3337,10 +3365,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-vs-code-python" class="md-nav__link">
+  <a href="#3-na-pratica-verificando-nativismo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. VS Code + Python
+        3. Na Prática: Verificando Nativismo 💻
       
     </span>
   </a>
@@ -3348,10 +3376,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-solucao-de-problemas-comuns" class="md-nav__link">
+  <a href="#4-desenvolver-ios-no-windows" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Solução de Problemas Comuns ⚠️
+        4. Desenvolver iOS no Windows? 🖥️
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios-progressivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Exercícios Progressivos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projeto-dashboard-de-compatibilidade" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Mini-Projeto: Dashboard de Compatibilidade
       
     </span>
   </a>
@@ -3378,27 +3428,100 @@
   
 
 
-<h1 id="setup-06-python">Setup 06: Python 🐍</h1>
-<h2 id="1-interpretador-python">1. Interpretador Python</h2>
-<ol>
-<li>Baixe a versão mais recente em <a href="https://www.python.org/">python.org</a>.</li>
-<li><strong>IMPORTANTE</strong>: Marque a caixa <strong>"Add Python to PATH"</strong> na instalação!</li>
-<li>Teste: <code>python --version</code> ou <code>py --version</code>.</li>
-</ol>
-<h2 id="2-pycharm-community">2. PyCharm Community</h2>
-<p>A IDE mais poderosa para Python.
-1.  Baixe em <a href="https://www.jetbrains.com/pycharm/">jetbrains.com/pycharm</a>.</p>
-<h2 id="3-vs-code-python">3. VS Code + Python</h2>
-<ol>
-<li>Instale a extensão "Python" da Microsoft.</li>
-<li>Instale a extensão "Jupyter" se quiser usar Notebooks.</li>
-</ol>
-<h2 id="4-solucao-de-problemas-comuns">4. Solução de Problemas Comuns ⚠️</h2>
+<h1 id="aula-o-caso-de-estudo-apple">Aula: O Caso de Estudo Apple 🍎</h1>
+<h2 id="evolucao-e-eficiencia">Evolução e Eficiência</h2>
+<p>Entender as transições da Apple é entender a história da eficiência computacional. A distinção entre emulação e simulação define o fluxo de trabalho de um desenvolvedor mobile.</p>
+<hr>
+<h2 id="1-a-jornada-do-silicio">1. A Jornada do Silício 🕒</h2>
+<p>A Apple passou por grandes transições de arquitetura, cada uma com um "tradutor" para manter a compatibilidade.</p>
+<h3 id="linha-do-tempo-de-transicoes">Linha do Tempo de Transições 📊</h3>
+<pre class="mermaid"><code>timeline
+    title Evolução Apple
+    1994 : PowerPC (RISC) : Foco em performance bruta
+    2006 : Intel (CISC) : Mobilidade e compatibilidade : Rosetta
+    2020 : Apple Silicon (ARM) : Eficiência extrema e UMA : Rosetta 2</code></pre>
+<div class="admonition concept">
+<p class="admonition-title">Conceito: Arquitetura Unificada de Memória (UMA)</p>
+<p>No Apple Silicon, a CPU, GPU e NPU compartilham o mesmo pool de memória de alta velocidade. Isso elimina a necessidade de copiar dados entre memórias diferentes, fazendo com que 8GB de RAM rendam muito mais que em sistemas tradicionais.</p>
+</div>
+<hr>
+<h2 id="2-ferramentas-de-teste-virtualizacao-vs-simulacao">2. Ferramentas de Teste: Virtualização vs. Simulação 📱</h2>
+<p>Como testamos sem o hardware físico?</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Característica</th>
+<th style="text-align: left;"><strong>Emulação (Android)</strong></th>
+<th style="text-align: left;"><strong>Simulação (iOS)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Definição</strong></td>
+<td style="text-align: left;">Imita o <strong>Hardware</strong>.</td>
+<td style="text-align: left;">Imita o <strong>Software</strong>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Arquitetura</strong></td>
+<td style="text-align: left;">Cria uma CPU virtual (QEMU).</td>
+<td style="text-align: left;">Roda bibliotecas nativas no Mac host.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Performance</strong></td>
+<td style="text-align: left;">Mais lenta (pesada).</td>
+<td style="text-align: left;">Ultra rápida (leve).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Fidelidade</strong></td>
+<td style="text-align: left;">Alta (testa limites de RAM).</td>
+<td style="text-align: left;">Média (foco em UI/UX).</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition attention">
+<p class="admonition-title">Atenção: Diferença de Comportamento</p>
+<p>Um app que roda perfeito no <strong>Simulador iOS</strong> pode falhar no aparelho real por questões de temperatura ou memória. Nunca publique sem testar no hardware físico!</p>
+</div>
+<hr>
+<h2 id="3-na-pratica-verificando-nativismo">3. Na Prática: Verificando Nativismo 💻</h2>
+<p>Como saber se um processo está rodando nativamente no seu Mac?</p>
+<div id="termynal" data-termynal>
+    <span data-ty="input">arch</span>
+    <span data-ty="output">arm64</span>
+    <span data-ty="input">file /usr/local/bin/legacy_app</span>
+    <span data-ty="output">Mach-O 64-bit executable x86_64</span>
+    <span data-ty="output">⚠️ Esse app está rodando via Rosetta 2!</span>
+</div>
+
+<hr>
+<h2 id="4-desenvolver-ios-no-windows">4. Desenvolver iOS no Windows? 🖥️</h2>
+<p>A resposta curta é: <strong>Sim, com ressalvas.</strong></p>
 <ul>
-<li><strong>'python' não encontrado</strong>: É o erro mais comum. Reinstale e marque a caixa "Add Python to PATH".</li>
-<li><strong>Comando 'python' abre a Microsoft Store</strong>: Vá nas configurações do Windows ("Gerenciar Aliases de Execução de Aplicativo") e DESATIVE os itens do "Instalador de Aplicativo" para Python.</li>
-<li><strong>Pip não funciona</strong>: Tente <code>python -m pip install pacote</code>.</li>
+<li><strong>Frameworks Multiplataforma:</strong> Flutter ou React Native permitem escrever o código no Windows.</li>
+<li><strong>A "Tranca" da Apple:</strong> Para gerar o arquivo <code>.ipa</code> final e publicar, um macOS (físico ou cloud) ainda é obrigatório.</li>
+<li><strong>Expo:</strong> Uma ótima ferramenta para testar no iPhone físico sem precisar de Mac durante o desenvolvimento inicial.</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Dica: MacinCloud</p>
+<p>Se você não tem um Mac, serviços como <strong>MacinCloud</strong> permitem alugar um servidor macOS por hora para compilar seus projetos.</p>
+</div>
+<hr>
+<h2 id="exercicios-progressivos">📝 Exercícios Progressivos</h2>
+<ol>
+<li><strong>Nível 1:</strong> O que foi a tecnologia <strong>Rosetta</strong> e por que ela foi vital para a Apple em 2006 e 2020?</li>
+<li><strong>Nível 2:</strong> Explique por que o <strong>Simulador do Xcode</strong> é geralmente mais rápido que o <strong>Emulador do Android Studio</strong>.</li>
+<li><strong>Nível 3:</strong> Pesquise sobre a <strong>Arquitetura Unificada de Memória (UMA)</strong> e cite uma vantagem técnica sobre o modelo tradicional de GPU dedicada.</li>
+</ol>
+<hr>
+<h2 id="mini-projeto-dashboard-de-compatibilidade">🚀 Mini-Projeto: Dashboard de Compatibilidade</h2>
+<p><strong>Objetivo:</strong> Criar um guia rápido (Tabela MD) para uma equipe que usa diferentes hardwares.</p>
+<ul>
+<li><strong>Tarefa 1:</strong> Criar uma tabela listando 3 tecnologias populares (ex: Docker, VS Code, Android Studio).</li>
+<li><strong>Tarefa 2:</strong> Indicar se rodam nativamente em <code>x86</code>, <code>ARM (Silicon)</code> ou via emulação.</li>
+<li><strong>Tarefa 3:</strong> Adicionar uma coluna de "Impacto de Performance" (Baixo, Médio, Alto).</li>
+</ul>
+<hr>
+<p><a href="../setup-07/">Ir para próxima aula: Configuração de Sistemas <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span></a></p>
 
 
 
@@ -3421,7 +3544,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 21:44:50 UTC">19 de fevereiro de 2026 21:44:50</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="24 de fevereiro de 2026 04:47:03 UTC">24 de fevereiro de 2026 04:47:03</span>
   </span>
 
     

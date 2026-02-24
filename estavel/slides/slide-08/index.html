@@ -20,7 +20,7 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../assets/images/logic_logo.svg">
+      <link rel="icon" href="../../assets/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#aula-08-persistencia-de-dados" class="md-skip">
+        <a href="#aula-08-modularizacao" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -120,7 +120,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -481,7 +481,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
     Desenvolvimento Mobile Nativo - Curso
@@ -2793,10 +2793,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#onde-guardamos-os-dados" class="md-nav__link">
+  <a href="#agenda" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💾 Onde guardamos os dados?
+        Agenda 📅
       
     </span>
   </a>
@@ -2804,22 +2804,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-sharedpreferences" class="md-nav__link">
+  <a href="#1-dividir-para-conquistar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. SharedPreferences 🔑
+        1. Dividir para Conquistar ⚔️
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. SharedPreferences 🔑">
+    <nav class="md-nav" aria-label="1. Dividir para Conquistar ⚔️">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usando-preferencemanager" class="md-nav__link">
+  <a href="#na-programacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Usando PreferenceManager
+        Na Programação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizando-mermaid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualizando (Mermaid)
       
     </span>
   </a>
@@ -2832,33 +2843,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#banco-de-dados-sqlite" class="md-nav__link">
+  <a href="#2-tipos-de-modulos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏛️ Banco de Dados: SQLite
+        2. Tipos de Módulos 🛠️
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conheca-o-room" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔨 Conheça o ROOM
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔨 Conheça o ROOM">
+    <nav class="md-nav" aria-label="2. Tipos de Módulos 🛠️">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#passo-1-a-entidade-entity" class="md-nav__link">
+  <a href="#procedimento-acao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 1: A Entidade (@Entity)
+        Procedimento (Ação)
       
     </span>
   </a>
@@ -2866,10 +2866,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#passo-2-o-dao-dao" class="md-nav__link">
+  <a href="#funcao-calculo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 2: O DAO (@Dao)
+        Função (Cálculo)
       
     </span>
   </a>
@@ -2882,77 +2882,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-regra-de-ouro-do-banco" class="md-nav__link">
+  <a href="#3-escopo-de-variaveis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🧵 A Regra de Ouro do Banco
+        3. Escopo de Variáveis 🏠
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ciclo-completo-mvvm-room" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🧬 Ciclo Completo: MVVM + Room
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arquivos-externos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📂 Arquivos Externos
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#persistencia-android-vs-ios" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🆚 Persistência: Android vs iOS
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ferramenta-app-inspection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🕵️ Ferramenta: App Inspection
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pratica-lista-de-tarefas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🛠️ Prática: Lista de Tarefas
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🛠️ Prática: Lista de Tarefas">
+    <nav class="md-nav" aria-label="3. Escopo de Variáveis 🏠">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dica-o-singleton-do-banco" class="md-nav__link">
+  <a href="#o-muro-das-funcoes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dica: O Singleton do Banco
+        O Muro das Funções 🧱
       
     </span>
   </a>
@@ -2965,33 +2910,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conclusao" class="md-nav__link">
+  <a href="#4-parametros" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏁 Conclusão
+        4. Parâmetros 🚚
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#duvidas-sobre-dados" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ❓ Dúvidas sobre Dados?
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="❓ Dúvidas sobre Dados?">
+    <nav class="md-nav" aria-label="4. Parâmetros 🚚">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proxima-aula-listas-com-recyclerview" class="md-nav__link">
+  <a href="#exemplo-troca-de-valores" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Próxima Aula: Listas com RecyclerView! 📋👋
+        Exemplo: Troca de Valores
       
     </span>
   </a>
@@ -3000,6 +2934,50 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vantagens-da-modularizacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Vantagens da Modularização ✅
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projeto-final-modulo-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projeto Final Módulo 1 🏆
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumo ✅
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxima-aula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Próxima Aula 🚀
+      
+    </span>
+  </a>
   
 </li>
       
@@ -3582,10 +3560,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#onde-guardamos-os-dados" class="md-nav__link">
+  <a href="#agenda" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💾 Onde guardamos os dados?
+        Agenda 📅
       
     </span>
   </a>
@@ -3593,22 +3571,33 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-sharedpreferences" class="md-nav__link">
+  <a href="#1-dividir-para-conquistar" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. SharedPreferences 🔑
+        1. Dividir para Conquistar ⚔️
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="1. SharedPreferences 🔑">
+    <nav class="md-nav" aria-label="1. Dividir para Conquistar ⚔️">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#usando-preferencemanager" class="md-nav__link">
+  <a href="#na-programacao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Usando PreferenceManager
+        Na Programação
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visualizando-mermaid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visualizando (Mermaid)
       
     </span>
   </a>
@@ -3621,33 +3610,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#banco-de-dados-sqlite" class="md-nav__link">
+  <a href="#2-tipos-de-modulos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏛️ Banco de Dados: SQLite
+        2. Tipos de Módulos 🛠️
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conheca-o-room" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🔨 Conheça o ROOM
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🔨 Conheça o ROOM">
+    <nav class="md-nav" aria-label="2. Tipos de Módulos 🛠️">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#passo-1-a-entidade-entity" class="md-nav__link">
+  <a href="#procedimento-acao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 1: A Entidade (@Entity)
+        Procedimento (Ação)
       
     </span>
   </a>
@@ -3655,10 +3633,10 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#passo-2-o-dao-dao" class="md-nav__link">
+  <a href="#funcao-calculo" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Passo 2: O DAO (@Dao)
+        Função (Cálculo)
       
     </span>
   </a>
@@ -3671,77 +3649,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#a-regra-de-ouro-do-banco" class="md-nav__link">
+  <a href="#3-escopo-de-variaveis" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🧵 A Regra de Ouro do Banco
+        3. Escopo de Variáveis 🏠
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ciclo-completo-mvvm-room" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🧬 Ciclo Completo: MVVM + Room
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#arquivos-externos" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        📂 Arquivos Externos
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#persistencia-android-vs-ios" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🆚 Persistência: Android vs iOS
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ferramenta-app-inspection" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🕵️ Ferramenta: App Inspection
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pratica-lista-de-tarefas" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        🛠️ Prática: Lista de Tarefas
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="🛠️ Prática: Lista de Tarefas">
+    <nav class="md-nav" aria-label="3. Escopo de Variáveis 🏠">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#dica-o-singleton-do-banco" class="md-nav__link">
+  <a href="#o-muro-das-funcoes" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Dica: O Singleton do Banco
+        O Muro das Funções 🧱
       
     </span>
   </a>
@@ -3754,33 +3677,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#conclusao" class="md-nav__link">
+  <a href="#4-parametros" class="md-nav__link">
     <span class="md-ellipsis">
       
-        🏁 Conclusão
+        4. Parâmetros 🚚
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#duvidas-sobre-dados" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        ❓ Dúvidas sobre Dados?
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="❓ Dúvidas sobre Dados?">
+    <nav class="md-nav" aria-label="4. Parâmetros 🚚">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#proxima-aula-listas-com-recyclerview" class="md-nav__link">
+  <a href="#exemplo-troca-de-valores" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Próxima Aula: Listas com RecyclerView! 📋👋
+        Exemplo: Troca de Valores
       
     </span>
   </a>
@@ -3789,6 +3701,50 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vantagens-da-modularizacao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Vantagens da Modularização ✅
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projeto-final-modulo-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Projeto Final Módulo 1 🏆
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resumo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resumo ✅
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proxima-aula" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Próxima Aula 🚀
+      
+    </span>
+  </a>
   
 </li>
       
@@ -3812,165 +3768,132 @@
   
 
 
-<h1 id="aula-08-persistencia-de-dados">Aula 08 - Persistência de Dados 💾</h1>
-<!-- .slide: data-transition="slide" -->
+<h1 id="aula-08-modularizacao">Aula 08 - Modularização 🧩</h1>
+<hr>
+<h2 id="agenda">Agenda 📅</h2>
+<ol>
+<li>Conceito de Módulos (Divide &amp; Conquer) <!-- .element: class="fragment" --></li>
+<li>Procedimentos vs Funções <!-- .element: class="fragment" --></li>
+<li>Escopo de Variáveis (Locais x Globais) <!-- .element: class="fragment" --></li>
+<li>Parâmetros (Valor x Referência) <!-- .element: class="fragment" --></li>
+<li>Exemplos Práticos <!-- .element: class="fragment" --></li>
+</ol>
+<hr>
+<h2 id="1-dividir-para-conquistar">1. Dividir para Conquistar ⚔️</h2>
+<p>Imagine construir um carro inteiro num bloco só. Impossível!
+Nós montamos:
+- Motor 🔧 <!-- .element: class="fragment" -->
+- Rodas 🚗 <!-- .element: class="fragment" -->
+- Vidros 🪟 <!-- .element: class="fragment" -->
+E depois <strong>juntamos</strong>.</p>
+<hr>
+<h3 id="na-programacao">Na Programação</h3>
+<ul>
+<li>Não escreva 1000 linhas no <code>Inicio</code>. <!-- .element: class="fragment" --></li>
+<li>Quebre em pequenos blocos (<strong>Módulos</strong>). <!-- .element: class="fragment" --></li>
+<li>Cada módulo resolve <strong>um problema específico</strong>. <!-- .element: class="fragment" --></li>
+</ul>
+<hr>
+<h3 id="visualizando-mermaid">Visualizando (Mermaid)</h3>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Principal
+    participant Soma
 
+    Principal-&gt;&gt;Soma: Envia (5, 3)
+    Note right of Soma: Calcula 5+3
+    Soma--&gt;&gt;Principal: Retorna 8
+    Principal-&gt;&gt;Principal: Mostra 8</code></pre>
 <hr>
-<h2 id="onde-guardamos-os-dados">💾 Onde guardamos os dados?</h2>
-<p>Apps precisam lembrar das coisas quando fechados.</p>
-<ul>
-<li>Configurações simples. <!-- .element: class="fragment" --></li>
-<li>Listas complexas. <!-- .element: class="fragment" --></li>
-<li>Arquivos multimídia. <!-- .element: class="fragment" --></li>
-</ul>
+<h2 id="2-tipos-de-modulos">2. Tipos de Módulos 🛠️</h2>
+<p>Em Portugol, temos dois tipos principais.</p>
+<ol>
+<li><strong>Procedimentos</strong>: Fazem uma ação, mas não devolvem valor matemático. <!-- .element: class="fragment" --></li>
+<li><strong>Funções</strong>: Calculam e <strong>RETORNAM</strong> um valor. <!-- .element: class="fragment" --></li>
+</ol>
 <hr>
-<h2 id="1-sharedpreferences">1. SharedPreferences 🔑</h2>
-<p>A forma mais simples: Chave e Valor.</p>
-<ul>
-<li>"nome" -&gt; "Ricardo" <!-- .element: class="fragment" --></li>
-<li>"notificacoes_on" -&gt; true <!-- .element: class="fragment" --></li>
-<li>"tema" -&gt; 1 <!-- .element: class="fragment" --></li>
-</ul>
-<hr>
-<h3 id="usando-preferencemanager">Usando PreferenceManager</h3>
-<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">prefs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">getSharedPreferences</span><span class="p">(</span><span class="s">"config"</span><span class="p">,</span><span class="w"> </span><span class="n">MODE_PRIVATE</span><span class="p">)</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">// Gravar</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">prefs</span><span class="p">.</span><span class="na">edit</span><span class="p">().</span><span class="na">putString</span><span class="p">(</span><span class="s">"USER"</span><span class="p">,</span><span class="w"> </span><span class="s">"Android"</span><span class="p">).</span><span class="na">apply</span><span class="p">()</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="c1">// Ler</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="kd">val</span><span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">prefs</span><span class="p">.</span><span class="na">getString</span><span class="p">(</span><span class="s">"USER"</span><span class="p">,</span><span class="w"> </span><span class="s">"Ninguém"</span><span class="p">)</span>
+<h3 id="procedimento-acao">Procedimento (Ação)</h3>
+<p>Ex: <code>LimparTela()</code>, <code>MostrarMenu()</code>, <code>TocarSom()</code>.</p>
+<div class="language-portugol highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">procedimento</span><span class="w"> </span><span class="nf">saudacao</span><span class="p">(</span><span class="n">nome</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">caractere</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">inicio</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">   </span><span class="k">escreval</span><span class="p">(</span><span class="s">"Olá, "</span><span class="o">,</span><span class="w"> </span><span class="n">nome</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">fimprocedimento</span>
 </span></code></pre></div>
 <blockquote>
-<p><strong>Atenção</strong>: Não use para dados grandes ou listas!</p>
+<p>Chamada: <code>saudacao("João")</code></p>
 </blockquote>
 <hr>
-<h2 id="banco-de-dados-sqlite">🏛️ Banco de Dados: SQLite</h2>
-<p>O Android tem o SQLite no seu coração.</p>
-<ul>
-<li>Banco Relacional. <!-- .element: class="fragment" --></li>
-<li>Leve e embutido. <!-- .element: class="fragment" --></li>
-<li>Mas... o código puro é horrível (SQL strings). <!-- .element: class="fragment" --></li>
-</ul>
-<hr>
-<h2 id="conheca-o-room">🔨 Conheça o ROOM</h2>
-<p>A biblioteca do Jetpack que salva vidas.</p>
-<ol>
-<li><strong>Entity</strong>: Sua tabela (Classe de dados). <!-- .element: class="fragment" --></li>
-<li><strong>DAO</strong>: Seus comandos (Queries). <!-- .element: class="fragment" --></li>
-<li><strong>Database</strong>: O gerente do banco. <!-- .element: class="fragment" --></li>
-</ol>
-<!-- .slide: data-transition="convex" -->
-
-<hr>
-<h3 id="passo-1-a-entidade-entity">Passo 1: A Entidade (@Entity)</h3>
-<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nd">@Entity</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kd">data</span><span class="w"> </span><span class="kd">class</span><span class="w"> </span><span class="nc">User</span><span class="p">(</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nd">@PrimaryKey</span><span class="w"> </span><span class="kd">val</span><span class="w"> </span><span class="nv">id</span><span class="p">:</span><span class="w"> </span><span class="kt">Int</span><span class="p">,</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="kd">val</span><span class="w"> </span><span class="nv">name</span><span class="p">:</span><span class="w"> </span><span class="kt">String</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">)</span>
+<h3 id="funcao-calculo">Função (Cálculo)</h3>
+<p>Ex: <code>Raiz(x)</code>, <code>Soma(a,b)</code>, <code>Media(n1,n2)</code>.
+Tem a palavra mágica <strong>RETORNE</strong>.</p>
+<div class="language-portugol highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">funcao</span><span class="w"> </span><span class="nf">somar</span><span class="p">(</span><span class="n">a</span><span class="o">,</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">inteiro</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">inteiro</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">inicio</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">   </span><span class="k">retorne</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">b</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">fimfuncao</span>
 </span></code></pre></div>
+<blockquote>
+<p>Chamada: <code>res &lt;- somar(2, 3)</code></p>
+</blockquote>
 <hr>
-<h3 id="passo-2-o-dao-dao">Passo 2: O DAO (@Dao)</h3>
-<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nd">@Dao</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kd">interface</span><span class="w"> </span><span class="nc">UserDao</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nd">@Insert</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="n">void</span><span class="w"> </span><span class="n">save</span><span class="p">(</span><span class="n">User</span><span class="w"> </span><span class="n">user</span><span class="p">)</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">    </span><span class="nd">@Query</span><span class="p">(</span><span class="s">"SELECT * FROM User"</span><span class="p">)</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="n">LiveData</span><span class="o">&lt;</span><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">getAll</span><span class="p">()</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">}</span>
-</span></code></pre></div>
-<hr>
-<h2 id="a-regra-de-ouro-do-banco">🧵 A Regra de Ouro do Banco</h2>
-<p><strong>NUNCA</strong> acesse o banco na Main Thread.</p>
+<h2 id="3-escopo-de-variaveis">3. Escopo de Variáveis 🏠</h2>
+<p>Onde minha variável vive?</p>
 <ul>
-<li>O Room vai travar seu app (Crash) se você tentar. <!-- .element: class="fragment" --></li>
-<li>Use <strong>Coroutines</strong> ou <strong>LiveData</strong>. <!-- .element: class="fragment" --></li>
-<li>Por que? Porque ler o disco é lento e trava a tela. <!-- .element: class="fragment" --></li>
+<li><strong>Global</strong>: Criada fora de tudo. Todo mundo vê. (Perigoso!). <!-- .element: class="fragment" --></li>
+<li><strong>Local</strong>: Criada dentro da função. Só a função vê. (Seguro!). <!-- .element: class="fragment" --></li>
 </ul>
 <hr>
-<h2 id="ciclo-completo-mvvm-room">🧬 Ciclo Completo: MVVM + Room</h2>
-<pre class="mermaid"><code>graph TD
-    UI[Activity/View] --&gt;|Observa| VM[ViewModel]
-    VM --&gt;|Pede| REPO[Repository]
-    REPO --&gt;|Query| DB[(Room DB)]
-    DB --&gt;|Retorna| REPO
-    REPO --&gt;|State| VM
-    VM --&gt;|LiveData| UI</code></pre>
+<h3 id="o-muro-das-funcoes">O Muro das Funções 🧱</h3>
+<p>Se eu crio <code>x</code> dentro de <code>somar</code>, o <code>Principal</code> <strong>não sabe</strong> quem é <code>x</code>.
+Isso evita confusão!</p>
 <hr>
-<h2 id="arquivos-externos">📂 Arquivos Externos</h2>
-<p>Para fotos e vídeos.</p>
-<ul>
-<li><strong>Cache</strong>: Temporário. <!-- .element: class="fragment" --></li>
-<li><strong>Arquivos Privados</strong>: Só seu app vê. <!-- .element: class="fragment" --></li>
-<li><strong>Arquivos Públicos</strong>: Galeria, Downloads (Precisa de permissão). <!-- .element: class="fragment" --></li>
-</ul>
-<hr>
-<h2 id="persistencia-android-vs-ios">🆚 Persistência: Android vs iOS</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;">Recurso</th>
-<th style="text-align: center;">Android</th>
-<th style="text-align: left;">iOS</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;"><strong>Simples</strong></td>
-<td style="text-align: center;">SharedPreferences</td>
-<td style="text-align: left;">UserDefaults</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Banco</strong></td>
-<td style="text-align: center;">Room (SQLite)</td>
-<td style="text-align: left;">Core Data / SwiftData</td>
-</tr>
-<tr>
-<td style="text-align: center;"><strong>Arquivos</strong></td>
-<td style="text-align: center;">Scoped Storage</td>
-<td style="text-align: left;">Sandbox</td>
-</tr>
-</tbody>
-</table>
-<hr>
-<h2 id="ferramenta-app-inspection">🕵️ Ferramenta: App Inspection</h2>
-<p>No Android Studio, você pode ver o banco de dados <strong>ao vivo</strong>.</p>
+<h2 id="4-parametros">4. Parâmetros 🚚</h2>
+<p>Como passar dados para a função?</p>
 <ol>
-<li>Rode o app. <!-- .element: class="fragment" --></li>
-<li>Aba <code>App Inspection</code> -&gt; <code>Database Inspector</code>. <!-- .element: class="fragment" --></li>
-<li>Você pode editar os dados e ver a tela do celular mudar! 🎩 <!-- .element: class="fragment" --></li>
-</ol>
-<!-- .slide: data-background-color="#003049" -->
-
-<hr>
-<h2 id="pratica-lista-de-tarefas">🛠️ Prática: Lista de Tarefas</h2>
-<p>Vamos criar um banco para salvar textos.</p>
-<ol>
-<li>Configure o Room no <code>build.gradle</code>. <!-- .element: class="fragment" --></li>
-<li>Crie a Entity <code>Task</code>. <!-- .element: class="fragment" --></li>
-<li>Salve um texto vindo de um <code>EditText</code>. <!-- .element: class="fragment" --></li>
+<li><strong>Por Valor</strong> (O padrão): Envia uma <strong>CÓPIA</strong>. Se a função mudar, o original não muda. <!-- .element: class="fragment" --></li>
+<li><strong>Por Referência</strong> (<code>var</code>): Envia o <strong>ENDEREÇO</strong>. Se a função mudar, o original MUDA! <!-- .element: class="fragment" --></li>
 </ol>
 <hr>
-<h3 id="dica-o-singleton-do-banco">Dica: O Singleton do Banco</h3>
-<p>Não crie várias instâncias do banco. Use o padrão <strong>Singleton</strong>.</p>
-<div class="language-kotlin highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kd">val</span><span class="w"> </span><span class="nv">db</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Room</span><span class="p">.</span><span class="na">databaseBuilder</span><span class="p">(</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="n">applicationContext</span><span class="p">,</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="n">AppDatabase</span><span class="o">::</span><span class="n">class</span><span class="p">.</span><span class="na">java</span><span class="p">,</span><span class="w"> </span><span class="s">"database-name"</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">).</span><span class="na">build</span><span class="p">()</span>
+<h3 id="exemplo-troca-de-valores">Exemplo: Troca de Valores</h3>
+<p>Precisa ser por Referência!</p>
+<div class="language-portugol highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">procedimento</span><span class="w"> </span><span class="nf">troca</span><span class="p">(</span><span class="k">var</span><span class="w"> </span><span class="n">a</span><span class="o">,</span><span class="w"> </span><span class="k">var</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kt">inteiro</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">inicio</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">   </span><span class="n">temp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">a</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">   </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">b</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">   </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">temp</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">fimprocedimento</span>
 </span></code></pre></div>
 <hr>
-<h2 id="conclusao">🏁 Conclusão</h2>
+<h2 id="5-vantagens-da-modularizacao">5. Vantagens da Modularização ✅</h2>
+<ol>
+<li><strong>Reutilização</strong>: Escreve uma vez, usa 1000 vezes. <!-- .element: class="fragment" --></li>
+<li><strong>Organização</strong>: Código limpo. <!-- .element: class="fragment" --></li>
+<li><strong>Facilidade de Manutenção</strong>: Se o cálculo mudar, corrijo num lugar só. <!-- .element: class="fragment" --></li>
+</ol>
+<hr>
+<h2 id="projeto-final-modulo-1">Projeto Final Módulo 1 🏆</h2>
+<p><strong>Sistema de Notas Completo</strong></p>
 <ul>
-<li>Escolha a ferramenta certa para o dado certo. <!-- .element: class="fragment" --></li>
-<li>Room é o padrão para dados estruturados. <!-- .element: class="fragment" --></li>
-<li>Sempre use threads de background (IO). <!-- .element: class="fragment" --></li>
+<li>Use Vetores. <!-- .element: class="fragment" --></li>
+<li>Use Matrizes (se quiser). <!-- .element: class="fragment" --></li>
+<li>Use Funções para calcular média. <!-- .element: class="fragment" --></li>
+<li>Use Procedimentos para mostrar boletim. <!-- .element: class="fragment" --></li>
 </ul>
 <hr>
-<h2 id="duvidas-sobre-dados">❓ Dúvidas sobre Dados?</h2>
+<h2 id="resumo">Resumo ✅</h2>
+<ul>
+<li>Modularizar = Organizar. <!-- .element: class="fragment" --></li>
+<li><strong>Função</strong> retorna valor. <strong>Procedimento</strong> faz ação. <!-- .element: class="fragment" --></li>
+<li>Variáveis <strong>Locais</strong> são protegidas. <!-- .element: class="fragment" --></li>
+<li>Use parâmetros para comunicar. <!-- .element: class="fragment" --></li>
+</ul>
 <hr>
-<h3 id="proxima-aula-listas-com-recyclerview">Próxima Aula: Listas com RecyclerView! 📋👋</h3>
+<h2 id="proxima-aula">Próxima Aula 🚀</h2>
+<ul>
+<li>Fim da "Lógica Pura"! <!-- .element: class="fragment" --></li>
+<li>Vamos conhecer linguagens reais. <!-- .element: class="fragment" --></li>
+<li><strong>C e C++</strong>: Os pais da programação moderna. <!-- .element: class="fragment" --></li>
+<li>Gerenciamento de Memória na unha! <!-- .element: class="fragment" --></li>
+</ul>
+<p>👉 <strong>Tarefa</strong>: Refatore seus códigos antigos usando Funções!</p>
 
 
 
@@ -4013,11 +3936,12 @@
   <span class="md-source-file__fact">
     <span class="md-icon" title="Contribuidores">
       
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a4 4 0 0 1 4 4 4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 5.5A3.5 3.5 0 0 1 15.5 9a3.5 3.5 0 0 1-3.5 3.5A3.5 3.5 0 0 1 8.5 9 3.5 3.5 0 0 1 12 5.5M5 8c.56 0 1.08.15 1.53.42-.15 1.43.27 2.85 1.13 3.96C7.16 13.34 6.16 14 5 14a3 3 0 0 1-3-3 3 3 0 0 1 3-3m14 0a3 3 0 0 1 3 3 3 3 0 0 1-3 3c-1.16 0-2.16-.66-2.66-1.62a5.54 5.54 0 0 0 1.13-3.96c.45-.27.97-.42 1.53-.42M5.5 18.25c0-2.07 2.91-3.75 6.5-3.75s6.5 1.68 6.5 3.75V20h-13zM0 20v-1.5c0-1.39 1.89-2.56 4.45-2.9-.59.68-.95 1.62-.95 2.65V20zm24 0h-3.5v-1.75c0-1.03-.36-1.97-.95-2.65 2.56.34 4.45 1.51 4.45 2.9z"></path></svg>
       
     </span>
     <nav>
       
+        <a href="mailto:not.committed.yet">Not Committed Yet</a>, 
         <a href="mailto:ricardotecpro@hotmail.com">Ricardo Pires</a>
     </nav>
   </span>

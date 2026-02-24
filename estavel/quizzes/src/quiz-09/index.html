@@ -16,12 +16,12 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../../assets/images/logic_logo.svg">
+      <link rel="icon" href="../../../assets/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Quiz 09 - Listas Eficientes (RecyclerView) 📋 - Desenvolvimento Mobile Nativo - Curso</title>
+        <title>Quiz 09 - C e C++ 🧱 - Desenvolvimento Mobile Nativo - Curso</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quiz-09-listas-eficientes-recyclerview" class="md-skip">
+        <a href="#quiz-09-c-e-c" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -116,7 +116,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Quiz 09 - Listas Eficientes (RecyclerView) 📋
+              Quiz 09 - C e C++ 🧱
             
           </span>
         </div>
@@ -475,7 +475,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../../assets/images/logo.png" alt="logo">
 
     </a>
     Desenvolvimento Mobile Nativo - Curso
@@ -3326,106 +3326,96 @@
   
 
 
-<h1 id="quiz-09-listas-eficientes-recyclerview">Quiz 09 - Listas Eficientes (RecyclerView) 📋</h1>
+<h1 id="quiz-09-c-e-c">Quiz 09 - C e C++ 🧱</h1>
 <ol>
 <li>
-<p>Qual a principal vantagem do RecyclerView em relação à antiga ListView?</p>
+<p>A Linguagem C é conhecida como:</p>
 <ul>
-<li>[ ] Ele gasta mais bateria.</li>
-<li>[x] Ele recicla as Views que saíram da tela para exibir novos dados, economizando memória e processamento.</li>
-<li>[ ] Ele só funciona com listas de no máximo 10 itens.</li>
-<li>[ ] Ele obriga o uso de imagens em 4K.
-<em>Explicação: A reciclagem evita a criação desnecessária de milhares de objetos de layout, mantendo o app fluido.</em></li>
+<li>[ ] A linguagem mais fácil do mundo</li>
+<li>[x] O Pai das Linguagens Modernas (Baixo Nível)</li>
+<li>[ ] Uma linguagem apenas para Web</li>
+<li>[ ] Uma linguagem morta</li>
 </ul>
 </li>
 <li>
-<p>No RecyclerView, para que serve o "Adapter"?</p>
+<p>O que é a memória Stack (Pilha)?</p>
 <ul>
-<li>[ ] Para conectar o celular na tomada.</li>
-<li>[ ] Para definir se a lista é vertical ou horizontal.</li>
-<li>[x] Para atuar como o intermediário entre os dados (lista) e as Views (layout).</li>
-<li>[ ] Para salvar os dados no banco de dados.
-<em>Explicação: O Adapter decide qual dado vai em qual posição da lista e como ele deve ser exibido.</em></li>
+<li>[ ] Memória lenta e gigante</li>
+<li>[x] Memória rápida para variáveis locais e funções</li>
+<li>[ ] O HD do computador</li>
+<li>[ ] A nuvem</li>
 </ul>
 </li>
 <li>
-<p>Qual a função do "ViewHolder"?</p>
+<p>O que é a memória Heap (Monte)?</p>
 <ul>
-<li>[ ] Guardar os dados em cache no disco.</li>
-<li>[x] Guardar as referências dos componentes visuais (TextView, ImageView) para evitar chamadas lentas ao <code>findViewById</code>.</li>
-<li>[ ] Definir a cor de fundo da lista.</li>
-<li>[ ] Fazer o download de imagens.
-<em>Explicação: O ViewHolder funciona como uma "gaveta" que já tem tudo organizado, acelerando a atualização dos itens.</em></li>
+<li>[ ] Memória organizada automaticamente</li>
+<li>[x] Memória dinâmica, gerenciada manualmente (malloc/free)</li>
+<li>[ ] A memória da placa de vídeo</li>
+<li>[ ] O cache do processador</li>
 </ul>
 </li>
 <li>
-<p>Qual componente define se a lista será uma coluna única, uma grade (grid) ou um carrossel horizontal?</p>
+<p>O que guarda um Ponteiro?</p>
 <ul>
-<li>[ ] Adapter</li>
-<li>[ ] ViewHolder</li>
-<li>[x] LayoutManager</li>
-<li>[ ] ItemDecoration
-<em>Explicação: O LayoutManager é o responsável pela estratégia de organização espacial dos itens.</em></li>
+<li>[ ] Um valor inteiro</li>
+<li>[x] O Endereço de Memória de outra variável</li>
+<li>[ ] Um texto</li>
+<li>[ ] Uma imagem</li>
 </ul>
 </li>
 <li>
-<p>O que acontece se chamarmos o método <code>notifyDataSetChanged()</code> no Adapter?</p>
+<p>Qual comando usamos para COMPILAR um código C no terminal (geralmente)?</p>
 <ul>
-<li>[ ] Ele deleta a lista.</li>
-<li>[x] Ele avisa ao RecyclerView que os dados mudaram e toda a lista precisa ser redesenhada.</li>
-<li>[ ] Ele atualiza apenas o item que foi clicado.</li>
-<li>[ ] Ele fecha o aplicativo.
-<em>Explicação: Embora funcional, o <code>notifyDataSetChanged</code> é ineficiente para listas grandes, pois força o redesenho de tudo.</em></li>
+<li>[ ] run c</li>
+<li>[x] gcc arquivo.c -o saida</li>
+<li>[ ] python arquivo.c</li>
+<li>[ ] compile c</li>
 </ul>
 </li>
 <li>
-<p>Qual é a ferramenta moderna do Jetpack que compara duas listas e atualiza apenas o que mudou (com animações)?</p>
+<p>Qual a principal diferença do C++ em relação ao C?</p>
 <ul>
-<li>[ ] FastUpdate</li>
-<li>[ ] ListCompare</li>
-<li>[x] DiffUtil (usado no ListAdapter)</li>
-<li>[ ] QuickChange
-<em>Explicação: O DiffUtil calcula a diferença exata entre listas, tornando as atualizações muito mais performáticas.</em></li>
+<li>[ ] É mais lento</li>
+<li>[x] Suporte a Orientação a Objetos (Classes)</li>
+<li>[ ] Não usa ponteiros</li>
+<li>[ ] Não precisa compilar</li>
 </ul>
 </li>
 <li>
-<p>Como o RecyclerView se comporta quando um item sai da tela pelo topo durante a rolagem?</p>
+<p>O que acontece se acessarmos um ponteiro inválido (NULL)?</p>
 <ul>
-<li>[ ] O item é destruído para sempre.</li>
-<li>[ ] O item fica escondido atrás da barra de status.</li>
-<li>[x] O item vai para uma "piscina de reciclagem" para ser reutilizado no fundo da lista.</li>
-<li>[ ] O app para de carregar dados.
-<em>Explicação: Esse é o conceito central de "Reciclagem" que dá nome ao componente.</em></li>
+<li>[ ] Nada</li>
+<li>[x] Segmentation Fault (O programa trava)</li>
+<li>[ ] O computador reinicia</li>
+<li>[ ] O compilador corrige</li>
 </ul>
 </li>
 <li>
-<p>No desenvolvimento Android nativo, qual classe devemos estender para criar nosso próprio Adapter?</p>
+<p>O que faz <code>#include &lt;stdio.h&gt;</code>?</p>
 <ul>
-<li>[ ] BaseAdapter</li>
-<li>[ ] ListAdapter (antigo)</li>
-<li>[x] RecyclerView.Adapter<viewholder></viewholder></li>
-<li>[ ] ViewAdapter
-<em>Explicação: Usamos o Generics para indicar qual ViewHolder nosso Adapter vai gerenciar.</em></li>
+<li>[ ] Inclui a biblioteca de gráficos</li>
+<li>[x] Inclui a biblioteca padrão de Entrada e Saída (IO)</li>
+<li>[ ] Inclui o Studio Code</li>
+<li>[ ] Inclui a internet</li>
 </ul>
 </li>
 <li>
-<p>Qual o método do Adapter é chamado toda vez que um item novo precisa ser exibido e uma View precisa ser "vinculada" ao dado?</p>
+<p><code>int main()</code> deve retornar o que ao final com sucesso?</p>
 <ul>
-<li>[ ] onCreateViewHolder</li>
-<li>[x] onBindViewHolder</li>
-<li>[ ] getItemCount</li>
-<li>[ ] onViewAttached
-<em>Explicação: "Bind" significa vincular/ligar. É aqui que fazemos <code>holder.textView.text = data.name</code>.</em></li>
+<li>[ ] 1</li>
+<li>[x] 0</li>
+<li>[ ] -1</li>
+<li>[ ] "Fim"</li>
 </ul>
 </li>
 <li>
-<p>No iOS, qual é o componente equivalente ao RecyclerView?</p>
+<p>Por que aprender C/C++ hoje em dia?</p>
 <ul>
-<li>[ ] UIScrollView</li>
-<li>[x] UITableView (ou UICollectionView)</li>
-<li>[ ] UIPickerView</li>
-<li>[ ] UIStackView
-<em>Explicação: UITableView é o padrão para listas simples e UICollectionView para grades e layouts complexos.</em></li>
+<li>[ ] Para fazer sites simples</li>
+<li>[x] Para entender como o computador funciona e performance (Jogos, SO)</li>
+<li>[ ] Porque é modinha</li>
+<li>[ ] Para scripts rápidos</li>
 </ul>
 </li>
 </ol>
@@ -3451,7 +3441,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 22:50:10 UTC">19 de fevereiro de 2026 22:50:10</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="24 de fevereiro de 2026 04:47:03 UTC">24 de fevereiro de 2026 04:47:03</span>
   </span>
 
     

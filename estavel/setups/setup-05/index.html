@@ -16,12 +16,12 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../assets/images/logic_logo.svg">
+      <link rel="icon" href="../../assets/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Setup 05: .NET (C# e F#) 🔷 - Desenvolvimento Mobile Nativo - Curso</title>
+        <title>Aula: Do Silício ao Software 🖥️ - Desenvolvimento Mobile Nativo - Curso</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setup-05-net-c-e-f" class="md-skip">
+        <a href="#aula-do-silicio-ao-software" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -116,7 +116,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Setup 05: .NET (C# e F#) 🔷
+              Aula: Do Silício ao Software 🖥️
             
           </span>
         </div>
@@ -475,7 +475,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
     Desenvolvimento Mobile Nativo - Curso
@@ -3315,10 +3315,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-net-sdk" class="md-nav__link">
+  <a href="#o-ecossistema-da-computacao-moderna" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. .NET SDK
+        O Ecossistema da Computação Moderna
       
     </span>
   </a>
@@ -3326,10 +3326,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-visual-studio-community" class="md-nav__link">
+  <a href="#1-o-alicerce-cisc-vs-risc" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Visual Studio Community
+        1. O Alicerce: CISC vs. RISC 🏗️
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. O Alicerce: CISC vs. RISC 🏗️">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparativo-de-fluxo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparativo de Fluxo 📊
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-abstracao-e-camadas-de-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Abstração e Camadas de Software 🧠
       
     </span>
   </a>
@@ -3337,10 +3365,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-vs-code-c-dev-kit" class="md-nav__link">
+  <a href="#3-na-pratica-compilacao-cruzada" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. VS Code + C# Dev Kit
+        3. Na Prática: Compilação Cruzada 💻
       
     </span>
   </a>
@@ -3348,10 +3376,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-solucao-de-problemas-comuns" class="md-nav__link">
+  <a href="#4-sistemas-embarcados-e-iot" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Solução de Problemas Comuns ⚠️
+        4. Sistemas Embarcados e IoT 🔌
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios-progressivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Exercícios Progressivos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projeto-dashboard-de-arquitetura" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Mini-Projeto: Dashboard de Arquitetura
       
     </span>
   </a>
@@ -3378,25 +3428,99 @@
   
 
 
-<h1 id="setup-05-net-c-e-f">Setup 05: .NET (C# e F#) 🔷</h1>
-<h2 id="1-net-sdk">1. .NET SDK</h2>
-<p>Necessário para rodar C# e F#.
-1.  Baixe o <strong>.NET 8.0 SDK (LTS)</strong> em <a href="https://dotnet.microsoft.com/download">dotnet.microsoft.com</a>.
-2.  Instale.
-3.  Teste: <code>dotnet --version</code>.</p>
-<h2 id="2-visual-studio-community">2. Visual Studio Community</h2>
-<p>A IDE mais completa para Windows.
-1.  Baixe em <a href="https://visualstudio.microsoft.com/vs/community/">visualstudio.microsoft.com</a>.
-2.  No instalador, selecione a carga de trabalho: <strong>"Desenvolvimento para desktop com .NET"</strong>.</p>
-<h2 id="3-vs-code-c-dev-kit">3. VS Code + C# Dev Kit</h2>
-<p>Para uma experiência mais leve:
-1.  Instale a extensão "C# Dev Kit" da Microsoft.</p>
-<h2 id="4-solucao-de-problemas-comuns">4. Solução de Problemas Comuns ⚠️</h2>
+<h1 id="aula-do-silicio-ao-software">Aula: Do Silício ao Software 🖥️</h1>
+<h2 id="o-ecossistema-da-computacao-moderna">O Ecossistema da Computação Moderna</h2>
+<p>Esta aula explora a transição entre o hardware (processadores e arquiteturas) e o software (sistemas operacionais e plataformas).</p>
+<hr>
+<h2 id="1-o-alicerce-cisc-vs-risc">1. O Alicerce: CISC vs. RISC 🏗️</h2>
+<p>Todo software é reduzido a um <strong>ISA</strong> (<em>Instruction Set Architecture</em>). Existem duas filosofias principais:</p>
 <ul>
-<li><strong>'dotnet' não encontrado</strong>: Reinicie o computador após instalar o SDK.</li>
-<li><strong>Erro de Certificado HTTPS</strong>: Na primeira execução, rode <code>dotnet dev-certs https --trust</code> para confiar no certificado local.</li>
-<li><strong>OmniSharp Error</strong>: Se o VS Code reclamar, verifique se instalou o <strong>C# Dev Kit</strong> e se o SDK é compatível.</li>
+<li><strong>CISC (Complex Instruction Set Computer):</strong> Focada em executar tarefas complexas com poucas linhas. Ex: <strong>Intel/AMD (x86)</strong>.</li>
+<li><strong>RISC (Reduced Instruction Set Computer):</strong> Usa instruções simples e ultra-rápidas. Ex: <strong>ARM (Apple M-series, Snapdragon)</strong>.</li>
 </ul>
+<h3 id="comparativo-de-fluxo">Comparativo de Fluxo 📊</h3>
+<pre class="mermaid"><code>graph LR
+    A[Código Top-Level] --&gt; B{Compilador}
+    B --&gt; C[ISA CISC: Instruções Complexas]
+    B --&gt; D[ISA RISC: Instruções Simples]
+    C --&gt; E[Hardware Tradicional]
+    D --&gt; F[Hardware Mobile/Eficiente]</code></pre>
+<hr>
+<h2 id="2-abstracao-e-camadas-de-software">2. Abstração e Camadas de Software 🧠</h2>
+<p>O Sistema Operacional (SO) serve como o tradutor entre seu código e o silício.</p>
+<div class="admonition concept">
+<p class="admonition-title">Conceito: Abstração de Hardware</p>
+<p>A abstração permite que você escreva <code>print("Hello")</code> sem se preocupar se o processador usa x86 ou ARM. O SO e o compilador cuidam da tradução para os binários específicos.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Sistema Operacional</th>
+<th style="text-align: left;">Arquitetura Principal</th>
+<th style="text-align: left;">Desafio do Desenvolvedor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Windows</strong></td>
+<td style="text-align: left;">x86_64 / ARM64</td>
+<td style="text-align: left;">Compatibilidade de drivers e emulação.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>macOS / iOS</strong></td>
+<td style="text-align: left;">ARM64 (Apple Silicon)</td>
+<td style="text-align: left;">Otimização para memória unificada.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Android</strong></td>
+<td style="text-align: left;">ARM64</td>
+<td style="text-align: left;">Lidar com a fragmentação de hardware.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Dica de Performance</p>
+<p>Sempre prefira <strong>binários nativos</strong>. Rodar um app x86 em um Mac ARM via Rosetta 2 funciona, mas consome mais bateria e CPU.</p>
+</div>
+<hr>
+<h2 id="3-na-pratica-compilacao-cruzada">3. Na Prática: Compilação Cruzada 💻</h2>
+<p>Quando desenvolvemos mobile, estamos quase sempre fazendo <em>Cross-Compilation</em>: escrevemos no PC (x86) para rodar no celular (ARM).</p>
+<div id="termynal" data-termynal>
+    <span data-ty="input">rustup target add aarch64-apple-ios</span>
+    <span data-ty="progress"></span>
+    <span data-ty="input">cargo build --target aarch64-apple-ios</span>
+    <span data-ty="output">✅ Build concluído para arquitetura ARM64!</span>
+</div>
+
+<hr>
+<h2 id="4-sistemas-embarcados-e-iot">4. Sistemas Embarcados e IoT 🔌</h2>
+<p>Aqui o software "toca" o metal de forma direta.</p>
+<ul>
+<li><strong>Arduino:</strong> 8 bits, extremamente simples.</li>
+<li><strong>ESP32:</strong> O rei da IoT com Wi-Fi/Bluetooth e dual-core RISC.</li>
+<li><strong>Raspberry Pi:</strong> Um computador ARM completo rodando Linux.</li>
+</ul>
+<div class="admonition attention">
+<p class="admonition-title">Atenção: Limites de Memória</p>
+<p>Em sistemas embarcados, você não tem GBs de RAM. Cada byte conta! O uso de linguagens como C ou Rust é essencial.</p>
+</div>
+<hr>
+<h2 id="exercicios-progressivos">📝 Exercícios Progressivos</h2>
+<ol>
+<li><strong>Nível 1:</strong> Explique a principal diferença entre um processador que equipa um Desktop (Intel) e um que equipa um Smartphone (Snapdragon).</li>
+<li><strong>Nível 2:</strong> Por que a Apple conseguiu aumentar drasticamente a duração da bateria ao mudar de Intel para Apple Silicon?</li>
+<li><strong>Nível 3:</strong> Pesquise o que é o "Instruction Set" RISC-V e por que ele é considerado o futuro do hardware open-source.</li>
+</ol>
+<hr>
+<h2 id="mini-projeto-dashboard-de-arquitetura">🚀 Mini-Projeto: Dashboard de Arquitetura</h2>
+<p><strong>Objetivo:</strong> Criar um script (Python ou Node) que detecte as especificações do sistema host.</p>
+<ul>
+<li><strong>Tarefa 1:</strong> Identificar o nome do SO e a arquitetura da CPU (<code>x86_64</code> ou <code>arm64</code>).</li>
+<li><strong>Tarefa 2:</strong> Listar a quantidade de núcleos físicos vs lógicos.</li>
+<li><strong>Tarefa 3:</strong> Exibir uma recomendação de build (Nativo vs Emulado) com base nos dados.</li>
+</ul>
+<hr>
+<p><a href="../setup-06/">Ir para próxima aula: Navegação e Fluxo <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span></a></p>
 
 
 
@@ -3419,7 +3543,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 21:44:50 UTC">19 de fevereiro de 2026 21:44:50</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="24 de fevereiro de 2026 04:47:03 UTC">24 de fevereiro de 2026 04:47:03</span>
   </span>
 
     

@@ -16,12 +16,12 @@
         <link rel="alternate" type="application/rss+xml" title="RSS feed" href="../../feed_rss_created.xml">
         <link rel="alternate" type="application/rss+xml" title="RSS feed de conteúdo atualizado" href="../../feed_rss_updated.xml">
       
-      <link rel="icon" href="../../assets/images/logic_logo.svg">
+      <link rel="icon" href="../../assets/images/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.2">
     
     
       
-        <title>Setup 07: Sistemas (Rust e Go) ⚙️ - Desenvolvimento Mobile Nativo - Curso</title>
+        <title>Aula: Virtualização e Baixo Nível ⚙️ - Desenvolvimento Mobile Nativo - Curso</title>
       
     
     
@@ -96,7 +96,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#setup-07-sistemas-rust-e-go" class="md-skip">
+        <a href="#aula-virtualizacao-e-baixo-nivel" class="md-skip">
           Pular para conteúdo
         </a>
       
@@ -116,7 +116,7 @@
   <nav class="md-header__inner md-grid" aria-label="Cabeçalho">
     <a href="../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-header__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Setup 07: Sistemas (Rust e Go) ⚙️
+              Aula: Virtualização e Baixo Nível ⚙️
             
           </span>
         </div>
@@ -475,7 +475,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="Desenvolvimento Mobile Nativo - Curso" class="md-nav__button md-logo" aria-label="Desenvolvimento Mobile Nativo - Curso" data-md-component="logo">
       
-  <img src="../../assets/images/logic_logo.svg" alt="logo">
+  <img src="../../assets/images/logo.png" alt="logo">
 
     </a>
     Desenvolvimento Mobile Nativo - Curso
@@ -3315,10 +3315,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rust" class="md-nav__link">
+  <a href="#o-pulo-do-gato-para-desenvolvedores-modernos" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Rust 🦀
+        O "Pulo do Gato" para Desenvolvedores Modernos
       
     </span>
   </a>
@@ -3326,10 +3326,38 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#go-golang" class="md-nav__link">
+  <a href="#1-virtualizacao-e-abstracao" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Go (Golang) 🐹
+        1. Virtualização e Abstração 🏗️
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Virtualização e Abstração 🏗️">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#camadas-de-abstracao" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Camadas de Abstração 📊
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-firmware-e-boot-o-acordar-do-pc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Firmware e Boot: O Acordar do PC ⚡
       
     </span>
   </a>
@@ -3337,10 +3365,54 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-solucao-de-problemas-comuns" class="md-nav__link">
+  <a href="#3-na-pratica-docker-multi-arch" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Solução de Problemas Comuns ⚠️
+        3. Na Prática: Docker Multi-Arch 💻
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-real-time-systems-rtos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Real-Time Systems (RTOS) ⏱️
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-comparativo-de-ecossistemas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Comparativo de Ecossistemas 📊
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicios-progressivos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        📝 Exercícios Progressivos
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mini-projeto-monitor-de-recursos-bare-metal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        🚀 Mini-Projeto: Monitor de Recursos Bare-Metal
       
     </span>
   </a>
@@ -3367,27 +3439,105 @@
   
 
 
-<h1 id="setup-07-sistemas-rust-e-go">Setup 07: Sistemas (Rust e Go) ⚙️</h1>
-<h2 id="rust">Rust 🦀</h2>
-<p>O Rust usa o gerenciador <code>rustup</code>.
-1.  Acesse <a href="https://rustup.rs/">rustup.rs</a>.
-2.  Baixe e execute o <code>rustup-init</code>.
-3.  Aceite o padrão (opção 1).
-4.  Reinicie o terminal e teste: <code>cargo --version</code>.
-5.  <strong>VS Code</strong>: Instale a extensão "rust-analyzer".</p>
-<h2 id="go-golang">Go (Golang) 🐹</h2>
-<ol>
-<li>Baixe em <a href="https://go.dev/dl/">go.dev</a>.</li>
-<li>Instale (Next, Next, Finish).</li>
-<li>Teste: <code>go version</code>.</li>
-<li><strong>VS Code</strong>: Instale a extensão "Go" oficial.</li>
-</ol>
-<h2 id="4-solucao-de-problemas-comuns">4. Solução de Problemas Comuns ⚠️</h2>
+<h1 id="aula-virtualizacao-e-baixo-nivel">Aula: Virtualização e Baixo Nível ⚙️</h1>
+<h2 id="o-pulo-do-gato-para-desenvolvedores-modernos">O "Pulo do Gato" para Desenvolvedores Modernos</h2>
+<p>Aprenda como rodar código em qualquer lugar e como o software interage com a camada de "quase-hardware".</p>
+<hr>
+<h2 id="1-virtualizacao-e-abstracao">1. Virtualização e Abstração 🏗️</h2>
+<p>Nesta camada, isolamos o hardware para ganhar portabilidade e segurança.</p>
+<h3 id="camadas-de-abstracao">Camadas de Abstração 📊</h3>
+<pre class="mermaid"><code>graph TD
+    A[Hardware Real] --&gt; B[Hypervisor]
+    B --&gt; C[Máquina Virtual 1]
+    B --&gt; D[Máquina Virtual 2]
+    A --&gt; E[Docker Engine]
+    E --&gt; F[Container x86]
+    E --&gt; G[Container ARM]</code></pre>
 <ul>
-<li><strong>'cargo' não encontrado</strong>: Reinicie o terminal. Se não funcionar, adicione <code>~/.cargo/bin</code> (Linux/Mac) ou <code>%USERPROFILE%\.cargo\bin</code> (Windows) ao PATH.</li>
-<li><strong>Go Path</strong>: Certifique-se de que a variável <code>GOPATH</code> está configurada corretamente (geralmente <code>C:\Users\SeuUsuario\go</code>).</li>
-<li><strong>Erro de Linker (Rust)</strong>: No Windows, pode faltar as ferramentas de build do C++. Baixe o "Build Tools for Visual Studio".</li>
+<li><strong>Hypervisors:</strong> Proxmox, Hyper-V e VirtualBox.</li>
+<li><strong>Containers Multi-Arquitetura:</strong> Uso de <strong>Docker Buildx</strong> para rodar o mesmo app em Intel e ARM.</li>
 </ul>
+<hr>
+<h2 id="2-firmware-e-boot-o-acordar-do-pc">2. Firmware e Boot: O Acordar do PC ⚡</h2>
+<ul>
+<li><strong>BIOS vs. UEFI:</strong> Como o computador entrega o controle ao SO.</li>
+<li><strong>Bootloaders:</strong> O papel do <strong>U-Boot</strong> (Mobile/ARM) e do <strong>GRUB</strong>.</li>
+<li><strong>Segurança:</strong> TPM e Secure Boot (essenciais para Windows 11 e apps bancários no Mobile).</li>
+</ul>
+<div class="admonition concept">
+<p class="admonition-title">Conceito: big.LITTLE</p>
+<p>Processadores móveis misturam núcleos de <strong>Alta Performance</strong> (potência) com núcleos de <strong>Alta Eficiência</strong> (economia). O software deve ser inteligente para não acordar os núcleos potentes sem necessidade.</p>
+</div>
+<hr>
+<h2 id="3-na-pratica-docker-multi-arch">3. Na Prática: Docker Multi-Arch 💻</h2>
+<p>Criando imagens que rodam tanto no seu PC quanto no Raspberry Pi.</p>
+<div id="termynal" data-termynal>
+    <span data-ty="input">docker buildx create --use</span>
+    <span data-ty="progress"></span>
+    <span data-ty="input">docker buildx build --platform linux/amd64,linux/arm64 -t meu-app .</span>
+    <span data-ty="output">🚀 Imagem pronta para Intel e Apple Silicon!</span>
+</div>
+
+<hr>
+<h2 id="4-real-time-systems-rtos">4. Real-Time Systems (RTOS) ⏱️</h2>
+<p>Crucial para sistemas críticos como drones ou freios ABS.</p>
+<div class="admonition attention">
+<p class="admonition-title">Atenção: Determinismo</p>
+<p>Diferente do Windows, um <strong>RTOS</strong> (como FreeRTOS) garante que uma tarefa será executada em um tempo exato. No desenvolvimento mobile, usamos conceitos similares para garantir a fluidez da UI (60fps).</p>
+</div>
+<hr>
+<h2 id="5-comparativo-de-ecossistemas">5. Comparativo de Ecossistemas 📊</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tema</th>
+<th style="text-align: left;">Desktop (High)</th>
+<th style="text-align: left;">Mobile (Mid)</th>
+<th style="text-align: left;">Embarcados (Low)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>CPU</strong></td>
+<td style="text-align: left;">Intel i9 / Ryzen 9</td>
+<td style="text-align: left;">Snapdragon / Apple A</td>
+<td style="text-align: left;">ESP32 / AVR</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Arquitetura</strong></td>
+<td style="text-align: left;">CISC (x86_64)</td>
+<td style="text-align: left;">RISC (ARM64)</td>
+<td style="text-align: left;">RISC (Xtensa)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>OS Principal</strong></td>
+<td style="text-align: left;">Windows / Linux</td>
+<td style="text-align: left;">Android / iOS</td>
+<td style="text-align: left;">RTOS / Bare Metal</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Dica: WebAssembly (Wasm)</p>
+<p>O Wasm é o "binário universal" que permite rodar código C++/Rust no navegador com performance nativa, independente da CPU por baixo.</p>
+</div>
+<hr>
+<h2 id="exercicios-progressivos">📝 Exercícios Progressivos</h2>
+<ol>
+<li><strong>Nível 1:</strong> Explique a diferença entre uma Máquina Virtual e um Container Docker em termos de uso de recursos do hardware.</li>
+<li><strong>Nível 2:</strong> Por que desenvolvedores mobile devem se preocupar com o "Thermal Throttling" (redução de clock por calor)?</li>
+<li><strong>Nível 3:</strong> O que é uma <strong>NPU (Neural Processing Unit)</strong> e como ela ajuda a economizar bateria em tarefas de IA local?</li>
+</ol>
+<hr>
+<h2 id="mini-projeto-monitor-de-recursos-bare-metal">🚀 Mini-Projeto: Monitor de Recursos Bare-Metal</h2>
+<p><strong>Objetivo:</strong> Pesquisar e documentar como acessar o "Uptime" do sistema sem bibliotecas de alto nível.</p>
+<ul>
+<li><strong>Tarefa 1:</strong> No Linux, pesquisar o arquivo no <code>/proc</code> que guarda a temperatura da CPU.</li>
+<li><strong>Tarefa 2:</strong> Criar uma tabela comparando o consumo de RAM de um app "Hello World" em Java vs. Rust.</li>
+<li><strong>Tarefa 3:</strong> Simular (teoricamente) o impacto de um loop infinito em um núcleo de "Alta Eficiência" de um ARM.</li>
+</ul>
+<hr>
+<p><a href="../setup-08/">Ir para próxima aula: Mobile (Flutter e Kotlin) <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.22 19.03a.75.75 0 0 1 0-1.06L18.19 13H3.75a.75.75 0 0 1 0-1.5h14.44l-4.97-4.97a.749.749 0 0 1 .326-1.275.75.75 0 0 1 .734.215l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0"></path></svg></span></a></p>
 
 
 
@@ -3410,7 +3560,7 @@
     <span class="md-icon" title="Última atualização">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"></path></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="19 de fevereiro de 2026 21:44:50 UTC">19 de fevereiro de 2026 21:44:50</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="24 de fevereiro de 2026 04:47:03 UTC">24 de fevereiro de 2026 04:47:03</span>
   </span>
 
     
