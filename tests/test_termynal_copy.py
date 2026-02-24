@@ -12,11 +12,9 @@ def test_termynal_copy_button(page: Page, base_url: str):
     page.goto(f"{base_url}/aulas/aula-04/")
 
     # Wait for Termynal to be visible
-    # Note: custom_termynal.js looks for .termy, but the mkdocs-termynal plugin
-    # renders a custom structure. We need to match what's actually rendered.
-    # Usually it's a div with data-termynal attribute or class.
-    # Let's try a broader selector if .termy isn't found
+    # We look for .termy (used by custom script) or [data-termynal]
     termynal = page.locator(".termy, [data-termynal]").first
+    termynal.wait_for(state="visible", timeout=10000)
     expect(termynal).to_be_visible()
 
     # Check for copy button

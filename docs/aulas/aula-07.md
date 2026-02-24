@@ -24,8 +24,8 @@ Separamos as responsabilidades em 3 camadas:
 
 ```mermaid
 graph LR
-    View[View (Activity/XML)] <-->|Observa| VM[ViewModel]
-    VM -->|Pede Dados| Model[Model (Repository)]
+    View["View (Activity/XML)"] <-->|Observa| VM[ViewModel]
+    VM -->|Pede Dados| Model["Model (Repository)"]
     Model -->|Retorna Dados| VM
 ```
 

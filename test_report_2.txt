@@ -1,0 +1,221 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.0, pytest-9.0.1, pluggy-1.6.0
+baseurl: http://127.0.0.1:8766
+rootdir: D:\SourceCode\REPOS\github.io\ads_spec_mobile_nativo_kotlin_swift
+configfile: pyproject.toml
+plugins: anyio-4.11.0, base-url-2.1.0, cov-7.0.0, mock-3.15.1, playwright-0.7.2
+collected 124 items
+
+tests\test_assets.py .                                                   [  0%]
+tests\test_course_structure.py ........                                  [  7%]
+tests\test_fullscreen.py .                                               [  8%]
+tests\test_layout.py F......                                             [ 13%]
+tests\test_navigation.py ....F                                           [ 17%]
+tests\test_quizzes.py ......                                             [ 22%]
+tests\test_slides.py ......                                              [ 27%]
+tests\test_termynal_copy.py F                                            [ 28%]
+tests\test_layout.py .                                                   [ 29%]
+tests\test_mermaid_syntax.py ........................................... [ 63%]
+..                                                                       [ 65%]
+tests\test_quizzes.py .                                                  [ 66%]
+tests\test_slides.py .                                                   [ 66%]
+tests\test_quizzes.py .                                                  [ 67%]
+tests\test_slides.py .                                                   [ 68%]
+tests\test_quizzes.py .                                                  [ 69%]
+tests\test_slides.py .                                                   [ 70%]
+tests\test_quizzes.py .                                                  [ 70%]
+tests\test_slides.py .                                                   [ 71%]
+tests\test_quizzes.py .                                                  [ 72%]
+tests\test_slides.py .                                                   [ 73%]
+tests\test_quizzes.py .                                                  [ 74%]
+tests\test_slides.py .                                                   [ 75%]
+tests\test_quizzes.py .                                                  [ 75%]
+tests\test_slides.py .                                                   [ 76%]
+tests\test_quizzes.py .                                                  [ 77%]
+tests\test_slides.py .                                                   [ 78%]
+tests\test_quizzes.py .                                                  [ 79%]
+tests\test_slides.py .                                                   [ 79%]
+tests\test_quizzes.py .                                                  [ 80%]
+tests\test_slides.py .                                                   [ 81%]
+tests\test_quizzes.py .                                                  [ 82%]
+tests\test_slides.py .                                                   [ 83%]
+tests\test_quizzes.py .                                                  [ 83%]
+tests\test_slides.py .                                                   [ 84%]
+tests\test_quizzes.py .                                                  [ 85%]
+tests\test_slides.py .                                                   [ 86%]
+tests\test_quizzes.py .                                                  [ 87%]
+tests\test_slides.py .                                                   [ 87%]
+tests\test_quizzes.py .                                                  [ 88%]
+tests\test_slides.py .                                                   [ 89%]
+tests\test_site_structure.py ...                                         [ 91%]
+tests\test_slide_build.py .....                                          [ 95%]
+tests\test_slide_generation.py .....                                     [100%]
+
+================================== FAILURES ===================================
+______________________ test_homepage_structure[chromium] ______________________
+
+page = <Page url='http://127.0.0.1:8766/'>, base_url = 'http://127.0.0.1:8766'
+
+    def test_homepage_structure(page: Page, base_url):
+        """Test that the homepage loads and has correct structure."""
+        page.set_viewport_size({"width": 1920, "height": 1080})
+>       page.goto(base_url)
+
+tests\test_layout.py:27: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:9054: in goto
+    self._sync(
+C:\Python\Python313\Lib\site-packages\playwright\_impl\_page.py:552: in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:153: in goto
+    await self._channel.send(
+C:\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000002976156DE80>
+cb = <function Channel.send.<locals>.<lambda> at 0x0000029761B996C0>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, "__pw_stack__", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Page.goto: Timeout 30000ms exceeded.
+E           Call log:
+E             - navigating to "http://127.0.0.1:8766/", waiting until "load"
+
+C:\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError
+____________ TestNavigation.test_navigation_to_lesson_01[chromium] ____________
+
+self = <test_navigation.TestNavigation object at 0x00000297615E4CB0>
+page_with_base_url = <Page url='http://127.0.0.1:8766/aulas/aula-01/'>
+base_url = 'http://127.0.0.1:8766'
+
+    def test_navigation_to_lesson_01(self, page_with_base_url: Page, base_url: str):
+        """Verifica se Ú possÝvel navegar para Aula 01"""
+        page = page_with_base_url
+        page.goto(base_url)
+    
+        self._ensure_menu_visible(page)
+    
+        # Navigate Aulas -> M¾dulo 1: Fundamentos -> Aula 01
+        # Click Aulas
+        page.get_by_role("link", name="Aulas").first.click(force=True)
+    
+        # Click M¾dulo 1: Fundamentos e UI (using regex for encoding safety)
+>       page.get_by_text(re.compile(r"M.dulo 1: Fundamentos e UI", re.I)).first.click()
+
+tests\test_navigation.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:15631: in click
+    self._sync(
+C:\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:162: in click
+    return await self._frame._click(self._selector, strict=True, **params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:566: in _click
+    await self._channel.send("click", self._timeout, locals_to_params(locals()))
+C:\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000002976156DE80>
+cb = <function Channel.send.<locals>.<lambda> at 0x0000029763D1D580>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, "__pw_stack__", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.click: Timeout 30000ms exceeded.
+E           Call log:
+E             - waiting for get_by_text(re.compile(r"M.dulo 1: Fundamentos e UI", re.IGNORECASE)).first
+
+C:\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError
+_____________________ test_termynal_copy_button[chromium] _____________________
+
+page = <Page url='http://127.0.0.1:8766/aulas/aula-04/'>
+base_url = 'http://127.0.0.1:8766'
+
+    def test_termynal_copy_button(page: Page, base_url: str):
+        """
+        Test that the Termynal copy button is injected and visible.
+        """
+        # Grant clipboard permissions
+        page.context.grant_permissions(['clipboard-write', 'clipboard-read'])
+    
+        # Navigate to Lesson 04 which contains console blocks (Termynal)
+        page.goto(f"{base_url}/aulas/aula-04/")
+    
+        # Wait for Termynal to be visible
+        # We look for .termy (used by custom script) or [data-termynal]
+        termynal = page.locator(".termy, [data-termynal]").first
+>       termynal.wait_for(state="visible", timeout=10000)
+
+tests\test_termynal_copy.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python\Python313\Lib\site-packages\playwright\sync_api\_generated.py:18074: in wait_for
+    self._sync(self._impl_obj.wait_for(timeout=timeout, state=state))
+C:\Python\Python313\Lib\site-packages\playwright\_impl\_locator.py:710: in wait_for
+    await self._frame.wait_for_selector(
+C:\Python\Python313\Lib\site-packages\playwright\_impl\_frame.py:369: in wait_for_selector
+    await self._channel.send(
+C:\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:69: in send
+    return await self._connection.wrap_api_call(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <playwright._impl._connection.Connection object at 0x000002976156DE80>
+cb = <function Channel.send.<locals>.<lambda> at 0x0000029763C96160>
+is_internal = False, title = None
+
+    async def wrap_api_call(
+        self, cb: Callable[[], Any], is_internal: bool = False, title: str = None
+    ) -> Any:
+        if self._api_zone.get():
+            return await cb()
+        task = asyncio.current_task(self._loop)
+        st: List[inspect.FrameInfo] = getattr(
+            task, "__pw_stack__", None
+        ) or inspect.stack(0)
+    
+        parsed_st = _extract_stack_trace_information_from_stack(st, is_internal, title)
+        self._api_zone.set(parsed_st)
+        try:
+            return await cb()
+        except Exception as error:
+>           raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+E           playwright._impl._errors.TimeoutError: Locator.wait_for: Timeout 10000ms exceeded.
+E           Call log:
+E             - waiting for locator(".termy, [data-termynal]").first to be visible
+
+C:\Python\Python313\Lib\site-packages\playwright\_impl\_connection.py:559: TimeoutError
+=========================== short test summary info ===========================
+FAILED tests/test_layout.py::test_homepage_structure[chromium] - playwright._...
+FAILED tests/test_navigation.py::TestNavigation::test_navigation_to_lesson_01[chromium]
+FAILED tests/test_termynal_copy.py::test_termynal_copy_button[chromium] - pla...
+================== 3 failed, 121 passed in 263.33s (0:04:23) ==================

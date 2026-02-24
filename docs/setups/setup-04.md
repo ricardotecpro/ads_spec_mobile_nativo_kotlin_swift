@@ -28,7 +28,7 @@ graph LR
 
 ## 2. Na Prática: Verificando o Ambiente 💻
 
-<div id="termynal" data-termynal>
+<div class="termy" data-termynal>
     <span data-ty="input">java -version</span>
     <span data-ty="output">openjdk version "17.0.x" 202x-xx-xx</span>
     <span data-ty="input">javac -version</span>

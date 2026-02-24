@@ -35,7 +35,7 @@ Para criar apps iOS e Android com a mesma base de código.
 
 ### Verificando a Saúde do Ambiente 💻
 
-<div id="termynal" data-termynal>
+<div class="termy" data-termynal>
     <span data-ty="input">flutter doctor</span>
     <span data-ty="progress"></span>
     <span data-ty="input">flutter doctor --android-licenses</span>

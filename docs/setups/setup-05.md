@@ -47,7 +47,7 @@ O Sistema Operacional (SO) serve como o tradutor entre seu código e o silício.
 
 Quando desenvolvemos mobile, estamos quase sempre fazendo *Cross-Compilation*: escrevemos no PC (x86) para rodar no celular (ARM).
 
-<div id="termynal" data-termynal>
+<div class="termy" data-termynal>
     <span data-ty="input">rustup target add aarch64-apple-ios</span>
     <span data-ty="progress"></span>
     <span data-ty="input">cargo build --target aarch64-apple-ios</span>

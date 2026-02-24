@@ -31,7 +31,7 @@ graph TD
 
 Para criar um app moderno, o fluxo via terminal é o padrão de mercado.
 
-<div id="termynal" data-termynal>
+<div class="termy" data-termynal>
     <span data-ty="input">npx ionic start MySuperApp tabs --type=angular</span>
     <span data-ty="progress"></span>
     <span data-ty="input">npx cap add android</span>

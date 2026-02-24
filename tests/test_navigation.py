@@ -14,7 +14,7 @@ class TestNavigation:
         page = page_with_base_url
         page.goto(base_url)
         
-        expect(page).to_have_title("Lógica e Algoritmos - Curso")
+        expect(page).to_have_title("Desenvolvimento Mobile Nativo - Curso")
 
     def _ensure_menu_visible(self, page: Page):
         """Helper to ensure menu is visible (opens drawer if needed)"""
@@ -68,13 +68,13 @@ class TestNavigation:
         # Click Aulas
         page.get_by_role("link", name="Aulas").first.click(force=True)
         
-        # Click Módulo 1: Fundamentos
-        page.get_by_text("Módulo 1: Fundamentos").first.click()
+        # Click Módulo 1: Fundamentos e UI (using regex for encoding safety)
+        page.get_by_text(re.compile(r"M.dulo 1: Fundamentos e UI", re.I)).first.click()
         
         # Click Aula 01
-        page.get_by_role("link", name="Aula 01", exact=True).first.click()
+        page.get_by_role("link", name=re.compile(r"Aula 01"), exact=False).first.click()
         
         # Verifica se chegou na página correta
         expect(page).to_have_url(re.compile(r".*/aulas/aula-01/?$"))
-        # H1 is "Aula 01 - Introdução à Lógica..."
-        expect(page.locator("h1")).to_contain_text("Introdução à Lógica")
+        # H1 is "Aula 01 - Introdução ao Desenvolvimento Mobile 📱"
+        expect(page.locator("h1")).to_contain_text("Introdução ao Desenvolvimento Mobile")

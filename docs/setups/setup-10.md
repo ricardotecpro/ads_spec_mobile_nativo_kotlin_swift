@@ -47,7 +47,7 @@ Diferente de um emulador de GameBoy, o Android é um sistema operacional complet
 
 Antes de rodar um "console" Android no seu PC, precisamos garantir que os motores de tradução estão ativos.
 
-<div id="termynal" data-termynal>
+<div class="termy" data-termynal>
 <span data-ty="input">cpu-check --is-virtualization-enabled</span>
 <span data-ty="output">KVM acceleration can be used: YES</span>
 <span data-ty="input">emulator -avd Pixel_7_Pro_API_34 -gpu host</span>

@@ -140,10 +140,12 @@ extra:
     provider: mike
     default: estavel
 
+
 nav:
   - Início: index.md
   - Plano de Ensino: plano-ensino.md
   - Aulas:
+      - 'Índice': aulas/index.md
       - 'Aula 01 - Intro Mobile': aulas/aula-01.md
       - 'Aula 02 - Java vs Swift': aulas/aula-02.md
       - 'Aula 03 - Intro Kotlin': aulas/aula-03.md
@@ -223,8 +225,16 @@ nav:
       - 'Slide 16': slides/slide-16.md
   - Configuração:
       - 'Índice': setups/index.md
-      - 'Setup Android': setups/setup-01.md
-      - 'Setup iOS': setups/setup-02.md
+      - 'Setup 01 - Android': setups/setup-01.md
+      - 'Setup 02 - iOS': setups/setup-02.md
+      - 'Setup 03 - Flutter': setups/setup-03.md
+      - 'Setup 04 - Java e JDK': setups/setup-04.md
+      - 'Setup 05 - Ferramentas': setups/setup-05.md
+      - 'Setup 06 - Emulator': setups/setup-06.md
+      - 'Setup 07 - Debugging': setups/setup-07.md
+      - 'Setup 08 - Flutter Doctor': setups/setup-08.md
+      - 'Setup 09 - Ionic/Capacitor': setups/setup-09.md
+      - 'Setup 10 - Emulação Avançada': setups/setup-10.md
   - Sobre:
       - 'O Curso': sobre.md
       - 'Roadmap': project_roadmap.md

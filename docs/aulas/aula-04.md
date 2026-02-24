@@ -132,8 +132,22 @@ O ViewBinding gera uma classe que conecta o XML ao Kotlin automaticamente.
 ## 6. Resources (R.) 📦
 
 Tudo que não é código fica na pasta `res`:
-*   `res/drawable`: Imagens, ícones.
-*   `res/values`: Cores, Strings (textos traduzíveis), Temas.
+
+### No Android (Gradle Project)
+
+Explore a estrutura típica de um projeto Android:
+
+<div class="termy" data-termynal>
+    <span data-ty="input">tree MyFirstApp</span>
+    <span data-ty="output">MyFirstApp</span>
+    <span data-ty="output">├── app/</span>
+    <span data-ty="output">│   ├── src/</span>
+    <span data-ty="output">│   │   ├── main/</span>
+    <span data-ty="output">│   │   │   ├── java/ (Código Kotlin/Java)</span>
+    <span data-ty="output">│   │   │   ├── res/ (Recursos)</span>
+    <span data-ty="output">│   │   │   └── AndroidManifest.xml</span>
+    <span data-ty="output">└── build.gradle</span>
+</div>
 
 > **Regra de Ouro**: Nunca coloque texto fixo ("Hardcoded") no código ou XML. Use `@string/meu_texto`.
 
