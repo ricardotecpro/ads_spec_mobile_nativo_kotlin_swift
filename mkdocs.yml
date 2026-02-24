@@ -5,8 +5,8 @@ repo_name: ricardotecpro/ads_spec_mobile_nativo_kotlin_swift
 theme:
   name: material
   language: pt-BR
-  favicon: assets/images/logic_logo.svg
-  logo: assets/images/logic_logo.svg
+  favicon: assets/images/logo.png
+  logo: assets/images/logo.png
   custom_dir: overrides
   features:
     - navigation.tracking
@@ -72,12 +72,7 @@ markdown_extensions:
 
 
 plugins:
-  - mkdocs-revealjs:
-      revealjs_config:
-        transition: slide
-        backgroundTransition: fade
-        slideNumber: true
-
+  - mkdocs-revealjs
   - search:
       lang: pt
   - mkdocs-jupyter

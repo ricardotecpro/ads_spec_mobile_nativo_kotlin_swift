@@ -1,137 +1,150 @@
-# Aula 14 - Testes e Qualidade 🐞
-
-<!-- .slide: data-transition="slide" -->
+# Aula 14 - Sistemas Modernos: Rust e Go 🦀🐹
 
 ---
 
-## 🔍 Por que testar?
+## Agenda 📅
 
-Erros custam caro.
-
-* Perda de usuários. { .fragment }
-* Má fama na loja (1 estrela). { .fragment }
-* Prejuízo financeiro. { .fragment }
-
-> "Testar é o ato de provar que seu código faz o que você diz que ele faz."
+1.  O Problema do C/C++ { .fragment }
+2.  Rust: Segurança de Memória { .fragment }
+3.  Go: Concorrência Simples { .fragment }
+4.  Comparativo { .fragment }
+5.  Quando usar? { .fragment }
 
 ---
 
-## 📝 O Logcat Profissional
+## 1. O Problema do C/C++ 💥
 
-Pare de usar `println`. Use etiquetas!
-
-* **Log.d**: Debug (lógica). { .fragment }
-* **Log.i**: Informação (eventos). { .fragment }
-* **Log.w**: Aviso (algo estranho). { .fragment }
-* **Log.e**: Erro grave. { .fragment }
+- C/C++ são rápidos, mas perigosos. { .fragment }
+- **70% das vulnerabilidades** de segurança são erros de memória (Microsoft). { .fragment }
+- Buffer Overflow, Use-After-Free. { .fragment }
 
 ---
 
-## 🛠️ O Modo Debug (Besouro)
+## 2. Rust 🦀
 
-Seu superpoder de investigação.
-
-* **Breakpoint**: "Congele" o tempo naquela linha. { .fragment }
-* **Variables Panel**: Veja o que tem dentro de cada objeto. { .fragment }
-* **Evaluate Expression**: Execute código no meio da pausa! 🎩 { .fragment }
-
----
-
-## 🏔️ A Pirâmide de Testes
-
-Não teste tudo da mesma forma.
-
-1. **Unitários (70%)**: Lógica pura, rápidos. { .fragment }
-2. **Integração (20%)**: Peças conversando. { .fragment }
-3. **UI / Espresso (10%)**: O robô clica na tela. { .fragment }
+- Criada pela Mozilla. { .fragment }
+- Promessa: **Performance de C++ com Segurança de Memória**. { .fragment }
+- Sem Garbage Collector (GC). { .fragment }
+- Sem Tela Azul. { .fragment }
 
 ---
 
-### Teste Unitário (JUnit) 🧪
+### O Segredo: Ownership (Posse) 🔑
 
-```kotlin
-@Test
-fun login_comSenhaVazia_deveRetornarErro() {
-    val result = validador.verificar("", "123")
-    assertFalse(result)
-}
+- Cada dado tem **um único dono**. { .fragment }
+- Quando o dono muda, o antigo perde o acesso. { .fragment }
+- O compilador verifica isso **antes** de rodar. { .fragment }
+
+---
+
+### Visualizando Ownership
+
+```mermaid
+graph LR;
+    A["Variável A\n(Dona do Dado)"] -- "Move" --> B["Variável B\n(Nova Dona)"];
+    style A fill:#f9f;
+    style B fill:#bbf;
+    
+    NoteA["A morre.\nNão pode mais acessar!"] --- A
 ```
 
-* Roda no seu PC (JVM). { .fragment }
-* Leva milissegundos. { .fragment }
-
 ---
 
-### Teste de UI (Espresso) ☕
+### Código Rust
 
-O robô que simula o usuário.
-
-```kotlin
-onView(withId(R.id.btnEnter)).perform(click())
-onView(withId(R.id.txtWelcome)).check(matches(isDisplayed()))
-```
-
-* Roda no Emulador/Celular. { .fragment }
-* Lento, mas testa a experiência real. { .fragment }
-
----
-
-## 🛡️ Tratamento de Exceções
-
-Previna o "O App parou".
-
-```kotlin
-try {
-    fazerAlgoPerigoso()
-} catch (e: Exception) {
-    Log.e("BUM", "Deu ruim", e)
-    showErrorDialog()
+```rust
+fn main() {
+    let a = String::from("Olá");
+    let b = a; // MOVEU para b
+    
+    // println!("{}", a); // ERRO DE COMPILAÇÃO!
+    // O compilador te salva de usar memória inválida.
 }
 ```
 
 ---
 
-## 🆚 Android vs iOS (Qualidade)
+## 3. Go (Golang) 🐹
 
-| Ferramenta | Android | iOS |
+- Criada pelo Google (Rob Pike, Ken Thompson). { .fragment }
+- Foco: **Simplicidade** e **Google Scale**. { .fragment }
+- Compila ultra-rápido. { .fragment }
+
+---
+
+### Concorrência Fácil (Goroutines) 🧵
+
+- Threads são pesadas. { .fragment }
+- Goroutines são leves (milhares em poucos MBs). { .fragment }
+- **Channels**: Forma segura de conversar entre processos. { .fragment }
+
+---
+
+### Visualizando Channels
+
+```mermaid
+graph LR;
+    T1[Goroutine A] -->|Envia 'Ping'| Canal((Channel));
+    Canal -->|Recebe 'Ping'| T2[Goroutine B];
+    
+    style Canal fill:#ff9;
+```
+
+---
+
+### Código Go
+
+```go
+package main
+import "fmt"
+
+func main() {
+    mensagens := make(chan string)
+
+    go func() { mensagens <- "Ping" }()
+
+    msg := <-mensagens
+    fmt.Println(msg)
+}
+```
+
+---
+
+## 4. Comparativo ⚖️
+
+| Feature | Rust 🦀 | Go 🐹 |
 | :--- | :--- | :--- |
-| **Unit Testing** | JUnit / Mockito | XCTest |
-| **UI Testing** | Espresso / Barista | XCUITest |
-| **Logs** | Logcat | Console (os_log) |
-| **Profiler** | Android Profiler | Xcode Instruments |
+| **Foco** | Controle, Segurança Absoluta | Simplicidade, Web Services |
+| **Aprendizado** | Curva Íngreme (Dificil) | Muito Fácil |
+| **Performance** | Extrema (Zero-Cost) | Muito Boa (Com GC) |
+| **Uso** | Drivers, Engines, Crypto | Microservices, Cloud, APIs |
 
 ---
 
-## 🏃 CI/CD: Automação
+## Termynal: Execução 🖥️
 
-Nunca envie código quebrado para o GitHub.
-
-* **GitHub Actions**: Roda seus testes a cada "Push". { .fragment }
-* **Lint**: Analisa se o seu código está limpo e segue padrões. { .fragment }
-
-<!-- .slide: data-background-color="#5e503f" -->
-
----
-
-## 🛠️ Prática: Meu Primeiro Teste
-
-1. Vá na pasta `src/test/java`. { .fragment }
-2. Crie uma função que soma dois números. { .fragment }
-3. Escreva um `@Test` que use `assertEquals`. { .fragment }
-4. Clique no "Play" verde ao lado da função. { .fragment }
+<div data-termynal class="termy">
+    <span data-ty="input">cargo run</span>
+    <span data-ty="progress">Compiling...</span>
+    <span data-ty>Hello Rust! (Safe)</span>
+    <span data-ty="input">go run main.go</span>
+    <span data-ty>Hello Go! (Fast Build)</span>
+</div>
 
 ---
 
-## 🏁 Conclusão
+## Resumo ✅
 
-* Programador bom é o que testa. { .fragment }
-* Use logs com sabedoria. { .fragment }
-* Aprenda a ler o **Stack Trace** (o relatório de erros). { .fragment }
-
----
-
-## ❓ Perguntas sobre Qualidade?
+- **Rust**: Substitui C++ onde segurança é crítica. { .fragment }
+- **Go**: Substitui Java/Node onde concorrência é crítica. { .fragment }
+- Ambas são o futuro da Infraestrutura (Docker, Kubernetes). { .fragment }
 
 ---
 
-### Próxima Aula: Publicação na Google Play! 🚀👋
+## Próxima Aula 🚀
+
+- Sair do Servidor. { .fragment }
+- Ir para o dispositivo que está na sua mão. { .fragment }
+- **Desenvolvimento Mobile**: Flutter (Dart) e Nativo. { .fragment }
+
+👉 **Tarefa**: Instalar o Go e rodar um "Olá Mundo"!

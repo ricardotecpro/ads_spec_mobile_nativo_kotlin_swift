@@ -7,29 +7,39 @@ Domine a criação de aplicativos profissionais para Android e entenda como as m
 
 ---
 
-## 🎯 O Que Você Vai Aprender
+## 🎯 Exploração por Módulos
 
 <div class="grid cards" markdown>
 
--   :material-android: **Ecossistema Android**
+-   :material-book-open-variant: **Aulas Teóricas**
     ---
-    Domine Kotlin e Java, o Android Studio e o ciclo de vida das Activities. A base sólida do sistema mobile mais usado no mundo.
-    [:octicons-arrow-right-24: Ir para Módulo 1](aulas/aula-01.md)
+    Conteúdo detalhado de todas as 16 aulas do curso.
+    [:octicons-arrow-right-24: Ver Aulas](aulas/index.md)
 
--   :material-apple: **Visão Poliglota**
+-   :material-weight-lifter: **Exercícios**
     ---
-    Entenda as diferenças e semelhanças entre Android e iOS. Aprenda como conceitos de UI e Navegação se traduzem entre plataformas.
-    [:octicons-code-24: Ver Comparativos](aulas/aula-02.md)
+    Listas de fixação para praticar após cada aula.
+    [:octicons-arrow-right-24: Ver Exercícios](exercicios/index.md)
 
--   :material-layers: **Arquitetura MVVM**
+-   :material-rocket-launch: **Projetos Práticos**
     ---
-    Aprenda o padrão de mercado recomendado pelo Google: Separação de responsabilidades, LiveData e ViewModel.
-    [:octicons-rocket-24: Ver Arquitetura](aulas/aula-07.md)
+    Desafios reais para compor seu portfólio mobile.
+    [:octicons-arrow-right-24: Ver Projetos](projetos/index.md)
 
--   :material-cloud-sync: **Mundo Conectado**
+-   :material-brain: **Quizzes**
     ---
-    Consuma APIs REST com Retrofit, persista dados com Room e gerencie tarefas assíncronas com Coroutines.
-    [:octicons-repo-24: Ver Projetos](projetos/index.md)
+    Teste rápido de conhecimento ao final de cada trilha.
+    [:octicons-arrow-right-24: Ver Quizzes](quizzes/index.md)
+
+-   :material-presentation: **Slides**
+    ---
+    Material de apoio para acompanhamento das aulas.
+    [:octicons-arrow-right-24: Ver Slides](slides/index.md)
+
+-   :material-tools: **Configuração**
+    ---
+    Guias de instalação e ecossistema de hardware.
+    [:octicons-arrow-right-24: Ver Setups](setups/index.md)
 
 </div>
 

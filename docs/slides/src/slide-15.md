@@ -1,119 +1,148 @@
-# Aula 15 - Publicação na Google Play 🚀
-
-<!-- .slide: data-transition="convex" -->
+# Aula 15 - Desenvolvimento Mobile 📱
 
 ---
 
-## 🏁 A Reta Final
+## Agenda 📅
 
-Seu app está pronto e testado. Agora, como o mundo vai baixá-lo?
-
-* Google Play (Android). { .fragment }
-* App Store (iOS). { .fragment }
-* Distribuição Direta (APK/Enterprise). { .fragment }
-
----
-
-## 📦 APK vs AAB
-
-O passado e o futuro dos pacotes.
-
-* **APK**: Um arquivo gigante para todos os celulares. { .fragment }
-* **AAB (App Bundle)**: O Google gera o APK sob medida para cada usuário. { .fragment }
-* **Resultado**: Downloads até 50% menores! 💎 { .fragment }
+1.  O Ecossistema Mobile { .fragment }
+2.  Nativo vs Multiplataforma { .fragment }
+3.  Dart e Flutter (Google) { .fragment }
+4.  Árvore de Widgets { .fragment }
+5.  Kotlin (Android Nativo) { .fragment }
 
 ---
 
-## 🔑 A Chave da Vida (Keystore)
+## 1. O Mundo Mobile 🌍
 
-Todo app de produção deve ser assinado.
+Dois gigantes dominam o mercado.
 
-* O arquivo `.jks` é o seu RG. { .fragment }
-* **AVISO CRÍTICO**: Se perder a senha ou o arquivo, você nunca mais poderá atualizar o app. Guarde na nuvem, no HD e no papel! 💾 { .fragment }
-
----
-
-## 🎮 Google Play Console
-
-O portal dos campeões.
-
-* **Taxa**: $25 (Única e vitalícia). { .fragment }
-* **Análise**: O Google revisa seu app (1 a 7 dias). { .fragment }
-* **Políticas**: Cuidado com direitos autorais e privacidade. { .fragment }
+- **Android (Google)**: ~70% do mercado mundial. Aberto. Baseado em Linux/Java. { .fragment }
+- **iOS (Apple)**: ~29% do mercado. Fechado. Hardware Premium. { .fragment }
 
 ---
 
-## 🛡️ Ofuscação (R8 / ProGuard)
+## 2. Abordagens de Desenvolvimento 🛠️
 
-Proteja seu código original.
+Como criar apps para eles?
 
-* Transforma `MinhaClasseDeLogin` em `a.b.c`. { .fragment }
-* Remove código morto. { .fragment }
-* Dificulta a pirataria e engenharia reversa. { .fragment }
+1.  **Nativo**: { .fragment }
+    - Performance Máxima. { .fragment }
+    - Acesso total ao hardware (GPS, Bluetooth). { .fragment }
+    - **Problema**: Precisa fazer 2 vezes (Kotlin para Android, Swift para iOS). { .fragment }
 
----
-
-## 📈 Versão e Build
-
-No `build.gradle`:
-
-* **versionCode**: 1, 2, 3... (Sempre sobe). { .fragment }
-* **versionName**: "1.0.0", "1.1.2" (O que o usuário vê). { .fragment }
-
-<!-- .slide: data-background-color="#344e41" -->
+2.  **Multiplataforma**: { .fragment }
+    - Escreve uma vez, roda nos dois. { .fragment }
+    - Flutter (Dart) ou React Native (JS). { .fragment }
+    - **Vantagem**: Velocidade de entrega. { .fragment }
 
 ---
 
-## 🎨 Marketing na Loja (ASO)
+## 3. Flutter e Dart 💙
 
-Não basta ser bom, tem que parecer bom.
-
-* **Ícone**: A cara do seu app (512px). { .fragment }
-* **Feature Graphic**: O banner de impacto. { .fragment }
-* **Screenshots**: Mostre as melhores telas! { .fragment }
+- **Dart**: A linguagem (parece Java + JS). { .fragment }
+- **Flutter**: O Kit de Ferramentas (UI Toolkit). { .fragment }
+- Renderiza pixels direto na tela (como um jogo). { .fragment }
 
 ---
 
-## 🆚 Android vs iOS (Loja)
+### Tudo é um Widget 🧱
 
-| Característica | Google Play | App Store |
-| :--- | :--- | :--- |
-| **Custo** | $25 (Única) | $99 (Anual) |
-| **Revisão** | Média de 2 dias | Média de 24h a 48h |
-| **Rigidez** | Moderada | Alta / Rigorosa |
-| **Formato** | AAB / APK | IPA |
+Botão é widget. Texto é widget. Layout é widget.
 
----
-
-## 🧪 Canais de Teste
-
-Teste com pessoas reais antes do lançamento.
-
-1. **Teste Interno**: Amigos e equipe. { .fragment }
-2. **Teste Fechado (Beta)**: Grupo seleto. { .fragment }
-3. **Produção**: O mundo todo! { .fragment }
+```mermaid
+graph TD;
+    App[MaterialApp] --> Home["Tela Principal"];
+    Home --> AppBar[Barra Superior];
+    Home --> Body[Corpo];
+    Body --> Center;
+    Center --> Button["Botão Clique"];
+    
+    style App fill:#f9f;
+```
 
 ---
 
-## 🏆 Checklist de Lançamento
+### Código Flutter Básico
 
-- [ ] Removi todos os `Log.d`? { .fragment }
-- [ ] O nome do app está correto? { .fragment }
-- [ ] O ícone é o de produção (não o padrão)? { .fragment }
-- [ ] Tenho os links de Política de Privacidade? { .fragment }
+```dart
+import 'package:flutter/material.dart';
 
----
-
-## 🏁 Conclusão
-
-* Publicar é um processo burocrático mas gratificante. { .fragment }
-* A segurança da Keystore é sua prioridade #1. { .fragment }
-* Marketing (ASO) é o que traz downloads. { .fragment }
-
----
-
-## ❓ Perguntas sobre Lançamento?
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(title: Text("Meu App")),
+      body: Center(child: Text("Olá Mundo!")),
+    ),
+  ));
+}
+```
 
 ---
 
-### Próxima Aula: Projeto Final e Portfólio! 🎓👋
+## 4. O Estado (State) ⚡
+
+Apps são interativos.
+Se o usuário clica, a tela muda.
+
+- **StatelessWidget**: Estático (Ícone, Texto). { .fragment }
+- **StatefulWidget**: Dinâmico (Checkbox, Contador). { .fragment }
+
+---
+
+### Ciclo de Vida do Estado
+
+```mermaid
+graph LR;
+    User["Usuário Clica"] --> Acao[setState];
+    Acao --> Build[Reconstruir Tela];
+    Build --> UI[Nova UI];
+```
+
+---
+
+## 5. Kotlin (Android Nativo) 🤖
+
+Para quando você precisa de poder bruto.
+
+- Oficial do Google. { .fragment }
+- 100% Compatível com Java. { .fragment }
+- Conciso e seguro (sem NullPointerException). { .fragment }
+
+```kotlin
+fun main() {
+    val nome = "Android"
+    println("Olá, $nome!")
+}
+```
+
+---
+
+## Termynal: Criando App 📱
+
+<div data-termynal class="termy">
+    <span data-ty="input">flutter create meu_app</span>
+    <span data-ty="progress">Criando arquivos...</span>
+    <span data-ty="input">flutter run</span>
+    <span data-ty="progress">Compilando APK...</span>
+    <span data-ty>App rodando no Emulador!</span>
+</div>
+
+---
+
+## Resumo ✅
+
+- **Nativo**: Melhor performance, mais trabalho. { .fragment }
+- **Multiplataforma**: Menor custo, velocidade. { .fragment }
+- **Flutter**: Desenha a tela do zero. { .fragment }
+- **Widgets**: Blocos de construção. { .fragment }
+
+---
+
+## Próxima Aula 🚀
+
+- Sair do Cliente (Celular). { .fragment }
+- Voltar para o Servidor (Backend). { .fragment }
+- A tecnologia que roda 77% da Web. { .fragment }
+- **PHP e Arquitetura MVC**. { .fragment }
+
+👉 **Tarefa**: Rodar o "Counter App" do Flutter!

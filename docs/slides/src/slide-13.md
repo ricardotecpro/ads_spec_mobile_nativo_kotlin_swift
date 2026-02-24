@@ -1,151 +1,157 @@
-# Aula 13 - Sensores e Hardware 📸
-
-<!-- .slide: data-transition="zoom" -->
+# Aula 13 - Python e Ciência de Dados 🐍
 
 ---
 
-## 📱 Além da Tela
+## Agenda 📅
 
-O smartphone é um laboratório de sensores.
-Apps nativos têm "superpoderes" para sentir o mundo físico.
-
-* Onde eu estou? (GPS) { .fragment }
-* O que eu estou vendo? (Câmera) { .fragment }
-* Estou me movendo? (Acelerômetro) { .fragment }
-
----
-
-## 🔑 O Porteiro: Permissões
-
-No Android 6.0+, as permissões são dinâmicas.
-
-* **Normais**: Declaradas no Manifest (Internet, BT). { .fragment }
-* **Perigosas**: Pop-up em tempo de execução (GPS, Câmera, Microfone). { .fragment }
-
-> **Sempre** verifique se tem a permissão antes de usar o hardware! 🛡️
+1.  Por que Python? { .fragment }
+2.  Sintaxe Limpa { .fragment }
+3.  Estruturas de Dados Poderosas { .fragment }
+4.  Modo Interativo (REPL) vs Scripts { .fragment }
+5.  O Ecossistema de Data Science { .fragment }
 
 ---
 
-### Pedindo Permissão (Moderno)
+## 1. Por que Python? 🚀
 
-```kotlin
-val launcher = registerForActivityResult(
-    ActivityResultContracts.RequestPermission()
-) { concedida ->
-    if (concedida) { /* Use o hardware */ }
-}
+- **Legibilidade**: Parece inglês. { .fragment }
+- **Produtividade**: Menos linhas, mais resultado. { .fragment }
+- **Ecossistema**: IA, Data Science, Web, Automação. { .fragment }
+- Não é o mais rápido (em CPU), mas é o mais rápido para **desenvolver**. { .fragment }
 
-launcher.launch(Manifest.permission.CAMERA)
+---
+
+## 2. Sintaxe Limpa ✨
+
+Esqueça `{}` e `;`.
+
+- **Indentação** (espaços) define os blocos. { .fragment }
+- Força o código a ser organizado. { .fragment }
+
+```python
+if idade >= 18:
+    print("Maior")
+else:
+    print("Menor")
 ```
 
 ---
 
-## 🗺️ Localização e GPS
+## 3. Estruturas de Dados 🧱
 
-Use o **Fused Location Provider**.
-
-* **Por que?** Ele mistura GPS, Wi-Fi e Células de rede. { .fragment }
-* **Vantagem**: Menos gasto de bateria e maior precisão. { .fragment }
-* **Maps SDK**: Exiba a localização visualmente. { .fragment }
+Em vez de Arrays e Matrizes chatos de declarar, temos **Listas** e **Dicionários**.
 
 ---
 
-## 📸 A Câmera com CameraX
+### Listas (Arrays Turbinados)
 
-Esqueça a dor de cabeça da Camera2 API.
-
-* **Preview**: Imagem em tempo real. { .fragment }
-* **Capture**: Tirar e salvar foto. { .fragment }
-* **Analysis**: Analisar frames (QR Code, IA). { .fragment }
-
-<!-- .slide: data-background-color="#023e8a" -->
+```python
+frutas = ["Maçã", "Banana", "Uva"]
+print(frutas[0]) # Maçã
+frutas.append("Pera") # Adiciona no fim
+```
 
 ---
 
-## 🎢 Sensores de Movimento
+### Dicionários (Chave-Valor) 🔑
 
-Acelerômetro e Giroscópio.
+Como um JSON ou um Objeto.
 
-* Detectar o "Shake" (Balançar). { .fragment }
-* Rodar a tela automaticamente. { .fragment }
-* Realidade Aumentada (AR). { .fragment }
-
----
-
-## 🔵 Bluetooth (Classic e BLE)
-
-Conecte-se a tudo.
-
-* **Classic**: Som, Arquivos grandes. { .fragment }
-* **BLE (Low Energy)**: Sensores, IoT, Smartwatches. { .fragment }
-* **Eddystone/iBeacons**: Localização interna por proximidade. { .fragment }
+```python
+pessoa = {
+    "nome": "Ana",
+    "idade": 25,
+    "tech": ["Python", "SQL"]
+}
+print(pessoa["nome"])
+```
 
 ---
 
-## 📞 Telefonia e SMS
-
-Sim, ainda é um telefone!
-
-* **SmsManager**: Envie e receba mensagens programaticamente. { .fragment }
-* **TelephonyManager**: Saiba a operadora e o estado da rede. { .fragment }
-
-> **Cuidado**: O Google Play é muito rígido com permissões de SMS. ⚠️ { .fragment }
-
----
-
-## 🔐 Biometria Segura
-
-Impressão digital e Rosto.
-
-* Use o `BiometricPrompt`. { .fragment }
-* Nunca guarde a digital do usuário! O sistema apenas diz "Confere" ou "Não Confere". { .fragment }
-
----
-
-## 🆚 Android vs iOS (Hardware)
-
-| Recurso | Android | iOS |
-| :--- | :--- | :--- |
-| **GPS** | Fused Location | Core Location |
-| **Câmera** | CameraX | AVFoundation |
-| **Sensores** | SensorManager | Core Motion |
-| **Bluetooth** | BluetoothAdapter | Core Bluetooth |
-
----
-
-## 🧬 Mermaid: Ciclo de Hardware
+### Visualizando (Mermaid)
 
 ```mermaid
-graph TD
-    A[Usuário quer Foto] --> B{Tem Permissão?}
-    B -- Não --> C[Pedir Permissão]
-    C --> D{Aceitou?}
-    D -- Não --> E[Mostrar Aviso]
-    B -- Sim --> F[Abrir CameraX]
-    D -- Sim --> F
-    F --> G[Salvar Imagem]
+graph LR;
+    subgraph Lista [Lista: Compras]
+    L0[0: Maçã] --- L1[1: Banana] --- L2[2: Uva]
+    end
+    
+    subgraph Dicionario [Dicionário: Pessoa]
+    D1[Chave: 'Nome'\nValor: 'Ana'] --- D2[Chave: 'Idade'\nValor: 25]
+    end
+    
+    style Lista fill:#bbf;
+    style Dicionario fill:#f9f;
 ```
 
 ---
 
-## 🛠️ Prática: O Sensor de Luz
+## 4. Modos de Execução ⚙️
 
-1. Obtenha o `SensorManager`. { .fragment }
-2. Escolha o `Sensor.TYPE_LIGHT`. { .fragment }
-3. Se a luz baixar (colocar a mão sobre o sensor), mostre um aviso "Está escuro!". { .fragment }
+1.  **REPL (Interativo)**: { .fragment }
+    - Digite `python` no terminal. { .fragment }
+    - Teste comandos na hora. `2 + 2`. { .fragment }
+    - Ótimo para aprender. { .fragment }
 
----
-
-## 🏁 Conclusão
-
-* Hardware exige permissão e cuidado. { .fragment }
-* CameraX e Fused Location são seus melhores amigos. { .fragment }
-* Respeite a bateria do usuário! Pare de ouvir sensores no `onPause`. { .fragment }
+2.  **Scripts (`.py`)**: { .fragment }
+    - Arquivos de texto com código. { .fragment }
+    - `python meu_script.py`. { .fragment }
+    - Para programas reais. { .fragment }
 
 ---
 
-## ❓ Perguntas sobre Hardware?
+## 5. O Ecossistema de Dados 📊
+
+Por que Data Science ama Python? **Bibliotecas**.
+
+1.  **Pandas**: O "Excel" do programador. Manipula milhões de linhas. { .fragment }
+2.  **Matplotlib**: Cria gráficos (Barras, Linhas, Pizza). { .fragment }
+3.  **TensorFlow/PyTorch**: Inteligência Artificial. { .fragment }
 
 ---
 
-### Próxima Aula: Testes e Qualidade! 🐞👋
+### Exemplo Pandas 🐼
+
+```python
+import pandas as pd
+
+# Ler uma planilha inteira
+tabela = pd.read_csv("vendas.csv")
+
+# Calcular totais
+print(tabela["valor"].sum())
+```
+
+---
+
+## Exercício Rápido ⚡
+
+**Análise de Notas**
+
+1.  Crie uma lista com 4 notas: `[6.0, 7.5, 9.0, 5.5]`. { .fragment }
+2.  Use `sum(lista)` e `len(lista)` para calcular a média. { .fragment }
+3.  Se média > 6, imprima "Aprovado". { .fragment }
+
+```python
+notas = [6.0, 7.5, 9.0, 5.5]
+media = sum(notas) / len(notas)
+# Complete...
+```
+
+---
+
+## Resumo ✅
+
+- Python é a linguagem da prototipagem e dos dados. { .fragment }
+- **Indentação** é regra. { .fragment }
+- **Bibliotecas** fazem o trabalho pesado. { .fragment }
+
+---
+
+## Próxima Aula 🚀
+
+- E quando performance é tudo? { .fragment }
+- Sistemas que não podem travar. { .fragment }
+- **Rust e Go**: As linguagens da Cloud e Sistemas. { .fragment }
+
+👉 **Tarefa**: Instalar Python e fazer o exercício da média!

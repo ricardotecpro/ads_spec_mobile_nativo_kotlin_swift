@@ -1,71 +1,61 @@
-# Quiz 05 - Interface Gráfica (UI) 🎨
+# Quiz 05 - Estruturas Repetitivas 🔄
 
-1. Qual a diferença fundamental entre uma View e um ViewGroup?
-    - [ ] Uma View organiza o layout e um ViewGroup exibe o conteúdo.
-    - [x] Uma View é um componente visual individual (botão, texto) e um ViewGroup é um container que organiza as Views.
-    - [ ] Não há diferença, são sinônimos.
-    - [ ] ViewGroups só existem no iOS.
-    *Explicação: ViewGroups (como LinearLayout e ConstraintLayout) servem para posicionar as Views na tela.*
+1. Qual o principal objetivo de uma estrutura repetitiva (Loop)?
+    - [ ] Deixar o código mais lento
+    - [ ] Criar variáveis infinitas
+    - [x] Executar um bloco de códigos várias vezes sem repetir escrita
+    - [ ] Tomar uma única decisão
 
-2. Qual unidade de medida deve ser usada para definir o tamanho de botões e margens no Android?
-    - [ ] px (pixels)
-    - [ ] pt (pontos)
-    - [x] dp (density-independent pixels)
-    - [ ] sp (scale-independent pixels)
-    *Explicação: dp escala automaticamente de acordo com a densidade de pixels da tela do dispositivo.*
+2. O que caracteriza um "Loop Infinito"?
+    - [ ] Ele roda 1000 vezes e para
+    - [x] Ele nunca atinge a condição de parada
+    - [ ] Ele é muito rápido
+    - [ ] Ele ocupa 0 bytes de memória
 
-3. Qual unidade de medida é recomendada especificamente para o tamanho de textos (fontes)?
-    - [ ] dp
-    - [ ] px
-    - [x] sp
-    - [ ] mm
-    *Explicação: sp respeita as configurações de acessibilidade do usuário, aumentando se o usuário escolher letras grandes no sistema.*
+3. A estrutura `Enquanto...Faca` testa a condição quando?
+    - [x] No Início (antes de entrar)
+    - [ ] No Fim (depois de rodar uma vez)
+    - [ ] No meio
+    - [ ] Nunca
 
-4. Qual Layout organiza seus filhos em uma única linha ou coluna?
-    - [ ] ConstraintLayout
-    - [ ] FrameLayout
-    - [x] LinearLayout
-    - [ ] RelativeLayout
-    *Explicação: O LinearLayout é linear, ou seja, segue uma única direção (horizontal ou vertical).*
+4. A estrutura `Repita...Ate` garante que o bloco execute pelo menos quantas vezes?
+    - [ ] 0
+    - [x] 1
+    - [ ] 10
+    - [ ] Infinito
 
-5. Qual a principal vantagem do ConstraintLayout em relação aos outros layouts?
-    - [ ] É o layout mais antigo e compatível.
-    - [x] Permite criar layouts complexos de forma plana, sem aninhar muitos ViewGroups, melhorando a performance.
-    - [ ] Só funciona com imagens 3D.
-    - [ ] Ele obriga o uso de Java em vez de Kotlin.
-    *Explicação: O ConstraintLayout reduz o aninhamento de telas, o que torna a renderização mais rápida.*
+5. Para loops onde sabemos o número exato de repetições (ex: 10 vezes), qual é a melhor estrutura?
+    - [ ] Enquanto
+    - [ ] Repita
+    - [x] Para (For)
+    - [ ] Se
 
-6. No Android Studio, o que representa a aba "Split" ao editar um arquivo XML?
-    - [ ] Divide a tela do computador em duas.
-    - [x] Mostra o código XML de um lado e o preview visual do outro.
-    - [ ] Separa o código Kotlin do XML.
-    - [ ] Finaliza o processo de compilação.
-    *Explicação: É o modo ideal para desenvolvedores, permitindo ver o resultado visual imediato das mudanças no código.*
+6. O que é um "Contador" em um loop?
+    - [ ] Uma variável que soma valores (total = total + valor)
+    - [x] Uma variável que conta passadas (i = i + 1)
+    - [ ] Um cronômetro do Windows
+    - [ ] Um erro de hardware
 
-7. O atributo `android:layout_width="match_parent"` faz com que o componente:
-    - [ ] Tenha o tamanho exato do seu conteúdo interno.
-    - [x] Ocupe toda a largura disponível do seu componente pai (parent).
-    - [ ] Tenha exatamente 100 pixels de largura.
-    - [ ] Desapareça da tela.
-    *Explicação: match_parent diz ao componente para esticar até os limites do container onde ele está.*
+7. O que é um "Acumulador" (ou Somador)?
+    - [ ] Uma variável que conta de 1 em 1
+    - [x] Uma variável que guarda a soma de valores (saldo = saldo + deposito)
+    - [ ] Uma bateria
+    - [ ] Um vetor
 
-8. Qual componente usamos para permitir que o usuário digite um texto (Input)?
-    - [ ] TextView
-    - [x] EditText (ou TextInputEditText)
-    - [ ] Button
-    - [ ] ImageButton
-    *Explicação: Diferente do TextView (exibição), o EditText permite a interação de escrita.*
+8. O comando `interrompa` (break) serve para:
+    - [ ] Pausar o programa para o café
+    - [x] Sair imediatamente do loop
+    - [ ] Reiniciar o Windows
+    - [ ] Pular uma iteração
 
-9. Para que serve o atributo `android:hint` em um EditText?
-    - [ ] É a senha secreta do campo.
-    - [ ] Define a cor do fundo.
-    - [x] Exibe um texto de ajuda ou exemplo dentro do campo enquanto ele está vazio.
-    - [ ] Define o limite máximo de caracteres.
-    *Explicação: O hint (dica) ajuda o usuário a entender o que ele deve digitar naquele campo.*
+9. O que é "Teste de Mesa"?
+    - [ ] Testar se a mesa está firme
+    - [x] Simular o código manualmente (no papel) para ver os valores das variáveis
+    - [ ] Rodar o código no servidor de produção
+    - [ ] Limpar o computador
 
-10. No iOS, qual tecnologia de layout é mais parecida com o ConstraintLayout do Android?
-    - [ ] SwiftUI
-    - [ ] Objective-C
-    - [x] Auto Layout
-    - [ ] Core Graphics
-    *Explicação: Tanto o ConstraintLayout quanto o Auto Layout baseiam-se em regras de posicionamento relativo entre os elementos.*
+10. No loop `Para i de 1 ate 10 faca`, qual o valor final de `i` ao sair do loop?
+    - [ ] 9
+    - [ ] 10
+    - [x] 11 (Geralmente ele incrementa, falha no teste 11 <= 10 e sai) - *Depende da linguagem, mas em lógica costuma ser o valor de 'estouro'*
+    - [ ] 0

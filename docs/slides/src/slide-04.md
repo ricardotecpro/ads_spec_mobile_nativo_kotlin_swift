@@ -1,162 +1,212 @@
-# Aula 04 - Estrutura de um App 🏗️
-
-<!-- .slide: data-transition="zoom" -->
+# Aula 04 - Estrutura Condicional 🔀
 
 ---
 
-## 🧐 O que tem "debaixo do capô"?
+## Agenda 📅
 
-Ao abrir um projeto no Android Studio, vemos muitas pastas.
-Não se desespere! Vamos entender cada uma.
-
----
-
-## 📂 Visão Geral do Projeto
-
-Existem dois modos de visão: **Project** e **Android**.
-Nós usaremos o modo **Android** (mais organizado).
+1.  O Desvio Lógico ("Se...") { .fragment }
+2.  Operadores Relacionais { .fragment }
+3.  Estrutura Se-Entao-Senao { .fragment }
+4.  Operadores Lógicos (E, OU, NÃO) { .fragment }
+5.  Estrutura Escolha-Caso { .fragment }
 
 ---
 
-## 1. O Manifesto 📜
+## 1. O Desvio Lógico 🤔
 
-`app/src/main/AndroidManifest.xml`
+Até agora, nossos programas eram uma linha reta.
+Mas a vida é feita de escolhas.
 
-É o contrato do seu app com o sistema operacional.
-
-* Nome e Ícone do App. { .fragment }
-* Declaração de todas as **Activities**. { .fragment }
-* Solicitação de **Permissões** (Câmera, GPS). { .fragment }
+- **Se** chover, pego guarda-chuva. { .fragment }
+- **Senão**, vou de bicicleta. { .fragment }
 
 ---
 
-## 2. A Pasta `java` (ou `kotlin`) ⌨️
-
-Onde a "mágica" acontece.
-
-* Ficam as classes de lógica. { .fragment }
-* Ficam as classes das telas (MainActivity). { .fragment }
-* Organizado em **pacotes** (ex: `com.meuapp.telas`). { .fragment }
-
----
-
-## 3. A Pasta `res` (Resources) 🎨
-
-Tudo o que o usuário **vê** ou **ouve**, mas que não é lógica.
-
-* **drawable**: Imagens e ícones. { .fragment }
-* **layout**: A interface visual (XML). { .fragment }
-* **mipmap**: Ícones que aparecem no menu do celular. { .fragment }
-* **values**: Strings, Cores e Temas. { .fragment }
-
----
-
-### 🎨 Por que centralizar os `values`?
-
-Evite escrever texto direto no código!
-
-```xml
-<!-- res/values/strings.xml -->
-<string name="boas_vinda">Bem-vindo ao App!</string>
-```
-
-> Facilita a tradução para outros idiomas (Internacionalização). 🌍
-
----
-
-## 4. Gradle: O Gerente de Fábrica ⚙️
-
-Não é código do seu app, é a configuração da "fábrica" que constrói ele.
-
-* `build.gradle (Project)`: Configurações globais. { .fragment }
-* `build.gradle (Module)`: Configurações específicas do App. { .fragment }
-
----
-
-### 📦 O que tem no Gradle?
-
-* **versionCode**: Número interno (1, 2, 3...). { .fragment }
-* **versionName**: Nome para o usuário (1.0.1...). { .fragment }
-* **Dependencies**: Bibliotecas externas (Retrofit, Room). { .fragment }
-
----
-
-## 🏗️ O Ciclo de Build
+### Visualizando a Decisão
 
 ```mermaid
-graph LR
-    A[Código Kotlin/Java] --> B[Compilador]
-    E[Recursos XML/Img] --> B
-    B --> C[Arquivo DEX]
-    C --> D[APK / AAB]
+graph TD;
+    Inicio([Início]) --> Pergunta{Está Sol?};
+    Pergunta -- Sim --> A[Praia];
+    Pergunta -- Não --> B[Netflix];
+    A --> Fim([Fim]);
+    B --> Fim;
 ```
 
 ---
 
-## 🆚 Estrutura: Android vs iOS
+## 2. Operadores Relacionais 📏
 
-| Android | iOS | Papel |
-| :---: | :---: | :--- |
-| `AndroidManifest` | `Info.plist` | Metadados |
-| `res/layout` | `Storyboard/XIB` | UI Visual |
-| `gradle` | `CocoaPods/SwiftPM` | Dependências |
-| `res/values` | `Localizable.strings` | Textos |
+Para o computador decidir, ele precisa **comparar**.
+A resposta é sempre **Verdadeiro** ou **Falso**.
 
 ---
 
-## 🔌 ViewBinding: O Link Seguro
+### Os Comparadores
 
-Antigamente usava-se o `findViewById` (lento e perigoso).
-Hoje usamos o **ViewBinding**.
+| Símbolo | Significado | Exemplo | Resultado |
+| :---: | :--- | :--- | :--- |
+| `>` | Maior que | `10 > 5` | V |
+| `<` | Menor que | `3 < 8` | V |
+| `==` | Igual a | `5 == 5` | V |
+| `!=` | Diferente | `5 != 3` | V |
+| `>=` | Maior/Igual | `10 >= 10` | V |
 
-```kotlin
-// No código Kotlin
-binding.txtTitulo.text = "Novo Título"
+---
+
+## 3. Sintaxe Básica (Se-Entao) 📝
+
+```visualg
+se (nota >= 7) entao
+   escreva("Aprovado!")
+fimse
 ```
 
-> Garante que você não tente acessar um ID que não existe na tela! 🛡️
+- Se a condição for **Verdadeira**, ele executa o bloco. { .fragment }
+- Se for **Falsa**, ele pula. { .fragment }
 
 ---
 
-## 🛠️ Prática: Explorando o Studio
+### O "Senao" (O Plano B)
 
-1. Abra o arquivo `Activity_main.xml`. { .fragment }
-2. Veja as abas **Code**, **Split** e **Design**. { .fragment }
-3. Mantenha no **Split** para aprender rápido! { .fragment }
+E se for Falso? Usamos o `senao`.
 
-<!-- .slide: data-background-color="#2d6a4f" -->
-
----
-
-## ⚠️ Cuidado com a pasta `build`
-
-Ela é gerada automaticamente.
-**Nunca** altere nada dentro dela manualmente. Se der erro, use o comando:
-`Build -> Clean Project`.
+```visualg
+se (nota >= 7) entao
+   escreva("Aprovado!")
+senao
+   escreva("Reprovado!")
+fimse
+```
 
 ---
 
-## 🧩 Resumo
+## 4. Operadores Lógicos 🔗
 
-* **Manifesto**: Declarativo e essencial. { .fragment }
-* **Res**: Visual e Multimídia. { .fragment }
-* **Gradle**: Configuração e Bibliotecas. { .fragment }
-* **Java/Kotlin**: Comportamento. { .fragment }
+Às vezes, uma condição só não basta.
 
----
-
-## 🚀 Desafio da Aula
-
-1. Adicione uma nova cor em `colors.xml`. { .fragment }
-2. Crie uma nova String em `strings.xml`. { .fragment }
-3. Use essa cor e essa string em um componente na tela inicial. { .fragment }
+- Quero ir à praia **SE** tiver sol **E** for sábado. { .fragment }
 
 ---
 
-## 🏁 Conclusão
+### Operador E (AND) 🤝
 
-Entender a estrutura é o primeiro passo para não se perder em projetos grandes.
+- Exige que **TODAS** as condições sejam verdadeiras. { .fragment }
+
+| A | B | A e B |
+| :---: | :---: | :---: |
+| V | V | **V** |
+| V | F | F |
+| F | V | F |
+| F | F | F |
 
 ---
 
-### Próxima Aula: Interface Gráfica (Layouts)! 🎨👋
+### Operador OU (OR) 🤷
+
+- Exige que **PELO MENOS UM** seja verdadeiro. { .fragment }
+
+| A | B | A ou B |
+| :---: | :---: | :---: |
+| V | V | **V** |
+| V | F | **V** |
+| F | V | **V** |
+| F | F | F |
+
+---
+
+### Operador NÃO (NOT) 🚫
+
+- Inverte o resultado. { .fragment }
+
+| A | NÃO A |
+| :---: | :---: |
+| V | F |
+| F | V |
+
+---
+
+## Exemplo Prático: Média Escolar 🎓
+
+Vamos melhorar nosso cálculo de média.
+
+- Media >= 7: Aprovado. { .fragment }
+- Media >= 5 E Media < 7: Recuperação. { .fragment }
+- Media < 5: Reprovado. { .fragment }
+
+---
+
+### O Código (Aninhado)
+
+```visualg
+se (media >= 7) entao
+   escreval("Aprovado")
+senao
+   se (media >= 5) entao
+      escreval("Recuperação")
+   senao
+      escreval("Reprovado")
+   fimse
+fimse
+```
+
+---
+
+## 5. Estrutura Escolha-Caso 🚦
+
+Quando temos muitas opções fixas (como um Menu).
+Evita aquele monte de `se-senao-se-senao`.
+
+---
+
+### Exemplo: Menu
+
+```visualg
+escolha (opcao)
+   caso 1
+      escreva("Iniciar Jogo")
+   caso 2
+      escreva("Configurações")
+   caso 3
+      escreva("Sair")
+   outrocaso
+      escreva("Opção Inválida")
+fimescolha
+```
+
+---
+
+### Quando usar qual? 🤔
+
+- **SE**: Para testar intervalos (`idade > 18`), condições complexas (`E`, `OU`). { .fragment }
+- **ESCOLHA**: Para valores exatos (Menus, Códigos de produto). { .fragment }
+
+---
+
+## Exercício Rápido ⚡
+
+**Par ou Ímpar?**
+
+1.  Leia um número. { .fragment }
+2.  Verifique se o resto da divisão por 2 é zero. { .fragment }
+3.  Se for, é Par. { .fragment }
+4.  Senão, é Ímpar. { .fragment }
+
+---
+
+## Resumo ✅
+
+- **Se/Então/Senão**: Tomada de decisão. { .fragment }
+- **Relacionais**: `>`, `<`, `=`, `!=`. { .fragment }
+- **Lógicos**: `E`, `OU`, `NÃO`. { .fragment }
+- **Escolha**: Ótimo para menus. { .fragment }
+
+---
+
+## Próxima Aula 🚀
+
+- E se eu quiser repetir um comando 1000 vezes? { .fragment }
+- **Loops** (Laços de Repetição). { .fragment }
+- `Enquanto`, `Para`, `Repita`. { .fragment }
+
+👉 **Tarefa**: Fazer o exercício do Bhaskara!

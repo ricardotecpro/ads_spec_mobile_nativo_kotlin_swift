@@ -1,182 +1,211 @@
-# Aula 05 - Interface Gráfica (UI) 🎨
-
-<!-- .slide: data-transition="convex" -->
+# Aula 05 - Estruturas Repetitivas 🔁
 
 ---
 
-## 🏗️ A Hierarquia de Views
+## Agenda 📅
 
-No Android, tudo o que você vê é baseado em uma árvore de elementos.
+1.  O Poder da Repetição (Loops) { .fragment }
+2.  Estrutura Enquanto (While) { .fragment }
+3.  Estrutura Repita (Do-While) { .fragment }
+4.  Estrutura Para (For) { .fragment }
+5.  Controle de Fluxo (Interrompa) { .fragment }
+6.  Teste de Mesa { .fragment }
+
+---
+
+## 1. O Poder da Repetição 🔄
+
+Imagine escrever "Eu não vou jogar bolinha de papel" 100 vezes no quadro.
+
+- **Humano**: Cansa, erra, demora. { .fragment }
+- **Computador**: Faz em 1 milissegundo. { .fragment }
+
+---
+
+### O Loop (Laço) ♾️
+
+- Executa um bloco de código **enquanto** uma condição for verdadeira. { .fragment }
+- Automatiza tarefas repetitivas. { .fragment }
+- Economiza linhas de código. { .fragment }
+
+---
+
+### Visualizando um Loop
 
 ```mermaid
-graph TD
-    Root[ViewGroup / Layout] --> Child1[TextView]
-    Root --> Child2[Button]
-    Root --> InnerVG[LinearLayout]
-    InnerVG --> GrandChild[ImageView]
+graph TD;
+    Inicio([Início]) --> Cond{Contador < 5?};
+    Cond -- Sim --> Acao["Escrever 'Olá'"];
+    Acao --> Inc[Contador + 1];
+    Inc --> Cond;
+    Cond -- Não --> Fim([Fim]);
 ```
 
 ---
 
-## 🧱 Views vs ViewGroups
+## 2. Enquanto (While) ⏳
 
-* **View**: O átomo da interface (Botão, Campo de Texto, Imagem). { .fragment }
-* **ViewGroup**: O esqueleto que organiza os átomos (LinearLayout, ConstraintLayout). { .fragment }
-
----
-
-## 📏 Unidades: dp vs sp
-
-Regra de ouro: NUNCA use `px`.
-
-* **dp** (Density-independent Pixels): Para tamanhos e margens. { .fragment }
-* **sp** (Scale-independent Pixels): Para textos. { .fragment }
+- O mais comum. { .fragment }
+- Testa a condição **ANTES** de entrar. { .fragment }
+- Se a condição for falsa de cara, ele nunca executa. { .fragment }
 
 ---
 
-## 📐 LinearLayout
+### Sintaxe
 
-O mais simples. Organiza itens em fila.
-
-* **Vertical**: Um abaixo do outro. { .fragment }
-* **Horizontal**: Um ao lado do outro. { .fragment }
-* **Peso (layout_weight)**: Útil para preencher espaço proporcionalmente. { .fragment }
-
----
-
-## ⚓ ConstraintLayout
-
-O padrão da indústria moderna.
-
-* Baseado em restrições (amarras). { .fragment }
-* Evita aninhamento de layouts (performance 🚀). { .fragment }
-* Flexível e responsivo para qualquer tamanho de tela. { .fragment }
-
-<!-- .slide: data-transition="slide-in fade-out" -->
-
----
-
-### Exemplo: Botão centralizado
-
-```xml
-<Button
-    android:id="@+id/btnCentro"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent" />
+```visualg
+enquanto (condicao) faca
+   // Comandos
+fimenquanto
 ```
 
 ---
 
-## 🖼️ ImageView & Drawable
+### Exemplo: Contagem
 
-Como exibir imagens?
+```visualg
+i <- 0
+enquanto (i < 5) faca
+   escreval("Número: ", i)
+   i <- i + 1  // Importante!
+fimenquanto
+```
 
-* Use vetores (SVG -> Vector Drawable) sempre que possível. { .fragment }
-* Formatos bitmap (PNG/JPG) aumentam o tamanho do app. { .fragment }
-* Escala: `scaleType="centerCrop"` vs `fitCenter`. { .fragment }
-
----
-
-## ⌨️ Entrada de Dados: EditText
-
-* Use `inputType="textPassword"` para senhas. { .fragment }
-* Use `inputType="emailAddress"` para teclados customizados. { .fragment }
-* Dica: `TextInputLayout` (Material Design) dá um visual premium. { .fragment }
+> Se esquecer o `i <- i + 1`, vira um **Loop Infinito**! 😱
 
 ---
 
-## 💅 Temas e Estilos
+## 3. Repita-Até (Do-While) 🛡️
 
-Não repita código! Centralize o estilo.
+- Testa a condição no **FINAL**. { .fragment }
+- Executa **pelo menos uma vez**. { .fragment }
+- Ótimo para menus ou validação. { .fragment }
 
-```xml
-<style name="BotaoRosa">
-    <item name="android:backgroundTint">@color/pink</item>
-</style>
+---
+
+### Sintaxe
+
+```visualg
+repita
+   // Comandos
+ate (condicao)
+```
+
+**Atenção**: No VisualG/Portugol, ele repete *até* a condição ser verdadeira (ou seja, enquanto for falsa). Em outras linguagens (C, Java), é *enquanto* for verdadeira.
+
+---
+
+### Exemplo: Senha Correta 🔒
+
+```visualg
+repita
+   escreva("Digite a senha: ")
+   leia(senha)
+ate (senha == "1234")
 ```
 
 ---
 
-## 🆚 Android XML vs iOS Auto Layout
+## 4. Para (For) 🎯
 
-| Recurso | Android | iOS |
-| :---: | :---: | :--- |
-| **Pai** | ViewGroup | UIView |
-| **Logic** | Layout Params | Constraints |
-| **Unidade** | dp | points |
-| **Arquivo** | .xml | .storyboard / .xib |
+- Quando sabemos **exatamente** quantas vezes repetir. { .fragment }
+- Agrupa tudo numa linha só: { .fragment }
+    1.  **Início** (Onde começa) { .fragment }
+    2.  **Fim** (Onde termina) { .fragment }
+    3.  **Passo** (De quanto em quanto) { .fragment }
 
 ---
 
-## 🔗 ViewBinding na Prática
+### Sintaxe
 
-Adeus `findViewById`!
-
-```kotlin
-// Inicialização no onCreate
-binding = ActivityMainBinding.inflate(layoutInflater)
-setContentView(binding.root)
-
-// Uso
-binding.btnSalvar.setOnClickListener { ... }
+```visualg
+para i de 1 ate 10 passo 1 faca
+   escreva(i)
+fimpara
 ```
 
-<!-- .slide: data-background-color="#1b4332" -->
+- **i**: Variável contadora. { .fragment }
+- **1**: Valor inicial. { .fragment }
+- **10**: Valor final. { .fragment }
+- **1**: Incremento. { .fragment }
 
 ---
 
-## 🖱️ Eventos de Clique
+### Exemplo: Contagem Regressiva 🚀
 
-```kotlin
-binding.myButton.setOnClickListener {
-    Toast.makeText(this, "Clicou!", Toast.LENGTH_SHORT).show()
-}
+```visualg
+para i de 10 ate 0 passo -1 faca
+   escreval(i)
+fimpara
+escreval("FOGO!")
 ```
 
 ---
 
-## ♿ Acessibilidade
+## 5. Controle de Fluxo (Interrompa) 🛑
 
-O Android deve ser para todos.
+- Sai do loop imediatamente. { .fragment }
+- Útil para parar buscas ou sair de menus. { .fragment }
 
-* **contentDescription**: OBRIGATÓRIO para imagens (leitores de tela). { .fragment }
-* **Cores**: Contraste adequado. { .fragment }
-* **Tamanhos**: Botões com pelo menos 48dp de área de toque. { .fragment }
-
----
-
-## 🛠️ Desafio da Aula: Tela de Cadastro
-
-Crie uma tela com:
-1. Nome (EditText) { .fragment }
-2. E-mail (EditText) { .fragment }
-3. Senha (Password) { .fragment }
-4. Botão "Salvar" { .fragment }
-5. Use **ConstraintLayout** para posicionar tudo. { .fragment }
+```visualg
+enquanto (verdadeiro) faca
+   se (botao == "Sair") entao
+      interrompa
+   fimse
+fimenquanto
+```
 
 ---
 
-## 🧪 Preview de Layout
+## 6. O Teste de Mesa 🧠
 
-O Android Studio permite testar seu layout em diferentes dispositivos (Pixel, Tablets, Dobráveis) sem rodar o app.
+Como debugar mentalmente?
 
-* Use a aba **Design** para ajustes rápidos. { .fragment }
-* Use a aba **Attributes** para mudar propriedades sem digitar XML. { .fragment }
+1.  Crie uma tabela com as variáveis. { .fragment }
+2.  Simule linha por linha. { .fragment }
+3.  Anote as mudanças. { .fragment }
 
----
-
-## 🏁 Conclusão
-
-* Design atrativo retém usuários. { .fragment }
-* ViewBinding é o padrão moderno de conexão. { .fragment }
-* ConstraintLayout é sua ferramenta mais potente. { .fragment }
-
----
-
-## ❓ Dúvidas?
+| Passo | i | Saída |
+| :--- | :--- | :--- |
+| 1 | 0 | - |
+| 2 | 0 | "0" |
+| 3 | 1 | - |
+| ... | ... | ... |
 
 ---
 
-### Próxima Aula: Navegação entre Telas! 🗺️👋
+## Comparativo ⚖️
+
+| Estrutura | Quando usar? |
+| :--- | :--- |
+| **Enquanto** | Não sei quantas vezes vai repetir. |
+| **Repita** | Tenho que executar pelo menos 1 vez. |
+| **Para** | Sei exatamente o número de repetições. |
+
+---
+
+## Exercício Rápido ⚡
+
+**Tabuada do 7**
+
+1.  Use um `para`. { .fragment }
+2.  De 1 até 10. { .fragment }
+3.  Mostre `7 x i = resultado`. { .fragment }
+
+---
+
+## Resumo ✅
+
+- **Loops** economizam tempo. { .fragment }
+- **Cuidado** com Loops Infinitos. { .fragment }
+- Escolha a estrutura certa para o problema. { .fragment }
+
+---
+
+## Próxima Aula 🚀
+
+- E para guardar 50 notas de alunos? { .fragment }
+- Criar 50 variáveis? `n1, n2, n3...`? 😫 { .fragment }
+- **Vetores (Arrays)**: A solução elegante. { .fragment }
+
+👉 **Tarefa**: Fazer a Tabuada e o Primo!

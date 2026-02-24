@@ -1,183 +1,162 @@
-# Aula 08 - Persistência de Dados 💾
-
-<!-- .slide: data-transition="slide" -->
+# Aula 08 - Modularização 🧩
 
 ---
 
-## 💾 Onde guardamos os dados?
+## Agenda 📅
 
-Apps precisam lembrar das coisas quando fechados.
-
-* Configurações simples. { .fragment }
-* Listas complexas. { .fragment }
-* Arquivos multimídia. { .fragment }
-
----
-
-## 1. SharedPreferences 🔑
-
-A forma mais simples: Chave e Valor.
-
-* "nome" -> "Ricardo" { .fragment }
-* "notificacoes_on" -> true { .fragment }
-* "tema" -> 1 { .fragment }
+1.  Conceito de Módulos (Divide & Conquer) { .fragment }
+2.  Procedimentos vs Funções { .fragment }
+3.  Escopo de Variáveis (Locais x Globais) { .fragment }
+4.  Parâmetros (Valor x Referência) { .fragment }
+5.  Exemplos Práticos { .fragment }
 
 ---
 
-### Usando PreferenceManager
+## 1. Dividir para Conquistar ⚔️
 
-```kotlin
-val prefs = getSharedPreferences("config", MODE_PRIVATE)
-
-// Gravar
-prefs.edit().putString("USER", "Android").apply()
-
-// Ler
-val user = prefs.getString("USER", "Ninguém")
-```
-
-> **Atenção**: Não use para dados grandes ou listas!
+Imagine construir um carro inteiro num bloco só. Impossível!
+Nós montamos:
+- Motor 🔧 { .fragment }
+- Rodas 🚗 { .fragment }
+- Vidros 🪟 { .fragment }
+E depois **juntamos**.
 
 ---
 
-## 🏛️ Banco de Dados: SQLite
+### Na Programação
 
-O Android tem o SQLite no seu coração.
-
-* Banco Relacional. { .fragment }
-* Leve e embutido. { .fragment }
-* Mas... o código puro é horrível (SQL strings). { .fragment }
+- Não escreva 1000 linhas no `Inicio`. { .fragment }
+- Quebre em pequenos blocos (**Módulos**). { .fragment }
+- Cada módulo resolve **um problema específico**. { .fragment }
 
 ---
 
-## 🔨 Conheça o ROOM
-
-A biblioteca do Jetpack que salva vidas.
-
-1. **Entity**: Sua tabela (Classe de dados). { .fragment }
-2. **DAO**: Seus comandos (Queries). { .fragment }
-3. **Database**: O gerente do banco. { .fragment }
-
-<!-- .slide: data-transition="convex" -->
-
----
-
-### Passo 1: A Entidade (@Entity)
-
-```kotlin
-@Entity
-data class User(
-    @PrimaryKey val id: Int,
-    val name: String
-)
-```
-
----
-
-### Passo 2: O DAO (@Dao)
-
-```kotlin
-@Dao
-interface UserDao {
-    @Insert
-    void save(User user)
-
-    @Query("SELECT * FROM User")
-    LiveData<List<User>> getAll()
-}
-```
-
----
-
-## 🧵 A Regra de Ouro do Banco
-
-**NUNCA** acesse o banco na Main Thread.
-
-* O Room vai travar seu app (Crash) se você tentar. { .fragment }
-* Use **Coroutines** ou **LiveData**. { .fragment }
-* Por que? Porque ler o disco é lento e trava a tela. { .fragment }
-
----
-
-## 🧬 Ciclo Completo: MVVM + Room
+### Visualizando (Mermaid)
 
 ```mermaid
-graph TD
-    UI[Activity/View] -->|Observa| VM[ViewModel]
-    VM -->|Pede| REPO[Repository]
-    REPO -->|Query| DB[(Room DB)]
-    DB -->|Retorna| REPO
-    REPO -->|State| VM
-    VM -->|LiveData| UI
+sequenceDiagram
+    participant Principal
+    participant Soma
+    
+    Principal->>Soma: Envia (5, 3)
+    Note right of Soma: Calcula 5+3
+    Soma-->>Principal: Retorna 8
+    Principal->>Principal: Mostra 8
 ```
 
 ---
 
-## 📂 Arquivos Externos
+## 2. Tipos de Módulos 🛠️
 
-Para fotos e vídeos.
+Em Portugol, temos dois tipos principais.
 
-* **Cache**: Temporário. { .fragment }
-* **Arquivos Privados**: Só seu app vê. { .fragment }
-* **Arquivos Públicos**: Galeria, Downloads (Precisa de permissão). { .fragment }
-
----
-
-## 🆚 Persistência: Android vs iOS
-
-| Recurso | Android | iOS |
-| :---: | :---: | :--- |
-| **Simples** | SharedPreferences | UserDefaults |
-| **Banco** | Room (SQLite) | Core Data / SwiftData |
-| **Arquivos** | Scoped Storage | Sandbox |
+1.  **Procedimentos**: Fazem uma ação, mas não devolvem valor matemático. { .fragment }
+2.  **Funções**: Calculam e **RETORNAM** um valor. { .fragment }
 
 ---
 
-## 🕵️ Ferramenta: App Inspection
+### Procedimento (Ação)
 
-No Android Studio, você pode ver o banco de dados **ao vivo**.
+Ex: `LimparTela()`, `MostrarMenu()`, `TocarSom()`.
 
-1. Rode o app. { .fragment }
-2. Aba `App Inspection` -> `Database Inspector`. { .fragment }
-3. Você pode editar os dados e ver a tela do celular mudar! 🎩 { .fragment }
-
-<!-- .slide: data-background-color="#003049" -->
-
----
-
-## 🛠️ Prática: Lista de Tarefas
-
-Vamos criar um banco para salvar textos.
-
-1. Configure o Room no `build.gradle`. { .fragment }
-2. Crie a Entity `Task`. { .fragment }
-3. Salve um texto vindo de um `EditText`. { .fragment }
+```portugol
+procedimento saudacao(nome : caractere)
+inicio
+   escreval("Olá, ", nome)
+fimprocedimento
+```
+> Chamada: `saudacao("João")`
 
 ---
 
-### Dica: O Singleton do Banco
+### Função (Cálculo)
 
-Não crie várias instâncias do banco. Use o padrão **Singleton**.
+Ex: `Raiz(x)`, `Soma(a,b)`, `Media(n1,n2)`.
+Tem a palavra mágica **RETORNE**.
 
-```kotlin
-val db = Room.databaseBuilder(
-    applicationContext,
-    AppDatabase::class.java, "database-name"
-).build()
+```portugol
+funcao somar(a, b : inteiro) : inteiro
+inicio
+   retorne a + b
+fimfuncao
+```
+> Chamada: `res <- somar(2, 3)`
+
+---
+
+## 3. Escopo de Variáveis 🏠
+
+Onde minha variável vive?
+
+- **Global**: Criada fora de tudo. Todo mundo vê. (Perigoso!). { .fragment }
+- **Local**: Criada dentro da função. Só a função vê. (Seguro!). { .fragment }
+
+---
+
+### O Muro das Funções 🧱
+
+Se eu crio `x` dentro de `somar`, o `Principal` **não sabe** quem é `x`.
+Isso evita confusão!
+
+---
+
+## 4. Parâmetros 🚚
+
+Como passar dados para a função?
+
+1.  **Por Valor** (O padrão): Envia uma **CÓPIA**. Se a função mudar, o original não muda. { .fragment }
+2.  **Por Referência** (`var`): Envia o **ENDEREÇO**. Se a função mudar, o original MUDA! { .fragment }
+
+---
+
+### Exemplo: Troca de Valores
+
+Precisa ser por Referência!
+
+```portugol
+procedimento troca(var a, var b : inteiro)
+inicio
+   temp <- a
+   a <- b
+   b <- temp
+fimprocedimento
 ```
 
 ---
 
-## 🏁 Conclusão
+## 5. Vantagens da Modularização ✅
 
-* Escolha a ferramenta certa para o dado certo. { .fragment }
-* Room é o padrão para dados estruturados. { .fragment }
-* Sempre use threads de background (IO). { .fragment }
-
----
-
-## ❓ Dúvidas sobre Dados?
+1.  **Reutilização**: Escreve uma vez, usa 1000 vezes. { .fragment }
+2.  **Organização**: Código limpo. { .fragment }
+3.  **Facilidade de Manutenção**: Se o cálculo mudar, corrijo num lugar só. { .fragment }
 
 ---
 
-### Próxima Aula: Listas com RecyclerView! 📋👋
+## Projeto Final Módulo 1 🏆
+
+**Sistema de Notas Completo**
+
+- Use Vetores. { .fragment }
+- Use Matrizes (se quiser). { .fragment }
+- Use Funções para calcular média. { .fragment }
+- Use Procedimentos para mostrar boletim. { .fragment }
+
+---
+
+## Resumo ✅
+
+- Modularizar = Organizar. { .fragment }
+- **Função** retorna valor. **Procedimento** faz ação. { .fragment }
+- Variáveis **Locais** são protegidas. { .fragment }
+- Use parâmetros para comunicar. { .fragment }
+
+---
+
+## Próxima Aula 🚀
+
+- Fim da "Lógica Pura"! { .fragment }
+- Vamos conhecer linguagens reais. { .fragment }
+- **C e C++**: Os pais da programação moderna. { .fragment }
+- Gerenciamento de Memória na unha! { .fragment }
+
+👉 **Tarefa**: Refatore seus códigos antigos usando Funções!
